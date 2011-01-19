@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashBugTrackerPlugInDemo", "StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo.csproj", "{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHash.CommandLinePlugin", "StackHash.CommandLinePlugin\StackHash.CommandLinePlugin\StackHash.CommandLinePlugin.csproj", "{1515365B-4308-4E9B-95F8-A3B3613E93E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHash.EmailPlugin", "StackHash.EmailPlugin\StackHash.EmailPlugin\StackHash.EmailPlugin.csproj", "{7B91FC1E-518D-484C-A443-04767623BB99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHash.FogBugzPlugin", "StackHash.FogBugzPlugin\StackHash.FogBugzPlugin\StackHash.FogBugzPlugin.csproj", "{E479E497-E46C-4902-9290-7FA05F7AE6FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5D96ECE-AC58-4B2D-9B9E-68F398F30315}"
+	ProjectSection(SolutionItems) = preProject
+		BugTrackerInterfaceV1\Debug\StackHashBugTrackerInterfaceV1.dll = BugTrackerInterfaceV1\Debug\StackHashBugTrackerInterfaceV1.dll
+		BugTrackerInterfaceV1\Release\StackHashBugTrackerInterfaceV1.dll = BugTrackerInterfaceV1\Release\StackHashBugTrackerInterfaceV1.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs20
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StackHash.CommandLinePlugin\\StackHash.CommandLinePlugin\\StackHash.CommandLinePlugin.csproj
+		SccProjectName1 = StackHash.CommandLinePlugin/StackHash.CommandLinePlugin
+		SccLocalPath1 = StackHash.CommandLinePlugin\\StackHash.CommandLinePlugin
+		SccProjectUniqueName2 = StackHash.EmailPlugin\\StackHash.EmailPlugin\\StackHash.EmailPlugin.csproj
+		SccProjectName2 = StackHash.EmailPlugin/StackHash.EmailPlugin
+		SccLocalPath2 = StackHash.EmailPlugin\\StackHash.EmailPlugin
+		SccProjectUniqueName3 = StackHash.FogBugzPlugin\\StackHash.FogBugzPlugin\\StackHash.FogBugzPlugin.csproj
+		SccProjectName3 = StackHash.FogBugzPlugin/StackHash.FogBugzPlugin
+		SccLocalPath3 = StackHash.FogBugzPlugin\\StackHash.FogBugzPlugin
+		SccProjectUniqueName4 = StackHashBugTrackerPlugInDemo\\StackHashBugTrackerPlugInDemo\\StackHashBugTrackerPlugInDemo.csproj
+		SccProjectName4 = StackHashBugTrackerPlugInDemo/StackHashBugTrackerPlugInDemo
+		SccLocalPath4 = StackHashBugTrackerPlugInDemo\\StackHashBugTrackerPlugInDemo
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1515365B-4308-4E9B-95F8-A3B3613E93E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1515365B-4308-4E9B-95F8-A3B3613E93E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1515365B-4308-4E9B-95F8-A3B3613E93E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1515365B-4308-4E9B-95F8-A3B3613E93E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B91FC1E-518D-484C-A443-04767623BB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B91FC1E-518D-484C-A443-04767623BB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B91FC1E-518D-484C-A443-04767623BB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B91FC1E-518D-484C-A443-04767623BB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E479E497-E46C-4902-9290-7FA05F7AE6FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E479E497-E46C-4902-9290-7FA05F7AE6FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E479E497-E46C-4902-9290-7FA05F7AE6FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E479E497-E46C-4902-9290-7FA05F7AE6FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
