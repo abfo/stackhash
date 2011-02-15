@@ -15,7 +15,7 @@ namespace StackHash.FogBugzPlugin
     /// </summary>
     sealed class FogBugzApi
     {
-        private const int MinimumApiVersion = 6; // minimum acceptable FogBugz API Level
+        private const int MinimumApiVersion = 5; // minimum acceptable FogBugz API Level
 
         private string m_ApiEndpoint; // FogBugz API endpoint, retrieved by querying the API url
         private string m_Token; // FogBugz API token, valid until logout

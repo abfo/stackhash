@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Cucku, Inc.")]
 [assembly: AssemblyProduct("StackHashBugTrackerPlugInDemo")]
-[assembly: AssemblyCopyright("Copyright © Cucku, Inc. 2010,2011")]
+[assembly: AssemblyCopyright("Copyright © Cucku, Inc. 2010-2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("e912b7d7-75df-481d-b5cf-58e9d32d6bff")]
 
-[assembly: AssemblyVersion("0.95.1411.157")]
-[assembly: AssemblyFileVersion("0.95.1411.157")]
+[assembly: AssemblyVersion("1.0.3811.6")]
+[assembly: AssemblyFileVersion("1.0.3811.6")]
