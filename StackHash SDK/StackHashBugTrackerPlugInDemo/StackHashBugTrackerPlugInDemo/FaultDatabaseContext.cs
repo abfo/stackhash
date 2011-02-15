@@ -329,11 +329,11 @@ namespace StackHashBugTrackerPlugInDemo
         /// This method is not currently called during a manual BugReport.
         /// 
         /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
-        /// by the StackHash client user. The plug-in can also change the bug reference by returning the desired 
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
         /// bug reference from this call. 
         /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
         /// Return any other string (including an empty string) and this value will be used to overwrite the 
-        /// bug reference in the StackHash database.
+        /// plugin bug reference in the StackHash database.
         /// Note that there are 2 bug references: 
         ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
         ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
@@ -356,6 +356,9 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// This method may be called any number of times. It is also possible for this event to be called if none 
+        /// of the exposed event fields have changed.
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
@@ -397,11 +400,11 @@ namespace StackHashBugTrackerPlugInDemo
         ///    EventManualUpdateCompleted.
         ///    
         /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
-        /// by the StackHash client user. The plug-in can also change the bug reference by returning the desired 
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
         /// bug reference from this call. 
         /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
         /// Return any other string (including an empty string) and this value will be used to overwrite the 
-        /// bug reference in the StackHash database.
+        /// plugin bug reference in the StackHash database.
         /// Note that there are 2 bug references: 
         ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
         ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
@@ -450,13 +453,24 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
+        /// bug reference from this call. 
+        /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
+        /// Return any other string (including an empty string) and this value will be used to overwrite the 
+        /// plugin bug reference in the StackHash database.
+        /// Note that there are 2 bug references: 
+        ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
+        ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
         /// <param name="file">The file to which the event belongs.</param>
         /// <param name="theEvent">The event to which the note belongs.</param>
         /// <param name="note">The event note to add.</param>
-        public void EventNoteAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerNote note)
+        /// <returns>Null - if the plugin bug reference in the StackHash database should not be changed, Otherwise the new value for the plugin bug reference.</returns>
+        public string EventNoteAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerNote note)
         {
             if (product == null)
                 throw new ArgumentNullException("product");
@@ -469,6 +483,9 @@ namespace StackHashBugTrackerPlugInDemo
 
             // Note that all of the interface objects have a built in ToString() which formats the fields suitably.
             BugTrackerTrace.LogMessage(BugTrackerTraceSeverity.Information, m_Control.PlugInName, "Event Note Added: " + note.ToString());
+        
+            // Don't change the bug reference.
+            return null;
         }
 
 
@@ -490,13 +507,24 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
+        /// bug reference from this call. 
+        /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
+        /// Return any other string (including an empty string) and this value will be used to overwrite the 
+        /// plugin bug reference in the StackHash database.
+        /// Note that there are 2 bug references: 
+        ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
+        ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
         /// <param name="file">The file to which the event belongs.</param>
         /// <param name="theEvent">The event to which the cab belongs.</param>
         /// <param name="cab">The cab being added.</param>
-        public void CabAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab)
+        /// <returns>Null - if the plugin bug reference in the StackHash database should not be changed, Otherwise the new value for the plugin bug reference.</returns>
+        public string CabAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab)
         {
             if (product == null)
                 throw new ArgumentNullException("product");
@@ -509,6 +537,9 @@ namespace StackHashBugTrackerPlugInDemo
 
             // Note that all of the interface objects have a built in ToString() which formats the fields suitably.
             BugTrackerTrace.LogMessage(BugTrackerTraceSeverity.Information, m_Control.PlugInName, "Cab Added: " + cab.ToString());
+
+            // Don't change the plugin bug reference.
+            return null;
         }
 
 
@@ -526,13 +557,27 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// This method may be called any number of times. It is also possible for this event to be called if none 
+        /// of the exposed event fields have changed.
+        /// 
+        /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
+        /// bug reference from this call. 
+        /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
+        /// Return any other string (including an empty string) and this value will be used to overwrite the 
+        /// plugin bug reference in the StackHash database.
+        /// Note that there are 2 bug references: 
+        ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
+        ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
         /// <param name="file">The file to which the event belongs.</param>
         /// <param name="theEvent">The event to which the cab belongs.</param>
         /// <param name="cab">The cab being added.</param>
-        public void CabUpdated(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab)
+        /// <returns>Null - if the plugin bug reference in the StackHash database should not be changed, Otherwise the new value for the plugin bug reference.</returns>
+        public string CabUpdated(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab)
         {
             if (product == null)
                 throw new ArgumentNullException("product");
@@ -545,6 +590,9 @@ namespace StackHashBugTrackerPlugInDemo
 
             // Note that all of the interface objects have a built in ToString() which formats the fields suitably.
             BugTrackerTrace.LogMessage(BugTrackerTraceSeverity.Information, m_Control.PlugInName, "Cab Updated: " + cab.ToString());
+
+            // Don't change the plugin bug reference.
+            return null;
         }
 
 
@@ -557,6 +605,16 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
+        /// bug reference from this call. 
+        /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
+        /// Return any other string (including an empty string) and this value will be used to overwrite the 
+        /// plugin bug reference in the StackHash database.
+        /// Note that there are 2 bug references: 
+        ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
+        ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
@@ -564,7 +622,8 @@ namespace StackHashBugTrackerPlugInDemo
         /// <param name="theEvent">The event to which the cab belongs.</param>
         /// <param name="cab">The cab to which the note belongs.</param>
         /// <param name="note">The cab note to add.</param>
-        public void CabNoteAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab, BugTrackerNote note)
+        /// <returns>Null - if the plugin bug reference in the StackHash database should not be changed, Otherwise the new value for the plugin bug reference.</returns>
+        public string CabNoteAdded(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab, BugTrackerNote note)
         {
             if (product == null)
                 throw new ArgumentNullException("product");
@@ -579,6 +638,9 @@ namespace StackHashBugTrackerPlugInDemo
 
             // Note that all of the interface objects have a built in ToString() which formats the fields suitably.
             BugTrackerTrace.LogMessage(BugTrackerTraceSeverity.Information, m_Control.PlugInName, "Cab Note Added: " + note.ToString());
+
+            // Don't change the plugin bug reference.
+            return null;
         }
 
 
@@ -594,6 +656,16 @@ namespace StackHashBugTrackerPlugInDemo
         /// 
         /// Automatic reports may arrived interleaved with manual reports. This may happen when, say a WinQual sync
         /// is happening at the same time as a manual report is requested. 
+        /// 
+        /// A Plugin Bug Reference is stored with the Event data in the StackHash database. This can be manually changed
+        /// by the StackHash client user. The plug-in can also change the plugin bug reference by returning the desired 
+        /// bug reference from this call. 
+        /// Return null if you do NOT want to change the bug reference stored in the StackHash database.
+        /// Return any other string (including an empty string) and this value will be used to overwrite the 
+        /// plugin bug reference in the StackHash database.
+        /// Note that there are 2 bug references: 
+        ///   The BugReference can be set by the StackHash client user manually. This cannot be changed by the plugin.
+        ///   The PlugInBugReference can be set by the StackHash client user manually AND/OR set by the plugin.         
         /// </summary>
         /// <param name="reportType">Manual or automatic. If manual identifies what level of report is taking place.</param>
         /// <param name="product">The product to which the file belongs.</param>
@@ -601,7 +673,8 @@ namespace StackHashBugTrackerPlugInDemo
         /// <param name="theEvent">The event to which the cab belongs.</param>
         /// <param name="cab">The cab to which the debug script result belongs.</param>
         /// <param name="scriptResult">The result of running a debug script on the cab dump file.</param>
-        public void DebugScriptExecuted(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab, BugTrackerScriptResult scriptResult)
+        /// <returns>Null - if the plugin bug reference in the StackHash database should not be changed, Otherwise the new value for the plugin bug reference.</returns>
+        public string DebugScriptExecuted(BugTrackerReportType reportType, BugTrackerProduct product, BugTrackerFile file, BugTrackerEvent theEvent, BugTrackerCab cab, BugTrackerScriptResult scriptResult)
         {
             if (product == null)
                 throw new ArgumentNullException("product");
@@ -616,6 +689,9 @@ namespace StackHashBugTrackerPlugInDemo
 
             // Note that all of the interface objects have a built in ToString() which formats the fields suitably.
             BugTrackerTrace.LogMessage(BugTrackerTraceSeverity.Information, m_Control.PlugInName, "Debug Script Added: " + scriptResult.ToString());
+
+            // Don't change the plugin bug reference.
+            return null;
         }
 
         
