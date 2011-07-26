@@ -1,0 +1,6 @@
+LIBRARY "StackHashCA"
+EXPORTS
+	AddServiceSettingsFolder
+	AddUrlacl
+	RemoveUrlacl
+	ConfigureSymbolServerProxyMode
