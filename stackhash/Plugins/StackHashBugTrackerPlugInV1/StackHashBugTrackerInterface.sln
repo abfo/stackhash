@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashBugTrackerInterfaceV1", "StackHashBugTrackerInterfaceV1\StackHashBugTrackerInterfaceV1.csproj", "{2A63012D-1C95-40D6-8975-A531223E9478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashBugTrackerInterfaceUnitTests", "StackHashBugTrackerInterfaceUnitTests\StackHashBugTrackerInterfaceUnitTests.csproj", "{06AA74AE-E8A3-4A5E-9AD9-D42044E777C7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs20
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StackHashBugTrackerInterfaceUnitTests\\StackHashBugTrackerInterfaceUnitTests.csproj
+		SccProjectName1 = StackHashBugTrackerInterfaceUnitTests
+		SccLocalPath1 = StackHashBugTrackerInterfaceUnitTests
+		SccProjectUniqueName2 = StackHashBugTrackerInterfaceV1\\StackHashBugTrackerInterfaceV1.csproj
+		SccProjectName2 = StackHashBugTrackerInterfaceV1
+		SccLocalPath2 = StackHashBugTrackerInterfaceV1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A63012D-1C95-40D6-8975-A531223E9478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A63012D-1C95-40D6-8975-A531223E9478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A63012D-1C95-40D6-8975-A531223E9478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A63012D-1C95-40D6-8975-A531223E9478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AA74AE-E8A3-4A5E-9AD9-D42044E777C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AA74AE-E8A3-4A5E-9AD9-D42044E777C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AA74AE-E8A3-4A5E-9AD9-D42044E777C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AA74AE-E8A3-4A5E-9AD9-D42044E777C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
