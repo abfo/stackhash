@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="Windows-1252" ?> 
+
+<!--*****************************************************************-->
+<!--** StackHash build project file		                             **-->
+<!--**     Edit this file with Visual Studio                       **-->
+<!--*****************************************************************-->
+
+<Project DefaultTargets="DoAll" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<UsingTask TaskName="AssemblyInfoUpdate"
+    		   AssemblyFile = "R:\stackhash\BuildTools\CustomBuildTasks.dll"  />
+	<UsingTask TaskName="UpdateVersion"
+    		   AssemblyFile = "R:\stackhash\BuildTools\CustomBuildTasks.dll"  />
+	<UsingTask TaskName="GetCuckuVersion"
+    		   AssemblyFile = "R:\stackhash\BuildTools\CustomBuildTasks.dll"  />
+  <UsingTask TaskName="CopySampleSourceTask"
+    		   AssemblyFile = "R:\stackhash\BuildTools\CustomBuildTasks.dll"  />
+
+  <!--*****************************************************************-->
+	<!--** ENVIRONMENT VARIABLES	 				                             **-->
+	<!--** See buildall.bat for settings                               **-->
+	<!--*****************************************************************-->
+
+	<PropertyGroup>
+    <BuildType Condition=" '$(Configuration)' == '' "> Debug  </BuildType>
+    <BuildType Condition=" '$(Configuration)' != '' "> $(Configuration)  </BuildType>
+		<BuildTarget Condition=" '$(RebuildAll)' == 'true' "> Rebuild  </BuildTarget>
+		<BuildTarget Condition=" '$(RebuildAll)' != 'true' "> Build  </BuildTarget>
+		<ResultsDir> r:\stackhash\results </ResultsDir>
+		<Platform></Platform>
+	</PropertyGroup>
+
+
+	<!--*****************************************************************-->
+	<!--** PROJECTS TO BUILD	 				                                 **-->
+	<!--*****************************************************************-->
+
+	<ItemGroup>
+		<!--Add new Tools projects in here-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--Add new Client dependent Tools projects in here-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Add new Common projects in here -->
+    <CommonBuild Include="R:\StackHash\Plugins\StackHashBugTrackerPlugInV1\StackHashBugTrackerInterface.sln" />
+    <CommonBuild Include="R:\StackHash\Plugins\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo.sln" />
+    <CommonBuild Include="R:\stackhash\BusinessLogic\BusinessLogic\BusinessLogic.sln" />
+    <CommonBuild Include="R:\stackhash\ServiceContracts\StackHashServiceContracts\StackHashServiceContracts.sln" />
+    <CommonBuild Include="R:\StackHash\Plugins\StackHash.EmailPlugin\StackHash.EmailPlugin.sln" />
+    <CommonBuild Include="R:\StackHash\Plugins\StackHash.FogBugzPlugin\StackHash.FogBugzPlugin.sln" />
+    <CommonBuild Include="R:\StackHash\Plugins\StackHash.CommandLinePlugin\StackHash.CommandLinePlugin.sln" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--Add new Client projects in here-->
+    <ClientBuild Include="R:\StackHash\Client\StackHash\StackHash.sln" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <!--Add new Installer projects in here-->
+    <InstallerBuild Include="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller.sln" />
+  </ItemGroup>
+
+
+  
+	<!--*****************************************************************-->
+	<!--** GET THE LATEST SOURCE CODE - Do this first		               **-->
+	<!--*****************************************************************-->
+
+	<Target Name="GetAllSource" Condition=" '$(GetLatestSource)' == 'true'">
+    <!--Add code to get the latest source from your source control system here. -->
+		<Message Text="Getting Latest Source Code From Perforce"/>
+	</Target>
+
+
+
+  <!--*****************************************************************-->
+  <!--** BUILD COMMON	                                               **-->
+  <!--*****************************************************************-->
+
+  <Target Name="BuildCommon" DependsOnTargets="GetAllSource;">
+    <Message Text="Building STACKHASH Common Components"/>
+    <MSBuild
+			Projects="@(CommonBuild)"
+			Targets="$(BuildTarget)"
+ 			ContinueOnError="false"
+			Properties="Configuration=$(BuildType);StopOnFirstFailure=true">
+    </MSBuild>
+  </Target>
+
+
+  <!--*****************************************************************-->
+	<!--** BUILD THE CLIENT:                                       	   **-->
+	<!--*****************************************************************-->
+
+	<Target Name="BuildClient" DependsOnTargets="GetAllSource;BuildServer;BuildCommon">
+		<Message Text="Building STACKHASH Client"/>
+		<MSBuild 
+			Projects="@(ClientBuild)" 
+			Targets="$(BuildTarget)" 
+ 			ContinueOnError="false"
+			Properties="Configuration=$(BuildType);StopOnFirstFailure=true">
+		</MSBuild>
+	</Target>
+
+
+	<!--*****************************************************************-->
+	<!--** BUILD THE SERVER: 			                                     **-->
+	<!--*****************************************************************-->
+
+	<Target Name="BuildServer" DependsOnTargets="GetAllSource;BuildCommon">
+    <!--All the main server components are now built by BuildCommon. -->
+    <Message Text="Building STACKHASH Server"/>
+    <MSBuild
+			Projects="@(ServerBuild)"
+			Targets="$(BuildTarget)"
+ 			ContinueOnError="false"
+			Properties="Configuration=$(BuildType);StopOnFirstFailure=true">
+    </MSBuild>
+	</Target>
+
+
+  <!--*****************************************************************-->
+  <!--** BUILD THE INSTALLER                                         **-->
+  <!--*****************************************************************-->
+
+  <Target Name="BuildInstaller" DependsOnTargets="BuildStackHash;CopyCodeSamples" Condition="'$(BuildInstaller)'=='true'">
+    <Message Text="Building STACKHASH Installer"/>
+    <GetCuckuVersion
+			Product="StackHash"
+      Major="$(AssemblyInfoMajor)"
+      Minor="$(AssemblyInfoMinor)">
+      <Output TaskParameter="Build" PropertyName="StackHashBuild"/>
+      <Output TaskParameter="Version" PropertyName="StackHashVersion"/>
+    </GetCuckuVersion>
+    <MSBuild 
+			Projects="@(InstallerBuild)"
+			Targets="$(BuildTarget)"
+ 			ContinueOnError="false"
+			Properties="Configuration=$(BuildType);StopOnFirstFailure=true;SHVersion=$(AssemblyInfoMajor).$(AssemblyInfoMinor).$(StackHashBuild).$(StackHashVersion)">
+    </MSBuild>
+  </Target>
+
+  
+  <!--*****************************************************************-->
+	<!--** BUILD STACKHASH:                                            **-->
+	<!--*****************************************************************-->
+
+	<Target Name="BuildStackHash" 
+		DependsOnTargets="BuildCommon;BuildClient;BuildServer"
+		Condition=" '$(Configuration)' != 'None' ">
+    <!--Stop the service, copy the new files to the service folder, restart the service. -->
+    <Exec Command="r:\stackhash\buildtools\servicectrl StackHashService Stop"/>
+		<Exec Command="r:\stackhash\buildtools\copystackhashservice $(Configuration)"/>
+    <Exec Command="r:\stackhash\buildtools\copyplugin $(Configuration)"/>
+    <Exec Command="r:\stackhash\buildtools\servicectrl StackHashService Start"/>
+		<Message Text="Building STACKHASH"/>
+	</Target>
+
+
+	<!--*****************************************************************-->
+	<!--** TESTPREP                                                    **-->
+	<!--*****************************************************************-->
+
+  <Target Name="TestPrep">
+  </Target>
+
+
+	<!--*****************************************************************-->
+	<!--** TESTS: Add new Unit tests in here			                     **-->
+	<!--*****************************************************************-->
+
+	<Target Name="TestAll" DependsOnTargets="BuildStackHash;TestPrep" Condition="'$(Test)'=='true'">
+		<Message Text="Testing STACKHASH"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\stackhashutilitiesunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\stackhashcabsunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\stackhashdebugunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\Plugins\StackHashBugTrackerPlugInV1\StackHashBugTrackerInterfaceUnitTests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\Plugins\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemoUnitTests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\stackhashsqlutilsunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\businessobjectsunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\errorindexunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\businesslogic\businesslogic\tasksunittests\runtests $(TestConfig)"/>
+    <Exec Command="R:\stackhash\ServiceContracts\StackHashServiceContracts\ServiceUnitTests\runtests $(TestConfig)"/>
+  </Target>
+
+
+	<!--*****************************************************************-->
+	<!--** ASSEMBLY INFO Version numbers - 				                     **-->
+	<!--*****************************************************************-->
+	<PropertyGroup>
+    <!--Main version number to be patched into the assembly info files. -->
+    <AssemblyInfoMajor>1</AssemblyInfoMajor>
+		<AssemblyInfoMinor>30</AssemblyInfoMinor>
+	</PropertyGroup>
+
+	<!--*****************************************************************-->
+	<!--** ASSEMBLY INFO UPDATE - Increments the build number for all  **-->
+	<!--** AssemblyInfo.cs files 					                             **-->
+	<!--*****************************************************************-->
+
+	<Target Name="IncrementVersions" Condition="'$(IncrementVersion)'=='true'">
+    <!--Changes the stackhash build version number in the registry. -->
+    <!--This will be patched into the assembly info files. -->
+    <Message Text="Incrementing StackHash Version"/>
+        	<UpdateVersion 
+			Product="StackHash"			
+			Major="$(AssemblyInfoMajor)"			
+			Minor="$(AssemblyInfoMinor)"/>
+    </Target>
+
+	<ItemGroup>
+		<!--Add folders containing projects that need the version updating -->
+    <AssemblyFolder Include="r:\stackhash\businesslogic\" />
+    <AssemblyFolder Include="r:\stackhash\servicecontracts\" />
+    <AssemblyFolder Include="r:\stackhash\client\" />
+    <AssemblyFolder Include="r:\stackHash\installer\" />
+    <!--Add specific plugin subfolders because StackHashBugTrackerPlugInV1 should not be versioned as it has its own version -->
+    <AssemblyFolder Include="r:\stackHash\plugins\StackHash.CommandLinePlugin" />
+    <AssemblyFolder Include="r:\stackHash\plugins\StackHash.EmailPlugin" />
+    <AssemblyFolder Include="r:\stackHash\plugins\StackHash.FogBugzPlugin" />
+    <AssemblyFolder Include="r:\stackHash\plugins\StackHashBugTrackerPlugInDemo" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--Add new assembly files for updating in here-->
+    <AssemblyFiles Include="AssemblyInfo.cpp" />
+    <AssemblyFiles Include="AssemblyInfo.cs" />
+    <AssemblyFiles Include="App.rc" />
+    <AssemblyFiles Include="stub.rc" />
+    <AssemblyFiles Include="StackHashCA.rc" />
+  </ItemGroup>
+
+  <Target Name="UpdateAssemblyFiles" DependsOnTargets="GetAllSource" Condition="'$(UpdateVersions)'=='true'">
+    <Message Text="Getting Cucku Version"/>
+    <GetCuckuVersion
+			Product="StackHash"
+			Major="$(AssemblyInfoMajor)"
+			Minor="$(AssemblyInfoMinor)">
+      <Output TaskParameter="Build" PropertyName="CuckuBuild"/>
+      <Output TaskParameter="Version" PropertyName="CuckuVersion"/>
+    </GetCuckuVersion>
+    <Message Text="Updating Assembly Info files"/>
+    <Message Text="$(CuckuBuild)"/>
+    <Message Text="$(CuckuVersion)"/>
+    <AssemblyInfoUpdate
+			FolderList="@(AssemblyFolder)"
+      FileNames="@(AssemblyFiles)"
+      Major="$(AssemblyInfoMajor)"
+			Minor="$(AssemblyInfoMinor)"
+			Build="$(CuckuBuild)"
+			Version="$(CuckuVersion)"/>
+  </Target>
+
+
+  <!--*****************************************************************-->
+	<!--** LABEL SOURCE WITH VERSION NUMBER		                         **-->
+	<!--*****************************************************************-->
+
+	<Target Name="LabelSourceCode" Condition="'$(LabelSource)'=='true'">
+		<Message Text="Getting StackHash Version"/>
+    <GetCuckuVersion 
+			Product="StackHash"			
+			Major="$(AssemblyInfoMajor)"			
+			Minor="$(AssemblyInfoMinor)">
+		  <Output TaskParameter="LabelStr" PropertyName="LabelName"/>
+		</GetCuckuVersion>
+		<Message Text="Creating label $(LabelName)"/>
+    <Message Text="TODO: Add label creation for your source control system here."/>
+		<Message Text="Labeling the souce files"/>
+    <Message Text="TODO: Label the source here."/>
+	</Target>
+
+
+
+  <!--*****************************************************************-->
+  <!--** COPY CODE SAMPLES TO THE CODE SAMPLES FOLDER	               **-->
+  <!--*****************************************************************-->
+
+  <Target Name="CopyCodeSamples"
+	  DependsOnTargets="BuildStackHash"
+	  Condition=" '$(Configuration)' != 'None' ">
+    <Message Text="Copying code samples."/>
+    <CopySampleSourceTask
+      ExcludeBinaries="False"
+      SourceFolder="r:\stackhash\plugins\BugTrackerInterfaceV1"
+      DestinationFolder="r:\stackhash\CodeSamples\BugTrackerInterfaceV1">
+    </CopySampleSourceTask>
+    <CopySampleSourceTask
+      ExcludeBinaries="True"
+			SourceFolder="r:\stackhash\plugins\StackHash.EmailPlugin\StackHash.EmailPlugin"
+      DestinationFolder="r:\stackhash\CodeSamples\StackHash.EmailPlugin\StackHash.EmailPlugin">
+    </CopySampleSourceTask>
+    <CopySampleSourceTask
+      ExcludeBinaries="True"
+			SourceFolder="r:\stackhash\plugins\StackHash.FogBugzPlugin\StackHash.FogBugzPlugin"
+      DestinationFolder="r:\stackhash\CodeSamples\StackHash.FogBugzPlugin\StackHash.FogBugzPlugin">
+    </CopySampleSourceTask>
+    <CopySampleSourceTask
+      ExcludeBinaries="True"
+			SourceFolder="r:\stackhash\plugins\StackHash.CommandLinePlugin\StackHash.CommandLinePlugin"
+      DestinationFolder="r:\stackhash\CodeSamples\StackHash.CommandLinePlugin\StackHash.CommandLinePlugin">
+    </CopySampleSourceTask>
+    <CopySampleSourceTask
+      ExcludeBinaries="True"
+			SourceFolder="r:\stackhash\plugins\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo"
+      DestinationFolder="r:\stackhash\CodeSamples\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo">
+    </CopySampleSourceTask>
+  </Target>
+
+
+  <!--*****************************************************************-->
+	<!--** DOALL: Gets latest source, builds and tests it.		         **-->
+	<!--*****************************************************************-->
+
+	<Target Name="DoAll" DependsOnTargets="IncrementVersions;LabelSourceCode;GetAllSource;UpdateAssemblyFiles;BuildStackHash;TestAll;CopyCodeSamples;BuildInstaller">
+		<Message Text="Processing STACKHASH"/>
+	</Target>
+
+
+</Project>
+
+
