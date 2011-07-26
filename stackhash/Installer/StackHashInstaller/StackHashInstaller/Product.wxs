@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	<Product Id="*" Name="StackHash" Language="1033" Version="$(var.StackHashWixVersion)" Manufacturer="Cucku, Inc." UpgradeCode="24066D34-86B9-4c58-8CFA-E22092DDBB0D">
+		<Package InstallerVersion="300" Compressed="yes" InstallPrivileges="elevated" InstallScope="perMachine" />
+
+    <!-- Upgrade Ruless -->
+    <Upgrade Id="24066D34-86B9-4c58-8CFA-E22092DDBB0D">
+      <UpgradeVersion Minimum="0.0.1" IncludeMinimum="yes" Maximum="$(var.StackHashWixVersion)" Property="OLDERVERSIONBEINGUPGRADED" />
+    </Upgrade>
+    <Upgrade Id="24066D34-86B9-4c58-8CFA-E22092DDBB0D">
+      <UpgradeVersion Minimum="$(var.StackHashWixVersion)" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+    </Upgrade>
+
+    <!-- Add/Remove Programs -->
+    <Property Id="ARPCOMMENTS" Value="StackHash" />
+    <Property Id="ARPCONTACT" Value="Cucku, Inc." />
+    <Property Id="ARPPRODUCTICON" Value="MainIcon.ico" />
+    <Property Id="ARPURLINFOABOUT" Value="http://stackhash.codeplex.com/" />
+    <Icon Id="MainIcon.ico" SourceFile="R:\3rdparty\LuckyIcon\StackHash\Main Icon\StackHash.ico" />
+    <CustomAction Id="SetARPINSTALLLOCATION" Property="ARPINSTALLLOCATION" Value="[INSTALLDIR]" />
+
+    <!-- Import Custom Actions -->
+    <Binary Id="StackHashCA" SourceFile="R:\StackHash\Installer\StackHashInstaller\$(var.Configuration)\StackHashCA.dll" />
+    <CustomAction Id="AddUrlacl" BinaryKey="StackHashCA" DllEntry="AddUrlacl" Impersonate="no" Execute="deferred" Return="check" />
+    <CustomAction Id="RemoveUrlacl" BinaryKey="StackHashCA" DllEntry="RemoveUrlacl" Impersonate="no" Execute="deferred" Return="check" />
+    <CustomAction Id="AddServiceSettingsFolder" BinaryKey="StackHashCA" DllEntry="AddServiceSettingsFolder" Impersonate="no" Execute="deferred" Return="check" />
+    <CustomAction Id="ConfigureSymbolServerProxyMode" BinaryKey="StackHashCA" DllEntry="ConfigureSymbolServerProxyMode" Impersonate="no" Execute="deferred" Return="check" />
+    <CustomAction Id="ServiceDependencyCheck" FileKey="StackHashDC.exe" ExeCommand="" Impersonate="yes" Return="asyncNoWait" Execute="commit" />
+
+    <!-- UI -->
+    <UIRef Id="WixUI_Advanced" />
+    <Property Id="ApplicationFolderName" Value="StackHash" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+    <WixVariable Id="WixUISupportPerUser" Value="0" />
+    <WixVariable Id="WixUILicenseRtf" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\StackHash License Agreement.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\dialog.bmp" />
+    <WixVariable Id="WixUIExclamationIco" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\warning.ico" />
+    <WixVariable Id="WixUIInfoIco" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\info.ico" />
+    <!--
+    Also possible to replace new/up icons for selecting the install folder:
+    <WixVariable Id="WixUINewIco" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\" />
+    <WixVariable Id="WixUIUpIco" Value="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\" />-->
+
+    <!-- Check that a more recent version is not installed -->
+    <Condition Message="A more recent version of StackHash is already installed. Setup will now exit.">
+      <![CDATA[NOT NEWERVERSIONDETECTED OR Installed]]>
+    </Condition>
+
+    <!-- Must be Admin -->
+    <Condition Message="You must be an administrator to install StackHash. Setup cannot continue.">
+      <![CDATA[Installed OR Privileged]]>
+    </Condition>
+
+    <!-- We require XP SP3, or Vista (XP x64 looks like Windows Server 2003), also attempt to run on later versions -->
+    <Condition Message='StackHash requires Windows XP Service Pack 3 or later. Setup cannot continue.'>
+      <![CDATA[Installed OR ((VersionNT = 501 AND ServicePackLevel >= 3) OR (VersionNT = 502) OR (VersionNT >= 600))]]>
+    </Condition>
+
+    <!-- Must have .NET 4.0 Installed -->
+    <PropertyRef Id="NETFRAMEWORK40CLIENT"/>
+    <Condition Message="StackHash requires the .NET Framework 4.0. Please install .NET Framework 4.0 and then run setup again.">
+      <![CDATA[Installed OR NETFRAMEWORK40CLIENT]]>
+    </Condition>
+
+    <Media Id="1" Cabinet="stackhash.cab" EmbedCab="yes" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+
+        <!-- MSVC80 is required by CabLib.dll -->
+        <Merge Id="MSVC80" SourceFile="R:\StackHash\Installer\StackHashInstaller\StackHashInstaller\Microsoft_VC80_CRT_x86.msm" Language="0" DiskId="1"/>
+      
+			  <Directory Id="ProgramFilesFolder">
+				  <Directory Id="APPLICATIONFOLDER" Name="StackHash">
+            <Directory Id="PluginSDKFolder" Name="Plugin SDK">
+              <Directory Id="BugTrackerInterfaceV1Folder" Name="BugTrackerInterfaceV1">
+                <Directory Id="BugTrackerInterfaceV1DebugFolder" Name="Debug" />
+                <Directory Id="BugTrackerInterfaceV1ReleaseFolder" Name="Release" />
+              </Directory>
+              <Directory Id="StackHashBugTrackerPlugInDemoFolder" Name="StackHashBugTrackerPlugInDemo">
+                <Directory Id="StackHashBugTrackerPlugInDemoFolder2" Name="StackHashBugTrackerPlugInDemo">
+                  <Directory Id="StackHashBugTrackerPlugInDemoPropertiesFolder" Name="Properties" />
+                </Directory>
+              </Directory>
+            </Directory>
+            <Directory Id="SqlScriptsFolder" Name="SQL Scripts" />
+            <Directory Id="PssCor2Folder" Name="psscor2">
+              <Directory Id="PssCor2amd64Folder" Name="amd64" />
+              <Directory Id="PssCor2ia64Folder" Name="ia64" />
+              <Directory Id="PssCor2x86Folder" Name="x86" />
+            </Directory>
+            <Directory Id="PssCor4Folder" Name="psscor4">
+              <Directory Id="PssCor4amd64Folder" Name="amd64" />
+              <Directory Id="PssCor4x86Folder" Name="x86" />
+            </Directory>
+          </Directory>
+        </Directory>
+        
+        <Directory Id="ProgramMenuFolder">
+          <Directory Id="ApplicationProgramsFolder" Name="StackHash"/>
+        </Directory>
+
+        <Directory Id="DesktopFolder" />
+
+        <Directory Id="CommonAppDataFolder">
+          <Directory Id="AppDataStackHash" Name="StackHash">
+            <Directory Id="AppDataPlugins" Name="BugTrackerPlugins" />
+            <Directory Id="AppDataScripts" Name="DebuggerScripts" />
+          </Directory>
+        </Directory>
+        
+    </Directory>
+
+    <!-- Default Debugger Scripts -->
+    <DirectoryRef Id="AppDataScripts">
+      <Component Id="SHManagedAnalysis.xml" Guid="2B1B6E78-4038-4912-A839-F31226C01DD5">
+        <File Name="SHManagedAnalysis.xml" Source="R:\StackHash\BusinessLogic\BusinessLogic\Tasks\DefaultScripts\SHManagedAnalysis.xml" KeyPath="yes" />
+      </Component>
+      <Component Id="SHUnmanagedAnalysis.xml" Guid="2AFC12DB-2E65-4AA7-9E82-04FE9515CEF9">
+        <File Name="SHUnmanagedAnalysis.xml" Source="R:\StackHash\BusinessLogic\BusinessLogic\Tasks\DefaultScripts\SHUnmanagedAnalysis.xml" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- psscor2 -->
+    <DirectoryRef Id="PssCor2Folder">
+      <Component Id="EULA.rtf" Guid="342A2527-9CF1-4760-A4D8-27BA871B9D4B">
+        <File Name="EULA.rtf" Source="R:\3rdparty\psscor2\EULA.rtf" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="PssCor2amd64Folder">
+      <Component Id="amd64psscor2.dll" Guid="BE1EC9DB-3B65-47E3-9096-FA8875EBB642">
+        <File Name="psscor2.dll" Id="amd64psscor2dll" Source="R:\3rdparty\psscor2\amd64\psscor2.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="PssCor2ia64Folder">
+      <Component Id="ia64psscor2.dll" Guid="F77AA6F1-6C6A-4C2B-9E80-55140475C63D">
+        <File Name="psscor2.dll" Id="ia64psscor2dll" Source="R:\3rdparty\psscor2\ia64\psscor2.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="PssCor2x86Folder">
+      <Component Id="x86psscor2.dll" Guid="7BD0DA33-141E-476C-AFC5-BB481F37AA12">
+        <File Name="psscor2.dll" Id="x86psscor2dll" Source="R:\3rdparty\psscor2\x86\psscor2.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- psscor4 -->
+    <DirectoryRef Id="PssCor4amd64Folder">
+      <Component Id="amd64psscor4.dll" Guid="80AF9478-D8D7-4EB6-AFDC-CC28FDCF56A2">
+        <File Name="psscor4.dll" Id="amd64psscor4dll" Source="R:\3rdparty\psscor4\amd64\psscor4.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="amd64psscor4.pdb" Guid="05D71C6E-1003-4C24-ADA3-A020C1C63053">
+        <File Name="psscor4.pdb" Id="amd64psscor4pdb" Source="R:\3rdparty\psscor4\amd64\psscor4.pdb" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="PssCor4x86Folder">
+      <Component Id="x86psscor4.dll" Guid="0CA05A49-59BC-4442-B963-0E4B87577223">
+        <File Name="psscor4.dll" Id="x86psscor4dll" Source="R:\3rdparty\psscor4\x86\psscor4.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="x86psscor4.pdb" Guid="55808928-F062-4075-AF44-32439389E0C9">
+        <File Name="psscor4.pdb" Id="x86psscor4pdb" Source="R:\3rdparty\psscor4\x86\psscor4.pdb" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- SQL Scripts-->
+    <DirectoryRef Id="SqlScriptsFolder">
+      <Component Id="CreateStackHashDatabase.sql" Guid="BB6CF564-F8D7-4AEA-AB9D-B7048377FD20">
+        <File Name="CreateStackHashDatabase.sql" Source="R:\StackHash\BusinessLogic\BusinessLogic\StackHashSqlSchema\CreateStackHashDatabase.sql" KeyPath="yes" />
+      </Component>
+      <Component Id="UpdateStackHashDatabase.sql" Guid="EE0838BA-AA50-4528-A0B8-2C730E8D143D">
+        <File Name="UpdateStackHashDatabase.sql" Source="R:\StackHash\BusinessLogic\BusinessLogic\StackHashSqlSchema\UpdateStackHashDatabase.sql" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Plugin SDK -->
+    <DirectoryRef Id="BugTrackerInterfaceV1DebugFolder">
+      <Component Id="DebugStackHashBugTrackerInterfaceV1.dll" Guid="C4A805BC-CB4E-4E84-ABA6-F83397B0B360">
+        <File Name="StackHashBugTrackerInterfaceV1.dll" Id="DebugStackHashBugTrackerInterfaceV1Dll" Source="R:\StackHash\Plugins\BugTrackerInterfaceV1\Debug\StackHashBugTrackerInterfaceV1.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="BugTrackerInterfaceV1ReleaseFolder">
+      <Component Id="ReleaseStackHashBugTrackerInterfaceV1.dll" Guid="1A79FD63-5DD9-46CB-8780-0776D4CC6294">
+        <File Name="StackHashBugTrackerInterfaceV1.dll" Id="ReleaseStackHashBugTrackerInterfaceV1Dll" Source="R:\StackHash\Plugins\BugTrackerInterfaceV1\Release\StackHashBugTrackerInterfaceV1.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="StackHashBugTrackerPlugInDemoFolder2">
+      <Component Id="FaultDatabaseContext.cs" Guid="CD117B6B-F8D8-4EF7-B861-8A75B2D8D633">
+        <File Name="FaultDatabaseContext.cs" Source="R:\StackHash\CodeSamples\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo\FaultDatabaseContext.cs" KeyPath="yes" />
+      </Component>
+      <Component Id="FaultDatabaseControl.cs" Guid="4842B827-F065-484D-B27F-349BA86797C9">
+        <File Name="FaultDatabaseControl.cs" Source="R:\StackHash\CodeSamples\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo\FaultDatabaseControl.cs" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashBugTrackerPlugInDemo.csproj" Guid="F13E3FA2-2C39-4D09-A235-FA13BA2E2AB9">
+        <File Name="StackHashBugTrackerPlugInDemo.csproj" Source="R:\StackHash\CodeSamples\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo.csproj" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="StackHashBugTrackerPlugInDemoPropertiesFolder">
+      <Component Id="AssemblyInfo.cs" Guid="FD691673-1951-4F91-A093-156AC8143872">
+        <File Name="AssemblyInfo.cs" Source="R:\StackHash\CodeSamples\StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo\Properties\AssemblyInfo.cs" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Plugins -->
+    <DirectoryRef Id="AppDataPlugins">
+      <Component Id="StackHash.EmailPlugin.dll" Guid="49847004-8DD3-4B09-8A50-84864B40BA6B">
+        <File Name="StackHash.EmailPlugin.dll" Source="R:\StackHash\Plugins\StackHash.EmailPlugin\StackHash.EmailPlugin\bin\$(var.Configuration)\StackHash.EmailPlugin.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHash.FogBugzPlugin.dll" Guid="57990052-4A19-4435-AA27-FF1AE7B8AFEF">
+        <File Name="StackHash.FogBugzPlugin.dll" Source="R:\StackHash\Plugins\StackHash.FogBugzPlugin\StackHash.FogBugzPlugin\bin\$(var.Configuration)\StackHash.FogBugzPlugin.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHash.CommandLinePlugin.dll" Guid="9959E29E-6129-412E-AF70-625174479789">
+        <File Name="StackHash.CommandLinePlugin.dll" Source="R:\StackHash\Plugins\StackHash.CommandLinePlugin\StackHash.CommandLinePlugin\bin\$(var.Configuration)\StackHash.CommandLinePlugin.dll" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="655740A0-DFBB-49bd-81F1-96833B9A7AC8">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="StackHash"
+                  Description="StackHash Client"
+                  Target="[APPLICATIONFOLDER]StackHash.exe"
+                  WorkingDirectory="APPLICATIONFOLDER" />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Cucku\StackHash" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="DesktopShortcut" Guid="406ABC9B-59CE-4914-B82F-17CCF9E7FF90">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="StackHash"
+                  Description="StackHash Client"
+                  Target="[APPLICATIONFOLDER]StackHash.exe"
+                  WorkingDirectory="APPLICATIONFOLDER" />
+        <RegistryValue Root="HKCU" Key="Software\Cucku\StackHash" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="APPLICATIONFOLDER">
+      
+      <!-- Client -->
+      <Component Id="StackHash.exe" Guid="7609B505-167B-4f1d-83C3-BCD7E39E3ABD">
+        <File Name="StackHash.exe" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHash.exe" KeyPath="yes" />
+        <RegistryKey Root="HKCR" Key="stackhash" Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Value="URL:StackHash Protocol" />
+          <RegistryValue Type="string" Name="URL Protocol" Value="" />
+          <RegistryKey Key="DefaultIcon" Action="createAndRemoveOnUninstall">
+            <RegistryValue Type="string" Value='"[#StackHash.exe],0"' />
+          </RegistryKey>
+          <RegistryKey Key="shell" Action="createAndRemoveOnUninstall">
+            <RegistryKey Key="open" Action="createAndRemoveOnUninstall">
+              <RegistryKey Key="command" Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Value='"[#StackHash.exe]" "%1"' />
+              </RegistryKey>
+            </RegistryKey>
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+      <Component Id="StackHashDC.exe" Guid="FB5F0F5D-8D11-4D11-88DD-53036FD567BB">
+        <File Name="StackHashDC.exe" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHashDC.exe" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashDBConfig.exe" Guid="A5A400FE-0168-4493-B9EC-02AF75D40270">
+        <File Name="StackHashDBConfig.exe" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHashDBConfig.exe" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashDBConfig.exe.config" Guid="FDFCEDB8-1CFE-4F8A-8BC6-4DC4CC8D4C1F">
+        <File Name="StackHashDBConfig.exe.config" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHashDBConfig.exe.config" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHash.chm" Guid="9EE5C6B2-7E05-4D3C-AE46-665C278632BB">
+        <File Name="StackHash.chm" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHash.chm" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHash.exe.config" Guid="E1232FC3-2E55-4c46-A6EB-4C2D5B26F30B">
+        <File Name="StackHash.exe.config" Source="R:\StackHash\Client\StackHash\$(var.Configuration)\StackHash.exe.config" KeyPath="yes" />
+      </Component>
+
+      <!-- BusinessLogic -->
+      <Component Id="StackHash.WindowsErrorReporting.API.dll" Guid="6C0F6ADD-D1B4-4ECA-B42E-490877788CFB">
+        <File Name="StackHash.WindowsErrorReporting.API.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHash.WindowsErrorReporting.API.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashBusinessObjects.dll" Guid="C5CAC578-1C39-471c-89E7-61BF652B9003">
+        <File Name="StackHashBusinessObjects.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashBusinessObjects.dll" KeyPath="yes" />
+      </Component>
+        <Component Id="StackHashBusinessObjects.XmlSerializers.dll" Guid="17E77AF4-8060-47f9-9F0F-DD9BD98ED8B1">
+        <File Name="StackHashBusinessObjects.XmlSerializers.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashBusinessObjects.XmlSerializers.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashCabs.dll" Guid="D2DBA535-862C-411f-8123-C7F74009034E">
+        <File Name="StackHashCabs.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashCabs.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashDebug.dll" Guid="6C108434-D81C-4023-BD02-02C088D5D689">
+        <File Name="StackHashDebug.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashDebug.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashErrorIndex.dll" Guid="20892AA3-C143-4949-A0C7-2D093DC38BD4">
+        <File Name="StackHashErrorIndex.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashErrorIndex.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashTasks.dll" Guid="E00B305C-034F-42b0-848A-87A2391A83CE">
+        <File Name="StackHashTasks.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashTasks.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashUtilities.dll" Guid="25A7CB90-78D0-4e76-A901-4ED915483B94">
+        <File Name="StackHashUtilities.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashUtilities.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashWinQual.dll" Guid="01C96CF2-5206-44be-9B3B-519EE36AB20D">
+        <File Name="StackHashWinQual.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashWinQual.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="WinQualAtomFeed.dll" Guid="1B34759F-5183-4111-A6DF-CB0732CA1FC7">
+        <File Name="WinQualAtomFeed.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\WinQualAtomFeed.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashSqlSchema.dll" Guid="BC66F33D-9375-4363-A5E4-13639DEE2448">
+        <File Name="StackHashSqlSchema.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashSqlSchema.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashBugTrackerInterfaceV1.dll" Guid="7F152303-F87B-4663-B909-CF1BD822974A">
+        <File Name="StackHashBugTrackerInterfaceV1.dll" Source="R:\StackHash\BusinessLogic\$(var.Configuration)\StackHashBugTrackerInterfaceV1.dll" KeyPath="yes" />
+      </Component>
+
+      <!-- ServiceContracts -->
+      <Component Id="StackHashService.exe" Guid="CB6DDEB8-C870-48e8-A92B-15AF3F8F23F6">
+        <File Name="StackHashService.exe" Source="R:\StackHash\ServiceContracts\$(var.Configuration)\StackHashService.exe" KeyPath="yes" />
+        <ServiceControl Name="StackHashService" Start="install" Stop="both" Remove="uninstall" Id="StackHashServiceControl" Wait="yes" />
+        <ServiceInstall Name="StackHashService" DisplayName="StackHash Service" Description="StackHash remote services" Account="NT AUTHORITY\NetworkService" ErrorControl="normal" Interactive="no" Start="auto" Type="ownProcess" Vital="yes" />
+      </Component>
+      <Component Id="StackHashService.exe.config" Guid="18AB2391-27AD-427a-B528-07317F08ECAB">
+        <File Name="StackHashService.exe.config" Source="R:\StackHash\ServiceContracts\$(var.Configuration)\StackHashService.exe.config" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashServiceContracts.dll" Guid="24FDA872-BCB1-4d80-BE18-166B704F07F6">
+        <File Name="StackHashServiceContracts.dll" Source="R:\StackHash\ServiceContracts\$(var.Configuration)\StackHashServiceContracts.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="StackHashServiceImplementation.dll" Guid="C6406085-3541-4596-A75F-574EAF444493">
+        <File Name="StackHashServiceImplementation.dll" Source="R:\StackHash\ServiceContracts\$(var.Configuration)\StackHashServiceImplementation.dll" KeyPath="yes" />
+      </Component>
+
+      <!-- Third Party -->
+      <Component Id="CabLib.dll" Guid="1606B6D8-D1D9-4f2b-B747-D554CC577B96">
+        <File Name="CabLib.dll" Source="R:\3rdparty\CabLib\CabLib.dll" KeyPath="yes" />
+      </Component>
+
+      <Component Id="Microsoft.Whos.Shared.Client.LiveID.dll" Guid="0F210034-43AB-450B-9104-3D9264AE72EB">
+        <File Name="Microsoft.Whos.Shared.Client.LiveID.dll" Source="R:\3rdparty\LiveIdClient\Microsoft.Whos.Shared.Client.LiveID.dll" KeyPath="yes" />
+      </Component>
+      
+    </DirectoryRef>
+    
+    <!-- Default Debugger Scripts -->
+    <ComponentGroup Id="DefaultDebuggerScriptsGroup">
+      <ComponentRef Id="SHManagedAnalysis.xml" />
+      <ComponentRef Id="SHUnmanagedAnalysis.xml" />
+    </ComponentGroup>
+    
+    <!-- Psscor2 -->
+    <ComponentGroup Id="Psscor2Group">
+      <ComponentRef Id="EULA.rtf" />
+      <ComponentRef Id="amd64psscor2.dll" />
+      <ComponentRef Id="ia64psscor2.dll" />
+      <ComponentRef Id="x86psscor2.dll" />
+    </ComponentGroup>
+
+    <!-- Psscor4 -->
+    <ComponentGroup Id="Psscor4Group">
+      <ComponentRef Id="amd64psscor4.dll" />
+      <ComponentRef Id="amd64psscor4.pdb" />
+      <ComponentRef Id="x86psscor4.dll" />
+      <ComponentRef Id="x86psscor4.pdb" />
+    </ComponentGroup>
+
+    <!-- SQL Scripts -->
+    <ComponentGroup Id="SqlScriptsGroup">
+      <ComponentRef Id="CreateStackHashDatabase.sql" />
+      <ComponentRef Id="UpdateStackHashDatabase.sql" />
+    </ComponentGroup>
+    
+    <!-- Plugins -->
+    <ComponentGroup Id="PluginsComponentGroup">
+      <ComponentRef Id="StackHash.EmailPlugin.dll" />
+      <ComponentRef Id="StackHash.FogBugzPlugin.dll" />
+      <ComponentRef Id="StackHash.CommandLinePlugin.dll" />
+    </ComponentGroup>
+
+    <!-- Plugin SDK -->
+    <ComponentGroup Id="PluginSDKComponentGroup">
+      <ComponentRef Id="DebugStackHashBugTrackerInterfaceV1.dll" />
+      <ComponentRef Id="ReleaseStackHashBugTrackerInterfaceV1.dll" />
+      <ComponentRef Id="FaultDatabaseContext.cs" />
+      <ComponentRef Id="FaultDatabaseControl.cs" />
+      <ComponentRef Id="StackHashBugTrackerPlugInDemo.csproj" />
+      <ComponentRef Id="AssemblyInfo.cs" />
+    </ComponentGroup>
+
+    <!-- Components shared between the client and the service -->
+    <ComponentGroup Id="SharedComponentGroup">
+      <ComponentGroupRef Id="PluginSDKComponentGroup" />
+      <ComponentRef Id="CabLib.dll" />
+      <ComponentRef Id="StackHashCabs.dll" />
+      <ComponentRef Id="StackHashUtilities.dll" />
+      <ComponentRef Id="StackHashSqlSchema.dll" />
+    </ComponentGroup>
+
+    <!-- Components required only be the client -->
+    <ComponentGroup Id="ClientComponentGroup">
+      <ComponentGroupRef Id="SharedComponentGroup" />
+      <ComponentRef Id="StackHash.exe" />
+      <ComponentRef Id="StackHash.chm" />
+      <ComponentRef Id="StackHash.exe.config" />
+      <ComponentRef Id="StackHashDBConfig.exe" />
+      <ComponentRef Id="StackHashDBConfig.exe.config" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="DesktopShortcut" />
+    </ComponentGroup>
+
+    <!-- Components required only by the service -->
+    <ComponentGroup Id="ServiceComponentGroup">
+      <ComponentGroupRef Id="SharedComponentGroup" />
+      <ComponentGroupRef Id="PluginsComponentGroup" />
+      <ComponentGroupRef Id="SqlScriptsGroup" />
+      <ComponentGroupRef Id="DefaultDebuggerScriptsGroup" />
+      <ComponentGroupRef Id="Psscor2Group" />
+      <ComponentGroupRef Id="Psscor4Group" />
+      <ComponentRef Id="StackHashDC.exe" />
+      <ComponentRef Id="Microsoft.Whos.Shared.Client.LiveID.dll" />
+      <ComponentRef Id="StackHash.WindowsErrorReporting.API.dll" />
+      <ComponentRef Id="StackHashBusinessObjects.dll" />
+      <ComponentRef Id="StackHashBusinessObjects.XmlSerializers.dll" />
+      <ComponentRef Id="StackHashDebug.dll" />
+      <ComponentRef Id="StackHashErrorIndex.dll" />
+      <ComponentRef Id="StackHashTasks.dll" />
+      <ComponentRef Id="StackHashWinQual.dll" />
+      <ComponentRef Id="StackHashService.exe" />
+      <ComponentRef Id="StackHashService.exe.config" />
+      <ComponentRef Id="StackHashServiceContracts.dll" />
+      <ComponentRef Id="StackHashServiceImplementation.dll" />
+      <ComponentRef Id="WinQualAtomFeed.dll"/>
+      <ComponentRef Id="StackHashBugTrackerInterfaceV1.dll"/>
+    </ComponentGroup>
+
+    <Feature Id="StackHashClient" Title="StackHash Client" Level="1">
+      <MergeRef Id="MSVC80" />
+      <ComponentGroupRef Id="ClientComponentGroup" />
+		</Feature>
+    
+    <Feature Id="StackHashService" Title="StackHash Service" Level="1">
+      <MergeRef Id="MSVC80" />
+      <ComponentGroupRef Id="ServiceComponentGroup" />
+    </Feature>
+
+    <!-- &StackHashService=3 means that the StackHashService feature is transitioning to being locally installed (=2 is transitioning to not installed) -->
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Before="InstallInitialize" />
+      <Custom Action="AddUrlacl" After="InstallInitialize"><![CDATA[((NOT Installed) AND &StackHashService=3) OR (!StackHashService=3 AND MaintenanceMode="Repair") OR (&StackHashService=3 AND MaintenanceMode="Modify")]]></Custom>
+      <Custom Action="AddServiceSettingsFolder" After="InstallInitialize"><![CDATA[((NOT Installed) AND &StackHashService=3) OR (!StackHashService=3 AND MaintenanceMode="Repair") OR (&StackHashService=3 AND MaintenanceMode="Modify")]]></Custom>
+      <Custom Action="ConfigureSymbolServerProxyMode" After="InstallInitialize"><![CDATA[((NOT Installed) AND &StackHashService=3) OR (!StackHashService=3 AND MaintenanceMode="Repair") OR (&StackHashService=3 AND MaintenanceMode="Modify")]]></Custom>
+      <Custom Action="RemoveUrlacl" Before="InstallFinalize"><![CDATA[(NOT UPGRADINGPRODUCTCODE) AND (&StackHashService=2) AND (!StackHashService=3)]]></Custom>
+      <Custom Action="ServiceDependencyCheck" After="InstallInitialize"><![CDATA[(NOT Installed) AND &StackHashService=3]]></Custom>
+    </InstallExecuteSequence>
+
+  </Product>
+</Wix>
