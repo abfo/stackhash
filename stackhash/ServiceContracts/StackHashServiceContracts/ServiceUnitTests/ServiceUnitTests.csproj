@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92020387-93ED-44A2-AFBF-E53EBA120A8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceUnitTests</RootNamespace>
+    <AssemblyName>ServiceUnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>Migrated rules for ServiceUnitTests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>Migrated rules for ServiceUnitTests.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="StackHashSqlSchema">
+      <HintPath>..\..\..\BusinessLogic\Debug\StackHashSqlSchema.dll</HintPath>
+    </Reference>
+    <Reference Include="StackHashUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BusinessLogic\Debug\StackHashUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzeUnitTests.cs" />
+    <Compile Include="BugReportTaskUnitTests.cs" />
+    <Compile Include="CabNotesUnitTests.cs" />
+    <Compile Include="CabUnitTests.cs" />
+    <Compile Include="CopyIndexUnitTests.cs" />
+    <Compile Include="DataCollectionPolicyUnitTests.cs" />
+    <Compile Include="DiagnosticUnitTest.cs" />
+    <Compile Include="DownloadCabUnitTests.cs" />
+    <Compile Include="EventNotesUnitTests.cs" />
+    <Compile Include="FaultUnitTest.cs" />
+    <Compile Include="GetEventsUnitTests.cs" />
+    <Compile Include="MappingsUnitTests.cs" />
+    <Compile Include="MoveIndexUnitTests.cs" />
+    <Compile Include="ProductsFilesEventsUnitTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConnectionUnitTests.cs" />
+    <Compile Include="PurgeSettingsUnitTests.cs" />
+    <Compile Include="ScriptUnitTests.cs" />
+    <Compile Include="SearchUnitTests.cs" />
+    <Compile Include="Service References\StackHashServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProxyControl.cs" />
+    <Compile Include="SettingsUnitTests.cs" />
+    <Compile Include="SoakTests.cs" />
+    <Compile Include="SqlMoveIndexUnitTests.cs" />
+    <Compile Include="StatisticsUnitTests.cs" />
+    <Compile Include="StatusMappingsUnitTests.cs" />
+    <Compile Include="TestModeSettingsUnitTests.cs" />
+    <Compile Include="ServiceTestSettings.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WinQualSyncUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringUnitTests.txt" />
+    <None Include="Migrated rules for ServiceUnitTests.ruleset" />
+    <None Include="Service References\StackHashServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StackHashServices\configuration.svcinfo" />
+    <None Include="Service References\StackHashServices\configuration91.svcinfo" />
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.AbortTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.CheckVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.CopyIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DeleteCabNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DeleteEventNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DisableReportingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DownloadCabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.EnableReportingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetActiveDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetActivePurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetBugTrackerPlugInDiagnosticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetCabPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetContextBugTrackerPlugInSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetLicenseDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetProductRollupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetPurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetStatusMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetTestModeSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetWindowedEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RemoveDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RemovePurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RunBugReportTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RunBugTrackerTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RunWinQualLogOnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetClientTimeoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetContextBugTrackerPlugInSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetEmailSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetEventBugIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetEventWorkFlowStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetProductSynchronizationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetProxyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetPurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetStatusMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.TestDatabaseConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.UploadMappingFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\StackHash.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="runtests.bat" />
+    <None Include="Service References\StackHashServices\InternalService.wsdl" />
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.AbortSynchronizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.ActivateStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.AddCabNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.AddDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.AddEventNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.CreateNewStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.CreateTestIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DeactivateStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DeleteIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.DisableLoggingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.EnableLoggingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetAllEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetCabNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetDebuggerScriptNamesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetDebugResultFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetDebugResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetEventNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetEventsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetProductEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetStackHashPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.GetStackHashServiceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.MoveIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RemoveDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RemoveScriptResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RemoveStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RenameDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RestartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RunDebuggerScriptAsyncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.RunDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetProductSynchronizationStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetStackHashPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.SetTestDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\ServiceUnitTests.StackHashServices.StartSynchronizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashServices\StackHash.wsdl" />
+    <None Include="Service References\StackHashServices\StackHash.xsd" />
+    <None Include="Service References\StackHashServices\StackHash1.xsd" />
+    <None Include="Service References\StackHashServices\StackHash3.xsd" />
+    <None Include="Service References\StackHashServices\StackHash4.xsd" />
+    <None Include="Service References\StackHashServices\StackHash5.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StackHashServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
