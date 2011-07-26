@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashBugTrackerPlugInDemo", "StackHashBugTrackerPlugInDemo\StackHashBugTrackerPlugInDemo.csproj", "{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashBugTrackerPlugInDemoUnitTests", "StackHashBugTrackerPlugInDemoUnitTests\StackHashBugTrackerPlugInDemoUnitTests.csproj", "{CC7D9DC4-67AC-48A1-9CFB-47F3652FCB28}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs20
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StackHashBugTrackerPlugInDemo\\StackHashBugTrackerPlugInDemo.csproj
+		SccProjectName1 = StackHashBugTrackerPlugInDemo
+		SccLocalPath1 = StackHashBugTrackerPlugInDemo
+		SccProjectUniqueName2 = StackHashBugTrackerPlugInDemoUnitTests\\StackHashBugTrackerPlugInDemoUnitTests.csproj
+		SccProjectName2 = StackHashBugTrackerPlugInDemoUnitTests
+		SccLocalPath2 = StackHashBugTrackerPlugInDemoUnitTests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A1EDAD-2293-4A00-93A8-F5156CD01CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7D9DC4-67AC-48A1-9CFB-47F3652FCB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7D9DC4-67AC-48A1-9CFB-47F3652FCB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7D9DC4-67AC-48A1-9CFB-47F3652FCB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7D9DC4-67AC-48A1-9CFB-47F3652FCB28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
