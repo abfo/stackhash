@@ -1,0 +1,58 @@
+﻿<Window x:Class="StackHash.UpgradeFromXml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Upgrade Profile - StackHash" Height="300" MinHeight="300" Width="500" MinWidth="500" WindowStartupLocation="CenterOwner" Icon="/StackHash;component/StackHash.ico" ShowInTaskbar="False" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Help" x:Name="commandBindingHelp" Executed="commandBindingHelp_Executed" />
+    </Window.CommandBindings>
+    <Grid Name="gridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Margin="10" Grid.ColumnSpan="2" TextWrapping="Wrap">
+            From Beta 7 StackHash stores WinQual data in a SQL Server 2005 or 2008 database. 
+            Select each profile listed below and click Upgrade to create a database for the profile. 
+        </TextBlock>
+        
+        <ListBox Margin="10" Grid.Row="1" Name="listBoxProfiles" DisplayMemberPath="ErrorIndexSettings.Name" SelectionChanged="listBoxProfiles_SelectionChanged" />
+        
+        <StackPanel Margin="0" Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Button Margin="0,10,10,3" Width="100" Name="buttonUpgrade" Click="buttonUpgrade_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="0,0,5,0" VerticalAlignment="Center" Width="16" Height="16" Name="imageShield" />
+                    <Label Margin="-5" VerticalAlignment="Center" Target="{Binding ElementName=buttonUpgrade}">_Upgrade...</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0,3,10,10" Width="100" Name="buttonDelete" Click="buttonDelete_Click">_Delete</Button>
+        </StackPanel>
+
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="10" Command="Help">_Help</Button>
+                
+                <Button Margin="10" Grid.Column="1" HorizontalAlignment="Right" Name="buttonClose" Click="buttonClose_Click" IsCancel="True">Close</Button>
+                
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

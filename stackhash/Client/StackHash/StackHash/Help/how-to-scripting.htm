@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Scripting - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Scripting</h1>
+
+            <p>The <a href="script-manager.htm">Script Manager</a> allows you to write and test scripts to run on crash dumps. 
+            Scripts can be automatically run on each new crash dump to gather common information. You can also run a script 
+            from the Debug menu or by right-clicking a cab.</p> 
+
+            <p>StackHash scripts are run using the <a href="http://www.microsoft.com/whdc/devtools/debugging/default.mspx" target="_blank">Debugging Tools for Windows</a>. 
+            If the StackHash service is running on a 64-bit system then the 32-bit tools are used for 32-bit dumps and the 
+            64-bit tools are used for 64-bit dumps. StackHash runs each command in the script using cdb.exe, a command line 
+            debugger. Cdb.exe uses the same debugging engine as WinDbg so the command syntax is identical.</p>
+
+            <p>Note that your WinHttp proxy configuration can prevent cdb.exe from accessing symbols from the Internet. 
+            If you experience difficulties accessing public symbols see 
+            <a href="how-to-cdb-from-service.htm">Cdb from a Windows Service</a>.</p>
+
+            <p>Each line of a script is passed to cdb.exe and the output is captured by StackHash for you to review. You may 
+            find it helpful to develop a script interactively in WinDbg and then enter the desired commands in StackHash.</p>
+
+            <p>An optional comment can be added to each line of the script using the * character, i.e.:</p>
+
+            <pre>.kp * Print Stack</pre>
+
+            <p>Only the last * is treated as a comment so for commands that include the * character a comment is required, i.e.:</p>
+
+            <pre>.shell dir *.dll * Comment is required</pre>
+
+            <p>Comments are not permitted for the .sympath, .srcpath and .exepath commands. Any comment added 
+            following these commands will be treated as part of the script line.</p>
+
+            <h2>Symbol, Source and Image Paths</h2>
+
+            <p>When running a script StackHash initializes the symbol and executable image search paths with the defaults 
+            specified in the current <a href="how-to-profiles.htm">profile</a>. You can edit the defaults in Tools -> <a href="service-options.htm">Service Options</a> 
+            -> <a href="add-edit-profile.htm">Edit Profile</a> -> <a href="add-edit-profile-debugger.htm">32-bit Debugger</a> 
+            and <a href="add-edit-profile-debugger.htm">64-bit Debugger</a>.</p>
+
+            <p>You can add to or replace each search path from a script using .sympath, .srcpath and .exepath.</p>
+
+            <p>Add to a search path by including + after the path command:</p>
+
+<pre>.sympath + C:\LocalSymbols
+.sympath + "Z:\More Symbols\"</pre>
+
+            <p>Replace the default search path by omitting the + after the path command:</p>
+
+<pre>.sympath C:\JustTheseSymbols</pre>
+
+            <p>The same syntax is used with .srcpath and .exepath to set the source search path and the executable image search path.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

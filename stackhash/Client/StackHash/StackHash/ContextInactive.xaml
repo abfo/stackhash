@@ -1,0 +1,31 @@
+﻿<Window x:Class="StackHash.ContextInactive"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Profile Deactivated - StackHash" Width="500" Icon="/StackHash;component/StackHash.ico" SizeToContent="Height" ResizeMode="CanMinimize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="13" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="10" TextWrapping="Wrap" FontWeight="Bold">The current profile has been deactivated by another client.</TextBlock>
+
+        <TextBlock Margin="10,0,10,10" Grid.Row="1" TextWrapping="Wrap">This may be temporary while new settings are applied. If the profile is 
+            activated again this window will close automatically. If you do not wish to wait click Exit to close StackHash. Run StackHash again later, 
+            or to choose a different profile to work with.</TextBlock>
+
+        <Border Grid.Row="3" Style="{StaticResource ButtonBorder}">
+            <Button Margin="10" IsCancel="True" HorizontalAlignment="Right">E_xit</Button>
+        </Border>
+
+    </Grid>
+</Window>

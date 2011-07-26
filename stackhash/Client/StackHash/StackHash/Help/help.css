@@ -1,0 +1,88 @@
+﻿body
+{
+	font-family: Segoe UI, Verdana, Sans-Serif; 
+	font-size: 0.8em;
+	margin: 10px 20px;
+	padding: 0px;
+}
+img 
+{
+	border: 0px;
+}
+img.inlineicon
+{	
+	padding: 0px;
+	margin: 0px 2px;
+	vertical-align:bottom;
+}
+img.titleicon
+{
+	border: 1px solid #999;
+	padding: 4px;
+	vertical-align: bottom;
+}
+h1
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #999;
+}
+h2
+{
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 1em 0 0 0;
+}
+h3
+{
+	font-size: 1.0em;
+	font-weight: bold;
+	padding: 1em 0 0 0;
+}
+li
+{
+	margin: 0 0 0.5em 0;
+}
+table
+{
+	border: solid 1px #999;
+	border-collapse: collapse;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+td
+{
+	border: solid 1px #999;
+	padding: 5px 2px;
+	margin: 0px;
+	font-size: 0.8em;
+	vertical-align:top;
+}
+td.emtd
+{
+	font-weight: bold;
+	background-color: #EEE;
+	padding: 5px 10px 5px 2px;
+	white-space: nowrap;
+}
+td.emtdm
+{
+	font-weight: bold;
+	background-color: #EEE;
+	padding: 5px 10px 5px 2px;
+	white-space: nowrap;
+	width: 160px;
+}
+td.mimg
+{
+	width: 16px;
+}
+#helpfooter
+{
+	border-top: 1px solid #999;
+	padding-top: 5px;
+	margin-top: 15px;
+	font-size: 0.8em;
+}

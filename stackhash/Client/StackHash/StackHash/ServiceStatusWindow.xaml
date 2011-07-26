@@ -1,0 +1,212 @@
+﻿<Window x:Class="StackHash.ServiceStatusWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters"
+    Title="Service Status - StackHash" Height="450" MinHeight="450" Width="650" MinWidth="650" Icon="/StackHash;component/StackHash.ico" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Help" x:Name="commandBindingHelp" Executed="commandBindingHelp_Executed" />
+    </Window.CommandBindings>
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Margin="7">Profiles:</Label>
+        <ListView Margin="0,10,10,10" Grid.Column="1" Name="listViewContexts" GridViewColumnHeader.Click="listViewContexts_Click" ItemsSource="{Binding ContextStatusCollection}" SelectionChanged="listViewContexts_SelectionChanged">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50">
+                        <GridViewColumnHeader Tag="ContextId" Content="ID" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ContextId, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="ContextName" Content="Name" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ContextName}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="IsActive" Content="Active" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IsActive, Converter={StaticResource boolToYesNoConverter}}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="LastSynchronizationLogOnFailed" Content="Last LogOn Failed" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastSynchronizationLogOnFailed, Converter={StaticResource boolToYesNoConverter}}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="LastSynchronizationLogOnServiceError" Content="Last LogOn Error" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastSynchronizationLogOnServiceError, Converter={StaticResource serviceErrorCodeToStringConverter}}" HorizontalAlignment="Left" ToolTip="{Binding LastSynchronizationLogOnException}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="CurrentError" Content="Current Error" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CurrentError, Converter={StaticResource serviceErrorCodeToStringConverter}}" HorizontalAlignment="Left" ToolTip="{Binding LastContextException}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <Label Grid.Row="1" Margin="7,0,7,7">Tasks:</Label>
+        <ListView Margin="0,0,10,10" Grid.Row="1" Grid.Column="1" Name="listViewTasks" GridViewColumnHeader.Click="listViewTasks_Click" ItemsSource="{Binding ElementName=listViewContexts, Path=SelectedItem.TaskStatusCollection}" ContextMenuOpening="listViewTasks_ContextMenuOpening">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="_Abort Task" Name="menuItemAbortTask" Click="menuItemAbortTask_Click" />
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="175">
+                        <GridViewColumnHeader Tag="TaskType" Content="Type" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TaskType}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="TaskState" Content="State" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TaskState}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="ServiceErrorCode" Content="Last Error" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ServiceErrorCode, Converter={StaticResource serviceErrorCodeToStringConverter}}" ToolTip="{Binding LastException}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="125">
+                        <GridViewColumnHeader Tag="LastDurationInSeconds" Content="Last Duration (s)" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastDurationInSeconds, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="RunCount" Content="Run Count" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RunCount, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="SuccessCount" Content="Success Count" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SuccessCount, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="FailedCount" Content="Failed Count" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FailedCount, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="LastStartedTimeUtc" Content="Last Started (UTC)" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastStartedTimeUtc, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="LastSuccessfulRunTimeUtc" Content="Last Succeeded (UTC)" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastSuccessfulRunTimeUtc, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150">
+                        <GridViewColumnHeader Tag="LastFailedRunTimeUtc" Content="Last Failed (UTC)" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding LastFailedRunTimeUtc, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Grid.Row="2" Margin="7,0,7,7">Initialization Failed:</Label>
+        <TextBlock Margin="0,0,10,10" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding InitializationFailed, Converter={StaticResource boolToYesNoConverter}}" />
+
+        <Label Grid.Row="3" Margin="7,0,7,7">Test Mode:</Label>
+        <TextBlock Margin="0,0,10,10" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding HostRunningInTestMode, Converter={StaticResource boolToYesNoConverter}}" />
+
+        <Border Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button Margin="10" Command="Help">_Help</Button>
+
+                <StackPanel Margin="7" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="3" Name="buttonPluginDiagnostics" Click="buttonPluginDiagnostics_Click" Width="120">_Plugin Diagnostics</Button>
+                    <Button Margin="3" Name="buttonRefresh" Click="buttonRefresh_Click">_Refresh</Button>
+                    <Button Margin="3" Name="buttonClose" IsDefault="True" Click="buttonClose_Click">Close</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

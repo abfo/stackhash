@@ -1,0 +1,39 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Add/Edit Profile - Default Collection Policy -  StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Add/Edit Profile - Default Collection Policy</h1>
+
+            <p>The profile collection policy applies to all products and events that do not have an individual collection policy. 
+            You can set the policy in the product and event lists by right-clicking an item and choosing <em>Properties</em> from the context menu.</p>
+
+            <h2>Cab Collection Policy</h2>
+
+            <p>You can choose to download all cabs, a number of cabs, a percentage of cabs or not to download cabs at all. 
+            Note that the StackHash policy does not affect the number of cabs collected by WinQual. If you need more cabs 
+            for an event you must login to the WinQual site and request additional cabs.</p>
+
+            <p>If you limit cab collection to a number or percentage you can choose how StackHash prioritizes which of the 
+            available cabs to download. In most cases you'll get the best result by choosing to download the largest cabs first.</p>
+
+            <p>If <em>Download larger cabs</em> is checked StackHash will exceed the download limit if a larger cab is 
+            available through WinQual. This is useful if the first few cabs collected for a new event don't contain much 
+            information and then a large cab (say including heap data) is added after your download limit has been reached.</p>
+
+            <h2>Event Collection Policy</h2>
+
+            <p>The event policy allows you to not download cabs at all for events with a low hit count. For example if you 
+            set this to 100 then cabs will only be downloaded for events with 100 or more hits. If you set the threshold 
+            to 0 then cabs will be downloaded according to the cab collection policy for all events. </p>
+
+            <p>Note that the event policy takes precedence over the cab policy. If an event has fewer hits than the threshold 
+            then no cabs are downloaded regardless of the cab collection settings.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

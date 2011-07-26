@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="StackHash.SummaryControlCab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters" MinWidth="810" Width="810">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderThickness="0.5" BorderBrush="Black" Margin="0,3,0,3" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" FontWeight="Bold">Cab:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Left" Text="{Binding Id, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Column="2">Created:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Column="3" HorizontalAlignment="Left" Text="{Binding DateCreatedLocal, Mode=OneWay, Converter={StaticResource dateTimeDisplayConverter}}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Column="4">Modified:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Column="5" HorizontalAlignment="Left" Text="{Binding DateModifiedLocal, Mode=OneWay, Converter={StaticResource dateTimeDisplayConverter}}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1">Size:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding SizeInBytes, Mode=OneWay, Converter={StaticResource fileSizeDisplayConverter}}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1" Grid.Column="2">OS Version:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding OSVersion, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1" Grid.Column="4">Architecture:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Left" Text="{Binding MachineArchitecture, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2">.NET:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding DotNetVersion, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2" Grid.Column="2">Process Uptime:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" Text="{Binding ProcessUpTime, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2" Grid.Column="4">System Uptime:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Left" Text="{Binding SystemUpTime, Mode=OneWay}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="3">Downloaded:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding CabDownloaded, Mode=OneWay, Converter={StaticResource boolToYesNoConverter}}" />
+
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="3" Grid.Column="2">Purged:</TextBox>
+            <TextBox Margin="3" Style="{StaticResource SelectOnlyTextBox}" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" Text="{Binding Purged, Mode=OneWay, Converter={StaticResource boolToYesNoConverter}}" />
+        </Grid>
+    </Border>
+</UserControl>

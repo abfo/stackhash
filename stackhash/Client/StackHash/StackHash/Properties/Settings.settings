@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StackHash.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainWindowDefaultMargin" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="ContractCabsInitialMaxReceiveBytes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20971520</Value>
+    </Setting>
+    <Setting Name="ContractProjectsMaxReceiveBytes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20971520</Value>
+    </Setting>
+    <Setting Name="ContractAdminMaxReceiveBytes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1048576</Value>
+    </Setting>
+    <Setting Name="ContractCabsOperationTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="ContractProjectsOperationTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="ContractAdminOperationTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="WinQualEventListTemplate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://winqual.microsoft.com/member/wer/user/Eventlist.aspx?productid={0}&amp;productname={1}&amp;productversion={2}</Value>
+    </Setting>
+    <Setting Name="WinQualEventDetailsTemplate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://winqual.microsoft.com/member/wer/user/EventDetails.aspx?bucketid={0}&amp;eventtype={1}</Value>
+    </Setting>
+    <Setting Name="ContractsMaxStringSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">65536</Value>
+    </Setting>
+    <Setting Name="ContractsMaxArraySize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">65536</Value>
+    </Setting>
+    <Setting Name="ContractTestOperationTimeoutInMinutes" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

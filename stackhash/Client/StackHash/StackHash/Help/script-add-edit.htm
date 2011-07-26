@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Add/Edit Script - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Add/Edit Script</h1>
+            
+            <p>See <a href="how-to-scripting.htm">Scripting</a> for help on writing StackHash Scripts.</p>
+
+            <p>You must enter a name for the script. You can rename an existing script by changing the name 
+            and clicking OK.</p>
+
+            <p>Scripts can selectively be run on managed or native dumps (a dump is treated as managed if 
+            the .NET CLR has been loaded). The default is to run scripts on all crash dumps.</p>
+
+            <p>If <em>Run on cabs automatically</em> is checked this script will be run immediately after each 
+            synchronization with WinQual. The script will be run on all new cabs and also any existing 
+            cabs that do not already have results for this script.</p>
+
+            <p>An optional comment can be added to each line of the script using the * character, i.e.:</p>
+
+            <pre>.kp * Print Stack</pre>
+
+            <p>Only the last * is treated as a comment so for commands that include the * character a comment is required, i.e.:</p>
+
+            <pre>.shell dir *.dll * Comment is required</pre>
+
+            <p>Comments are not permitted for the .sympath, .srcpath and .exepath commands. Any comment added 
+            following these commands will be treated as part of the script line.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

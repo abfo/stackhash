@@ -1,0 +1,41 @@
+﻿<local:SetupBasePage x:Class="StackHash.SetupFinishPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:StackHash">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="10" FontSize="14" FontWeight="Bold">More Options</TextBlock>
+
+        <TextBlock Margin="10,0,10,10" Grid.Row="1" TextWrapping="Wrap">Click the links below to set any additional client or service options, or just click Finish to start using StackHash.</TextBlock>
+        
+        <TextBlock Margin="10" Grid.Row="2">
+            <Hyperlink Name="hyperlinkClientOptions" Click="hyperlinkClientOptions_Click">Client Options...</Hyperlink>
+        </TextBlock>
+
+        <TextBlock Margin="10,0,10,10" Grid.Row="3">
+            <Hyperlink Name="hyperlinkServiceOptions" Click="hyperlinkServiceOptions_Click">Service Options...</Hyperlink>
+        </TextBlock>
+        
+        <local:DisplayPolicyControl Margin="5,15,5,0" Grid.Row="4" Width="350" HorizontalAlignment="Left" x:Name="displayPolicyControl" />
+        <TextBlock Margin="10,0,10,10" Grid.Row="5" Width="350" HorizontalAlignment="Left" TextWrapping="Wrap">(The default display filter prevents low hit count events from being shown in the client. Set this to 0 to show all events.)</TextBlock>
+
+    </Grid>
+</local:SetupBasePage>

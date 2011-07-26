@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConfirmCancel_MBMessage" xml:space="preserve">
+    <value>Are you sure you want to cancel StackHash Database Configuration?</value>
+  </data>
+  <data name="ConfirmCancel_MBTitle" xml:space="preserve">
+    <value>Cancel StackHash Database Configuration</value>
+  </data>
+  <data name="CreateFailed_MBMessage" xml:space="preserve">
+    <value>StackHash failed to create the profile database.</value>
+  </data>
+  <data name="CreateFailed_MBTitle" xml:space="preserve">
+    <value>Failed to create database - StackHash Database Configuration</value>
+  </data>
+  <data name="DatabaseTypeSqlServer" xml:space="preserve">
+    <value>SQL Server 2005/2008</value>
+  </data>
+  <data name="Error_All" xml:space="preserve">
+    <value>Please fix the following problems with the database configuration:
+{0}</value>
+    <comment>Parameter is all form errors</comment>
+  </data>
+  <data name="Error_CabFolderIsUNC" xml:space="preserve">
+    <value>Cab folder may not be a UNC path if database files are also stored in this folder. This is because SQL Server cannot guarantee database consistency when using a network share.</value>
+  </data>
+  <data name="Error_CabFolderMissing" xml:space="preserve">
+    <value>Cab folder does not exist. Please create the folder or select and existing, empty folder.</value>
+  </data>
+  <data name="Error_DuplicateCabFolder" xml:space="preserve">
+    <value>Cab folder is already used by another profile. Please choose a different folder.</value>
+  </data>
+  <data name="Error_DuplicateProfileName" xml:space="preserve">
+    <value>Profile name is already used by another profile. Please choose a different name.</value>
+  </data>
+  <data name="Error_InvalidProfileName" xml:space="preserve">
+    <value>Profile name is invalid: {0}</value>
+    <comment>Parameter explains the rules for a valid profile name</comment>
+  </data>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Configuration Invalid - StackHash Database Configuration</value>
+  </data>
+  <data name="Error_UpgradeFolder" xml:space="preserve">
+    <value>Cab folder is for a pre-Beta 7 profile. Please select a new folder for the upgrade. The current folder may be deleted once the profile upgrade has been completed.</value>
+  </data>
+  <data name="InstallExpressFailedMBMessageWithCode" xml:space="preserve">
+    <value>Failed to install SQL Server 2008 R2 Express Edition (Error {0:X8}).</value>
+    <comment>Paramter is the install error code</comment>
+  </data>
+  <data name="InstallExpressFailed_MBMessage" xml:space="preserve">
+    <value>Failed to install SQL Server 2008 R2 Express Edition.</value>
+  </data>
+  <data name="InstallExpressFailed_MBTitle" xml:space="preserve">
+    <value>Install SQL Server 2008 R2 Express Edition</value>
+  </data>
+  <data name="InstallExpress_MBMessage" xml:space="preserve">
+    <value>Would you like to download and install SQL Server 2008 R2 Express edition? This is the recommended database for StackHash. Click Yes to install automatically using recommended settings. Click No to choose a different database or to install SQL Server manually.</value>
+  </data>
+  <data name="InstallExpress_MBTitle" xml:space="preserve">
+    <value>Install SQL Server 2008 R2 Express Edition?</value>
+  </data>
+  <data name="InstallExpress_ProgressDownloading" xml:space="preserve">
+    <value>Downloading SQL Server 2008 R2 Express Edition...</value>
+  </data>
+  <data name="InstallExpress_ProgressInstalling" xml:space="preserve">
+    <value>Installing SQL Server 2008 R2 Express Edition. Please wait, this will take a few minutes...</value>
+  </data>
+  <data name="InstanceInstalled_MBMessage" xml:space="preserve">
+    <value>A STACKHASH instance of SQL Server has already been installed. Please select this from the list of available instances.</value>
+  </data>
+  <data name="InstanceInstalled_MBTitle" xml:space="preserve">
+    <value>StackHash Instance Installed</value>
+  </data>
+  <data name="InstanceListFailed_MBMessage" xml:space="preserve">
+    <value>Failed to list available instances for the selected database type.</value>
+  </data>
+  <data name="InstanceListFailed_MBTitle" xml:space="preserve">
+    <value>Failed to list instances - StackHash Database Configuration</value>
+  </data>
+  <data name="Reboot_MBMessage" xml:space="preserve">
+    <value>A reboot is required to complete the installation of SQL Server 2008 R2 Express Edition. Run StackHash again after rebooting to continue.
+
+Would you like to reboot now?</value>
+  </data>
+  <data name="Reboot_MBTitle" xml:space="preserve">
+    <value>Reboot Required - StackHash Database Configuration</value>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>Select this Folder</value>
+  </data>
+  <data name="SelectFolderFilter" xml:space="preserve">
+    <value>Folders|*.</value>
+  </data>
+  <data name="SelectFolderTitle" xml:space="preserve">
+    <value>Select Cab Folder - StackHash Database Configuration</value>
+  </data>
+  <data name="TestCabFolderFailed_MBMessage" xml:space="preserve">
+    <value>The StackHash Service could not access the specified Cab Folder. Please check that the folder exists and that the account the StackHash Service is running under has permission to access it. 
+
+By default the StackHash Service runs as NETWORK SERVICE and cannot access a folder located in the profile for your user account.</value>
+  </data>
+  <data name="TestCabFolderFailed_MBTitle" xml:space="preserve">
+    <value>Failed to access Cab Folder - StackHash Database Configuration</value>
+  </data>
+  <data name="TestFailed_MBMessage" xml:space="preserve">
+    <value>The StackHash Service failed to connect to the database: {0}</value>
+    <comment>Parameter is the database test result</comment>
+  </data>
+  <data name="TestFailed_MBTitle" xml:space="preserve">
+    <value>Failed to connect to database - StackHash Database Configuration</value>
+  </data>
+  <data name="TestSuccess_MBMessage" xml:space="preserve">
+    <value>The StackHash Service successfully connected to the selected database instance.</value>
+  </data>
+  <data name="TestSuccess_MBTitle" xml:space="preserve">
+    <value>Test Succeeded - StackHash Database Configuration</value>
+  </data>
+</root>

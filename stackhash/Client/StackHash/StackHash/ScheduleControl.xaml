@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="StackHash.ScheduleControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="6" Grid.ColumnSpan="2" Name="textBlockDescription" FontWeight="Bold" Text="Description of this schedule..." TextWrapping="Wrap" />
+        <Label Grid.Row="2" Target="{Binding ElementName=textHours}">_Time (hh:mm):</Label>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <TextBox Margin="3" Name="textHours" Width="40" IsEnabled="{Binding ElementName=radioHourly, Path=IsChecked, Converter={StaticResource notConverter}}" ToolTip="{Binding ElementName=textHours, Path=(Validation.Errors)[0].ErrorContent}">
+                <TextBox.Text>
+                    <Binding Path="Hour" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" Mode="TwoWay" StringFormat="{}{0:00}" />
+                </TextBox.Text>
+            </TextBox>
+            <Label>:</Label>
+            <TextBox Margin="3" Name="textMins" Width="40" ToolTip="{Binding ElementName=textMins, Path=(Validation.Errors)[0].ErrorContent}">
+                <TextBox.Text>
+                    <Binding Path="Min" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" Mode="TwoWay" StringFormat="{}{0:00}" />
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+        <Label Grid.Row="4">Period:</Label>
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Margin="3,3,10,3" Name="radioHourly">_Hourly</RadioButton>
+            <RadioButton Margin="3,3,10,3" Name="radioDaily">_Daily</RadioButton>
+        </StackPanel>
+        <Label Grid.Row="6">Days:</Label>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical">
+            <CheckBox Margin="3,6,0,3" Name="checkMonday">_Monday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkTuesday">T_uesday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkWednesday">Wed_nesday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkThursday">Thu_rsday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkFriday">_Friday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkSaturday">_Saturday</CheckBox>
+            <CheckBox Margin="3,0,0,3" Name="checkSunday">Sund_ay</CheckBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="StackHash.NotesControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters"
+    Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Name="notesControlGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Margin="3" VerticalAlignment="Top" HorizontalAlignment="Left" Name="textAddNote">
+            <Hyperlink IsEnabled="{Binding ElementName=notesControlGrid, Path=IsEnabled}" Name="linkAddNote" Click="linkAddNote_Click">Add Note</Hyperlink>
+        </TextBlock>
+        
+        <TextBox Margin="3" AcceptsReturn="True" TextWrapping="Wrap" Name="textBoxNote" Height="100" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" />
+        
+        <StackPanel Margin="0,0,0,13" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" Name="panelButtons">
+            <Button Margin="3" Name="buttonSave" Click="buttonSave_Click" IsEnabled="{Binding ElementName=textBoxNote, Path=Text, Converter={StaticResource stringNotNullOrEmptyConverter}}">_Save</Button>
+            <Button Margin="3" Name="buttonCancel" Click="buttonCancel_Click">_Cancel</Button>
+        </StackPanel>
+        
+        <RichTextBox Margin="3" Grid.Row="2" Name="richTextBoxNotes" IsDocumentEnabled="True" VerticalScrollBarVisibility="Visible" IsReadOnly="True" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,424 @@
+﻿<Window x:Class="StackHash.ProfileAddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:StackHash"
+        xmlns:vcs="clr-namespace:StackHash.ValueConverters"
+        Title="Add Profile - StackHash" 
+        Height="450" 
+        MinHeight="450" 
+        Width="400" 
+        MinWidth="400" 
+        Icon="/StackHash;component/StackHash.ico" 
+        ShowInTaskbar="False" 
+        WindowStartupLocation="CenterOwner" 
+        Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Help" x:Name="commandBindingHelp" Executed="commandBindingHelp_Executed" />
+    </Window.CommandBindings>
+    <Grid Name="gridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TabControl Margin="10" Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Header="WinQual" Name="tabItemWinQual">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Target="{Binding ElementName=textCompany}">_Profile Name:</Label>
+                        <TextBox Margin="3" Grid.Column="1" Name="textCompany" Text="{Binding Company, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textCompany, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <TextBlock Margin="6,13,6,6" Grid.Row="1" Grid.ColumnSpan="3" FontWeight="Bold">WinQual Credentials:</TextBlock>
+                        
+                        <Label Grid.Row="2" Target="{Binding ElementName=textUsername}">_Username:</Label>
+                        <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Name="textUsername" Text="{Binding Username, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textUsername, Path=(Validation.Errors)[0].ErrorContent}" />
+                        
+                        <Label Grid.Row="3" Target="{Binding ElementName=passPassword}">_Password:</Label>
+                        <Rectangle Grid.Row="3" Grid.Column="1" Margin="2" Name="rectPassError" Fill="Transparent" Stroke="Transparent" />
+                        <PasswordBox Grid.Row="3" Grid.Column="1" Margin="3" Name="passPassword" LostFocus="passPassword_LostFocus" />
+                        <Button Grid.Row="3" Grid.Column="2" Margin="3" Name="buttonTestCredentials" Click="buttonTestCredentials_Click" ToolTip="Click to test your WinQual username and password.">_Test</Button>
+                        
+                        <TextBlock Margin="6,13,6,6" Grid.Row="4" Grid.ColumnSpan="3" FontWeight="Bold">Cab Folder and Database:</TextBlock>
+
+                        <Button Margin="3" Grid.Row="5" Grid.ColumnSpan="2" Name="buttonMove" Width="180" HorizontalAlignment="left" Click="buttonMove_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Margin="0,0,5,0" VerticalAlignment="Center" Width="16" Height="16" Name="imageShield" />
+                                <Label Margin="-5" VerticalAlignment="Center" Target="{Binding ElementName=buttonMove}">_Move or Edit Database...</Label>
+                            </StackPanel>
+                        </Button>
+
+                        <Label Grid.Row="6" Target="{Binding ElementName=textIndexFolder}">Cab _Folder:</Label>
+                        <TextBox Margin="3" Grid.Row="6" Grid.Column="1" Name="textIndexFolder" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="Transparent" Text="{Binding IndexFolder, Mode=OneWay}" ToolTip="{Binding ElementName=textIndexFolder, Path=Text}" />
+                        
+                        <Label Grid.Row="7" Target="{Binding ElementName=textConnectionString}">_Connection String:</Label>
+                        <TextBox Margin="3" Grid.Row="7" Grid.Column="1" Name="textConnectionString" IsReadOnly="True" IsReadOnlyCaretVisible="True" Background="Transparent" Text="{Binding ConnectionString, Mode=OneWay}" ToolTip="{Binding ElementName=textConnectionString, Path=Text}" />
+                        <Button Margin="3" Grid.Row="7" Grid.Column="2" Name="buttonTestConnectionString" Click="buttonTestConnectionString_Click">T_est</Button>
+
+                        <Label Grid.Row="8" Target="{Binding ElementName=textPurgeDays}">Pu_rge (days):</Label>
+                        <TextBox Margin="3" Grid.Row="8" Grid.Column="1" Name="textPurgeDays" Text="{Binding PurgeDays, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textPurgeDays, Path=(Validation.Errors)[0].ErrorContent}" />
+                    
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Sync Schedule" Name="tabItemSyncSchedule">
+                <AdornerDecorator>
+                    <local:ScheduleControl Margin="3" x:Name="schSync" ScheduleDescription="WinQual synchronization schedule:" />
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Purge Schedule" Name="tabItemPurgeSchedule">
+                <AdornerDecorator>
+                    <local:ScheduleControl Margin="3" x:Name="schPurge" ScheduleDescription="Local store purge schedule (removes private information from the store to comply with WinQual terms and conditions):" />
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="32-bit Debugger" Name="tabItem32BitDebugger">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="6" Grid.ColumnSpan="3" FontWeight="Bold">Path to 32-bit cdb.exe (Debugging Tools for Windows):</TextBlock>
+                        <Label Grid.Row="1" Target="{Binding ElementName=textWinDbg}">_Cdb.exe:</Label>
+                        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textWinDbg" Text="{Binding WinDbgPath, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textWinDbg, Path=(Validation.Errors)[0].ErrorContent}" />
+                        <Button Margin="3" Grid.Row="1" Grid.Column="2" Name="buttonBrowseWinDbg" Click="buttonBrowseWinDbg_Click">_Browse...</Button>
+                        <TextBlock Margin="6,19,6,6" Grid.Row="2" Grid.ColumnSpan="3" FontWeight="Bold">Symbol File Search Path:</TextBlock>
+                        <Label Grid.Row="3" Target="{Binding ElementName=textSymbolPath}">_Path:</Label>
+                        <TextBox Margin="3" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Name="textSymbolPath" TextWrapping="Wrap" Text="{Binding SymbolPath, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textSymbolPath, Path=(Validation.Errors)[0].ErrorContent}" />
+                        <TextBlock Margin="6,19,6,6" Grid.Row="4" Grid.ColumnSpan="3" FontWeight="Bold">Executable Image Search Path:</TextBlock>
+                        <Label Grid.Row="5" Target="{Binding ElementName=textImagePath}">P_ath:</Label>
+                        <TextBox Margin="3" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Name="textImagePath" TextWrapping="Wrap" Text="{Binding ImagePath, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textImagePath, Path=(Validation.Errors)[0].ErrorContent}" />
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="64-bit Debugger" Name="tabItem64BitDebugger">
+                <AdornerDecorator>
+                    <Grid Margin="3" IsEnabled="{Binding Is64}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="6" Grid.ColumnSpan="3" FontWeight="Bold">Path to 64-bit cdb.exe (Debugging Tools for Windows):</TextBlock>
+                        <Label Grid.Row="1" Target="{Binding ElementName=textWinDbg64}">_Cdb.exe:</Label>
+                        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textWinDbg64" Text="{Binding WinDbgPath64, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textWinDbg64, Path=(Validation.Errors)[0].ErrorContent}" />
+                        <Button Margin="3" Grid.Row="1" Grid.Column="2" Name="buttonBrowseWinDbg64" Click="buttonBrowseWinDbg64_Click">_Browse...</Button>
+                        <TextBlock Margin="6,19,6,6" Grid.Row="2" Grid.ColumnSpan="3" FontWeight="Bold">Symbol File Search Path:</TextBlock>
+                        <Label Grid.Row="3" Target="{Binding ElementName=textSymbolPath64}">_Path:</Label>
+                        <TextBox Margin="3" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Name="textSymbolPath64" TextWrapping="Wrap" Text="{Binding SymbolPath64, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textSymbolPath64, Path=(Validation.Errors)[0].ErrorContent}" />
+                        <TextBlock Margin="6,19,6,6" Grid.Row="4" Grid.ColumnSpan="3" FontWeight="Bold">Executable Image Search Path:</TextBlock>
+                        <Label Grid.Row="5" Target="{Binding ElementName=textImagePath64}">P_ath:</Label>
+                        <TextBox Margin="3" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Name="textImagePath64" TextWrapping="Wrap" Text="{Binding ImagePath64, ValidatesOnDataErrors=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textImagePath, Path=(Validation.Errors)[0].ErrorContent}" />
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Notifications" Name="tabItemNotifications">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Margin="6" Grid.ColumnSpan="3" FontWeight="Bold">SMTP Notification Settings:</TextBlock>
+                        
+                        <Label Grid.Row="1" Target="{Binding ElementName=textSmtpHost}">_Server:</Label>
+                        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textSmtpHost" Text="{Binding SmtpServer, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textSmtpHost, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="2" Target="{Binding ElementName=textSmtpPort}">_Port:</Label>
+                        <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Name="textSmtpPort" Text="{Binding SmtpPort, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textSmtpPort, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="3" Target="{Binding ElementName=textSmtpUser}">_Username:</Label>
+                        <TextBox Margin="3" Grid.Row="3" Grid.Column="1" Name="textSmtpUser" Text="{Binding SmtpUser, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textSmtpUser, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="4" Target="{Binding ElementName=passSmtpPassword}">P_assword:</Label>
+                        <Rectangle Grid.Row="4" Grid.Column="1" Margin="2" Name="rectSmtpPasswordError" Fill="Transparent" Stroke="Transparent" />
+                        <PasswordBox Grid.Row="4" Grid.Column="1" Margin="3" Name="passSmtpPassword" LostFocus="passSmtpPassword_LostFocus" />
+
+                        <Label Grid.Row="5" Target="{Binding ElementName=textSmtpFrom}">_From:</Label>
+                        <TextBox Margin="3" Grid.Row="5" Grid.Column="1" Name="textSmtpFrom" Text="{Binding SmtpFrom, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textSmtpFrom, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="6" Target="{Binding ElementName=textSmtpTo}">_To:</Label>
+                        <TextBox Margin="3" Grid.Row="6" Grid.Column="1" Name="textSmtpTo" Text="{Binding SmtpTo, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ToolTip="{Binding ElementName=textSmtpTo, Path=(Validation.Errors)[0].ErrorContent}" />
+                        
+                        <Label Grid.Row="7" Margin="0,8,0,0">Notifications:</Label>
+                        
+                        <Grid Grid.Row="7" Grid.Column="1" Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <CheckBox Margin="3,3,7,3" Name="checkBoxNotifySync" IsChecked="{Binding SmtpNotifySync, Mode=TwoWay}">S_ynchronize</CheckBox>
+                            <CheckBox Margin="3,3,7,3" Grid.Column="1" Name="checkBoxNotifyAnalyze" IsChecked="{Binding SmtpNotifyAnalyze, Mode=TwoWay}">_Analyze Cabs</CheckBox>
+                            <CheckBox Margin="3,3,7,3" Grid.Column="2" Name="checkBoxNotifyPurge" IsChecked="{Binding SmtpNotifyPurge, Mode=TwoWay}">P_urge</CheckBox>
+                            <CheckBox Margin="3,3,7,3" Grid.Row="1" Name="checkBoxNotifyPluginReport" IsChecked="{Binding SmtpNotifyPluginReport, Mode=TwoWay}">P_lugin Report</CheckBox>
+                            <CheckBox Margin="3,3,7,3" Grid.Row="1" Grid.Column="1" Name="checkBoxNotifyPluginError" IsChecked="{Binding SmtpNotifyPluginError, Mode=TwoWay}">Plu_gin Failure</CheckBox>
+
+                        </Grid>
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Plugins" Name="tabItemPlugins">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <ListView Margin="3" Grid.RowSpan="2" SelectionMode="Single" Name="listViewPlugins" GridViewColumnHeader.Click="listViewPlugins_Click" SelectionChanged="listViewPlugins_SelectionChanged" MouseDoubleClick="listViewPlugins_MouseDoubleClick">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="75">
+                                        <GridViewColumnHeader Tag="Enabled" Content="Enabled" />
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <CheckBox IsChecked="{Binding Enabled, Mode=TwoWay}" Checked="PluginEnabledCheckBox_Checked" HorizontalAlignment="Center" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="150">
+                                        <GridViewColumnHeader Tag="Name" Content="Plugin Name" />
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="150">
+                                        <GridViewColumnHeader Tag="ChangesBugReference" Content="Sets Plugin Reference" />
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ChangesBugReference, Converter={StaticResource boolToYesNoConverter}}" HorizontalAlignment="Left" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <StackPanel Margin="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top">
+                            <Button Margin="3" Name="buttonAddPlugin" Click="buttonAddPlugin_Click" ToolTip="Add a plugin to this profile.">_Add...</Button>
+                            <Button Margin="3" Name="buttonPluginSettings" Click="buttonPluginSettings_Click" ToolTip="Edit settings for the selected plugin.">_Settings...</Button>
+                            <Button Margin="4" Name="buttonPluginHelp" Click="buttonPluginHelp_Click" ToolTip="{Binding ElementName=listViewPlugins, Path=SelectedItem.HelpUrl}">_Plugin Help</Button>
+                            <Button Margin="3" Name="buttonRemovePlugin" Click="buttonRemovePlugin_Click" ToolTip="Remove the selected plugin (also removes settings).">_Remove</Button>
+                        </StackPanel>
+
+                        <Button Margin="3" Grid.Row="1" Grid.Column="1" Name="buttonPluginDiagnostics" Click="buttonPluginDiagnostics_Click" ToolTip="View diagnostic information from all plugins.">Diagnostics</Button>
+
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Database" Name="tabItemDatabase">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="6" Grid.ColumnSpan="2" FontWeight="Bold">Database Settings:</TextBlock>
+
+                        <Label Grid.Row="1" Target="{Binding ElementName=textBoxConnectionTimeout}">_Connection Timeout (seconds):</Label>
+                        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textBoxConnectionTimeout" Text="{Binding ConnectionTimeout, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxConnectionTimeout, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="2" Target="{Binding ElementName=textBoxEventsPerBlock}">_Events Per Block:</Label>
+                        <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Name="textBoxEventsPerBlock" Text="{Binding EventsPerBlock, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxEventsPerBlock, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="3" Target="{Binding ElementName=textBoxMinPoolSize}">_Minimum Pool Size:</Label>
+                        <TextBox Margin="3" Grid.Row="3"  Grid.Column="1" Name="textBoxMinPoolSize" Text="{Binding MinPoolSize, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxMinPoolSize, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="4" Target="{Binding ElementName=textBoxMaxPoolSize}">M_aximum Pool Size:</Label>
+                        <TextBox Margin="3" Grid.Row="4" Grid.Column="1" Name="textBoxMaxPoolSize" Text="{Binding MaxPoolSize, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxMaxPoolSize, Path=(Validation.Errors)[0].ErrorContent}" />
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Advanced" Name="tabItemAdvanced">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="6" Grid.ColumnSpan="2" FontWeight="Bold">WinQual API:</TextBlock>
+
+                        <Label Grid.Row="1" Target="{Binding ElementName=textBoxRequestTimeoutMinutes}">_Timeout (minutes):</Label>
+                        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textBoxRequestTimeoutMinutes" Text="{Binding RequestTimeoutMinutes, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxRequestTimeoutMinutes, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="2" Target="{Binding ElementName=textBoxCabFailLimit}">_Cab download failure limit:</Label>
+                        <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Name="textBoxCabFailLimit" Text="{Binding CabDownloadFailureLimit, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxCabFailLimit, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="3" Target="{Binding ElementName=textBoxRequestRetryCount}">Per-request _retries:</Label>
+                        <TextBox Margin="3" Grid.Row="3"  Grid.Column="1" Name="textBoxRequestRetryCount" Text="{Binding RequestRetryCount, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxRequestRetryCount, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <Label Grid.Row="4" Target="{Binding ElementName=textBoxSyncsBeforeResync}">Syncs before automatic resync:</Label>
+                        <TextBox Margin="3" Grid.Row="4" Grid.Column="1" Name="textBoxSyncsBeforeResync" Text="{Binding SyncsBeforeResync, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxSyncsBeforeResync, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <CheckBox Margin="3,6,3,6" Grid.Row="5" Grid.ColumnSpan="2" IsChecked="{Binding RetrySync, Mode=TwoWay}" Name="checkBoxRetry" Checked="checkBoxRetry_Checked" Unchecked="checkBoxRetry_Unchecked">Retry _after failed synchronization</CheckBox>
+
+                        <Label Grid.Row="6" Name="labelRetryDelay" Target="{Binding ElementName=textBoxRetryDelay}">_Delay before retry (minutes):</Label>
+                        <TextBox Margin="3" Grid.Row="6" Grid.Column="1" Name="textBoxRetryDelay" Text="{Binding RetrySyncDelayMinutes, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay}" ToolTip="{Binding ElementName=textBoxRetryDelay, Path=(Validation.Errors)[0].ErrorContent}" />
+
+                        <CheckBox Margin="3,6,3,6" Grid.Row="7" Grid.ColumnSpan="2" IsChecked="{Binding EnableNewProducts, Mode=TwoWay}" Name="checkBoxEnableNewProducts">_Enable sync for new product mappings</CheckBox>
+                    
+                        <CheckBox Margin="3,6,3,6" Grid.Row="9" Grid.ColumnSpan="2" IsChecked="{Binding ForceRerun, Mode=TwoWay}">_Force update of all script results</CheckBox>
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header="Statuses" Name="tabItemStatuses">
+                <AdornerDecorator>
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Margin="6" FontWeight="Bold">Active Statuses:</TextBlock>
+                        <TextBlock Margin="6" FontWeight="Bold" Grid.Column="1">Resolved Statuses:</TextBlock>
+
+                        <TextBox Grid.Row="1" Margin="3" Name="textBoxStatus0" Text="{Binding WorkFlowStatuses[0], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="3" Name="textBoxStatus8" Text="{Binding WorkFlowStatuses[8], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="2" Margin="3" Name="textBoxStatus1" Text="{Binding WorkFlowStatuses[1], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="3" Name="textBoxStatus9" Text="{Binding WorkFlowStatuses[9], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="3" Margin="3" Name="textBoxStatus2" Text="{Binding WorkFlowStatuses[2], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="3" Grid.Column="1" Margin="3" Name="textBoxStatus10" Text="{Binding WorkFlowStatuses[10], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="4" Margin="3" Name="textBoxStatus3" Text="{Binding WorkFlowStatuses[3], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="4" Grid.Column="1" Margin="3" Name="textBoxStatus11" Text="{Binding WorkFlowStatuses[11], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="5" Margin="3" Name="textBoxStatus4" Text="{Binding WorkFlowStatuses[4], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="5" Grid.Column="1" Margin="3" Name="textBoxStatus12" Text="{Binding WorkFlowStatuses[12], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="6" Margin="3" Name="textBoxStatus5" Text="{Binding WorkFlowStatuses[5], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="6" Grid.Column="1" Margin="3" Name="textBoxStatus13" Text="{Binding WorkFlowStatuses[13], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="7" Margin="3" Name="textBoxStatus6" Text="{Binding WorkFlowStatuses[6], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="7" Grid.Column="1" Margin="3" Name="textBoxStatus14" Text="{Binding WorkFlowStatuses[14], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                        <TextBox Grid.Row="8" Margin="3" Name="textBoxStatus7" Text="{Binding WorkFlowStatuses[7], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+                        <TextBox Grid.Row="8" Grid.Column="1" Margin="3" Name="textBoxStatus15" Text="{Binding WorkFlowStatuses[15], Mode=TwoWay}" IsEnabled="{Binding WorkFlowStatusesEnabled}" />
+
+                    </Grid>
+                </AdornerDecorator>
+            </TabItem>
+            <TabItem Header=" Default Collection Policy" Name="tabItemCollectionPolicy">
+                <AdornerDecorator>
+                    <local:CollectionPolicyControl Margin="3" x:Name="collectionPolicyControl" />
+                </AdornerDecorator>
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Row="1" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button Margin="10" Command="Help">_Help</Button>
+
+                <StackPanel Margin="7" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="3" Name="buttonOK" IsDefault="True" Click="buttonOK_Click">OK</Button>
+                    <Button Margin="3" IsCancel="True">Cancel</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

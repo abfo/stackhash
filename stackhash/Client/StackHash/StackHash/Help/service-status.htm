@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Service Status - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Service Status</h1>
+
+            <p>The top list shows all <a href="how-to-profiles.htm">profiles</a> configured on the service, including if the profile is active 
+            or not and if the most recent attempt to logon to WinQual failed or succeeded.</p>
+
+            <p>Click a profile for detailed statistics in the tasks list. This shows:</p>
+
+            <table>
+                <tr><td class="emtd">Type:</td><td>The service runs various tasks for each profile, including WinQual synchronization, crash dump analysis, purge and timer tasks responsible for scheduling the other tasks.</td></tr>
+                <tr><td class="emtd">State:</td><td>Timer tasks should always be in the Running state. Other tasks should be Running or NotRunning. </td></tr>
+                <tr><td class="emtd">Last Exception:</td><td>Reports details of the last error for each task. If empty then the task has not reported an error. Pay attention to the Last Failed date as the Last Exception may not indicate a current problem with the task.</td></tr>
+                <tr><td class="emtd">Last Duration:</td><td>Time taken to run the task in seconds. This is not meaningful for the timer tasks.</td></tr>
+                <tr><td class="emtd">Run Count:</td><td>Total number of times that the task has been launched.</td></tr>
+                <tr><td class="emtd">Success Count:</td><td>Total number of times that the task has completed successfully.</td></tr>
+                <tr><td class="emtd">Failed Count:</td><td>Total number of times that the task has failed.</td></tr>
+                <tr><td class="emtd">Last Started:</td><td>Date and time that the task was last started (UTC - Coordinated Universal Time).</td></tr>
+                <tr><td class="emtd">Last Succeeded:</td><td>Date and time that the task last completed successfully (UTC - Coordinated Universal Time).</td></tr>
+                <tr><td class="emtd">Last Failed:</td><td>Date and time that the task last failed (UTC - Coordinated Universal Time).</td></tr>
+            </table>
+
+            <p>Tasks started based on a request from the client (move index, copy index, download cab and bug report) 
+            can be aborted if running. Right click the task and choose <em>Abort Task</em>.</p>
+
+            <p>Click <em>Refresh</em> to update the Service Status window.</p>
+
+            <p>Click <em><a href="plugin-diagnostics.htm">Plugin Diagnostics</a></em> to view troubleshooting information reported by any installed 
+            <a href="how-to-plugins.htm">plugins</a>. Select a profile first to view profile specific plugin diagnostics. </p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

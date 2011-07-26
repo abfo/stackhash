@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Getting Started - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Getting Started</h1>
+
+            <p>StackHash is a client/server application that synchronizes products, events, hits and cabs from your WinQual 
+            account to a local database and then helps you prioritize, analyze, fix and respond to crash and hang reports 
+            for your Windows software.</p> 
+            
+            <p>If you're new to WinQual review our guide to the service: 
+            <a href="http://www.stackhash.com/WinQual/" target="_blank">Getting Started With WinQual For Windows Error Reporting (WER)</a>. 
+            This covers prerequisites for post-mortem crash dump analysis including setting up a symbol server, source indexing, 
+            product mapping and debugger configuration. The guide also explains how to obtain and use a WinQual account.</p>
+            
+            <p>Email and telephone support is available at 
+            <a href="http://www.stackhash.com/Support.aspx" target="_blank">http://www.stackhash.com/Support.aspx</a>. We're here to help. 
+            Please get in touch if you have any questions or problems. To suggest and vote on new features visit our feedback forum at 
+            <a href="http://feedback.stackhash.com/" target="_blank">http://feedback.stackhash.com/</a>.</p>
+            
+            <p>Get product updates, news and tips on StackHash, WinQual and WER by subscribing to our 
+            <a href="http://www.stackhash.com/blog/" target="_blank">blog</a>, following 
+            <a href="http://twitter.com/StackHash" target="_blank">@StackHash</a> on twitter and becoming a fan on 
+            <a href="http://www.facebook.com/pages/Stack-Hash/315500797261" target="_blank">Facebook</a>. Videos demonstrating various 
+            capabilities of StackHash are available on our 
+            <a href="http://www.youtube.com/user/StackHashVideos" target="_blank">YouTube</a> channel.</p> 
+            
+            <p>If you're connecting to an existing StackHash install skip ahead to 
+            <a href="#clienth2">StackHash Client</a> below.</p>
+            
+            <h2>StackHash Service</h2>
+            
+            <p><em>Supported Platforms: Windows Vista SP2, Windows 7, Windows Server 2008 SP2, Windows Server 2008 R2.</em></p>
+            
+            <p>To configure StackHash run the StackHash Client on the same computer as the StackHash Service. The first time you run 
+            StackHash the <a href="setup.htm">Setup Wizard</a> will guide you through creating a <a href="how-to-profiles.htm">Profile</a>. 
+            To edit, delete or add a profile use <a href="service-options.htm">Service Options</a> from the <em>Tools</em> menu.</p>
+            
+            <p>Before configuring StackHash for the first time we recommend installing the 
+            <a href="http://www.microsoft.com/whdc/devtools/debugging/default.mspx" target="_blank">Debugging Tools for Windows</a> as the 
+            <a href="how-to-scripting.htm">Scripting</a> feature of StackHash requires cdb.exe (the command line debugger installed with 
+            the tools). On a 64-bit OS install both the 32-bit and 64-bit versions of the tools.</p>
+            
+            <p>StackHash stores WinQual data in a SQL Server 2005 or 2008 database. A folder is used to store downloaded cab files. 
+            We recommend running a dedicated StackHash Server on a supported 64-bit OS which includes StackHash, the database and the cab 
+            folder. It is also possible for each of these components to be on a different computer and to run the StackHash Service on a 
+            32-bit OS.</p>
+            
+            <p>The StackHash Service is a Windows service that runs under the NETWORK SERVICE account by default. This means that NETWORK 
+            SERVICE must have read/write permission to access the database and cab folder. You can use the Services control panel applet 
+            to change the StackHash service account if necessary (this is not recommended, if you do change the account it must have 
+            administrator privileges).</p>
+            
+            <p>There are three database configuration options for the StackHash Service:</p>
+            
+            <ol>
+                <li>During configuration StackHash can download and install SQL Server 2008 R2 Express Edition with the recommended settings. 
+                This is the easiest way to get started with StackHash.</li>
+            
+                <li>You can create a new database for StackHash on an existing local install of SQL Server 2005 or 2008. In this case the 
+                StackHash Service account, NETWORK SERVICE by default, must be granted the sysadmin role for the database.</li>
+                
+                <li>You can create a new database for StackHash on a remote install of SQL Server 2005 or 2008. SQL scripts to create and 
+                upgrade the StackHash database are installed with the product.</li>
+            </ol>
+
+            <p>See <a href="database-configuration.htm">StackHash Database Configuration Tool</a> for detailed instructions if you're 
+            planning to use an existing local or remote install of SQL Server.</p>
+            
+            <p>To help you comply with the WinQual terms and conditions the StackHash Service periodically purges old cab files while retaining 
+            product, event and hit data. The default retention policy for cab files is 180 days. The WinQual site only stores data for 90 days 
+            so over time StackHash will provide a valuable archive of historical crash data that allows you to compare product quality between 
+            releases.</p> 
+            
+            <p>The StackHash Service uses the 
+            <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=9BA199EF-3086-4F12-970D-8745BE104600&displaylang=en" target="_blank">Windows Live Sign-In Assistant</a>
+            to access WinQual. The StackHash installer will prompt you if this component is missing. If you skipped this step synchronization 
+            will fail with a message asking you to install it.</p>
+
+            <h2 id="clienth2">StackHash Client</h2>
+            
+            <p><em>Supported Platforms: Windows XP SP3, Windows Server 2003, Windows Vista, Windows 7, Windows Server 2008.</em></p>
+            
+            <p>When you run the StackHash Client for the first time the <a href="setup.htm">Setup Wizard</a> will guide you through connecting 
+            to the StackHash Service and choosing a <a href="how-to-profiles.htm">Profile</a> to work with. You can change the connection and 
+            profile later using <a href="client-options.htm">Client Options</a> from the <em>Tools</em> menu.</p>
+            
+            <p>StackHash uses Windows authentication to connect to the StackHash Service. In a workgroup environment you have two authentication 
+            options:</p>
+            
+            <ol>
+                <li>Create an account on the computer running the StackHash Service for each computer running the StackHash Client. 
+                The username and password for each account must match exactly.</li>
+
+                <li>Create one account on the computer running the StackHash Service to use for client connections. Enter the account 
+                details in <a href="service-credentials.htm">Service Credentials</a> (on the first page of the 
+                <a href="setup.htm">Setup Wizard</a> or in <a href="client-options.htm">Client Options</a>) on each StackHash Client.</li>
+            </ol>
+
+            <p>If you are attempting to connect via a Firewall or NAT note that the port forwarded to the StackHash Service must not be changed. 
+            For example a mapping of firewall.mycorp.com:9000 to stackhashhost:9000 will work (assuming that you are using the default StackHash 
+            Service port). firewall.mycorp.corp:1234 to stackhashhost:9000 will not work.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

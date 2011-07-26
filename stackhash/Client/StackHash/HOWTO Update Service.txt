@@ -1,0 +1,22 @@
+Updating StackHashService reference:
+
+IMPORTANT NOTE
+==============
+
+! System.ServiceModel configuration for the service must be copied from StackHash app.config to StackHashDBConfig app.config !
+
+
+Disable XML comment warnings
+============================
+
+For XML warnings wrap Reference.cs as follows:
+
+file://R:\StackHash\Client\StackHash\StackHash\Service%20References\StackHashService\Reference.cs
+
+#pragma warning disable 1591
+
+...
+
+#pragma warning restore 1591
+
+

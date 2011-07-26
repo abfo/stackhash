@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.cucku.com/stackhash/2010/02/17" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InternalService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdminContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IProjectsContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ICabContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <msf:Streamed xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ITestContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.cucku.com/stackhash/2010/02/17" location="http://localhost:8000/StackHash?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_IAdminContract" type="i0:IAdminContract">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdminContract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetDebugResult">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveScriptResult">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductSynchronizationState">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetProductSynchronizationData">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RunWinQualLogOn">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunWinQualLogOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProxy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailSettings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetEmailSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetPurgeOptions">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetPurgeOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurgeOptions">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetPurgeOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivePurgeOptions">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActivePurgeOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePurgeOptions">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemovePurgeOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetDataCollectionPolicy">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetDataCollectionPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataCollectionPolicy">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDataCollectionPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDataCollectionPolicy">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActiveDataCollectionPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDataCollectionPolicy">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveDataCollectionPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseData">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetLicenseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetLicense">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RunBugTracker">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunBugTracker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBugTrackerDiagnostics">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetBugTrackerDiagnostics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContextBugTrackerPlugInSettings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetContextBugTrackerPlugInSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetContextBugTrackerPlugInSettings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetContextBugTrackerPlugInSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AbortTask">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetClientTimeout">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetClientTimeout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMappingFile">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/UploadMappingFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusMappings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStatusMappings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetStatusMappings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStatusMappings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterForNotifications">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RegisterForNotifications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Restart">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/Restart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckVersion">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CheckVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TestDatabaseConnection">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/TestDatabaseConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndex">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeleteIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MoveIndex">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/MoveIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CopyIndex">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CopyIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStackHashSettings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStackHashSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceStatus">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetServiceStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetStackHashSettings">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStackHashSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewStackHashContext">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CreateNewStackHashContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStackHashContext">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveStackHashContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateStackHashContext">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/ActivateStackHashContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateStackHashContext">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeactivateStackHashContext" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EnableLogging">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisableLogging">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableLogging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EnableReporting">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableReporting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisableReporting">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableReporting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StartSynchronization">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/StartSynchronization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AbortSynchronization">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortSynchronization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebuggerScriptNames">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebuggerScriptNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddScript">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AddScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveScript">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RenameScript">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RenameScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetScript">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RunScript">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScript" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RunScriptAsync">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptAsync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebugResultFiles">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AdminProgressEvent">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AdminProgressEvent" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IProjectsContract" type="i0:IProjectsContract">
+    <wsp:PolicyReference URI="#NetTcpBinding_IProjectsContract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetProducts">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvents">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventPackage">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductEventPackages">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductEventPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventPackages">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWindowedEventPackages">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetWindowedEventPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCabNotes">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCabNote">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddCabNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCabNote">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteCabNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventNotes">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventNote">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddEventNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEventNote">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteEventNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetEventBugId">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetEventBugId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkFlowStatus">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetWorkFlowStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCab">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DownloadCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductSummary">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RunBugReportTask">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/RunBugReportTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCabPackage">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ICabContract" type="i0:ICabContract">
+    <wsp:PolicyReference URI="#NetTcpBinding_ICabContract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetCabFile">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/ICabContract/GetCabFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ITestContract" type="i0:ITestContract">
+    <wsp:PolicyReference URI="#NetTcpBinding_ITestContract_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateTestIndex">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/ITestContract/CreateTestIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetTestData">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/ITestContract/SetTestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestModeSetting">
+      <soap12:operation soapAction="http://www.cucku.com/stackhash/2010/02/17/ITestContract/GetTestModeSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SenderFaultDetailFault">
+        <soap12:fault use="literal" name="SenderFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ReceiverFaultDetailFault">
+        <soap12:fault use="literal" name="ReceiverFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InternalService">
+    <wsdl:port name="NetTcpBinding_IAdminContract" binding="tns:NetTcpBinding_IAdminContract">
+      <soap12:address location="net.tcp://localhost:9000/StackHash/Admin" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9000/StackHash/Admin</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/KATE-QUAD</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IProjectsContract" binding="tns:NetTcpBinding_IProjectsContract">
+      <soap12:address location="net.tcp://localhost:9000/StackHash/Projects" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9000/StackHash/Projects</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/KATE-QUAD</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ICabContract" binding="tns:NetTcpBinding_ICabContract">
+      <soap12:address location="net.tcp://localhost:9000/StackHash/Cabs" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9000/StackHash/Cabs</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/KATE-QUAD</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ITestContract" binding="tns:NetTcpBinding_ITestContract">
+      <soap12:address location="net.tcp://localhost:9000/StackHash/Test" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9000/StackHash/Test</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/KATE-QUAD</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

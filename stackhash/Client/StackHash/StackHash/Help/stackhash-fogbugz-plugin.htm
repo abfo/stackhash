@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>StackHash FogBugz Plugin - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>StackHash FogBugz Plugin</h1>
+            
+            <p>Adds and updates FogBugz cases.</p>
+
+            <p><strong>API URL</strong>: This is the URL of your FogBogz install with api.xml at the end, i.e. http://mycorp.fogbugz.com/api.xmi 
+            or http://www.mycorp.com/fogbugz/api.xml.</p> 
+
+            <p><strong>Username</strong>: FogBugz username (typically an email address). You can use your own 
+            account or create a FogBugz user specifically for StackHash.</p>
+
+            <p><strong>Password</strong>: Password for the FogBugz account.</p>
+
+            <p><strong>Project</strong>: Project to add cases to. This is optional, if omitted cases will be added to the 
+            default project. We recommend creating a project and area to use specifically for cases added by StackHash. 
+            The project and area are set when the case is created but are not modified by updates so you can safely move 
+            the case within FogBugz if necessary.</p>
+
+            <p><strong>Area</strong>: Area to add cases to. This is optional, if omitted cases will be added to the 
+            default area for the project.</p>
+
+            <p><strong>Only add manually submitted events</strong>: Enter True to only create cases on demand. 
+            To do this, right-click an event and choose <em>Send event to Plugin</em> -> <em>StackHash FogBugz Plugin</em>. 
+            Enter False to automatically add new events during synchronization. Note, once an event has been added new notes, 
+            cabs and script results will be added automatically.</p>
+
+            <p><strong>Hit threshold for automatically adding events</strong>: Prevents events from being automatically 
+            added unless the event has this number of hits. Enter 0 to add all events. Note this setting only applies 
+            to events added during synchronization. Manually submitted events are always added.</p>
+
+            <p>After adding this plugin you may wish to create FogBugz cases for existing events. To do this choose 
+            <em>Synchronize with Plugins</em> from the <em>Tools</em> menu, check Synchronize for StackHash FogBugz 
+            Plugin and click <em>OK</em>.</p>
+
+            <p>The FogBugz plugin sets the Plugin Reference for events. This is included as a column in the 
+            <a href="main-window-event-list.htm">event list</a> (scroll to the far right to find it, note 
+            that you can drag columns to reorder). Only one plugin that sets the Plugin Reference can be active 
+            in each <a href="how-to-profiles.htm">profile</a>.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

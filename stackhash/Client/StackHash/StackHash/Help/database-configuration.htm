@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>StackHash Database Configuration Tool - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>StackHash Database Configuration Tool</h1>
+
+            <p>The Database Configuration Tool configures the cab folder and database used to store WinQual 
+            data for a <a href="how-to-profiles.htm">profile</a>.</p>
+
+            <p>If you don't have a supported database management system (DBMS) available click <em>install SQL Server 2008 R2 Express Edition 
+            with recommended settings</em>. You can move your profile data to an alternative database later 
+            if necessary (see <a href="service-options.htm">Service Options</a>). See <a href="#common">Common Database Configurations</a>
+            below for instructions on different configurations.</p>
+
+            <p><strong>Cab Folder</strong>: Stores downloaded cab (crash dump) files. 
+            Enter a path or click the <em>Browse...</em> button to select or create a folder.</p>
+
+            <p>Note that the cab folder must exist and must be accessible to the StackHash Service. By default the 
+            StackHash Service runs under the NETWORK SERVICE account. This means a folder in your profile 
+            (i.e. C:\Users\...) will not be accessible. We recommend using a folder in the root directory (i.e. C:\StackHash).</p>
+
+            <p>You can optionally decide to create the database files in the cab folder rather than the default 
+            database location. This keeps all of your StackHash data in one folder. The <em>Store database files in cab folder</em> 
+            checkbox is only available when creating a new profile database. Note that UNC paths are not supported when using this option.</p>
+
+            <p>SQL Server does not support storing database files on compressed volumes.</p>
+
+            <p><strong>Database Name</strong>: Name (initial catalog) of the database to create or select.
+            This must start with a letter and can then contain letters, numbers and the underscore character. 
+            The profile name can be no longer than 50 characters. Reserved SQL identifiers like INDEX may not be used as a database name.</p>
+
+            <p><strong>Database Type:</strong>: Select which database to use. StackHash currently supports express, standard and enterprse editions of SQL Server 2005 and 2008. 
+            Click <em>Refresh</em> to update the list of available instances.</p>
+
+            <p><strong>Database Instance</strong>: If you are using a locally installed database select it from this list.
+            If you are connecting to a remote database you must update the connection string manually.</p>
+
+            <p><strong>Connection String</strong>: The connection string will be updated automatically as you 
+            choose a database name, database and instance. If you need to make any modifications to the connection 
+            string do so immediately before clicking <em>OK</em>. Use the <em>Test</em> button to check that the StackHash
+            Service can access the database.</p>
+
+            <h2><a id="common"></a>Common Database Configurations</h2>
+
+            <h3>Recommended Settings</h3>
+
+            <p>For the best possible performance we recommend using a dedicated STACKHASH instance of SQL Server 2008 R2 
+            running on the same computer as the StackHash Service. Use the <em>install SQL Server 2008 R2 Express Edition 
+            with recommended settings</em> link to install a dedicated STACKHASH instance. You may need to reboot after installing.  
+            Once installed, select STACKHASH in the list of available instances for SQL Server 2008.</p>
+
+            <h3>Existing Local SQL Server</h3>
+
+            <p>When creating a database for StackHash on an existing SQL Server instance you should first make sure 
+            that the StackHash Service can access the database. By default the StackHash Service runs under 
+            the NETWORK SERVICE account.</p>
+
+            <p>To provide access for NETWORK SERVICE:</p>
+
+            <ol>
+            <li>Run <a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=56AD557C-03E6-4369-9C1D-E81B33D8026B&amp;displaylang=en" target="_blank">SQL Server Management Studio</a>.</li>
+            <li>Connect to the existing SQL Server Instance.</li>
+            <li>Expand <em>Security</em> and then Logins.</li>
+            <li>If NT AUTHORITY\NETWORK SERVICE is listed right-click it and choose <em>Properties</em>.</li>
+            <li>If NT AUTHORITY\NETWORK SERVICE is not listed right-click <em>Logins</em> and choose <em>Add</em> to add it.</li>
+            <li>On the Login Properties page for NETWORK SERVICE click the <em>Server Roles</em> page and then ensure that <em>sysadmin</em> is checked.</li>
+            </ol>
+
+            <h3>Existing Remote SQL Server</h3>
+
+            <p>The StackHash Database Configuration Tool will not create databases on a remote SQL Server instance.</p>
+
+            <p>To use a remote database:</p>
+
+            <ol>
+            <li>Create a database on the remote SQL Server instance. SQL scripts to create and upgrade the database are installed
+            with StackHash (see C:\Program Files\StackHash\SQL Scripts).</li>
+            <li>Enter the name of the database as <em>Profile/Database Name</em>.</li>
+            <li>Edit the connection string to specify the remote database server, instance, initial catalog (same as <em>Profile/Database Name</em>) 
+            and optionally the username and password if you are not using Windows authentication.</li>
+            </ol>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

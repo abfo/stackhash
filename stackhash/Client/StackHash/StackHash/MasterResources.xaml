@@ -1,0 +1,91 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vcs="clr-namespace:StackHash.ValueConverters">
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="bug.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <vcs:BoolToYesNoConverter x:Key="boolToYesNoConverter" />
+    <vcs:NullHiddenConverter x:Key="nullHiddenConverter" />
+    <vcs:NullVisibleConverter x:Key="nullVisibleConverter" />
+    <vcs:NullCollapsedConverter x:Key="nullCollapsedConverter" />
+    <vcs:NullNotCollapsedConverter x:Key="nullNotCollapsedConverter" />
+    <vcs:DateTimeDisplayConverter x:Key="dateTimeDisplayConverter" />
+    <vcs:IntGeneralDisplayConverter x:Key="intGeneralDisplayConverter" />
+    <vcs:FileSizeDisplayConverter x:Key="fileSizeDisplayConverter" />
+    <vcs:LongHexDisplayConverter x:Key="longHexDisplayConverter" />
+    <vcs:ExceptionMessageConverter x:Key="exceptionMessageConverter" />
+    <vcs:CabCollectionPolicyDisplayConverter x:Key="cabCollectionPolicyDisplayConverter" />
+    <vcs:MoreThanOneConverter x:Key="moreThanOneConverter" />
+    <vcs:EventCollectionPolicyDisplayConverter x:Key="eventCollectionPolicyDisplayConverter" />
+    <vcs:DisplayPolicyDisplayConverter x:Key="displayPolicyDisplayConverter" />
+    <vcs:FalseHalfOpacityConverter x:Key="falseHalfOpacityConverter" />
+    <vcs:ProductListConverter x:Key="productListConverter" />
+    <vcs:EventListConverter x:Key="eventListConverter" />
+    <vcs:EventDetailsConverter x:Key="eventDetailsConverter" />
+    <vcs:CabDetailsConverter x:Key="cabDetailsConverter" />
+    <vcs:BusyCursorConverter x:Key="busyCursorConverter" />
+    <vcs:TrueNotCollapsedConverter x:Key="trueNotCollapsedConverter" />
+    <vcs:TrueVisibleConverter x:Key="trueVisibleConverter" />
+    <vcs:MoreThenOneVisibleConverter x:Key="moreThenOneVisibleConverter" />
+    <vcs:StringNotNullOrEmptyConverter x:Key="stringNotNullOrEmptyConverter" />
+    <vcs:NotNullConverter x:Key="notNullConverter" />
+    <vcs:FirstLineConverter x:Key="firstLineConverter" />
+    <vcs:NotConverter x:Key="notConverter" />
+    <vcs:ServiceErrorCodeToStringConverter x:Key="serviceErrorCodeToStringConverter" />
+    <vcs:StringNotNullOrEmptyVisibleConverter x:Key="stringNotNullOrEmptyVisibleConverter" />
+    <vcs:DumpTypeDisplayConverter x:Key="dumpTypeDisplayConverter" />
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="70" />
+    </Style>
+
+    <Style TargetType="{x:Type GridSplitter}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="NoUnderlineHyperlinkStyle" TargetType="{x:Type Hyperlink}">
+        <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+    </Style>
+
+    <Style x:Key="SelectOnlyTextBox" TargetType="{x:Type TextBox}" >
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="IsUndoEnabled" Value="False" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style x:Key="ToolBarButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+        <Setter Property="Width" Value="22" />
+        <Setter Property="Height" Value="22" />
+    </Style>
+    <Style x:Key="ToolBarButtonStyleNoSize" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" />
+
+    <Style x:Key="ButtonImageStyle" TargetType="{x:Type Image}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}, AncestorLevel=1}, Path=IsEnabled}" Value="False">
+                <Setter Property="Opacity" Value="0.50" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#CCCCCC" Offset="0.01" />
+                    <GradientStop Color="#EEEEEE" Offset="0.02" />
+                    <GradientStop Color="#DDDDDD" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

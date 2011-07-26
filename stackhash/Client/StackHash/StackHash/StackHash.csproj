@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF825E4E-12F0-4544-B74B-8622FDF21446}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StackHash</RootNamespace>
+    <AssemblyName>StackHash</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>StackHash.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>R:\StackHash\Client\StackHash\Debug\StackHash.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>StackHash.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>R:\StackHash\Client\StackHash\StackHash.XML</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>StackHash.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StackHashCabs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BusinessLogic\$(Configuration)\StackHashCabs.dll</HintPath>
+    </Reference>
+    <Reference Include="StackHashSqlSchema, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BusinessLogic\$(Configuration)\StackHashSqlSchema.dll</HintPath>
+    </Reference>
+    <Reference Include="StackHashUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BusinessLogic\$(Configuration)\StackHashUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddPlugin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTestData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="bug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CabDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CollectionPolicyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContextInactive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DateBarChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayPolicyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EventProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainProductList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MasterResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OptionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PieChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PluginDiagnostics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PluginSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductProperties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProfileManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProxySettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProxySettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScheduleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScriptAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScriptManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScriptResultViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SearchBuilder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SelectPlugins.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServiceCredentials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServiceStatusWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetupAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetupCollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetupFinishPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetupProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetupProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetupWelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetupWizard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StackHashMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SummaryControlCab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SummaryControlEventPackage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SummaryControlProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SyncReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpgradeFromXml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorldMapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AddPlugin.xaml.cs">
+      <DependentUpon>AddPlugin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddTestData.xaml.cs">
+      <DependentUpon>AddTestData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionPolicyControl.xaml.cs">
+      <DependentUpon>CollectionPolicyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContextInactive.xaml.cs">
+      <DependentUpon>ContextInactive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DBConfigSettings.cs" />
+    <Compile Include="DisplayCab.cs" />
+    <Compile Include="DisplayCabFile.cs" />
+    <Compile Include="DisplayClientLicenseUsage.cs" />
+    <Compile Include="DisplayCollectionPolicy.cs" />
+    <Compile Include="DisplayContext.cs" />
+    <Compile Include="DisplayEventInfo.cs" />
+    <Compile Include="DisplayEventPackage.cs" />
+    <Compile Include="DisplayMapping.cs" />
+    <Compile Include="DisplayPolicyControl.xaml.cs">
+      <DependentUpon>DisplayPolicyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayProduct.cs" />
+    <Compile Include="DisplayScriptResult.cs" />
+    <Compile Include="EventProperties.xaml.cs">
+      <DependentUpon>EventProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FolderPermissionHelper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminReportException.cs" />
+    <Compile Include="BindingValidator.cs" />
+    <Compile Include="CabDetails.xaml.cs">
+      <DependentUpon>CabDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartDataPoint.cs" />
+    <Compile Include="Cleanup.cs" />
+    <Compile Include="ClientLogic.cs" />
+    <Compile Include="ClientUtils.cs" />
+    <Compile Include="DateBarChartControl.xaml.cs">
+      <DependentUpon>DateBarChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultBrowser.cs" />
+    <Compile Include="EventDetails.xaml.cs">
+      <DependentUpon>EventDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventList.xaml.cs">
+      <DependentUpon>EventList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionMessageHelper.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ListViewSorter.cs" />
+    <Compile Include="MainProductList.xaml.cs">
+      <DependentUpon>MainProductList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Microsoft.Shell\SingleInstance.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NotesControl.xaml.cs">
+      <DependentUpon>NotesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsWindow.xaml.cs">
+      <DependentUpon>OptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PieChartControl.xaml.cs">
+      <DependentUpon>PieChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PluginDiagnostics.xaml.cs">
+      <DependentUpon>PluginDiagnostics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PluginSettings.xaml.cs">
+      <DependentUpon>PluginSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductProperties.xaml.cs">
+      <DependentUpon>ProductProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileAddEdit.xaml.cs">
+      <DependentUpon>ProfileAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileManager.xaml.cs">
+      <DependentUpon>ProfileManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProxySettings.cs" />
+    <Compile Include="ProxySettingsControl.xaml.cs">
+      <DependentUpon>ProxySettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProxySettingsWindow.xaml.cs">
+      <DependentUpon>ProxySettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleControl.xaml.cs">
+      <DependentUpon>ScheduleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptAddEdit.xaml.cs">
+      <DependentUpon>ScriptAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptManager.xaml.cs">
+      <DependentUpon>ScriptManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptResultViewer.xaml.cs">
+      <DependentUpon>ScriptResultViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchBuilder.xaml.cs">
+      <DependentUpon>SearchBuilder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchParseException.cs" />
+    <Compile Include="SearchRequestEventArgs.cs" />
+    <Compile Include="SelectPlugins.xaml.cs">
+      <DependentUpon>SelectPlugins.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\StackHashService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCredentials.xaml.cs">
+      <DependentUpon>ServiceCredentials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProxy.cs" />
+    <Compile Include="ServiceStatusWindow.xaml.cs">
+      <DependentUpon>ServiceStatusWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupAccountPage.xaml.cs">
+      <DependentUpon>SetupAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupBasePage.cs" />
+    <Compile Include="SetupCollectionPage.xaml.cs">
+      <DependentUpon>SetupCollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupFinishPage.xaml.cs">
+      <DependentUpon>SetupFinishPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupProductsPage.xaml.cs">
+      <DependentUpon>SetupProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupProfilePage.xaml.cs">
+      <DependentUpon>SetupProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWelcomePage.xaml.cs">
+      <DependentUpon>SetupWelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWizard.xaml.cs">
+      <DependentUpon>SetupWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SortDirectionAdorner.cs" />
+    <Compile Include="StackHashCommands.cs" />
+    <Compile Include="StackHashHelp.cs" />
+    <Compile Include="StackHashMessageBox.xaml.cs">
+      <DependentUpon>StackHashMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StackHashUri.cs" />
+    <Compile Include="SummaryControlCab.xaml.cs">
+      <DependentUpon>SummaryControlCab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryControlEventPackage.xaml.cs">
+      <DependentUpon>SummaryControlEventPackage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryControlProduct.xaml.cs">
+      <DependentUpon>SummaryControlProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SyncReport.xaml.cs">
+      <DependentUpon>SyncReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateWindow.xaml.cs">
+      <DependentUpon>UpdateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpgradeFromXml.xaml.cs">
+      <DependentUpon>UpgradeFromXml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValueConverters\BoolToYesNoConverter.cs" />
+    <Compile Include="ValueConverters\BusyCursorConverter.cs" />
+    <Compile Include="ValueConverters\CabCollectionPolicyDisplayConverter.cs" />
+    <Compile Include="ValueConverters\CabDetailsConverter.cs" />
+    <Compile Include="ValueConverters\DateTimeDisplayConverter.cs" />
+    <Compile Include="ValueConverters\DisplayPolicyDisplayConverter.cs" />
+    <Compile Include="ValueConverters\DumpTypeDisplayConverter.cs" />
+    <Compile Include="ValueConverters\EventCollectionPolicyDisplayConverter.cs" />
+    <Compile Include="ValueConverters\EventDetailsConverter.cs" />
+    <Compile Include="ValueConverters\EventListConverter.cs" />
+    <Compile Include="ValueConverters\ExceptionMessageConverter.cs" />
+    <Compile Include="ValueConverters\FalseHalfOpacityConverter.cs" />
+    <Compile Include="ValueConverters\FileSizeDisplayConverter.cs" />
+    <Compile Include="ValueConverters\FirstLineConverter.cs" />
+    <Compile Include="ValueConverters\IntGeneralDisplayConverter.cs" />
+    <Compile Include="ValueConverters\LongHexDisplayConverter.cs" />
+    <Compile Include="ValueConverters\MoreThanOneConverter.cs" />
+    <Compile Include="ValueConverters\MoreThenOneVisibleConverter.cs" />
+    <Compile Include="ValueConverters\NotConverter.cs" />
+    <Compile Include="ValueConverters\NotNullConverter.cs" />
+    <Compile Include="UserSettings.cs" />
+    <Compile Include="ValueConverters\NullCollapsedConverter.cs" />
+    <Compile Include="ValueConverters\NullHiddenConverter.cs" />
+    <Compile Include="ValueConverters\NullNotCollapsedConverter.cs" />
+    <Compile Include="ValueConverters\NullVisibleConverter.cs" />
+    <Compile Include="ValueConverters\ProductListConverter.cs" />
+    <Compile Include="ValueConverters\ProductToNameVersionConverter.cs" />
+    <Compile Include="ValueConverters\ServiceErrorCodeToStringConverter.cs" />
+    <Compile Include="ValueConverters\StringListDisplayConverter.cs" />
+    <Compile Include="ValueConverters\StringNotNullOrEmptyConverter.cs" />
+    <Compile Include="ValueConverters\StringNotNullOrEmptyVisibleConverter.cs" />
+    <Compile Include="ValueConverters\TrueNotCollapsedConverter.cs" />
+    <Compile Include="ValueConverters\TrueVisibleConverter.cs" />
+    <Compile Include="WorldMapControl.xaml.cs">
+      <DependentUpon>WorldMapControl.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Help\help.hhp" />
+    <None Include="Help\toc.hhc" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.AbortTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.CheckVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.CopyIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DeleteCabNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DeleteEventNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DisableReportingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DownloadCabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.EnableReportingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetActiveDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetActivePurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetBugTrackerPlugInDiagnosticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetCabPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetContextBugTrackerPlugInSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetLicenseDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetProductRollupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetPurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetStatusMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetTestModeSettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetWindowedEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RemoveDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RemovePurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RunBugReportTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RunBugTrackerTaskResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RunWinQualLogOnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetClientTimeoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetContextBugTrackerPlugInSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetDataCollectionPolicyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetEmailSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetEventBugIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetEventWorkFlowStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetProductSynchronizationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetProxyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetPurgeOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetStatusMappingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.TestDatabaseConnectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.UploadMappingFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.wsdl" />
+    <AppDesigner Include="Properties\" />
+    <None Include="StackHash.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StackHash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FipsMap.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StackHashService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StackHashService\InternalService.wsdl" />
+    <None Include="Service References\StackHashService\StackHash.disco" />
+    <None Include="Service References\StackHashService\StackHash.xsd" />
+    <None Include="Service References\StackHashService\StackHash1.xsd" />
+    <None Include="Service References\StackHashService\StackHash2.xsd" />
+    <None Include="Service References\StackHashService\StackHash3.xsd" />
+    <None Include="Service References\StackHashService\StackHash4.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StackHashService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StackHashService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StackHashService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.AbortSynchronizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.ActivateStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.AddCabNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.AddDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.AddEventNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.CreateNewStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DeactivateStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetAllEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetCabNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetDebuggerScriptNamesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetDebugResultFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetDebugResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetEventNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetEventsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetProductEventPackageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetStackHashPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RemoveDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RemoveStackHashContextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RenameDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RunDebuggerScriptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetStackHashPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.StartSynchronizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.CreateTestIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DeleteIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.DisableLoggingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.EnableLoggingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.GetStackHashServiceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.MoveIndexResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RemoveScriptResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RestartResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.RunDebuggerScriptAsyncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetProductSynchronizationStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StackHashService\StackHash.StackHashService.SetTestDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\index.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\help.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\client-options-service-connection.htm" />
+    <None Include="Help\client-options.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\client-options-debuggers.htm" />
+    <None Include="Help\client-options-proxy-server.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\client-help.htm" />
+    <None Include="Help\service-status.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\script-add-edit.htm" />
+    <None Include="Help\script-manager.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\add-edit-profile-database.htm" />
+    <Content Include="Help\add-edit-profile-notifications.htm" />
+    <Content Include="Help\add-edit-profile-plugins.htm" />
+    <Content Include="Help\add-edit-profile-statuses.htm" />
+    <Content Include="Help\add-plugin.htm" />
+    <Content Include="Help\client-options-advanced.htm" />
+    <Content Include="Help\database-configuration.htm" />
+    <Resource Include="Help\first.png" />
+    <Resource Include="Help\last.png" />
+    <Resource Include="Help\next.png" />
+    <Resource Include="Help\prev.png" />
+    <Content Include="Help\how-to-cdb-from-service.htm" />
+    <Content Include="Help\how-to-plugins.htm" />
+    <Content Include="Help\how-to-stackhash-urls.htm" />
+    <Content Include="Help\plugin-diagnostics.htm" />
+    <Content Include="Help\plugin-settings.htm" />
+    <Content Include="Help\select-plugins.htm" />
+    <Content Include="Help\service-credentials.htm" />
+    <Content Include="Help\service-options-advanced.htm" />
+    <Content Include="Help\setup-profile.htm" />
+    <Content Include="Help\stackhash-command-line-plugin.htm" />
+    <Content Include="Help\stackhash-email-plugin.htm" />
+    <Content Include="Help\stackhash-fogbugz-plugin.htm" />
+    <Content Include="Help\upgrade-profile.htm" />
+    <Resource Include="Help\add-criteria.png" />
+    <Resource Include="Help\add-field.png" />
+    <Resource Include="Help\back.png" />
+    <Resource Include="Help\clear-search.png" />
+    <Content Include="Help\client-options-display-filter.htm" />
+    <Resource Include="Help\client-options.png" />
+    <Resource Include="Help\copy.png" />
+    <Resource Include="Help\cut.png" />
+    <Resource Include="Help\debug.png" />
+    <Content Include="Help\event-properties-collection.htm" />
+    <Content Include="Help\event-properties-signature.htm" />
+    <Content Include="Help\event-properties.htm" />
+    <Resource Include="Help\export.png" />
+    <Resource Include="Help\extract-cab.png" />
+    <Resource Include="Help\facebook.png" />
+    <Resource Include="Help\feed.png" />
+    <Resource Include="Help\help.png" />
+    <Resource Include="Help\home.png" />
+    <Resource Include="Help\paste.png" />
+    <Content Include="Help\product-properties-collection.htm" />
+    <Content Include="Help\product-properties-display-filter.htm" />
+    <Content Include="Help\product-properties.htm" />
+    <Resource Include="Help\remove-criteria.png" />
+    <Resource Include="Help\remove-field.png" />
+    <Resource Include="Help\resync.png" />
+    <Resource Include="Help\run-script.png" />
+    <Resource Include="Help\script-manager.png" />
+    <Resource Include="Help\search-builder.png" />
+    <Resource Include="Help\search.png" />
+    <Resource Include="Help\service-options.png" />
+    <Resource Include="Help\service-status.png" />
+    <Content Include="Help\setup-collection.htm" />
+    <Content Include="Help\synchronization-report.htm" />
+    <Resource Include="Help\synchronize.png" />
+    <Resource Include="Help\twitter.png" />
+    <Resource Include="Help\update.png" />
+    <Resource Include="Help\stackhash_16.png" />
+    <Resource Include="Help\uservoice.png" />
+    <Resource Include="Help\warning32.png" />
+    <None Include="Help\setup-more.htm" />
+    <None Include="Help\setup-products.htm" />
+    <None Include="Help\setup-welcome.htm" />
+    <None Include="Help\setup-winqual.htm" />
+    <None Include="Help\setup.htm" />
+    <None Include="Help\add-edit-profile-advanced.htm" />
+    <None Include="Help\add-edit-profile-debugger.htm" />
+    <None Include="Help\add-edit-profile-purge.htm" />
+    <None Include="Help\add-edit-profile-sync.htm" />
+    <None Include="Help\add-edit-profile-winqual.htm" />
+    <None Include="Help\add-edit-profile.htm" />
+    <None Include="Help\proxy-server.htm" />
+    <None Include="Help\main-window-cab-details.htm" />
+    <None Include="Help\main-window-event-details.htm" />
+    <None Include="Help\main-window-event-list.htm" />
+    <None Include="Help\main-window-product-list.htm" />
+    <None Include="Help\main-window.htm" />
+    <Resource Include="Help\error32.png" />
+    <Resource Include="Help\information32.png" />
+    <Resource Include="Help\question32.png" />
+    <None Include="Help\how-to-getting-started.htm" />
+    <None Include="Help\how-to-profiles.htm" />
+    <None Include="Help\how-to-scripting.htm" />
+    <None Include="Help\how-to.htm" />
+    <Content Include="Help\add-edit-profile-collection.htm" />
+    <Content Include="Help\search-builder.htm" />
+    <None Include="Help\service-options-profiles.htm" />
+    <None Include="Help\service-options-proxy-server.htm" />
+    <None Include="Help\service-options-troubleshooting.htm" />
+    <None Include="Help\service-options.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"R:\3rdparty\HTML Help Workshop\hhc.exe"  $(ProjectDir)\Help\help.hhp
+copy /y $(ProjectDir)\Help\help.chm  $(ProjectDir)\$(OutDir)\$(TargetName).chm</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

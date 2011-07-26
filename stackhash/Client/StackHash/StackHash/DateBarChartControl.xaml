@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="StackHash.DateBarChartControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderThickness="0.5" BorderBrush="Black" Margin="6">
+        <Viewbox MaxWidth="400" MaxHeight="300" Stretch="Uniform">
+            <Grid Width="400" Height="300" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="columnYAxis" Width="0" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2" Margin="3" VerticalAlignment="Center" HorizontalAlignment="Center" Name="textTitle" />
+                <Grid Grid.Row="1" Margin="3,3,0,3">
+                    <Canvas Name="canvasYAxis" />
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" Margin="1,3,3,3" Name="gridChart" SizeChanged="gridChart_SizeChanged">
+                    <Canvas Name="canvasChart" />
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Margin="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Margin="0,0,3,0" Name="textBlockBack" FontWeight="Bold"><Hyperlink Name="linkBack" Click="linkBack_Click" PreviewMouseDown="linkBack_PreviewMouseDown" PreviewMouseUp="linkBack_PreviewMouseUp" ToolTip="Show earlier hits" Style="{StaticResource NoUnderlineHyperlinkStyle}">&lt;</Hyperlink></TextBlock>
+            
+                    <TextBlock Grid.Column="1" Name="textDateStart" />
+
+                    <TextBlock Grid.Column="2" Name="textBlockScale" HorizontalAlignment="Center"><Hyperlink Name="linkScale" Click="linkScale_Click" ToolTip="Click to toggle the scale of the chart"><TextBlock Name="textBlockScaleContent" /></Hyperlink></TextBlock>
+            
+                    <TextBlock Grid.Column="3" HorizontalAlignment="Right" Name="textDateEnd" />
+
+                    <TextBlock Margin="3,0,0,0" Grid.Column="4" Name="textBlockNext" FontWeight="Bold"><Hyperlink Name="linkNext" Click="linkNext_Click" PreviewMouseDown="linkNext_PreviewMouseDown" PreviewMouseUp="linkNext_PreviewMouseUp" ToolTip="Show later hits" Style="{StaticResource NoUnderlineHyperlinkStyle}">&gt;</Hyperlink></TextBlock>
+            
+                </Grid>
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

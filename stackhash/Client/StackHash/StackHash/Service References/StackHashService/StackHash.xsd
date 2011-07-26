@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.cucku.com/stackhash/2010/02/17" elementFormDefault="qualified" targetNamespace="http://www.cucku.com/stackhash/2010/02/17" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd2" namespace="http://schemas.cucku.com/stackhash/2010/02/17" />
+  <xs:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="GetDebugResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q1:GetDebugResultRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebugResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetDebugResultResult" nillable="true" type="q2:GetDebugResultResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScriptResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q3:RemoveScriptResultRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScriptResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RemoveScriptResultResult" nillable="true" type="q4:RemoveScriptResultResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProductSynchronizationState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q5:SetProductSynchronizationStateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProductSynchronizationStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetProductSynchronizationStateResult" nillable="true" type="q6:SetProductSynchronizationStateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProductSynchronizationData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q7:SetProductSynchronizationDataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProductSynchronizationDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetProductSynchronizationDataResult" nillable="true" type="q8:SetProductSynchronizationDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunWinQualLogOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q9:RunWinQualLogOnRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunWinQualLogOnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RunWinQualLogOnResult" nillable="true" type="q10:RunWinQualLogOnResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProxy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q11:SetProxyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProxyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetProxyResult" nillable="true" type="q12:SetProxyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEmailSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q13:SetEmailSettingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEmailSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetEmailSettingsResult" nillable="true" type="q14:SetEmailSettingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPurgeOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q15:SetPurgeOptionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPurgeOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetPurgeOptionsResult" nillable="true" type="q16:SetPurgeOptionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurgeOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q17:GetPurgeOptionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPurgeOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetPurgeOptionsResult" nillable="true" type="q18:GetPurgeOptionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePurgeOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q19:GetActivePurgeOptionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePurgeOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetActivePurgeOptionsResult" nillable="true" type="q20:GetActivePurgeOptionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePurgeOptions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q21:RemovePurgeOptionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemovePurgeOptionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RemovePurgeOptionsResult" nillable="true" type="q22:RemovePurgeOptionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDataCollectionPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q23:SetDataCollectionPolicyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDataCollectionPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetDataCollectionPolicyResult" nillable="true" type="q24:SetDataCollectionPolicyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCollectionPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q25:GetDataCollectionPolicyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataCollectionPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetDataCollectionPolicyResult" nillable="true" type="q26:GetDataCollectionPolicyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveDataCollectionPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q27:GetActiveDataCollectionPolicyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveDataCollectionPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetActiveDataCollectionPolicyResult" nillable="true" type="q28:GetActiveDataCollectionPolicyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDataCollectionPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q29:RemoveDataCollectionPolicyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDataCollectionPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RemoveDataCollectionPolicyResult" nillable="true" type="q30:RemoveDataCollectionPolicyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q31:GetLicenseDataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetLicenseDataResult" nillable="true" type="q32:GetLicenseDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLicense">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q33:SetLicenseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLicenseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetLicenseResult" nillable="true" type="q34:SetLicenseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunBugTracker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q35:RunBugTrackerTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunBugTrackerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RunBugTrackerResult" nillable="true" type="q36:RunBugTrackerTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBugTrackerDiagnostics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q37:GetBugTrackerPlugInDiagnosticsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBugTrackerDiagnosticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetBugTrackerDiagnosticsResult" nillable="true" type="q38:GetBugTrackerPlugInDiagnosticsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContextBugTrackerPlugInSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q39:GetContextBugTrackerPlugInSettingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContextBugTrackerPlugInSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetContextBugTrackerPlugInSettingsResult" nillable="true" type="q40:GetContextBugTrackerPlugInSettingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContextBugTrackerPlugInSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q41:SetContextBugTrackerPlugInSettingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetContextBugTrackerPlugInSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetContextBugTrackerPlugInSettingsResult" nillable="true" type="q42:SetContextBugTrackerPlugInSettingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbortTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q43:AbortTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbortTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="AbortTaskResult" nillable="true" type="q44:AbortTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientTimeout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q45:SetClientTimeoutRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientTimeoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetClientTimeoutResult" nillable="true" type="q46:SetClientTimeoutResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMappingFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q47:UploadMappingFileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMappingFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="UploadMappingFileResult" nillable="true" type="q48:UploadMappingFileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusMappings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q49:GetStatusMappingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusMappingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetStatusMappingsResult" nillable="true" type="q50:GetStatusMappingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusMappings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q51:SetStatusMappingsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusMappingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetStatusMappingsResult" nillable="true" type="q52:SetStatusMappingsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterForNotifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q53:RegisterRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Restart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q54:RestartRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RestartResult" nillable="true" type="q55:RestartResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q56:CheckVersionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="CheckVersionResult" nillable="true" type="q57:CheckVersionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestDatabaseConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q58:TestDatabaseConnectionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestDatabaseConnectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="TestDatabaseConnectionResult" nillable="true" type="q59:TestDatabaseConnectionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q60:DeleteIndexRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DeleteIndexResult" nillable="true" type="q61:DeleteIndexResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q62:MoveIndexRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="MoveIndexResult" nillable="true" type="q63:MoveIndexResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q64:CopyIndexRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="CopyIndexResult" nillable="true" type="q65:CopyIndexResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStackHashSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q66:GetStackHashPropertiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStackHashSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetStackHashSettingsResult" nillable="true" type="q67:GetStackHashPropertiesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q68:GetStackHashServiceStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetServiceStatusResult" nillable="true" type="q69:GetStackHashServiceStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStackHashSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q70:SetStackHashPropertiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStackHashSettingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetStackHashSettingsResult" nillable="true" type="q71:SetStackHashPropertiesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewStackHashContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q72:CreateNewStackHashContextRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewStackHashContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="CreateNewStackHashContextResult" nillable="true" type="q73:CreateNewStackHashContextResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveStackHashContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q74:RemoveStackHashContextRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveStackHashContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RemoveStackHashContextResult" nillable="true" type="q75:RemoveStackHashContextResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateStackHashContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q76:ActivateStackHashContextRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateStackHashContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="ActivateStackHashContextResult" nillable="true" type="q77:ActivateStackHashContextResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateStackHashContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q78:DeactivateStackHashContextRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateStackHashContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DeactivateStackHashContextResult" nillable="true" type="q79:DeactivateStackHashContextResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableLogging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q80:EnableLoggingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableLoggingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="EnableLoggingResult" nillable="true" type="q81:EnableLoggingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableLogging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q82:DisableLoggingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableLoggingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DisableLoggingResult" nillable="true" type="q83:DisableLoggingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q84:EnableReportingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableReportingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="EnableReportingResult" nillable="true" type="q85:EnableReportingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q86:DisableReportingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableReportingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DisableReportingResult" nillable="true" type="q87:DisableReportingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartSynchronization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q88:StartSynchronizationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartSynchronizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="StartSynchronizationResult" nillable="true" type="q89:StartSynchronizationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbortSynchronization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q90:AbortSynchronizationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbortSynchronizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="AbortSynchronizationResult" nillable="true" type="q91:AbortSynchronizationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebuggerScriptNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q92:GetDebuggerScriptNamesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebuggerScriptNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetDebuggerScriptNamesResult" nillable="true" type="q93:GetDebuggerScriptNamesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScript">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q94:AddDebuggerScriptRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddScriptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="AddScriptResult" nillable="true" type="q95:AddDebuggerScriptResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScript">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q96:RemoveDebuggerScriptRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveScriptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RemoveScriptResult" nillable="true" type="q97:RemoveDebuggerScriptResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameScript">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q98:RenameDebuggerScriptRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameScriptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RenameScriptResult" nillable="true" type="q99:RenameDebuggerScriptResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScript">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q100:GetDebuggerScriptRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScriptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetScriptResult" nillable="true" type="q101:GetDebuggerScriptResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunScript">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q102:RunDebuggerScriptRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunScriptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RunScriptResult" nillable="true" type="q103:RunDebuggerScriptResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunScriptAsync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q104:RunDebuggerScriptAsyncRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunScriptAsyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RunScriptAsyncResult" nillable="true" type="q105:RunDebuggerScriptAsyncResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebugResultFiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q106:GetDebugResultFilesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebugResultFilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetDebugResultFilesResult" nillable="true" type="q107:GetDebugResultFilesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminProgressEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="adminReport" nillable="true" type="q108:StackHashAdminReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q109:GetProductsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetProductsResult" nillable="true" type="q110:GetProductsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q111:GetFilesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetFilesResult" nillable="true" type="q112:GetFilesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q113:GetEventsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetEventsResult" nillable="true" type="q114:GetEventsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q115:GetEventPackageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventPackageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetEventPackageResult" nillable="true" type="q116:GetEventPackageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductEventPackages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q117:GetProductEventPackageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductEventPackagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetProductEventPackagesResult" nillable="true" type="q118:GetProductEventPackageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventPackages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q119:GetAllEventPackageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventPackagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetEventPackagesResult" nillable="true" type="q120:GetAllEventPackageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWindowedEventPackages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q121:GetWindowedEventPackageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWindowedEventPackagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetWindowedEventPackagesResult" nillable="true" type="q122:GetWindowedEventPackageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q123:GetCabNotesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetCabNotesResult" nillable="true" type="q124:GetCabNotesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCabNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q125:AddCabNoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCabNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="AddCabNoteResult" nillable="true" type="q126:AddCabNoteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCabNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q127:DeleteCabNoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCabNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DeleteCabNoteResult" nillable="true" type="q128:DeleteCabNoteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q129:GetEventNotesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetEventNotesResult" nillable="true" type="q130:GetEventNotesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEventNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q131:AddEventNoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEventNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="AddEventNoteResult" nillable="true" type="q132:AddEventNoteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEventNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q133:DeleteEventNoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEventNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DeleteEventNoteResult" nillable="true" type="q134:DeleteEventNoteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEventBugId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q135:SetEventBugIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetEventBugIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetEventBugIdResult" nillable="true" type="q136:SetEventBugIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkFlowStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q137:SetEventWorkFlowStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkFlowStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetWorkFlowStatusResult" nillable="true" type="q138:SetEventWorkFlowStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadCab">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q139:DownloadCabRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadCabResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="DownloadCabResult" nillable="true" type="q140:DownloadCabResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q141:GetProductRollupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetProductSummaryResult" nillable="true" type="q142:GetProductRollupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunBugReportTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q143:RunBugReportTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunBugReportTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="RunBugReportTaskResult" nillable="true" type="q144:RunBugReportTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabPackage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q145:GetCabPackageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabPackageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetCabPackageResult" nillable="true" type="q146:GetCabPackageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q147:GetCabFileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCabFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.microsoft.com/Message" name="GetCabFileResult" type="q148:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTestIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q149:CreateTestIndexRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTestIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="CreateTestIndexResult" nillable="true" type="q150:CreateTestIndexResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTestData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q151:SetTestDataRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTestDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="SetTestDataResult" nillable="true" type="q152:SetTestDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestModeSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="requestData" nillable="true" type="q153:GetTestModeSettingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestModeSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.cucku.com/stackhash/2010/02/17" minOccurs="0" name="GetTestModeSettingResult" nillable="true" type="q154:GetTestModeSettingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="StackHash.SetupWizard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Setup StackHash" Height="475" MinHeight="475" Width="675" MinWidth="675" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Icon="/StackHash;component/StackHash.ico" Closed="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Help" x:Name="commandBindingHelp" Executed="commandBindingHelp_Executed" />
+    </Window.CommandBindings>
+    <Grid Name="gridWizard">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Canvas Margin="10" Width="100" Height="100" Background="{StaticResource BugDrawingBrush}" VerticalAlignment="Top" />
+        
+        <Rectangle Margin="10" Grid.Column="1" Fill="#CCCCCC" Stroke="#CCCCCC" Width="1" />
+
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource ButtonBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button Margin="10" Command="Help">_Help</Button>
+
+                <StackPanel Margin="7" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Margin="3" IsEnabled="{Binding BackEnabled}" Name="buttonBack" Click="buttonBack_Click">&lt; _Back</Button>
+                    <Button Margin="3" IsEnabled="{Binding NextEnabled}" IsDefault="True" Content="{Binding NextText}" Name="buttonNext" Click="buttonNext_Click" />
+                    <Button Margin="10,3,3,3" IsCancel="True">_Cancel</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

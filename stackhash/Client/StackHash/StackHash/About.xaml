@@ -1,0 +1,71 @@
+﻿<Window x:Class="StackHash.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About StackHash" Height="500" MinHeight="500" Width="600" MinWidth="600" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Icon="/StackHash;component/StackHash.ico" Closed="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Viewbox Margin="10" VerticalAlignment="Top">
+            <Canvas Width="100" Height="100" Background="{StaticResource BugDrawingBrush}" />
+        </Viewbox>
+        <DockPanel Grid.Column="1" Margin="7">
+            <TextBlock Margin="3" DockPanel.Dock="Top" FontSize="14px" FontWeight="Bold">StackHash</TextBlock>
+            <TextBlock Margin="3" DockPanel.Dock="Top">Version <TextBlock Text="{Binding Version}" /></TextBlock>
+            <TextBlock Margin="3,0,3,3" DockPanel.Dock="Top" TextWrapping="Wrap">© Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</TextBlock>
+            <RichTextBox Margin="3,10,3,3" IsReadOnly="True" Name="textBoxLicenses" VerticalScrollBarVisibility="Auto" FontSize="10px" BorderBrush="#CCC" Background="#EEE" IsDocumentEnabled="True">
+                <FlowDocument>
+                    <Paragraph FontWeight="Bold">
+                        Except for the third party components listed below StackHash is licensed under the
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://opensource.org/licenses/MS-RL" ToolTip="http://opensource.org/licenses/MS-RL">Microsoft Reciprocal License (MS-RL)</Hyperlink>.
+                    </Paragraph>
+                    <Paragraph>
+                        StackHash uses the following third party components:
+                    </Paragraph>
+                    <Paragraph>
+                        WER Services
+                        (<Hyperlink Click="Hyperlink_Click" NavigateUri="http://wer.codeplex.com/" ToolTip="http://wer.codeplex.com/">Microsoft.WindowsErrorReporting.Services.Data.API.dll</Hyperlink>) 
+                        licensed under the
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://wer.codeplex.com/license" ToolTip="http://wer.codeplex.com/license">Microsoft Public License (Ms-Pl)</Hyperlink>.
+                    </Paragraph>
+                    <Paragraph>
+                        The
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=5c068e9f-ebfe-48a5-8b2f-0ad6ab454ad4" ToolTip="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=5c068e9f-ebfe-48a5-8b2f-0ad6ab454ad4">Psscor2</Hyperlink>
+                        and
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=a06a0fea-a4d4-434e-a527-d6afa2e552dd" ToolTip="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=a06a0fea-a4d4-434e-a527-d6afa2e552dd">Psscor4</Hyperlink>
+                        managed code debugging extensions.
+                    </Paragraph>
+                    <Paragraph>
+                        Cabinet File (*.CAB) Compression and Extraction 
+                        (<Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.codeproject.com/KB/files/CABCompressExtract.aspx" ToolTip="http://www.codeproject.com/KB/files/CABCompressExtract.aspx">CabLib.dll</Hyperlink>) 
+                        licensed under 
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.codeproject.com/info/cpol10.aspx" ToolTip="http://www.codeproject.com/info/cpol10.aspx">The Code Project Open License (CPOL) 1.02</Hyperlink>.
+                    </Paragraph>
+                    <Paragraph>
+                        Main product icons and art included by kind permission of
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.luckyicon.com/" ToolTip="http://www.luckyicon.com/">LuckyIcon</Hyperlink>.
+                        Additional icons are included from the 
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.famfamfam.com/lab/icons/silk/" ToolTip="http://www.famfamfam.com/lab/icons/silk/">Silk</Hyperlink> 
+                        icon set by
+                        <Hyperlink Click="Hyperlink_Click" NavigateUri="http://www.famfamfam.com/about/" ToolTip="http://www.famfamfam.com/about/">Mark James</Hyperlink>.
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </DockPanel>
+        <Border Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource ButtonBorder}">
+            <Button Margin="10" HorizontalAlignment="Right" IsDefault="True" Click="Button_Click">Close</Button>
+        </Border>
+    </Grid>
+</Window>
