@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09313472-B44F-418C-BE5D-63D3033C2AA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StackHashTasks</RootNamespace>
+    <AssemblyName>StackHashTasks</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <CodeAnalysisRuleSet>Migrated rules for StackHashTasks.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <CodeAnalysisRuleSet>Migrated rules for StackHashTasks.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StackHashBugTrackerInterfaceV1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Plugins\BugTrackerInterfaceV1\$(Configuration)\StackHashBugTrackerInterfaceV1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzeTask.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="AutoScript.cs" />
+    <Compile Include="AutoScriptBase.cs" />
+    <Compile Include="BugReportTask.cs" />
+    <Compile Include="BugTrackerManager.cs" />
+    <Compile Include="BugTrackerTask.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="ControllerContext.cs" />
+    <Compile Include="DebugScriptTask.cs" />
+    <Compile Include="DownloadCabTask.cs" />
+    <Compile Include="ErrorIndexCopyTask.cs" />
+    <Compile Include="ErrorIndexMoveTask.cs" />
+    <Compile Include="GetOSVersionScript.cs" />
+    <Compile Include="LicenseManager.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="MailManager.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PurgeTask.cs" />
+    <Compile Include="PurgeTimerTask.cs" />
+    <Compile Include="Reporter.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptManager.cs" />
+    <Compile Include="ScriptResultsManager.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="UploadFileTask.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TaskManager.cs" />
+    <Compile Include="TaskParameters.cs" />
+    <Compile Include="TestManager.cs" />
+    <Compile Include="WinQualLogOnTask.cs" />
+    <Compile Include="WinQualSyncTask.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinQualSyncTimerTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\StackHashBusinessObjects.csproj">
+      <Project>{DC4AA917-DE62-4273-B878-8DD646BB7E14}</Project>
+      <Name>StackHashBusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CabIndex\StackHashErrorIndex.csproj">
+      <Project>{1069DA08-00BD-41F5-BA98-57FA4430A0C5}</Project>
+      <Name>StackHashErrorIndex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashCabs\StackHashCabs.csproj">
+      <Project>{CC7E858D-4014-4201-8E64-CC2BEACD8C98}</Project>
+      <Name>StackHashCabs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashDebug\StackHashDebug.csproj">
+      <Project>{9C6330C4-210C-416B-9332-5E9E12B999B4}</Project>
+      <Name>StackHashDebug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashSqlSchema\StackHashSqlControl.csproj">
+      <Project>{9CC34CFF-4590-4879-94E9-ADB2E76E25F1}</Project>
+      <Name>StackHashSqlControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashUtilities\StackHashUtilities.csproj">
+      <Project>{78253FB5-BACA-44FC-B4F5-FA350918DE97}</Project>
+      <Name>StackHashUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinQual\StackHashWinQual.csproj">
+      <Project>{D9F9CA48-60C9-42BE-8658-2943F2A3BE9F}</Project>
+      <Name>StackHashWinQual</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml">
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Migrated rules for StackHashTasks.ruleset" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultScripts\SHManagedAnalysis.xml" />
+    <Content Include="DefaultScripts\SHUnmanagedAnalysis.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F4E6018-CBC8-44AF-AAFF-7DD2F32C3263}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TasksUnitTests</RootNamespace>
+    <AssemblyName>TasksUnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>Migrated rules for StackHashTasksUnitTests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisRuleSet>Migrated rules for StackHashTasksUnitTests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="StackHashBugTrackerInterfaceV1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Plugins\BugTrackerInterfaceV1\$(Configuration)\StackHashBugTrackerInterfaceV1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzeTaskUnitTests.cs" />
+    <Compile Include="AutoScriptUnitTests.cs" />
+    <Compile Include="BugReportTaskUnitTests.cs" />
+    <Compile Include="BugTrackerManagerUnitTest.cs" />
+    <Compile Include="BugTrackerTaskUnitTests.cs" />
+    <Compile Include="ContextWinQualSyncUniTests.cs" />
+    <Compile Include="ControllerContextUnitTests.cs" />
+    <Compile Include="ControllerUnitTests.cs" />
+    <Compile Include="CopyIndexTaskUnitTests.cs" />
+    <Compile Include="Credentials.cs" />
+    <Compile Include="DebugScriptTaskTests.cs" />
+    <Compile Include="DownloadCabUnitTests.cs" />
+    <Compile Include="DummyController.cs" />
+    <Compile Include="DummyControllerContext.cs" />
+    <Compile Include="DummyTask.cs" />
+    <Compile Include="GetEventsUnitTests.cs" />
+    <Compile Include="LogFileUnitTests.cs" />
+    <Compile Include="MoveIndexUnitTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PurgeTimerTaskUnitTests.cs" />
+    <Compile Include="PurgeUnitTests.cs" />
+    <Compile Include="ScriptResultsManagerUnitTests.cs" />
+    <Compile Include="Service References\StackHashWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsManagerUnitTests.cs" />
+    <Compile Include="SqlUtils.cs" />
+    <Compile Include="TaskManagerUnitTests.cs" />
+    <Compile Include="TaskUnitTests.cs" />
+    <Compile Include="WinQualSyncTimerTaskUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+    <None Include="Service References\StackHashWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StackHashWebService\configuration.svcinfo" />
+    <None Include="Service References\StackHashWebService\configuration91.svcinfo" />
+    <None Include="Service References\StackHashWebService\StackHashService.disco" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\StackHashWebService\StackHashService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\StackHashBusinessObjects.csproj">
+      <Project>{DC4AA917-DE62-4273-B878-8DD646BB7E14}</Project>
+      <Name>StackHashBusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CabIndex\StackHashErrorIndex.csproj">
+      <Project>{1069DA08-00BD-41F5-BA98-57FA4430A0C5}</Project>
+      <Name>StackHashErrorIndex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashDebug\StackHashDebug.csproj">
+      <Project>{9C6330C4-210C-416B-9332-5E9E12B999B4}</Project>
+      <Name>StackHashDebug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashTestBugTrackerPlugin\StackHashTestBugTrackerPlugin.csproj">
+      <Project>{6FF9564A-ADDD-45B1-825D-203B180C63A6}</Project>
+      <Name>StackHashTestBugTrackerPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StackHashUtilities\StackHashUtilities.csproj">
+      <Project>{78253FB5-BACA-44FC-B4F5-FA350918DE97}</Project>
+      <Name>StackHashUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tasks\StackHashTasks.csproj">
+      <Project>{09313472-B44F-418C-BE5D-63D3033C2AA4}</Project>
+      <Name>StackHashTasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinQualAtomFeed\WinQualAtomFeed.csproj">
+      <Project>{B8E71437-9ECC-450B-9A01-1C8DF9FAC6C4}</Project>
+      <Name>WinQualAtomFeed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinQual\StackHashWinQual.csproj">
+      <Project>{D9F9CA48-60C9-42BE-8658-2943F2A3BE9F}</Project>
+      <Name>StackHashWinQual</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrated rules for StackHashTasksUnitTests.ruleset" />
+    <None Include="runtests.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StackHashWebService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

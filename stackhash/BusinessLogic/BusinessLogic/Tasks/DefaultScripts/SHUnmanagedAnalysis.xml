@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<StackHashScriptSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Script>
+    <StackHashScriptLine>
+      <Command>.ecxr</Command>
+      <Comment>Dump the exception if there is one</Comment>
+    </StackHashScriptLine>
+    <StackHashScriptLine>
+      <Command>~*k</Command>
+      <Comment>Dump all unmanaged thread stacks</Comment>
+    </StackHashScriptLine>
+    <StackHashScriptLine>
+      <Command>!analyze -v</Command>
+      <Comment>Perform full unmanaged analysis</Comment>
+    </StackHashScriptLine>
+  </Script>
+  <Name>SHUnmanagedAnalysis</Name>
+  <CreationDate>2011-04-28T13:08:18.0649431Z</CreationDate>
+  <LastModifiedDate>2011-04-28T13:10:00.900825Z</LastModifiedDate>
+  <Version>1</Version>
+  <Owner>User</Owner>
+  <IsReadOnly>false</IsReadOnly>
+  <RunAutomatically>true</RunAutomatically>
+  <DumpType>UnmanagedAndManaged</DumpType>
+</StackHashScriptSettings>

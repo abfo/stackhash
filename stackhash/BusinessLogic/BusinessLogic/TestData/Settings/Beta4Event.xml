@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<StackHashEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DateCreatedLocal>2010-04-19T10:20:00Z</DateCreatedLocal>
+  <DateModifiedLocal>2010-04-19T10:20:00Z</DateModifiedLocal>
+  <EventTypeName>CLR20 Managed Crash</EventTypeName>
+  <Id>1099298216</Id>
+  <EventSignature>
+    <Parameters>
+      <StackHashParameter>
+        <Name>applicationName</Name>
+        <Value>Crashy.exe</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>applicationVersion</Name>
+        <Value>1.2.3.4</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>applicationTimeStamp</Name>
+        <Value>2010-04-16T22:21:32</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>moduleName</Name>
+        <Value>Crashy</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>moduleVersion</Name>
+        <Value>1.2.3.4</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>moduleTimeStamp</Name>
+        <Value>2010-04-16T22:21:32</Value>
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>exceptionCode</Name>
+        <Value />
+      </StackHashParameter>
+      <StackHashParameter>
+        <Name>offset</Name>
+        <Value>0x98</Value>
+      </StackHashParameter>
+    </Parameters>
+    <ApplicationName>Crashy.exe</ApplicationName>
+    <ApplicationVersion>1.2.3.4</ApplicationVersion>
+    <ApplicationTimeStamp>2010-04-16T22:21:32</ApplicationTimeStamp>
+    <ModuleName>Crashy</ModuleName>
+    <ModuleVersion>1.2.3.4</ModuleVersion>
+    <ModuleTimeStamp>2010-04-16T22:21:32</ModuleTimeStamp>
+    <Offset>152</Offset>
+    <ExceptionCode>0</ExceptionCode>
+  </EventSignature>
+  <TotalHits>1</TotalHits>
+  <FileId>4232330</FileId>
+</StackHashEvent>
