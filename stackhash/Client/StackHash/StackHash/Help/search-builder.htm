@@ -1,0 +1,68 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Search Builder - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Search Builder</h1> 
+
+            <p>StackHash supports rich searching and filtering of events. Enter search criteria by selecting a field to 
+            search (or all fields) and the type of search. The list of fields includes all of the columns from the event, 
+            cab and hit lists.</p>
+
+            <p>For text fields you can search for text within the field. The search is not case sensitive.</p>
+
+            <p>For numeric or date fields you can search for matches that are less than, greater than or equal to a 
+            value. When searching dates you can enter an absolute date (July 13, 2010) or a relative number of days 
+            or months (-7 days).</p>
+
+            <p>To create an AND search click the add field (<img src="add-field.png" width="16" height="16" alt="Add Field" class="inlineicon">) button to add additional fields. You can remove unwanted 
+            fields by clicking the remove field (<img src="remove-field.png" width="16" height="16" alt="Remove Filed" class="inlineicon">) button.</p>
+
+            <p>To create an OR search click the add criteria (<img src="add-criteria.png" width="16" height="16" alt="Add Criteria" class="inlineicon">) button. Remove unwanted OR searches by clicking the remove 
+            criteria (<img src="remove-criteria.png" width="16" height="16" alt="Remove Criteria" class="inlineicon">) button.</p>
+
+            <p>Search Text displays a compact representation of the current search. You can type this directly into the 
+            search box instead of using the Search Builder. The following characters have special meanings in a 
+            StackHash search:</p>
+
+            <table>
+            <tr><td class="emtd">[]</td><td>Square brackets are used to name a search. Place the name first and then the rest of the search expression within the brackets.</td></tr>
+            <tr><td class="emtd">(), OR</td><td>Each OR component of the search is contained in round brackets separated by OR. The brackets are optional if the search only contains AND criteria.</td></tr>
+            <tr><td class="emtd">space</td><td>Each AND search is separated by a space. Spaces within a search must be quoted.</td></tr>
+            <tr><td class="emtd">"</td><td>Quotes allow you to use space characters within a search expression.</td></tr>
+            <tr><td class="emtd">:</td><td>Indicates searching a text field for matches that contain the search expression (case insensitive).</td></tr>
+            <tr><td class="emtd">!</td><td>Indicates searching a text field for matches that do not contain the search expression (case insensitive).</td></tr>
+            <tr><td class="emtd">=</td><td>Indicates searching for an exact match in a numeric or date field.</td></tr>
+            <tr><td class="emtd">&gt;</td><td>Indicates searching for a greater than match in a numeric or date field.</td></tr>
+            <tr><td class="emtd">&lt;</td><td>Indicates searching for a less than match in a numeric or date field.</td></tr>
+            </table>
+
+            <p>The following search string demonstrates all of the special characters:</p>
+
+            <pre>My Search [(app:crashy ehits&gt;100 ccreated&lt;"-12 months" offset=0x12) OR (mod:kernel32)]</pre>
+
+            <p>The search is called &lsquo;My Search&rsquo; and will look for events matching:</p>
+
+            <p>Application Name contains &lsquo;crashy&rsquo; <strong>AND</strong> hit count is greater than 100 <strong>AND</strong> at least one cab was 
+            created more than a year ago <strong>AND</strong> the crash offset is 0x12
+            <br>
+            <strong>OR</strong>
+            <br>
+            Module name contains &lsquo;kernel32&rsquo;</p>
+
+            <p>When entering a search you can click the Search Builder button at any time. StackHash will try to parse what you've entered and you can then add or adjust criteria visually. You can also use this capability to refine searches rather than starting again from scratch.</p>
+
+            <p>Named searches appear first in the most recent search list (click the drop down next to the search box), followed by your most recent unnamed searches. You can remove a search from the list by right-clicking it and then choosing Remove from the context menu.</p>
+
+            <p>See Also:</p>
+
+            <ul><li><a href="http://www.stackhash.com/blog/post/Searching-Events-in-StackHash.aspx" target="_blank">Searching Events in StackHash</a> on the StackHash Blog</li></ul>
+
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

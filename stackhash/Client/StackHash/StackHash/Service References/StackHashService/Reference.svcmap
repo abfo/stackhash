@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7d463368-0d6e-43c3-98a7-953bf930baae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/StackHash" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StackHash3.xsd" MetadataType="Schema" ID="61dc25a1-2ee0-4b5c-a3f1-c4b8706ea7b0" SourceId="1" SourceUrl="http://localhost:8000/StackHash?xsd=xsd4" />
+    <MetadataFile FileName="StackHash.disco" MetadataType="Disco" ID="9b240020-41ec-44ad-b29c-1055126fd8ca" SourceId="1" SourceUrl="http://localhost:8000/StackHash?disco" />
+    <MetadataFile FileName="StackHash4.xsd" MetadataType="Schema" ID="0e869ecd-8c28-470c-82c3-86c9c167b782" SourceId="1" SourceUrl="http://localhost:8000/StackHash?xsd=xsd3" />
+    <MetadataFile FileName="StackHash2.xsd" MetadataType="Schema" ID="e0cbaf11-e654-4aae-a151-418e0b005599" SourceId="1" SourceUrl="http://localhost:8000/StackHash?xsd=xsd1" />
+    <MetadataFile FileName="StackHash.wsdl" MetadataType="Wsdl" ID="595aa2a6-e1a9-4e5d-a399-3d881855a1a8" SourceId="1" SourceUrl="http://localhost:8000/StackHash?wsdl=wsdl0" />
+    <MetadataFile FileName="StackHash1.xsd" MetadataType="Schema" ID="fdc78c1a-391c-40aa-93b2-47bb07838bc4" SourceId="1" SourceUrl="http://localhost:8000/StackHash?xsd=xsd2" />
+    <MetadataFile FileName="StackHash.xsd" MetadataType="Schema" ID="17a8c96c-9f56-4197-9272-1a866ba71346" SourceId="1" SourceUrl="http://localhost:8000/StackHash?xsd=xsd0" />
+    <MetadataFile FileName="InternalService.wsdl" MetadataType="Wsdl" ID="a10c8ff3-3f70-4a50-9fad-d87b8b130882" SourceId="1" SourceUrl="http://localhost:8000/StackHash?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

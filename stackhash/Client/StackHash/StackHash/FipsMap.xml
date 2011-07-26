@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocaleInfos>
+  <LocaleInfo shfips="f2PA" locale="es-py" name="Paraguay" />
+  <LocaleInfo shfips="f2LS" locale="de-li" name="Liechtenstein" />
+  <LocaleInfo shfips="f2LU" locale="fr-lu;de-lu" name="Luxembourg" />
+  <LocaleInfo shfips="f2TD" locale="en-tt" name="Trinidad And Tobago" />
+  <LocaleInfo shfips="f2BA" locale="ar-bh" name="Bahrain" />
+  <LocaleInfo shfips="f2AE" locale="ar-ae" name="United Arab Emirates" />
+  <LocaleInfo shfips="f2AG" locale="ar-dz" name="Algeria" />
+  <LocaleInfo shfips="f2AJ" locale="az-az" name="Azerbaijan" />
+  <LocaleInfo shfips="f2AL" locale="sq" name="Albania" />
+  <LocaleInfo shfips="f2AM" locale="hy" name="Armenia" />
+  <LocaleInfo shfips="f2AR" locale="es-ar" name="Argentina" />
+  <LocaleInfo shfips="f2AS" locale="en-au" name="Australia" />
+  <LocaleInfo shfips="f2AU" locale="de-at" name="Austria" />
+  <LocaleInfo shfips="f2BE" locale="nl-be;fr-be;en-be" name="Belgium" />
+  <LocaleInfo shfips="f2BH" locale="en-bz" name="Belize" />
+  <LocaleInfo shfips="f2BL" locale="es-bo" name="Bolivia" />
+  <LocaleInfo shfips="f2BO" locale="be" name="Belarus" />
+  <LocaleInfo shfips="f2BR" locale="pt-br" name="Brazil" />
+  <LocaleInfo shfips="f2BU" locale="bg" name="Bulgaria" />
+  <LocaleInfo shfips="f2CA" locale="en-ca;fr-ca" name="Canada" />
+  <LocaleInfo shfips="f2CH" locale="zh-cn;zh-hk;zh-mo;zh-sg;en-sg" name="China" />
+  <LocaleInfo shfips="f2CI" locale="es-cl" name="Chile" />
+  <LocaleInfo shfips="f2CO" locale="es-co" name="Colombia" />
+  <LocaleInfo shfips="f2CS" locale="es-cr" name="Costa Rica" />
+  <LocaleInfo shfips="f2DA" locale="da;da-dk" name="Denmark" />
+  <LocaleInfo shfips="f2DR" locale="es-do" name="Dominican Republic" />
+  <LocaleInfo shfips="f2EC" locale="es-ec" name="Ecuador" />
+  <LocaleInfo shfips="f2EG" locale="ar-eg" name="Egypt" />
+  <LocaleInfo shfips="f2EI" locale="en-ie;gd-ie" name="Ireland" />
+  <LocaleInfo shfips="f2EN" locale="et" name="Estonia" />
+  <LocaleInfo shfips="f2ES" locale="es-sv" name="El Salvador" />
+  <LocaleInfo shfips="f2EZ" locale="cs;cs-cz" name="Czech Republic" />
+  <LocaleInfo shfips="f2FI" locale="fi;sv-fi;fi-fi" name="Finland" />
+  <LocaleInfo shfips="f2FR" locale="fr-fr" name="France" />
+  <LocaleInfo shfips="f2GM" locale="de-de;sb" name="Germany" />
+  <LocaleInfo shfips="f2GR" locale="el;el-gr" name="Greece" />
+  <LocaleInfo shfips="f2GT" locale="es-gt" name="Guatemala" />
+  <LocaleInfo shfips="f2HO" locale="es-hn" name="Honduras" />
+  <LocaleInfo shfips="f2HR" locale="hr;hr-hr" name="Croatia" />
+  <LocaleInfo shfips="f2HU" locale="hu;hu-hu" name="Hungary" />
+  <LocaleInfo shfips="f2IC" locale="is" name="Iceland" />
+  <LocaleInfo shfips="f2ID" locale="id" name="Indonesia" />
+  <LocaleInfo shfips="f2IN" locale="hi;ta;en-in" name="India" />
+  <LocaleInfo shfips="f2IR" locale="fa" name="Iran" />
+  <LocaleInfo shfips="f2IS" locale="he;yi;he-il" name="Israel" />
+  <LocaleInfo shfips="f2IT" locale="it-it" name="Italy" />
+  <LocaleInfo shfips="f2IZ" locale="ar-iq" name="Iraq" />
+  <LocaleInfo shfips="f2JA" locale="ja-jp;ja" name="Japan" />
+  <LocaleInfo shfips="f2JO" locale="ar-jo" name="Jordan" />
+  <LocaleInfo shfips="f2KE" locale="sw" name="Kenya" />
+  <LocaleInfo shfips="f2KS" locale="ko;ko-kr" name="South Korea" />
+  <LocaleInfo shfips="f2KU" locale="ar-kw" name="Kuwait" />
+  <LocaleInfo shfips="f2LE" locale="ar-lb" name="Lebanon" />
+  <LocaleInfo shfips="f2LG" locale="lv" name="Latvia" />
+  <LocaleInfo shfips="f2LH" locale="lt" name="Lithuania" />
+  <LocaleInfo shfips="f2LO" locale="sk" name="Slovakia" />
+  <LocaleInfo shfips="f2LY" locale="ar-ly" name="Libya" />
+  <LocaleInfo shfips="f2MD" locale="ro-mo;ru-mo" name="Moldova" />
+  <LocaleInfo shfips="f2MK" locale="mk" name="Macedonia" />
+  <LocaleInfo shfips="f2MO" locale="ar-ma" name="Morocco" />
+  <LocaleInfo shfips="f2MU" locale="ar-om" name="Oman" />
+  <LocaleInfo shfips="f2MX" locale="es-mx" name="Mexico" />
+  <LocaleInfo shfips="f2MY" locale="ms-my" name="Malaysia" />
+  <LocaleInfo shfips="f2NL" locale="nl-nl" name="Netherlands" />
+  <LocaleInfo shfips="f2NO" locale="no-no;nb-no;nn-no" name="Norway" />
+  <LocaleInfo shfips="f2NU" locale="es-ni" name="Nicaragua" />
+  <LocaleInfo shfips="f2NZ" locale="en-nz" name="New Zealand" />
+  <LocaleInfo shfips="f2PE" locale="es-pe" name="Peru" />
+  <LocaleInfo shfips="f2PK" locale="ur" name="Pakistan" />
+  <LocaleInfo shfips="f2PL" locale="pl;pl-pl" name="Poland" />
+  <LocaleInfo shfips="f2PM" locale="es-pa" name="Panama" />
+  <LocaleInfo shfips="f2PO" locale="pt-pt" name="Portugal" />
+  <LocaleInfo shfips="f2RO" locale="ro;ro-ro" name="Romania" />
+  <LocaleInfo shfips="f2RP" locale="en-ph" name="Philippines" />
+  <LocaleInfo shfips="f2RS" locale="ru;ru-ru" name="Russia" />
+  <LocaleInfo shfips="f2SA" locale="ar-sa" name="Saudi Arabia" />
+  <LocaleInfo shfips="f2SF" locale="en-za;af;st;ts;xh;zu" name="South Africa" />
+  <LocaleInfo shfips="f2SI" locale="sl;sk-sk;sl-si" name="Slovenia" />
+  <LocaleInfo shfips="f2SP" locale="es-es;eu;ca;eu-us" name="Spain" />
+  <LocaleInfo shfips="f2SU" locale="ar-sd" name="Sudan" />
+  <LocaleInfo shfips="f2SW" locale="sv-se" name="Sweden" />
+  <LocaleInfo shfips="f2SY" locale="ar-sy" name="Syria" />
+  <LocaleInfo shfips="f2SZ" locale="de-ch;fr-ch;it-ch" name="Switzerland" />
+  <LocaleInfo shfips="f2TH" locale="th" name="Thailand" />
+  <LocaleInfo shfips="f2TS" locale="ar-tn" name="Tunisia" />
+  <LocaleInfo shfips="f2TU" locale="tr;tr-tr" name="Turkey" />
+  <LocaleInfo shfips="f2TW" locale="zh-tw" name="Taiwan" />
+  <LocaleInfo shfips="f2UK" locale="en-gb;gd" name="United Kingdom" />
+  <LocaleInfo shfips="f2UP" locale="uk;uk-ua" name="Ukraine" />
+  <LocaleInfo shfips="f2US" locale="en-us;es-us" name="United States" />
+  <LocaleInfo shfips="f2UY" locale="es-uy" name="Uruguay" />
+  <LocaleInfo shfips="f2UZ" locale="uz-uz" name="Uzbekistan" />
+  <LocaleInfo shfips="f2VE" locale="es-ve" name="Venezuela" />
+  <LocaleInfo shfips="f2VM" locale="vi" name="Vietnam" />
+  <LocaleInfo shfips="f2YM" locale="ar-ye" name="Yemen" />
+  <LocaleInfo shfips="f2ZI" locale="en-za" name="Zimbabwe" />
+</LocaleInfos>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Main Window - Event Details - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Main Window - Event Details</h1>
+
+            <p>The event details view shows a list of the cabs and hits (event infos) associated with an event.</p>
+
+            <p>The summary at the top right displays information about the selected product and event. Below the 
+            summary are notes relating to the event. Click <em>Add Note</em> to enter a new note.</p> 
+
+            <p>Double-click a cab or click <em>Show Details</em> to show the <a href="main-window-cab-details.htm">Cab Details</a> view.</p>
+
+            <p>A context menu is available when you right-click a cab. From this menu you can run a debugger script, 
+            launch the <a href="script-manager.htm">Script Manager</a>, start debugging the cab, extract the 
+            contents of the cab to a folder of your choice or copy the <a href="how-to-stackhash-urls.htm">StackHash URL</a>.</p>
+
+            <h2>Cabs</h2>
+
+            <table>
+            <tr> <td class="emtdm">ID</td> <td>The WinQual Id for the cab.</td> </tr>
+            <tr> <td class="emtdm">Downloaded</td> <td>Yes if StackHash has downloaded this cab. You can download a cab by right-clicking it and choosing <em>Download Cab</em>.</td> </tr>
+            <tr> <td class="emtdm">Type</td> <td>WinQual Event Type Name associated with the cab.</td> </tr>
+            <tr> <td class="emtdm">Size</td> <td>Size of the cab.</td> </tr>
+            <tr> <td class="emtdm">OS Version</td> <td>Operating system of the computer for the dump file contained in the cab.</td> </tr>
+            <tr> <td class="emtdm">Architecture</td> <td>Machine architecture of the computer for the dump file contained in the cab.</td> </tr>
+            <tr> <td class="emtdm">.NET</td> <td>CLR version for the dump file contained in the cab (if applicable).</td> </tr>
+            <tr> <td class="emtdm">Process Uptime</td> <td>Process uptime for the dump file contained in the cab.</td> </tr>
+            <tr> <td class="emtdm">System Update</td> <td>System uptime of the computer for the dump file contained in the cab.</td> </tr>
+            <tr> <td class="emtdm">Created</td> <td>Local date and time that the cab was created on WinQual.</td> </tr>
+            <tr> <td class="emtdm">Modified</td> <td>Local date and time that the cab was last modified on WinQual.</td> </tr>
+            <tr> <td class="emtdm">Purged</td> <td>Yes if the cab has been deleted by StackHash. StackHash purges old cab to help you comply with the WinQual terms and conditions. By default cabs are purged after 180 days. You can change purge settings in <a href="service-options.htm">Service Options</a>.</td> </tr>
+            </table>
+
+            <h2>Event Infos (Hits)</h2>
+
+            <table>
+            <tr> <td class="emtdm">Hit Date</td> <td>Local date and time for the hit summary. Each summary row rolls up hits for a given date, operating system and locale.</td> </tr>
+            <tr> <td class="emtdm">Hits</td> <td>Number of hits. A hit is an actual report of the event through Windows Error Reporting.</td> </tr>
+            <tr> <td class="emtdm">OS</td> <td>Operating System for the hit summary.</td> </tr>
+            <tr> <td class="emtdm">OS Version</td> <td>Operating System version for the hit summary.</td> </tr>
+            <tr> <td class="emtdm">Language</td> <td>Language for the hit summary.</td> </tr>
+            <tr> <td class="emtdm">Locale</td> <td>Locale for the hit summary.</td> </tr>
+            <tr> <td class="emtdm">LCID</td> <td>Locale Id for the hit summary.</td> </tr>
+            <tr> <td class="emtdm">Created</td> <td>Local date and time that the hit summary was created on WinQual.</td> </tr>
+            <tr> <td class="emtdm">Modified</td> <td>Local date and time that the hit summary was last modified on WinQual.</td> </tr>
+            </table>
+
+            <p>Note that columns can be re-ordered in the client and so might not be in the order listed above. 
+            You can re-order columns by clicking and dragging the header.</p>
+            
+            <p><em>See <a href="main-window.htm">Main Window</a> for an overview of the StackHash client.</em></p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

@@ -1,0 +1,209 @@
+﻿<UserControl x:Class="StackHash.CabDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters"
+    xmlns:local="clr-namespace:StackHash"
+    Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" MinHeight="50" x:Name="Row3" />            
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" MinHeight="50" x:Name="Row5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="50" x:Name="Column1" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="50" x:Name="Column3" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Margin="6" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3">
+            <TextBlock>
+                <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkMappedProducts" Click="linkMappedProducts_Click">Mapped Products</Hyperlink>
+            </TextBlock>
+            <TextBlock>&gt;</TextBlock>
+            <TextBlock>
+                <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkCurrentProduct" Click="linkCurrentProduct_Click">
+                    <TextBlock Text="{Binding EventListTitle}" />
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock>&gt;</TextBlock>
+            <TextBlock>
+                <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkCurrentEvent" Click="linkCurrentEvent_Click">
+                    <TextBlock Text="{Binding CurrentEventPackage.Id}" />
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock>&gt;</TextBlock>
+            <TextBlock Text="{Binding CurrentCab.Id}"/>
+        </TextBlock>
+        
+        <Grid Grid.Row="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="50" x:Name="InnerColumn1" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" MinWidth="50" x:Name="InnerColumn3" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Margin="6,6,6,3" FontWeight="Bold">Debugger Script Runs:</TextBlock>
+            
+            <ListView Margin="6,0,6,6" Grid.Row="1" ItemsSource="{Binding ScriptResultFiles}" Name="listViewResultFiles" ContextMenuOpening="listViewResultFiles_ContextMenuOpening" SelectionChanged="listViewResultFiles_SelectionChanged" GridViewColumnHeader.Click="listViewResultFiles_Click" SelectionMode="Single">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Run Script _Again" Name="menuRunScriptAgain" Click="menuRunScriptAgain_Click" />
+                        <MenuItem Header="_Delete Script Run" Name="menuDeleteScriptRun" Click="menuDeleteScriptRun_Click" />
+                        <Separator />
+                        <MenuItem Command="local:StackHashCommands.RunScriptCommand" ItemsSource="{Binding ScriptData}" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon">
+                            <MenuItem.Icon>
+                                <Image Source="Help\debug.png" />
+                            </MenuItem.Icon>
+                            <MenuItem.ItemContainerStyle>
+                                <Style TargetType="{x:Type MenuItem}">
+                                    <Setter Property="Command" Value="{x:Static local:StackHashCommands.RunScriptByNameCommand}" />
+                                    <Setter Property="CommandParameter" Value="{Binding Name}" />
+                                    <Setter Property="Header" Value="{Binding Name}" />
+                                    <Setter Property="CommandTarget" Value="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </Style>
+                            </MenuItem.ItemContainerStyle>
+                        </MenuItem>
+                        <MenuItem Command="local:StackHashCommands.ScriptManagerCommand" ToolTip="Create, edit, remove and test debugger scripts." IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                            <MenuItem.Icon>
+                                <Image Source="Help\script-manager.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Command="local:StackHashCommands.DebugCommand" ToolTip="Debug the contents of the selected Cab." IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                            <MenuItem.Icon>
+                                <Image Source="Help\debug.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="local:StackHashCommands.DebugUsingCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                            <MenuItem Command="local:StackHashCommands.DebugX86Command" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                            <MenuItem Command="local:StackHashCommands.DebugX64Command" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                            <MenuItem Command="local:StackHashCommands.DebugVisualStudioCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Command="local:StackHashCommands.ExtractCabCommand" ToolTip="Extract the contents of the currently selected Cab to a local directory." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon">
+                            <MenuItem.Icon>
+                                <Image Source="Help\extract-cab.png" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Command="local:StackHashCommands.DownloadCabCommand" ToolTip="Download the currently selected cab." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                        <MenuItem Command="local:StackHashCommands.OpenCabFolderCommand" ToolTip="Open the folder containing this cab file (only available if running on the same computer as the StackHash Service)." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                        <Separator />
+                        <MenuItem Header="Send Cab to Plugin" ItemsSource="{Binding ActivePlugins}" Name="menuItemSendCabToPlugin" Click="menuItemSendCabToPlugin_Click">
+                            <MenuItem.ItemContainerStyle>
+                                <Style TargetType="{x:Type MenuItem}">
+                                    <Setter Property="Header" Value="{Binding Name}" />
+                                    <Setter Property="Tag" Value="{Binding}" />
+                                </Style>
+                            </MenuItem.ItemContainerStyle>
+                        </MenuItem>
+                        <MenuItem Header="Copy Cab URL to Clipboard" Name="menuItemCopyCabUrl" Click="menuItemCopyCabUrl_Click" />
+                        <Separator />
+                        <MenuItem Command="local:StackHashCommands.RefreshCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200">
+                            <GridViewColumnHeader Tag="ScriptName" Content="Script Name" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ScriptName}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Tag="RunDate" Content="Run Date" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding RunDate, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="100">
+                            <GridViewColumnHeader Tag="UserName" Content="Script Type" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding UserName}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+            <GridSplitter Grid.Column="1" Grid.RowSpan="3" Margin="0,6,0,6" ResizeBehavior="PreviousAndNext" Width="3" />
+            
+            <TextBlock Margin="6,6,6,3" Grid.Column="2" FontWeight="Bold">Cab File Contents:</TextBlock>
+            
+            <ListView Margin="6,0,6,6" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding CurrentCab.Files}" Name="listViewCabContents" GridViewColumnHeader.Click="listViewCabContents_Click" SelectionMode="Single" SelectionChanged="listViewCabContents_SelectionChanged">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200">
+                            <GridViewColumnHeader Tag="FileName" Content="File Name" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FileName}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Tag="Length" Content="Size" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Length, Converter={StaticResource fileSizeDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+        </Grid>
+        
+        <GridSplitter Grid.Row="3" Height="3" Margin="6,0,6,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        
+        <DockPanel Grid.Row="4">
+            <TextBlock Margin="6,6,6,3" DockPanel.Dock="Top" FontWeight="Bold" Name="textBlockPreviewHeader">Select Script Run or Cab File...</TextBlock>
+            <RichTextBox Margin="6,0,6,6" DockPanel.Dock="Top" Name="richTextBoxScriptResult" VerticalScrollBarVisibility="Visible" IsReadOnly="True" />
+        </DockPanel>
+        
+        <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="0,6,0,6" ResizeBehavior="PreviousAndNext" Width="3" />
+        
+        <DockPanel Margin="3" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
+            <ScrollViewer Margin="6" DockPanel.Dock="Top" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+                    <local:SummaryControlProduct DataContext="{Binding CurrentProduct}" HorizontalAlignment="Left" />
+                    <local:SummaryControlEventPackage DataContext="{Binding CurrentEventPackage}" HorizontalAlignment="Left" />
+                    <local:SummaryControlCab DataContext="{Binding CurrentCab}" HorizontalAlignment="Left" />
+                </StackPanel>
+            </ScrollViewer>
+            <TextBlock Margin="3,13,3,3" DockPanel.Dock="Top" FontWeight="Bold">Cab Notes:</TextBlock>
+            <local:NotesControl DockPanel.Dock="Top" x:Name="notesControl" />
+        </DockPanel>
+        
+    </Grid>
+</UserControl>

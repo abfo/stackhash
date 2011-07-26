@@ -1,0 +1,2282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessViolation" xml:space="preserve">
+    <value>Access Violation</value>
+  </data>
+  <data name="ClrException" xml:space="preserve">
+    <value>CLR Exception</value>
+  </data>
+  <data name="Command_BuildSearch" xml:space="preserve">
+    <value>Search _Builder...</value>
+  </data>
+  <data name="Command_CancelSync" xml:space="preserve">
+    <value>_Cancel Synchronization</value>
+  </data>
+  <data name="Command_ClearSearch" xml:space="preserve">
+    <value>Clear Search</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>E_xit</value>
+  </data>
+  <data name="Command_ProfileManager" xml:space="preserve">
+    <value>Service Op_tions...</value>
+  </data>
+  <data name="Command_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Command_Sync" xml:space="preserve">
+    <value>_Synchronize Now</value>
+  </data>
+  <data name="ErrorReport" xml:space="preserve">
+    <value>Hit</value>
+  </data>
+  <data name="ErrorReports" xml:space="preserve">
+    <value>Hits</value>
+  </data>
+  <data name="FieldNameAll" xml:space="preserve">
+    <value>All Fields</value>
+  </data>
+  <data name="FieldNameAppLink" xml:space="preserve">
+    <value>Application Link Date</value>
+  </data>
+  <data name="FieldNameAppName" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
+  <data name="FieldNameAppVer" xml:space="preserve">
+    <value>Application Version</value>
+  </data>
+  <data name="FieldNameCabCreated" xml:space="preserve">
+    <value>Cab Created</value>
+  </data>
+  <data name="FieldNameCabId" xml:space="preserve">
+    <value>Cab ID</value>
+  </data>
+  <data name="FieldNameCabModified" xml:space="preserve">
+    <value>Cab Modified</value>
+  </data>
+  <data name="FieldNameCabName" xml:space="preserve">
+    <value>Cab Filename</value>
+  </data>
+  <data name="FieldNameCabSize" xml:space="preserve">
+    <value>Cab Size (Bytes)</value>
+  </data>
+  <data name="FieldNameEvendId" xml:space="preserve">
+    <value>Event ID</value>
+  </data>
+  <data name="FieldNameEventCreated" xml:space="preserve">
+    <value>Event Created</value>
+  </data>
+  <data name="FieldNameEventHits" xml:space="preserve">
+    <value>Event Hits</value>
+  </data>
+  <data name="FieldNameEventModified" xml:space="preserve">
+    <value>Event Modified</value>
+  </data>
+  <data name="FieldNameEventType" xml:space="preserve">
+    <value>Event Type</value>
+  </data>
+  <data name="FieldNameException" xml:space="preserve">
+    <value>Exception Code</value>
+  </data>
+  <data name="FieldNameHitCount" xml:space="preserve">
+    <value>Hit Count</value>
+  </data>
+  <data name="FieldNameHitCreated" xml:space="preserve">
+    <value>Hit Created</value>
+  </data>
+  <data name="FieldNameHitDate" xml:space="preserve">
+    <value>Hit Date</value>
+  </data>
+  <data name="FieldNameHitLang" xml:space="preserve">
+    <value>Hit Language</value>
+  </data>
+  <data name="FieldNameHitLcid" xml:space="preserve">
+    <value>Hit LCID</value>
+  </data>
+  <data name="FieldNameHitLocale" xml:space="preserve">
+    <value>Hit Locale</value>
+  </data>
+  <data name="FieldNameHitModified" xml:space="preserve">
+    <value>Hit Modified</value>
+  </data>
+  <data name="FieldNameModLink" xml:space="preserve">
+    <value>Module Link Date</value>
+  </data>
+  <data name="FieldNameModName" xml:space="preserve">
+    <value>Module Name</value>
+  </data>
+  <data name="FieldNameModVer" xml:space="preserve">
+    <value>Module Version</value>
+  </data>
+  <data name="FieldNameOffset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="FieldNameOS" xml:space="preserve">
+    <value>Hit Operating System</value>
+  </data>
+  <data name="FieldNameOSVer" xml:space="preserve">
+    <value>Hit Operating System Version</value>
+  </data>
+  <data name="GB" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="KB" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="OptionNameContains" xml:space="preserve">
+    <value>Contains</value>
+  </data>
+  <data name="OptionNameEquals" xml:space="preserve">
+    <value>Equals</value>
+  </data>
+  <data name="OptionNameGreaterThan" xml:space="preserve">
+    <value>Greater Than</value>
+  </data>
+  <data name="OptionNameLessThan" xml:space="preserve">
+    <value>Less Than</value>
+  </data>
+  <data name="ProfileAddEdit_DefaultName" xml:space="preserve">
+    <value>StackHash Profile {0}</value>
+    <comment>Parameter is the id</comment>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>Select this Folder</value>
+  </data>
+  <data name="SelectFolderFilter" xml:space="preserve">
+    <value>Folders|*.</value>
+  </data>
+  <data name="ProfileAddEdit_SelectFolderTitle" xml:space="preserve">
+    <value>Select Index Folder - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_TitleAdd" xml:space="preserve">
+    <value>Add Profile - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_TitleEdit" xml:space="preserve">
+    <value>Edit Profile - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorCompany" xml:space="preserve">
+    <value>Enter a name for this profile (i.e. your company or product name).</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorCompanyDuplicate" xml:space="preserve">
+    <value>This profile name is already in use by another profile.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorIndexFolder" xml:space="preserve">
+    <value>Enter a folder to store the local cache of your WinQual events. This folder must exist. Click Browse to choose a folder.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorIndexFolderDuplicate" xml:space="preserve">
+    <value>This local store folder is already in use by another profile.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorIndexName" xml:space="preserve">
+    <value>Enter a name for the local cache associated with this profile.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorPassword" xml:space="preserve">
+    <value>Enter the password you use to access winqual.microsoft.com.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorPurgeDays" xml:space="preserve">
+    <value>Enter the number of days to retain data that may contain private customer information.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorUsername" xml:space="preserve">
+    <value>Enter the username you use to access winqual.microsoft.com.</value>
+  </data>
+  <data name="ProfileManager_ActiveProfile" xml:space="preserve">
+    <value>Selected Profile: {0}</value>
+  </data>
+  <data name="ProfileManager_NoActiveProfile" xml:space="preserve">
+    <value>Selected Profile: None</value>
+  </data>
+  <data name="ScheduleControl_ValidationHour" xml:space="preserve">
+    <value>Enter a valid hour (24 hour clock, between 0 and 23)</value>
+  </data>
+  <data name="ScheduleControl_ValidationMin" xml:space="preserve">
+    <value>Enter a valid minute (0-59)</value>
+  </data>
+  <data name="SearchBuilder_ValidationErrorSearchDateTime" xml:space="preserve">
+    <value>Enter a valid date and/or time.</value>
+  </data>
+  <data name="SearchBuilder_ValidationErrorSearchEmpty" xml:space="preserve">
+    <value>Enter a search term.</value>
+  </data>
+  <data name="SearchBuilder_ValidationErrorSearchInvalidChars" xml:space="preserve">
+    <value>The search term may not contain:{0}</value>
+    <comment>Parameter is a list of invalid characters for a search</comment>
+  </data>
+  <data name="SearchBuilder_ValidationErrorSearchNameInvalidChars" xml:space="preserve">
+    <value>The search name may not contain:{0}</value>
+    <comment>Parameter is a list of invlid characters for a search name</comment>
+  </data>
+  <data name="SearchBuilder_ValidationErrorSearchNumber" xml:space="preserve">
+    <value>Enter a valid number.</value>
+  </data>
+  <data name="SearchParseException_DateConversionFailed" xml:space="preserve">
+    <value>Could not convert search expression to a date/time: {0}.</value>
+    <comment>Parameter is the search expression</comment>
+  </data>
+  <data name="SearchParseException_EmptySearch" xml:space="preserve">
+    <value>The search cannot be null or empty.</value>
+  </data>
+  <data name="SearchParseException_MissingSearchParameter" xml:space="preserve">
+    <value>A search parameter must be provided for each search expression.</value>
+  </data>
+  <data name="SearchParseException_NumericConversionFailed" xml:space="preserve">
+    <value>Could not convert search expression to a number: {0}.</value>
+    <comment>Parameter is the search expression</comment>
+  </data>
+  <data name="SearchParseException_UnknownField" xml:space="preserve">
+    <value>Search field not recognized: {0}.</value>
+    <comment>Parameter is the field</comment>
+  </data>
+  <data name="Status_Configure" xml:space="preserve">
+    <value>Select or add a profile to continue</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Status_ServiceConnect" xml:space="preserve">
+    <value>Connecting to the StackHash Service at http://{0}:{1}/StackHash</value>
+    <comment>Parameters are the host and port</comment>
+  </data>
+  <data name="Status_Startup" xml:space="preserve">
+    <value>StackHash is loading</value>
+  </data>
+  <data name="WorldMapControl_ToolTipTemplate" xml:space="preserve">
+    <value>{0}: {1:n0} {2}</value>
+    <comment>Parameters are the country name, the number of event infos and "error report or error reports"</comment>
+  </data>
+  <data name="ExeBrowseFilter" xml:space="preserve">
+    <value>Executable Files (*.exe)|*.exe</value>
+  </data>
+  <data name="ProfileAddEdit_BrowseWinQualTitle32" xml:space="preserve">
+    <value>Browse for cdb.exe (32-bit) - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorWinDbg" xml:space="preserve">
+    <value>Enter the path to WinDbg.exe.</value>
+  </data>
+  <data name="Command_About" xml:space="preserve">
+    <value>_About</value>
+  </data>
+  <data name="Command_Resync" xml:space="preserve">
+    <value>_Resynchronize Now</value>
+  </data>
+  <data name="Command_ScriptManager" xml:space="preserve">
+    <value>Script _Manager...</value>
+  </data>
+  <data name="ScriptAddEdit_AddTitle" xml:space="preserve">
+    <value>Add Script - StackHash</value>
+  </data>
+  <data name="ScriptAddEdit_EditTitle" xml:space="preserve">
+    <value>Edit Script - StackHash</value>
+  </data>
+  <data name="ScriptAddEdit_ValidationErrorBadCharInScriptName" xml:space="preserve">
+    <value>Enter a script name.</value>
+  </data>
+  <data name="ScriptAddEdit_ValidationErrorDuplicateScriptName" xml:space="preserve">
+    <value>This script name contains one of the following invalid characters:{0}</value>
+    <comment>Parameter is a list of invalid characters for a script name</comment>
+  </data>
+  <data name="ScriptAddEdit_ValidationErrorEmptyScript" xml:space="preserve">
+    <value>Enter a script.</value>
+  </data>
+  <data name="ScriptAddEdit_ValidationErrorEmptyScriptName" xml:space="preserve">
+    <value>This script name is already in use.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Error_AdminReportErrorMBMessage" xml:space="preserve">
+    <value>The StackHash Service has reported an error.</value>
+  </data>
+  <data name="Error_AdminReportErrorMBTitle" xml:space="preserve">
+    <value>Service Error Report - StackHash</value>
+  </data>
+  <data name="Error_ServiceCallFailedMBMessage" xml:space="preserve">
+    <value>The StackHash Service failed to complete the requested operation.</value>
+  </data>
+  <data name="Error_ServiceCallFailedMBTitle" xml:space="preserve">
+    <value>Service Error - StackHash</value>
+  </data>
+  <data name="Error_ServiceCallTimeoutMBMessage" xml:space="preserve">
+    <value>A timeout occurred while communicating with the StackHash Service. If this error occurs again try stopping and starting the StackHash Service.</value>
+  </data>
+  <data name="Error_ServiceCallTimeoutMBTitle" xml:space="preserve">
+    <value>Service Timeout - StackHash</value>
+  </data>
+  <data name="Error_ServiceConnectFailedMBMessage" xml:space="preserve">
+    <value>Failed to connect to the StackHash Service. Ensure that the service is running and click Retry. Click Cancel to continue without connecting to the StackHash Service.</value>
+  </data>
+  <data name="Error_ServiceConnectFailedMBTitle" xml:space="preserve">
+    <value>Failed to connect to the StackHash Service - StackHash</value>
+  </data>
+  <data name="Error_UnexpectedMBMessage" xml:space="preserve">
+    <value>An error has occurred.</value>
+  </data>
+  <data name="Error_UnexpectedMBTitle" xml:space="preserve">
+    <value>Error - StackHash</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MainWindow_StartSyncMBMessage" xml:space="preserve">
+    <value>Synchronizing with WinQual can take a long time. Are you sure you want to start synchronizing now?</value>
+  </data>
+  <data name="MainWindow_StartSyncMBTitle" xml:space="preserve">
+    <value>Start Synchronization? - StackHash</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NotesControl_HeaderDetails" xml:space="preserve">
+    <value>{0} from {1}</value>
+    <comment>Parameters are the date/time and the source</comment>
+  </data>
+  <data name="NotesControl_HeaderName" xml:space="preserve">
+    <value>Edited by {0}</value>
+    <comment>Parameter is the user name</comment>
+  </data>
+  <data name="Command_Blog" xml:space="preserve">
+    <value>StackHash _Blog</value>
+  </data>
+  <data name="Command_Debug" xml:space="preserve">
+    <value>_Start Debugging</value>
+  </data>
+  <data name="Command_Facebook" xml:space="preserve">
+    <value>StackHash on _Facebook</value>
+  </data>
+  <data name="Command_Options" xml:space="preserve">
+    <value>Client _Options...</value>
+  </data>
+  <data name="Command_Twitter" xml:space="preserve">
+    <value>@StackHash on _Twitter</value>
+  </data>
+  <data name="Command_Website" xml:space="preserve">
+    <value>StackHash _Website</value>
+  </data>
+  <data name="OptionsWindow_BrowseAmd64DebuggerTitle" xml:space="preserve">
+    <value>Browse for 64-bit debugger (WinDbg.exe) - StackHash</value>
+  </data>
+  <data name="OptionsWindow_BrowseX86DebuggerTitle" xml:space="preserve">
+    <value>Browse for 32-bit debugger (WinDbg.exe) - StackHash</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorAmd64DebuggerPath" xml:space="preserve">
+    <value>Enter path to the local 64-bit debugger (i.e. WinDbg.exe).</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorX86DebuggerPath" xml:space="preserve">
+    <value>Enter path to the local 32-bit debugger (i.e. WinDbg.exe).</value>
+  </data>
+  <data name="StackHashMessageBox_ReportErrorFailedMBMessage" xml:space="preserve">
+    <value>StackHash could not report the error. Check that your firewall allows StackHash.exe to access the Internet. If the problem persists copy the error text and send an email directly to support@stackhash.com.</value>
+  </data>
+  <data name="StackHashMessageBox_ReportErrorFailedMBTitle" xml:space="preserve">
+    <value>Failed to send error report - StackHash</value>
+  </data>
+  <data name="StackHashMessageBox_Thanks" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
+  <data name="ProfileAddEdit_BrowseWinQualTitle64" xml:space="preserve">
+    <value>Browse for cdb.exe (64-bit) - StackHash</value>
+  </data>
+  <data name="EventListMenuHeaderSearch" xml:space="preserve">
+    <value>Research {0} on StackHash.com</value>
+    <comment>Parameter is the application or module name.</comment>
+  </data>
+  <data name="Error_CantDebug64On32MBMessage" xml:space="preserve">
+    <value>The selected cab contains a crash dump from a 64-bit system. The dump can only be debugged on a 64-bit system.</value>
+  </data>
+  <data name="Error_CantDebugItaniumMBMessage" xml:space="preserve">
+    <value>The selected cab contains a crash dump from an Itanium system. StackHash does not currently support Itanium.</value>
+  </data>
+  <data name="Error_CantDebugMBTitle" xml:space="preserve">
+    <value>Cab contents not supported for debugging - StackHash</value>
+  </data>
+  <data name="Error_CantDebugNoDump" xml:space="preserve">
+    <value>The selected cab does not contain a crash dump.</value>
+  </data>
+  <data name="Error_DoDebugMBMessage" xml:space="preserve">
+    <value>A failure occurred while attempting to start debugging the selected Cab.</value>
+  </data>
+  <data name="Error_DoDebugMBTitle" xml:space="preserve">
+    <value>Failed to start debugging - StackHash</value>
+  </data>
+  <data name="Command_ServiceStatus" xml:space="preserve">
+    <value>Ser_vice Status</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorServiceHost" xml:space="preserve">
+    <value>Enter the hostname or IP address of your StackHash Server.</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorServicePort" xml:space="preserve">
+    <value>Enter the port used by your StackHash Server.</value>
+  </data>
+  <data name="IndexFolderInitFail_MBMessage" xml:space="preserve">
+    <value>StackHash failed to create or initialize {0}. Check that this folder exists, and that the permissions for the folder include Full Access for NETWORK SERVICE.</value>
+    <comment>Parameter is the folder path.</comment>
+  </data>
+  <data name="IndexFolderInitFail_MBTitle" xml:space="preserve">
+    <value>Failed to create index folder - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorIndexNameDuplicate" xml:space="preserve">
+    <value>This local store name is already in use by another profile.</value>
+  </data>
+  <data name="ProfileManager_ActivateProfileMBMessage" xml:space="preserve">
+    <value>Would you like to activate the new profile ({0})? Active profiles are available in the StackHash client. StackHash synchronizes active profiles with WinQual and purges old data using the configured schedules.</value>
+    <comment>Parameter is the new profile name.</comment>
+  </data>
+  <data name="ProfileManager_ActivateProfileMBTitle" xml:space="preserve">
+    <value>Activate Profile - StackHash</value>
+  </data>
+  <data name="EventDetails_ExtractCompleteMBMessage" xml:space="preserve">
+    <value>The contents of Cab {0} have been extracted to:
+
+{1}</value>
+    <comment>Parameters are the Cab ID and the extraction folder</comment>
+  </data>
+  <data name="EventDetails_ExtractCompleteMBTitle" xml:space="preserve">
+    <value>Cab Extracted - StackHash</value>
+  </data>
+  <data name="EventDetails_SelectFolderTitle" xml:space="preserve">
+    <value>Select Extract Folder - StackHash</value>
+  </data>
+  <data name="ClientLogic_EventListTitleProduct" xml:space="preserve">
+    <value>{0} {1}</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="ClientLogic_EventListTitleSearch" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="DefaultMainWindowTitle" xml:space="preserve">
+    <value>StackHash</value>
+  </data>
+  <data name="MainWindow_SearchAllProdcutsMBTitle" xml:space="preserve">
+    <value>Search all products? - StackHash</value>
+  </data>
+  <data name="MainWindow_SearchAllProductsMBMessage" xml:space="preserve">
+    <value>Are you sure you want to search for events in all products? This may take a long time. To search a specific product click No and then select a product before searching.</value>
+  </data>
+  <data name="MainWindow_SearchParseFailedMBMessage" xml:space="preserve">
+    <value>The requested search contains an error:
+
+{0}</value>
+  </data>
+  <data name="MainWindow_SearchParseFauiledMBTitle" xml:space="preserve">
+    <value>Search Failed - StackHash</value>
+  </data>
+  <data name="Status_ActivateProfile" xml:space="preserve">
+    <value>Activating StackHash Service Profile</value>
+  </data>
+  <data name="Status_DeactivateProfile" xml:space="preserve">
+    <value>Deactivating StackHash Service Profile</value>
+  </data>
+  <data name="Status_DeleteProfile" xml:space="preserve">
+    <value>Deleting StackHash Service Profile</value>
+  </data>
+  <data name="Status_DeleteScript" xml:space="preserve">
+    <value>Removing debugger script: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_DisableLogging" xml:space="preserve">
+    <value>Disabling StackHash Service diagnostic logging</value>
+  </data>
+  <data name="Status_EnableLogging" xml:space="preserve">
+    <value>Enabling StackHash Service diagnostic logging</value>
+  </data>
+  <data name="Status_ExtractCab" xml:space="preserve">
+    <value>Extracting cab {0} to {1}</value>
+    <comment>Parameters are the cab ID and the extraction location</comment>
+  </data>
+  <data name="Status_ListScriptResults" xml:space="preserve">
+    <value>Listing debugger script results</value>
+  </data>
+  <data name="Status_ListScripts" xml:space="preserve">
+    <value>Listing debugger scripts</value>
+  </data>
+  <data name="Status_LoadCabNotes" xml:space="preserve">
+    <value>Loading notes for cab {0}</value>
+    <comment>Parameter is the cab ID</comment>
+  </data>
+  <data name="Status_LoadEventNotes" xml:space="preserve">
+    <value>Loading notes for event {0}</value>
+    <comment>Parameter is the event ID</comment>
+  </data>
+  <data name="Status_LoadEvents" xml:space="preserve">
+    <value>Loading events for {0} {1}</value>
+    <comment>Parametes are the product name and version</comment>
+  </data>
+  <data name="Status_LoadProducts" xml:space="preserve">
+    <value>Loading products</value>
+  </data>
+  <data name="Status_LoadProfiles" xml:space="preserve">
+    <value>Loading StackHash Service Profiles</value>
+  </data>
+  <data name="Status_LoadScript" xml:space="preserve">
+    <value>Loading debugger script: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_LoadScriptResult" xml:space="preserve">
+    <value>Loading debugger script result: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_MoveIndex" xml:space="preserve">
+    <value>Moving profile data to {0}\{1}</value>
+    <comment>Parameters are the new path and name</comment>
+  </data>
+  <data name="Status_NewContext" xml:space="preserve">
+    <value>Adding a new StackHash Service Profile</value>
+  </data>
+  <data name="Status_RenameScript" xml:space="preserve">
+    <value>Renaming debugger script: {0} to {1}</value>
+    <comment>Parameters are the original and new script names</comment>
+  </data>
+  <data name="Status_RequestScriptRun" xml:space="preserve">
+    <value>Requesting debugger script run: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_RequestWinQualResync" xml:space="preserve">
+    <value>Requesting resynchronization with WinQual</value>
+  </data>
+  <data name="Status_RequestWinQualSync" xml:space="preserve">
+    <value>Requesting synchronization with WinQual</value>
+  </data>
+  <data name="Status_RunScript" xml:space="preserve">
+    <value>Running debugger script: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_SaveCabNote" xml:space="preserve">
+    <value>Adding note to cab {0}</value>
+    <comment>Parameter is the cab ID</comment>
+  </data>
+  <data name="Status_SaveEventNote" xml:space="preserve">
+    <value>Adding note to event {0}</value>
+    <comment>Parameter is the event ID</comment>
+  </data>
+  <data name="Status_SaveProfile" xml:space="preserve">
+    <value>Saving StackHash Service Profile</value>
+  </data>
+  <data name="Status_SaveScript" xml:space="preserve">
+    <value>Saving debugger script: {0}</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="Status_Search" xml:space="preserve">
+    <value>Searching</value>
+  </data>
+  <data name="Temp" xml:space="preserve">
+    <value>Temp</value>
+  </data>
+  <data name="ProfileManager_DeleteProfileMBMessage" xml:space="preserve">
+    <value>Are you sure you want to delete {0}?
+
+Deleting a profile does not remove the contents of the local store. To completely remove {0} you should also delete the local store at:
+
+{1}</value>
+    <comment>Parameters are the profile name and the index path.</comment>
+  </data>
+  <data name="ProfileManager_DeleteProfileMBTitle" xml:space="preserve">
+    <value>Delete Profile? - StackHash</value>
+  </data>
+  <data name="Command_BetaForum" xml:space="preserve">
+    <value>S_tackHash Feedback Forum</value>
+  </data>
+  <data name="Status_WinQualSyncCabsComplete" xml:space="preserve">
+    <value>Cab list completed for {0} {1}</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="Status_WinQualSyncEventsComplete" xml:space="preserve">
+    <value>Events completed for {0} {1}</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="Status_WinQualSyncProductsComplete" xml:space="preserve">
+    <value>Mapped product list completed</value>
+  </data>
+  <data name="Status_RemoveScriptResult" xml:space="preserve">
+    <value>Deleting debugger script result: {0}</value>
+    <comment>Parameters is the script name</comment>
+  </data>
+  <data name="ButtonText_Finish" xml:space="preserve">
+    <value>_Finish</value>
+  </data>
+  <data name="ButtonText_Next" xml:space="preserve">
+    <value>_Next &gt;</value>
+  </data>
+  <data name="SetupWizard_AddContextFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to add or update the WinQual account. Check that you have entered all fields correctly and that the StackHash Service is available and try again.</value>
+  </data>
+  <data name="SetupWizard_AddContextFailedMBTitle" xml:space="preserve">
+    <value>Failed to add WinQual Account - StackHash</value>
+  </data>
+  <data name="SetupWizard_GetProductListFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to download the product list from WinQual. Check that you have entered all fields correctly, that the StackHash Service is available and that the StackHash Service can access the Internet and try again.</value>
+  </data>
+  <data name="SetupWizard_GetProductListFailedMBTitle" xml:space="preserve">
+    <value>Failed to download product list - StackHash</value>
+  </data>
+  <data name="SetupWizard_ServiceConnectFailedMBMessage" xml:space="preserve">
+    <value>Failed to connect to the StackHash Service. Check that the host and port are correct and try again. If you continue to see this error restart the StackHash Service.</value>
+  </data>
+  <data name="SetupWizard_ServiceConnectFailedMBTitle" xml:space="preserve">
+    <value>Failed to connect to the StackHash Service - StackHash</value>
+  </data>
+  <data name="SetupWizard_Title" xml:space="preserve">
+    <value>StackHash Setup {0} of {1}</value>
+    <comment>Parameters are the page and the number of pages in the wizard</comment>
+  </data>
+  <data name="Status_FirstContext" xml:space="preserve">
+    <value>Updating initial profile from Setup Wizard</value>
+  </data>
+  <data name="Disabling" xml:space="preserve">
+    <value>Disabling</value>
+  </data>
+  <data name="Enabling" xml:space="preserve">
+    <value>Enabling</value>
+  </data>
+  <data name="SetupWizard_UpdateProductListFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to update the product list.</value>
+  </data>
+  <data name="SetupWizard_UpdateProductListFailedMBTitle" xml:space="preserve">
+    <value>Failed to update product list - StackHash</value>
+  </data>
+  <data name="Status_SetProductSyncState" xml:space="preserve">
+    <value>{0} synchronization for product: {1}</value>
+    <comment>Parameters are the operation and the product</comment>
+  </data>
+  <data name="DisableSync" xml:space="preserve">
+    <value>Disable _Synchronization</value>
+  </data>
+  <data name="EnableSync" xml:space="preserve">
+    <value>Enable _Synchronization</value>
+  </data>
+  <data name="Command_CheckForUpdates" xml:space="preserve">
+    <value>_Check for Updates</value>
+  </data>
+  <data name="MainWindow_NoUpdateMBMessage" xml:space="preserve">
+    <value>You are running the latest release of StackHash. To get notified when new releases are available follow our blog, Facebook page or Twitter account.</value>
+  </data>
+  <data name="MainWindow_NoUpdateMBTitle" xml:space="preserve">
+    <value>No Update Available - StackHash</value>
+  </data>
+  <data name="Command_ShowDisabledProducts" xml:space="preserve">
+    <value>_Show Disabled Products</value>
+  </data>
+  <data name="ScriptManager_DeleteScriptMBMessage" xml:space="preserve">
+    <value>Are you sure you want to delete {0}?</value>
+    <comment>Parameter is the script name</comment>
+  </data>
+  <data name="ScriptManager_DeleteScriptMBTitle" xml:space="preserve">
+    <value>Delete Script? - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_InvalidScheduleMBMessage" xml:space="preserve">
+    <value>At least one day of the week must be selected.</value>
+  </data>
+  <data name="ProfileAddEdit_InvalidScheduleMBTitle" xml:space="preserve">
+    <value>Invalid Schedule - StackHash</value>
+  </data>
+  <data name="MainWindow_UpdateCheckFailedMBMesssage" xml:space="preserve">
+    <value>StackHash failed to check for updates. This could a problem with your Internet access or proxy server configuration (Tools -&gt; Client Options). It's also possible that our web site is currently unavailable.</value>
+  </data>
+  <data name="MainWindow_UpdateCheckFailedMBTitle" xml:space="preserve">
+    <value>Failed to check for updates - StackHash</value>
+  </data>
+  <data name="ProxySettings_ValidationHost" xml:space="preserve">
+    <value>Enter the hostname or IP address of your HTTP proxy server.</value>
+  </data>
+  <data name="ProxySettings_ValidationPort" xml:space="preserve">
+    <value>Enter the port of your HTTP proxy server.</value>
+  </data>
+  <data name="Command_DebugVisualStudio" xml:space="preserve">
+    <value>_Visual Studio</value>
+  </data>
+  <data name="Command_DebugX64" xml:space="preserve">
+    <value>_64-bit Debugging Tools for Windows (AMD64)</value>
+  </data>
+  <data name="Command_DebugX86" xml:space="preserve">
+    <value>_32-bit Debugging Tools for Windows (x86)</value>
+  </data>
+  <data name="DebuggerName_DebuggingToolsForWindows" xml:space="preserve">
+    <value>Debugging Tools for Windows</value>
+  </data>
+  <data name="DebuggerName_VisualStudio" xml:space="preserve">
+    <value>Visual Studio</value>
+  </data>
+  <data name="OptionsWindow_BrowseVisualStudio" xml:space="preserve">
+    <value>Browse for Visual Studio (devenv.exe) - StackHash</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorVisualStudioPath" xml:space="preserve">
+    <value>Enter path to Visual Studio (devenv.exe).</value>
+  </data>
+  <data name="OptionsWindow_SelectProfileMBMessage" xml:space="preserve">
+    <value>Are you sure you want to save client options without selecting a profile?
+
+If no profiles are listed click Service Options to add or activate a profile. Note that you must be running on the same computer as the StackHash Service to access service options.</value>
+  </data>
+  <data name="OptionsWindow_SelectProfileMBTitle" xml:space="preserve">
+    <value>Save without selecting a profile? - StackHash</value>
+  </data>
+  <data name="SetupWizard_LogOnTestFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to access your WinQual account. Check that the username and password are entered correctly and try again. If this problem persists check that you can access your account at https://winqual.microsoft.com/.</value>
+  </data>
+  <data name="SetupWizard_LogOnTestFailedMBTitle" xml:space="preserve">
+    <value>Failed to access WinQual - StackHash</value>
+  </data>
+  <data name="Status_RunWinQualLogOn" xml:space="preserve">
+    <value>Testing WinQual credentials</value>
+  </data>
+  <data name="Command_Refresh" xml:space="preserve">
+    <value>_Refresh</value>
+  </data>
+  <data name="ServiceStatus_Analyze" xml:space="preserve">
+    <value>Analyzing Cabs</value>
+  </data>
+  <data name="ServiceStatus_Prefix" xml:space="preserve">
+    <value>Service:</value>
+  </data>
+  <data name="ServiceStatus_Purge" xml:space="preserve">
+    <value>Removing Old Cabs</value>
+  </data>
+  <data name="ServiceStatus_Sync" xml:space="preserve">
+    <value>Synchronizing</value>
+  </data>
+  <data name="Status_RefreshEventPackage" xml:space="preserve">
+    <value>Refreshing event {0}</value>
+    <comment>Parameter is the event id</comment>
+  </data>
+  <data name="Command_DebugUsing" xml:space="preserve">
+    <value>_Debug Using</value>
+  </data>
+  <data name="Command_ExtractCab" xml:space="preserve">
+    <value>_Extract Cab...</value>
+  </data>
+  <data name="Command_RunScript" xml:space="preserve">
+    <value>_Run Script</value>
+  </data>
+  <data name="Command_RunScriptByName" xml:space="preserve">
+    <value>Script</value>
+  </data>
+  <data name="Error_WinQualLogOnMBMessage" xml:space="preserve">
+    <value>StackHash failed to logon to WinQual. Check that your username and password are correct and then try again. If the failure persists attempt to logon at https://winqual.microsoft.com/.</value>
+  </data>
+  <data name="Error_WinQualLogOnMBTitle" xml:space="preserve">
+    <value>WinQual Logon Failed - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_WinQualLogOnSuccessMBMessage" xml:space="preserve">
+    <value>StackHash logged on to WinQual successfully.</value>
+  </data>
+  <data name="ProfileAddEdit_WinQualLogOnSuccessMBTitle" xml:space="preserve">
+    <value>WinQual Logon Succeeded - StackHash</value>
+  </data>
+  <data name="SetupWizard_ProxyUpdateFailedMBMessage" xml:space="preserve">
+    <value>Failed to update proxy server settings for the StackHash service. Click Proxy Settings and check that all fields are entered correctly and then try again.</value>
+  </data>
+  <data name="SetupWizard_ProxyUpdateFailedMBTitle" xml:space="preserve">
+    <value>Failed to update proxy settings - StackHash</value>
+  </data>
+  <data name="Status_UpdateProxySettings" xml:space="preserve">
+    <value>Updating proxy settings for service</value>
+  </data>
+  <data name="Status_WinQualSyncDownloadingCabs" xml:space="preserve">
+    <value>Updating cab list for {0} {1}</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="Status_WinQualSyncDownloadingEvents" xml:space="preserve">
+    <value>Updating events for {0} {1}</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="Status_WinQualSyncDownloadingProducts" xml:space="preserve">
+    <value>Updating mapped product list</value>
+  </data>
+  <data name="ButtonText_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ButtonText_Edit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="ButtonText_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonText_View" xml:space="preserve">
+    <value>_View</value>
+  </data>
+  <data name="Status_SetEventBugId" xml:space="preserve">
+    <value>Updating reference for event {0}</value>
+  </data>
+  <data name="FieldNameEventReference" xml:space="preserve">
+    <value>Event Reference</value>
+  </data>
+  <data name="Error_SyncFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to synchronize with WinQual. Common reasons for this error include:
+
+1. Your WinQual credentials are incorrect or have expired. Check that your username and password are correct and that you can logon at https://winqual.microsoft.com/.
+
+2. StackHash cannot access the WinQual API. Check that you can load https://winqual.microsoft.com/ in Internet Explorer. If you use a proxy server to access the Internet make sure that the StackHash proxy server settings are correct.</value>
+  </data>
+  <data name="Error_SyncFailedMBTitle" xml:space="preserve">
+    <value>WinQual Synchronization Failed - StackHash</value>
+  </data>
+  <data name="SetupWizard_IndexFolderMisingMBMessage" xml:space="preserve">
+    <value>The index folder must exist. Create the folder you entered or select an existing folder for the index.</value>
+  </data>
+  <data name="SetupWizard_IndexFolderMissingMBTitle" xml:space="preserve">
+    <value>Index Folder Not Found - StackHash</value>
+  </data>
+  <data name="Status_CancelSync" xml:space="preserve">
+    <value>Canceling synchronization with WinQual</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>_Export</value>
+  </data>
+  <data name="Command_ExportEventList" xml:space="preserve">
+    <value>Export E_vent List...</value>
+  </data>
+  <data name="Command_ExportEventListFull" xml:space="preserve">
+    <value>Export Event List, _Cabs and Hits...</value>
+  </data>
+  <data name="Command_ExportProductList" xml:space="preserve">
+    <value>Export _Product List...</value>
+  </data>
+  <data name="Error_ExportFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to export:
+
+{0}</value>
+    <comment>Parameter is the export path</comment>
+  </data>
+  <data name="Error_ExportFailedMBTitle" xml:space="preserve">
+    <value>Export Failed - StackHash</value>
+  </data>
+  <data name="ExportComplete_MBMessage" xml:space="preserve">
+    <value>Export Complete:
+
+{0}</value>
+    <comment>Parameter is the export path</comment>
+  </data>
+  <data name="ExportComplete_MBTitle" xml:space="preserve">
+    <value>Export Complete - StackHash</value>
+  </data>
+  <data name="ExportSaveDefaultExtension" xml:space="preserve">
+    <value>.xml</value>
+  </data>
+  <data name="ExportSaveDefaultName" xml:space="preserve">
+    <value>export.xml</value>
+  </data>
+  <data name="ExportSaveEventListName" xml:space="preserve">
+    <value>{0}_{1}_export.xml</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="ExportSaveFilter" xml:space="preserve">
+    <value>XML Files (*.xml)|*.xml</value>
+  </data>
+  <data name="ExportSaveProductListName" xml:space="preserve">
+    <value>mapped_products.xml</value>
+  </data>
+  <data name="ExportSaveTitle" xml:space="preserve">
+    <value>Save Export As - StackHash</value>
+  </data>
+  <data name="Status_ExportEvents" xml:space="preserve">
+    <value>Exporting events</value>
+  </data>
+  <data name="Status_ExportProductList" xml:space="preserve">
+    <value>Exporting mapped products</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorRetry" xml:space="preserve">
+    <value>Number of retry attempts must be at least one.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorTimeout" xml:space="preserve">
+    <value>Timeout must be at least one minute.</value>
+  </data>
+  <data name="Error_UserSettingsSaveMBMessage" xml:space="preserve">
+    <value>StackHash failed to save application settings.
+
+Would you like to try again?</value>
+  </data>
+  <data name="Error_UserSettingsSaveMBTitle" xml:space="preserve">
+    <value>Save Settings Failed - StackHash</value>
+  </data>
+  <data name="Status_RefreshCollectionPolicies" xml:space="preserve">
+    <value>Updating data collection policies</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="CollectionOrderShort_AsReceived" xml:space="preserve">
+    <value>in order received</value>
+  </data>
+  <data name="CollectionOrderShort_LargestFirst" xml:space="preserve">
+    <value>largest first</value>
+  </data>
+  <data name="CollectionOrderShort_MostRecentFirst" xml:space="preserve">
+    <value>most recent first</value>
+  </data>
+  <data name="CollectionOrderShort_OldestFirst" xml:space="preserve">
+    <value>oldest first</value>
+  </data>
+  <data name="CollectionOrderShort_SmallestFirst" xml:space="preserve">
+    <value>smallest first</value>
+  </data>
+  <data name="CollectionOrder_AsReceived" xml:space="preserve">
+    <value>Download cabs in order received.</value>
+  </data>
+  <data name="CollectionOrder_LargestFirst" xml:space="preserve">
+    <value>Download largest cabs first.</value>
+  </data>
+  <data name="CollectionOrder_MostRecentFirst" xml:space="preserve">
+    <value>Download most recent cabs first.</value>
+  </data>
+  <data name="CollectionOrder_OldestFirst" xml:space="preserve">
+    <value>Download oldest cabs first.</value>
+  </data>
+  <data name="CollectionOrder_SmallestFirst" xml:space="preserve">
+    <value>Download smallest cabs first.</value>
+  </data>
+  <data name="CollectionPolicyControl_ValidationErrorCabCount" xml:space="preserve">
+    <value>Number of cabs to download must be 0 or greater.</value>
+  </data>
+  <data name="CollectionPolicyControl_ValidationErrorCabPercentage" xml:space="preserve">
+    <value>Percentage of cabs to download must be between 0 and 100.</value>
+  </data>
+  <data name="CollectionPolicyControl_ValidationErrorHitThreshold" xml:space="preserve">
+    <value>Hit threshold must be 0 or greater.</value>
+  </data>
+  <data name="EventCollectionPolicy_All" xml:space="preserve">
+    <value>Collect cabs for all events</value>
+  </data>
+  <data name="EventCollectionPolicy_AtLeastOne" xml:space="preserve">
+    <value>Collect cabs for events with at least 1 hit</value>
+  </data>
+  <data name="EventCollectionPolicy_AtLeastX" xml:space="preserve">
+    <value>Collect cabs for events with at least {0:n0} hits</value>
+    <comment>Parameter is the number of hits</comment>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ProductProperties_Title" xml:space="preserve">
+    <value>{0} {1} Properties - StackHash</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="Status_UpdateProductProperties" xml:space="preserve">
+    <value>Updating product properties</value>
+  </data>
+  <data name="Collection_CollectLarger" xml:space="preserve">
+    <value>, always collect larger cabs</value>
+  </data>
+  <data name="EventProperties_Title" xml:space="preserve">
+    <value>Event {0} Properties - StackHash</value>
+    <comment>Parameter is the Event Id</comment>
+  </data>
+  <data name="Status_UpdateEventPackageProperties" xml:space="preserve">
+    <value>Updating event properties</value>
+  </data>
+  <data name="SetupWizard_SetCollectionPoliciesFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to set collection policies.</value>
+  </data>
+  <data name="SetupWizard_SetCollectionPoliciesFailedMBTitle" xml:space="preserve">
+    <value>Failed to set collection policies - StackHash</value>
+  </data>
+  <data name="Status_SetCollectionPolicies" xml:space="preserve">
+    <value>Updating data collection policies</value>
+  </data>
+  <data name="ClientLogic_EventListTitleProductFiltered" xml:space="preserve">
+    <value>{0} {1} (Filtered)</value>
+    <comment>Parameters are the product name and version</comment>
+  </data>
+  <data name="DisplayPolicyControl_ValidationErrorHitThreshold" xml:space="preserve">
+    <value>Hit threshold must be 0 or greater.</value>
+  </data>
+  <data name="EventDisplayPolicy_All" xml:space="preserve">
+    <value>Show all events</value>
+  </data>
+  <data name="EventDisplayPolicy_Many" xml:space="preserve">
+    <value>Show events with at least {0:n0} hits</value>
+    <comment>Parameter is the hit threshold</comment>
+  </data>
+  <data name="EventDisplayPolicy_One" xml:space="preserve">
+    <value>Show events with at least 1 hit</value>
+  </data>
+  <data name="ServiceError_Aborted" xml:space="preserve">
+    <value>The last operation was canceled.</value>
+  </data>
+  <data name="ServiceError_AccessDenied" xml:space="preserve">
+    <value>Access to a required resource was denied.</value>
+  </data>
+  <data name="ServiceError_AuthenticationFailure" xml:space="preserve">
+    <value>Failed to log in to WinQual.</value>
+  </data>
+  <data name="ServiceError_CabDoesNotExist" xml:space="preserve">
+    <value>The expected cab does not exist. Download the cab from the Debug menu and try again.</value>
+  </data>
+  <data name="ServiceError_CabDownloadFailed" xml:space="preserve">
+    <value>Failed to download cab. Please try again later.</value>
+  </data>
+  <data name="ServiceError_CabIsCorrupt" xml:space="preserve">
+    <value>The cab file is corrupt. Download the cab from the Debug menu and try again.</value>
+  </data>
+  <data name="ServiceError_CannotOverwriteScriptFile" xml:space="preserve">
+    <value>Script file exists and overwrite not specified when attempting to save the script file again.</value>
+  </data>
+  <data name="ServiceError_CannotRemoveReadOnlyScripts" xml:space="preserve">
+    <value>Read only script cannot be removed.</value>
+  </data>
+  <data name="ServiceError_CannotRemoveSystemScripts" xml:space="preserve">
+    <value>System script cannot be removed.</value>
+  </data>
+  <data name="ServiceError_ContextIsActive" xml:space="preserve">
+    <value>Operation failed because the profile is active. Please deactivate the profile and try again.</value>
+  </data>
+  <data name="ServiceError_ContextIsNotActive" xml:space="preserve">
+    <value>Operation failed because the profile is not active. Please activate the profile and try again.</value>
+  </data>
+  <data name="ServiceError_DebuggerError" xml:space="preserve">
+    <value>Failed to run debugger.</value>
+  </data>
+  <data name="ServiceError_DebuggerNotConfigured" xml:space="preserve">
+    <value>A debugger has not been configured. Specify a debugger in profile settings (Tools -&gt; Service Options -&gt; Profiles).</value>
+  </data>
+  <data name="ServiceError_ErrorIndexAssigned" xml:space="preserve">
+    <value>The error index is already in use by another profile.</value>
+  </data>
+  <data name="ServiceError_ErrorIndexNameAssigned" xml:space="preserve">
+    <value>The error index name is already in use by another profile.</value>
+  </data>
+  <data name="ServiceError_ErrorIndexNameIsDefault" xml:space="preserve">
+    <value>Cannot activate a profile with a reserved error index name.</value>
+  </data>
+  <data name="ServiceError_InvalidFeedDetected" xml:space="preserve">
+    <value>Invalid feed detected.</value>
+  </data>
+  <data name="ServiceError_ProfileActive" xml:space="preserve">
+    <value>Operation failed because the profile is active. Please deactivate the profile and try again.</value>
+  </data>
+  <data name="ServiceError_ScheduleFormatError" xml:space="preserve">
+    <value>The specified schedule is invalid.</value>
+  </data>
+  <data name="ServiceError_ScriptDoesNotExist" xml:space="preserve">
+    <value>Cannot find script. The script may be stored on a drive that is no longer available or may have been removed by another user.</value>
+  </data>
+  <data name="ServiceError_ServerDown" xml:space="preserve">
+    <value>The WinQual site appears to be down. Please try again later.</value>
+  </data>
+  <data name="ServiceError_TaskAlreadyInProgress" xml:space="preserve">
+    <value>Task is already running and cannot be started again.</value>
+  </data>
+  <data name="ServiceError_UnexpectedError" xml:space="preserve">
+    <value>An unexpected error occurred in the StackHash Service</value>
+  </data>
+  <data name="ServiceError_WinQualLogOnFailed" xml:space="preserve">
+    <value>Failed to log in to WinQual.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorCabFailLimit" xml:space="preserve">
+    <value>Cab download failure limit must be zero or greater.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSyncRetryMins" xml:space="preserve">
+    <value>Delay before retry must be at least one minute.</value>
+  </data>
+  <data name="Command_DownloadCab" xml:space="preserve">
+    <value>Download _Cab</value>
+  </data>
+  <data name="Status_DownloadCab" xml:space="preserve">
+    <value>Downloading cab {0}</value>
+  </data>
+  <data name="Status_DownloadCabRequest" xml:space="preserve">
+    <value>Requesting download of cab {0}</value>
+  </data>
+  <data name="Command_SyncReport" xml:space="preserve">
+    <value>Synchronization R_eport</value>
+  </data>
+  <data name="Status_GetContextStatus" xml:space="preserve">
+    <value>Getting service status</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>failed</value>
+  </data>
+  <data name="Succeeded" xml:space="preserve">
+    <value>succeeded</value>
+  </data>
+  <data name="Synchronization" xml:space="preserve">
+    <value>Synchronization</value>
+  </data>
+  <data name="SyncReport_AtDateTime" xml:space="preserve">
+    <value>on {0} at {1}.</value>
+    <comment>Parameters are the long date and time</comment>
+  </data>
+  <data name="SyncReport_LastSuccess" xml:space="preserve">
+    <value>The last successful synchronization was on {0} at {1}.</value>
+    <comment>Parameters are the long date and time</comment>
+  </data>
+  <data name="SyncReport_NoStatus" xml:space="preserve">
+    <value>Service status unavailable, check that a profile is selected in the client.</value>
+  </data>
+  <data name="SyncReport_NoSync" xml:space="preserve">
+    <value>The current profile has not been synchronized with WinQual yet. Use Tools -&gt; Synchronize Now to complete your first synchronization.</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>hour</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>minute</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>second</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="SyncReport_Canceled" xml:space="preserve">
+    <value>Synchronization started at {0} on {1} was canceled.</value>
+    <comment>Parameters are the long date and time</comment>
+  </data>
+  <data name="SyncReport_Duration" xml:space="preserve">
+    <value>Synchronization lasted {0}.</value>
+    <comment>Parameter is the duration as string</comment>
+  </data>
+  <data name="SyncReport_FailReason" xml:space="preserve">
+    <value>The synchronization failure reason was: {0}</value>
+    <comment>Parameter is the failure reason</comment>
+  </data>
+  <data name="ButtonText_Move" xml:space="preserve">
+    <value>_Move...</value>
+  </data>
+  <data name="ProfileAddEdit_MoveIndexMBMessage" xml:space="preserve">
+    <value>The local store (index) will be moved when you click OK on the Edit Profile window. If you don't want to move the local store click Cancel (you may lose other profile changes).</value>
+  </data>
+  <data name="ProfileAddEdit_MoveIndexMBTitle" xml:space="preserve">
+    <value>Move Local Store - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSearchPathQuotes" xml:space="preserve">
+    <value>Search path may not contain quotes (", ')</value>
+  </data>
+  <data name="Error_CabCorruptMBMessage" xml:space="preserve">
+    <value>StackHash failed to extract the contents of a cab downloaded from the service. Try synchronizing with WinQual to fix this problem.</value>
+  </data>
+  <data name="Error_CabCorruptMBTitle" xml:space="preserve">
+    <value>Cab is corrupt - StackHash</value>
+  </data>
+  <data name="Command_EnterLicense" xml:space="preserve">
+    <value>Enter _License Code...</value>
+  </data>
+  <data name="License_Evaluation" xml:space="preserve">
+    <value>Beta evaluation license.</value>
+  </data>
+  <data name="License_Full" xml:space="preserve">
+    <value>Licensed to {0} for up to {1:n0} events and {2:n0} seats. 
+License expires {3}
+License code is {4}</value>
+    <comment>Parameters are the name/department, number of events, number of seats, expiry date and license ID</comment>
+  </data>
+  <data name="Status_RefreshLicense" xml:space="preserve">
+    <value>Refreshing license</value>
+  </data>
+  <data name="Status_SetLicense" xml:space="preserve">
+    <value>Setting license</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="LicenseExpired_MBMessage" xml:space="preserve">
+    <value>Your license has expired. Synchronization is disabled until your license is renewed.</value>
+  </data>
+  <data name="LicenseExpired_MBTitle" xml:space="preserve">
+    <value>License Expired - StackHash</value>
+  </data>
+  <data name="LicenseExpiring_MBMessage" xml:space="preserve">
+    <value>Your license will expire in {0}. Once your license has expired Synchronization will be disabled. To prevent missing any event data your should renew before your license expires.</value>
+    <comment>Number of days until expiry (including day or days)</comment>
+  </data>
+  <data name="LicenseExpiring_MBTitle" xml:space="preserve">
+    <value>License Expiry Warning - StackHash</value>
+  </data>
+  <data name="ServiceError_FailedToGetLicense" xml:space="preserve">
+    <value>Failed to install or update license, if this error continues to occur check that your license code is correct.</value>
+  </data>
+  <data name="ServiceError_LicenseClientLimitExceeded" xml:space="preserve">
+    <value>License client limit reached. Please upgrade your license to support more StackHash client connections.</value>
+  </data>
+  <data name="ServiceError_LicenseEventCountExceeded" xml:space="preserve">
+    <value>License event limit reached. Please upgrade your license to support more events.</value>
+  </data>
+  <data name="ServiceError_LicenseExpired" xml:space="preserve">
+    <value>License has expired.</value>
+  </data>
+  <data name="ServiceError_LicenseNotFound" xml:space="preserve">
+    <value>Failed to install or update license, if this error continues to occur check that your license code is correct.</value>
+  </data>
+  <data name="ServiceError_NoLicense" xml:space="preserve">
+    <value>License is not installed.</value>
+  </data>
+  <data name="Status_WinQualSyncDownloadingCab" xml:space="preserve">
+    <value>Downloading cab {0} from event {1} for {2} {3}</value>
+    <comment>Parameters are the cab Id, event Id, product name and version</comment>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSyncsBeforeResync" xml:space="preserve">
+    <value>Syncs before automatic resync must be at least 1.</value>
+  </data>
+  <data name="ServiceStatus_Resync" xml:space="preserve">
+    <value>Resynchronizing</value>
+  </data>
+  <data name="Status_WinQualSyncDownloadingEventPage" xml:space="preserve">
+    <value>Processing event page {0:n0} of {1:n0} for {2} {3} - {4}</value>
+    <comment>Parameters are the current page, total pages, product name and version and file</comment>
+  </data>
+  <data name="SetupWizard_UpdateReportingStateFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to update your reporting preference. Check that the StackHash Service is running and try again.</value>
+  </data>
+  <data name="SetupWizard_UpdateReportingStateFailedMBTitle" xml:space="preserve">
+    <value>Failed to update reporting preference - StackHash</value>
+  </data>
+  <data name="Status_EnableDisableReporting" xml:space="preserve">
+    <value>Updating service reporting preference</value>
+  </data>
+  <data name="Error_MoveFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to move the local store (index). Check that the NETWORK SERVICE account has permission to access the new folder, and that there is enough space to store the contents of the current local store.</value>
+  </data>
+  <data name="Error_MoveFailedMBTitle" xml:space="preserve">
+    <value>Failed to move Local Store - StackHash</value>
+  </data>
+  <data name="ServiceError_MoveInProgress" xml:space="preserve">
+    <value>Operation invalid while a local store (index) move is in progress.</value>
+  </data>
+  <data name="DateBarChartControl_ScaleText" xml:space="preserve">
+    <value>{0} days</value>
+    <comment>Parameter is the number of days shown</comment>
+  </data>
+  <data name="ProfileNameRules" xml:space="preserve">
+    <value>Profile names must start with a letter and may only contain letters, numbers and the underscore character. Profile names must be no longer than 50 characters and must not be reserved SQL words such as INDEX or UPDATE.</value>
+  </data>
+  <data name="SetupAccountPage_ProfileNameInvalidMBTitle" xml:space="preserve">
+    <value>Profile Name Invalid - StackHash</value>
+  </data>
+  <data name="ServiceError_CopyInProgress" xml:space="preserve">
+    <value>Operation invalid while a local store (index) copy is in progress.</value>
+  </data>
+  <data name="ServiceError_ErrorIndexMustExist" xml:space="preserve">
+    <value>Operation invalid for a local store (index) that does not exist yet.</value>
+  </data>
+  <data name="ServiceError_ErrorIndexTypeNotSupported" xml:space="preserve">
+    <value>The specified local store (index) is not supported.</value>
+  </data>
+  <data name="ServiceError_ClientVersionMismatch" xml:space="preserve">
+    <value>StackHash Client version does not match the StackHash Service version. Please make sure that the client and service are running the most recent version of StackHash (Help -&gt; Check for Updates).</value>
+  </data>
+  <data name="ServiceError_ErrorIndexAccessDenied" xml:space="preserve">
+    <value>Unable to access local store (index) folder. Check that the StackHash Service has permission to access the folder.</value>
+  </data>
+  <data name="ServiceError_InvalidDatabaseName" xml:space="preserve">
+    <value>Profile name is invalid. Please use a profile name that starts with a letter and contains only letters, numbers and the underscore character. Profile names can be no longer than 50 characters.</value>
+  </data>
+  <data name="Status_CopyIndex" xml:space="preserve">
+    <value>Copying profile data to {0}\{1} ({2}).</value>
+    <comment>Parameters are the new path, name and catalog</comment>
+  </data>
+  <data name="Error_CopyFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to copy the local store (index). Check that the NETWORK SERVICE account has permission to access the new folder, and that there is enough space to store the contents of the current local store.</value>
+  </data>
+  <data name="Error_CopyFailedMBTitle" xml:space="preserve">
+    <value>Failed to copy Local Store - StackHash</value>
+  </data>
+  <data name="UpgradeFromXml_CloseMBMessage" xml:space="preserve">
+    <value>If you close without upgrading all profiles StackHash will exit. Run StackHash again when you're ready to upgrade.
+
+Are you sure you want to close?</value>
+  </data>
+  <data name="UpgradeFromXml_CloseMBTitle" xml:space="preserve">
+    <value>Close without upgrading? - StackHash</value>
+  </data>
+  <data name="DBConfigLaunchFailedMBMessage" xml:space="preserve">
+    <value>Failed to launch StackHash Database Configuration.</value>
+  </data>
+  <data name="DBConfigLaunchFailedMBTitle" xml:space="preserve">
+    <value>Failed to launch StackHash Database Configuration - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorConnectionTimeout" xml:space="preserve">
+    <value>Connection timeout must be between {0:n0} and {1:n0} seconds.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorEventsPerBlock" xml:space="preserve">
+    <value>Events per block must be between {0:n0} and {1:n0}.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorMaxPoolSize" xml:space="preserve">
+    <value>Maximum pool size must be between {0:n0} and {1:n0} and must also be at least as large as the minimum pool size.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorMinPoolSize" xml:space="preserve">
+    <value>Minimum pool size must be between {0:n0} and {1:n0}.</value>
+  </data>
+  <data name="ServiceError_CannotChangeIndexFolderOnceCreated" xml:space="preserve">
+    <value>Index folder may not be changed after the index has been created.</value>
+  </data>
+  <data name="ServiceError_CannotMoveToExistingFolder" xml:space="preserve">
+    <value>Cannot move index to an existing folder if the destination database does not also exist.</value>
+  </data>
+  <data name="ServiceError_CopyIndexDeleteButNoSwitch" xml:space="preserve">
+    <value>Cannot delete source index after copy if profile has not been switched to the destination index.</value>
+  </data>
+  <data name="Status_CreateTestIndex" xml:space="preserve">
+    <value>Creating test index data</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorEventsPerPage" xml:space="preserve">
+    <value>There must be at least one event per page.</value>
+  </data>
+  <data name="Status_LoadEventsNoProduct" xml:space="preserve">
+    <value>Loading events page {0:n0}</value>
+    <comment>Parameter is the events page</comment>
+  </data>
+  <data name="Status_LoadEventsWithProduct" xml:space="preserve">
+    <value>Loading events page {0:n0} for {1}</value>
+    <comment>Parameters are the events page and the product name/version</comment>
+  </data>
+  <data name="Status_PopulateProuductSummaries" xml:space="preserve">
+    <value>Loading hit summary data for {0}</value>
+    <comment>Parameter is the product name/version</comment>
+  </data>
+  <data name="MenuText_EditScript" xml:space="preserve">
+    <value>_Edit Script</value>
+  </data>
+  <data name="MenuText_ViewScript" xml:space="preserve">
+    <value>_View Script</value>
+  </data>
+  <data name="MainWindow_NoEnabledProductsMBMessage" xml:space="preserve">
+    <value>None of your mapped products are enabled for synchronization. To fix this right-click a product and choose Enable Synchronization from the context menu.
+
+Would you like to continue anyway? This will add new mapped products if any exist.</value>
+  </data>
+  <data name="MainWindow_NoEnabledProductsMBTitle" xml:space="preserve">
+    <value>Continue synchronization with no enabled products? - StackHash</value>
+  </data>
+  <data name="StackHashMessageBox_CloseWithoutSendingMBMessage" xml:space="preserve">
+    <value>Are you sure you want to close without sending an error report?</value>
+  </data>
+  <data name="StackHashMessageBox_CloseWithoutSendingMBTitle" xml:space="preserve">
+    <value>Close without sending error report? - StackHash</value>
+  </data>
+  <data name="Command_ExtractAllCabs" xml:space="preserve">
+    <value>E_xtract all cabs...</value>
+  </data>
+  <data name="MainWindow_CabsExtractedMBMessage" xml:space="preserve">
+    <value>Cabs for Event {0} have been extracted to:
+
+{1}</value>
+    <comment>Parameters are the event id and the extraction path</comment>
+  </data>
+  <data name="MainWindow_CabsExtractedMBTitle" xml:space="preserve">
+    <value>Cabs Extracted - StackHash</value>
+  </data>
+  <data name="SearchParseException_DateRangeError" xml:space="preserve">
+    <value>Date error: year must be between 1900 and 2078.</value>
+  </data>
+  <data name="ServiceError_ActivateFailed" xml:space="preserve">
+    <value>Failed to activate profile.       </value>
+  </data>
+  <data name="ServiceError_ContextActivationError" xml:space="preserve">
+    <value>Failed to activate profile.</value>
+  </data>
+  <data name="ServiceError_ContextLoadError" xml:space="preserve">
+    <value>Failed to load profile settings.        </value>
+  </data>
+  <data name="ServiceError_DatabaseNotFound" xml:space="preserve">
+    <value>Could not find database.</value>
+  </data>
+  <data name="ServiceError_DeactivateFailed" xml:space="preserve">
+    <value>Failed to deactivate profile.       </value>
+  </data>
+  <data name="ServiceError_FailedToAddCab" xml:space="preserve">
+    <value>Failed to add cab.</value>
+  </data>
+  <data name="ServiceError_FailedToAddCabNote" xml:space="preserve">
+    <value>Failed to add cab note.</value>
+  </data>
+  <data name="ServiceError_FailedToAddControlData" xml:space="preserve">
+    <value>Failed to add StackHash control data.     </value>
+  </data>
+  <data name="ServiceError_FailedToAddEvent" xml:space="preserve">
+    <value>Failed to add event.	       </value>
+  </data>
+  <data name="ServiceError_FailedToAddEventInfo" xml:space="preserve">
+    <value>Failed to add hit.</value>
+  </data>
+  <data name="ServiceError_FailedToAddEventInfos" xml:space="preserve">
+    <value>Failed to add hits.</value>
+  </data>
+  <data name="ServiceError_FailedToAddEventNote" xml:space="preserve">
+    <value>Failed to add event note.</value>
+  </data>
+  <data name="ServiceError_FailedToAddEventType" xml:space="preserve">
+    <value>Failed to add event type.</value>
+  </data>
+  <data name="ServiceError_FailedToAddFile" xml:space="preserve">
+    <value>Failed to add file.</value>
+  </data>
+  <data name="ServiceError_FailedToAddFileEvent" xml:space="preserve">
+    <value>Failed to add event to file.</value>
+  </data>
+  <data name="ServiceError_FailedToAddHitDateSummary" xml:space="preserve">
+    <value>Failed to add hit date summary.</value>
+  </data>
+  <data name="ServiceError_FailedToAddLocale" xml:space="preserve">
+    <value>Failed to add locale.</value>
+  </data>
+  <data name="ServiceError_FailedToAddLocaleSummary" xml:space="preserve">
+    <value>Failed to add locale summary.</value>
+  </data>
+  <data name="ServiceError_FailedToAddOperatingSystem" xml:space="preserve">
+    <value>Failed to add operating system.</value>
+  </data>
+  <data name="ServiceError_FailedToAddOperatingSystemSummary" xml:space="preserve">
+    <value>Failed to add operating system summary.</value>
+  </data>
+  <data name="ServiceError_FailedToAddProduct" xml:space="preserve">
+    <value>Failed to add product.</value>
+  </data>
+  <data name="ServiceError_FailedToAddProductControlData" xml:space="preserve">
+    <value>Failed to add product control data.</value>
+  </data>
+  <data name="ServiceError_FailedToAddProductFile" xml:space="preserve">
+    <value>Failed to add file to product.</value>
+  </data>
+  <data name="ServiceError_FailedToAddSource" xml:space="preserve">
+    <value>Failed to add source.</value>
+  </data>
+  <data name="ServiceError_FailedToAddTaskControlData" xml:space="preserve">
+    <value>Failed to add task control data.</value>
+  </data>
+  <data name="ServiceError_FailedToAddUser" xml:space="preserve">
+    <value>Failed to add user.</value>
+  </data>
+  <data name="ServiceError_FailedToChangeDatabaseLocation" xml:space="preserve">
+    <value>Failed to move database.  </value>
+  </data>
+  <data name="ServiceError_FailedToChangeDatabaseLogicalName" xml:space="preserve">
+    <value>Failed to rename database.      </value>
+  </data>
+  <data name="ServiceError_FailedToCreateDatabase" xml:space="preserve">
+    <value>Failed to create database.</value>
+  </data>
+  <data name="ServiceError_FailedToDeleteDatabase" xml:space="preserve">
+    <value>Failed to delete database.</value>
+  </data>
+  <data name="ServiceError_FailedToDetermineIfControlEntryExists" xml:space="preserve">
+    <value>Failed to find StackHash control data.</value>
+  </data>
+  <data name="ServiceError_FailedToDetermineIfLocaleExists" xml:space="preserve">
+    <value>Failed to find locale.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCab" xml:space="preserve">
+    <value>Failed to get cab.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCabCount" xml:space="preserve">
+    <value>Failed to get cab count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCabFileCount" xml:space="preserve">
+    <value>Failed to get cab file count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCabNotes" xml:space="preserve">
+    <value>Failed to get cab notes.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCabs" xml:space="preserve">
+    <value>Failed to load cab.</value>
+  </data>
+  <data name="ServiceError_FailedToGetControlData" xml:space="preserve">
+    <value>Failed to retrieve StackHash control data.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEvent" xml:space="preserve">
+    <value>Failed to get event.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventCount" xml:space="preserve">
+    <value>Failed to get event count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventInfoPackageCollection" xml:space="preserve">
+    <value>Failed to get hit package.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventInfos" xml:space="preserve">
+    <value>Failed to get hits.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventNotes" xml:space="preserve">
+    <value>Failed to get event notes.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEvents" xml:space="preserve">
+    <value>Failed to get events.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventType" xml:space="preserve">
+    <value>Failed to get event type.</value>
+  </data>
+  <data name="ServiceError_FailedToGetEventTypeId" xml:space="preserve">
+    <value>Failed to get event type ID.</value>
+  </data>
+  <data name="ServiceError_FailedToGetFile" xml:space="preserve">
+    <value>Failed to get file.        </value>
+  </data>
+  <data name="ServiceError_FailedToGetFileCount" xml:space="preserve">
+    <value>Failed to get file count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetFiles" xml:space="preserve">
+    <value>Failed to get files.</value>
+  </data>
+  <data name="ServiceError_FailedToGetFilesMatch" xml:space="preserve">
+    <value>Failed to get files match.</value>
+  </data>
+  <data name="ServiceError_FailedToGetHitCount" xml:space="preserve">
+    <value>Failed to get hit count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetHitDateSummaries" xml:space="preserve">
+    <value>Failed to get hit date summaries.</value>
+  </data>
+  <data name="ServiceError_FailedToGetHitDateSummaryForProduct" xml:space="preserve">
+    <value>Failed to get hit date summary for product.</value>
+  </data>
+  <data name="ServiceError_FailedToGetHitDateSummaryFresh" xml:space="preserve">
+    <value>Failed to get hit date summary.</value>
+  </data>
+  <data name="ServiceError_FailedToGetLocaleSummaries" xml:space="preserve">
+    <value>Failed to get locale summaries.</value>
+  </data>
+  <data name="ServiceError_FailedToGetLocaleSummaryForProduct" xml:space="preserve">
+    <value>Failed to get locale summary for product.</value>
+  </data>
+  <data name="ServiceError_FailedToGetLocaleSummaryFresh" xml:space="preserve">
+    <value>Failed to get locale summary.</value>
+  </data>
+  <data name="ServiceError_FailedToGetMostRecentHitDate" xml:space="preserve">
+    <value>Failed to get most recent hit date.</value>
+  </data>
+  <data name="ServiceError_FailedToGetOperatingSystemDetails" xml:space="preserve">
+    <value>Failed to get operating system details.</value>
+  </data>
+  <data name="ServiceError_FailedToGetOperatingSystemId" xml:space="preserve">
+    <value>Failed to get operating system ID.</value>
+  </data>
+  <data name="ServiceError_FailedToGetOperatingSystemSummaries" xml:space="preserve">
+    <value>Failed to get operating system summaries.</value>
+  </data>
+  <data name="ServiceError_FailedToGetOperatingSystemSummaryForProduct" xml:space="preserve">
+    <value>Failed to get operating system summary for product.</value>
+  </data>
+  <data name="ServiceError_FailedToGetOperatingSystemSummaryFresh" xml:space="preserve">
+    <value>Failed to get operating system summary.</value>
+  </data>
+  <data name="ServiceError_FailedToGetProductCount" xml:space="preserve">
+    <value>Failed to get product count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetProductEventCount" xml:space="preserve">
+    <value>Failed to get product event count.</value>
+  </data>
+  <data name="ServiceError_FailedToGetProductMatch" xml:space="preserve">
+    <value>Failed to get product match.</value>
+  </data>
+  <data name="ServiceError_FailedToGetSourceId" xml:space="preserve">
+    <value>Failed to get source ID.</value>
+  </data>
+  <data name="ServiceError_FailedToGetUserId" xml:space="preserve">
+    <value>Failed to get user ID.</value>
+  </data>
+  <data name="ServiceError_FailedToGetWindow" xml:space="preserve">
+    <value>Failed to get event page.</value>
+  </data>
+  <data name="ServiceError_FailedToLoadCabCollection" xml:space="preserve">
+    <value>Failed to load cabs.</value>
+  </data>
+  <data name="ServiceError_FailedToLoadEventList" xml:space="preserve">
+    <value>Failed to load event list.</value>
+  </data>
+  <data name="ServiceError_FailedToPrimeLocaleCache" xml:space="preserve">
+    <value>Failed to prime locale cache.</value>
+  </data>
+  <data name="ServiceError_FailedToReadProduct" xml:space="preserve">
+    <value>Failed to read product.</value>
+  </data>
+  <data name="ServiceError_FailedToReadProductControlData" xml:space="preserve">
+    <value>Failed to read product control data.</value>
+  </data>
+  <data name="ServiceError_FailedToReadProducts" xml:space="preserve">
+    <value>Failed to read products.</value>
+  </data>
+  <data name="ServiceError_FailedToReadTaskControlData" xml:space="preserve">
+    <value>Failed to read task control data.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfCabExists" xml:space="preserve">
+    <value>Failed to find cab.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfEventExists" xml:space="preserve">
+    <value>Failed to find event.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfEventTypeExists" xml:space="preserve">
+    <value>Failed to find event type.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfFileEventExists" xml:space="preserve">
+    <value>Failed to find event for file.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfFileExists" xml:space="preserve">
+    <value>Failed to find file.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfHitDateSummaryExists" xml:space="preserve">
+    <value>Failed to find hit date summary.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfLocaleSummaryExists" xml:space="preserve">
+    <value>Failed to find locale summary.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfOperatingSystemExists" xml:space="preserve">
+    <value>Failed to find operating system.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfOperatingSystemSummaryExists" xml:space="preserve">
+    <value>Failed to find operating system summary.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfProductControlDataExists" xml:space="preserve">
+    <value>Failed to find product control data.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfProductExists" xml:space="preserve">
+    <value>Failed to find product.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfProductFileExists" xml:space="preserve">
+    <value>Failed to get file for product.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfSourceExists" xml:space="preserve">
+    <value>Failed to find source.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfTaskControlDataExists" xml:space="preserve">
+    <value>Failed to find task control data.</value>
+  </data>
+  <data name="ServiceError_FailedToSeeIfUserExists" xml:space="preserve">
+    <value>Failed to find user.</value>
+  </data>
+  <data name="ServiceError_FailedToSelectDatabase" xml:space="preserve">
+    <value>Failed to select database.</value>
+  </data>
+  <data name="ServiceError_FailedToSetDatabaseOnlineState" xml:space="preserve">
+    <value>Failed to bring database online.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateCab" xml:space="preserve">
+    <value>Failed to update cab.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateControlData" xml:space="preserve">
+    <value>Failed to update StackHash control data.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateEvent" xml:space="preserve">
+    <value>Failed to update event.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateFile" xml:space="preserve">
+    <value>Failed to update file.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateProduct" xml:space="preserve">
+    <value>Failed to update product.       </value>
+  </data>
+  <data name="ServiceError_FailedToUpdateProductControlData" xml:space="preserve">
+    <value>Failed to update product control data.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateTaskControlData" xml:space="preserve">
+    <value>Failed to update task control.</value>
+  </data>
+  <data name="ServiceError_GetProductEvents" xml:space="preserve">
+    <value>Failed to get events for product.</value>
+  </data>
+  <data name="ServiceError_SqlConnectionError" xml:space="preserve">
+    <value>Failed to connect to database.       </value>
+  </data>
+  <data name="ProfileManager_ErrorDetailsMBMessage" xml:space="preserve">
+    <value>Profile {0} has the following error: {1}
+
+Error details:
+
+{2}</value>
+    <comment>Parameters are the profile name, current error text and last exception</comment>
+  </data>
+  <data name="ProfileManager_ErrorDetailsMBTitle" xml:space="preserve">
+    <value>Profile Error - StackHash</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="ServiceOptionsUnavailable_MBMessage" xml:space="preserve">
+    <value>Service Options may only be configured on the computer running the StackHash Service ({0}).</value>
+    <comment>Parameter is the hostname of the machine running the StackHash Service</comment>
+  </data>
+  <data name="ServiceOptionsUnavailable_MBTitle" xml:space="preserve">
+    <value>Service Options Unavailable - StackHash</value>
+  </data>
+  <data name="SetupWizard_FirstPageTitle" xml:space="preserve">
+    <value>StackHash Setup</value>
+  </data>
+  <data name="ServiceError_ClientNotRegistered" xml:space="preserve">
+    <value>Client is not registered with service. Please restart client.</value>
+  </data>
+  <data name="ServiceError_FailedToGetDatabaseLogicalFileNames" xml:space="preserve">
+    <value>Failed to get database logical file names.</value>
+  </data>
+  <data name="DatabaseStatus_ConnectedToMasterButDatabaseDoesNotExist" xml:space="preserve">
+    <value>Connected to database instance but the specified initial catalog does not exist.</value>
+  </data>
+  <data name="DatabaseStatus_ConnectedToMasterButFailedToSeeIfDatabaseExists" xml:space="preserve">
+    <value>Connected to database instance but could not find the specified initial catalog.</value>
+  </data>
+  <data name="DatabaseStatus_DatabaseDoesNotExist" xml:space="preserve">
+    <value>Database does not exist.</value>
+  </data>
+  <data name="DatabaseStatus_DatabaseExistsButFailedToConnect" xml:space="preserve">
+    <value>Connected to database instance but could not connect to the specified initial catalog.</value>
+  </data>
+  <data name="DatabaseStatus_FailedToConnectToMaster" xml:space="preserve">
+    <value>Failed to connect to database instance.</value>
+  </data>
+  <data name="DatabaseStatus_InvalidDatabaseName" xml:space="preserve">
+    <value>Database name is invalid.</value>
+  </data>
+  <data name="DatabaseStatus_Success" xml:space="preserve">
+    <value>Connected successfully.</value>
+  </data>
+  <data name="DatabaseStatus_Unknown" xml:space="preserve">
+    <value>An unknown error occurred.</value>
+  </data>
+  <data name="ProfileAddEdit_DatabaseTestFailedMBMessage" xml:space="preserve">
+    <value>The StackHash Service failed to connect to the database: {0}</value>
+    <comment>Parameter is the database status text</comment>
+  </data>
+  <data name="ProfileAddEdit_DatabaseTestFailedMBTitle" xml:space="preserve">
+    <value>Database Test Failed - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_DatabaseTestSucceededMBMessage" xml:space="preserve">
+    <value>The StackHash Service successfully connected to the database.</value>
+  </data>
+  <data name="ProfileAddEdit_DatabaseTestSucceededMBTitle" xml:space="preserve">
+    <value>Database Test Succeeded - StackHash</value>
+  </data>
+  <data name="Status_TestDatabase" xml:space="preserve">
+    <value>Testing database connection</value>
+  </data>
+  <data name="ServiceError_FailedToRunDebugger" xml:space="preserve">
+    <value>Failed to run debugger. Check that the debugger settings for the current profile are correct.</value>
+  </data>
+  <data name="PluginSettings_Title" xml:space="preserve">
+    <value>{0} Settings - StackHash</value>
+    <comment>Parameter is the plugin name</comment>
+  </data>
+  <data name="ProfileAddEdit_NoMorePluginsMBMessage" xml:space="preserve">
+    <value>All loaded plugins have already been added to this profile.
+
+If you recently added a plugin make sure you restart the StackHash Service (or reboot) so that the plugin is loaded.</value>
+  </data>
+  <data name="ProfileAddEdit_NoMorePluginsMBTitle" xml:space="preserve">
+    <value>No Plugins Available - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_RemovePluginMBMessage" xml:space="preserve">
+    <value>Are you sure you want to remove {0}? Existing settings for this plugin will be discarded.</value>
+    <comment>Parameter is the plugin name</comment>
+  </data>
+  <data name="ProfileAddEdit_RemovePluginMBTitle" xml:space="preserve">
+    <value>Remove Plugin? - StackHash</value>
+  </data>
+  <data name="Status_GetPluginDiagnostics" xml:space="preserve">
+    <value>Loading plugin diagnostics for {0}</value>
+    <comment>Parameter is the plugin name</comment>
+  </data>
+  <data name="Command_SendAllToPlugins" xml:space="preserve">
+    <value>Synchronize with _Plugins</value>
+  </data>
+  <data name="ProfileAddEdit_PluginAddedMBMessage" xml:space="preserve">
+    <value>StackHash reports NEW products, events, cab information, notes and script results to enabled plugins. 
+
+After you have finished configuring the plugin and have saved profile settings you can send ALL profile data to the plugin from the Tools menu (Synchronize with Plugins). Depending on the purpose of the plugin this step may be required to seed existing profile data.</value>
+  </data>
+  <data name="ProfileAddEdit_PluginAddedMBTitle" xml:space="preserve">
+    <value>Plugin Added - StackHash</value>
+  </data>
+  <data name="Status_SendAllToPlugins" xml:space="preserve">
+    <value>Sending all profile data to selected plugin(s)</value>
+  </data>
+  <data name="Status_SendEventToPlugin" xml:space="preserve">
+    <value>Sending event {0} to plugin {1}</value>
+    <comment>Parameters are the event id and the plugin name</comment>
+  </data>
+  <data name="ServiceStatus_PluginReportRunning" xml:space="preserve">
+    <value>Reporting events to plugin(s)</value>
+  </data>
+  <data name="ServiceError_BugTrackerNoPlugInsFound" xml:space="preserve">
+    <value>No plugins configured for the current profile.</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInLoadError" xml:space="preserve">
+    <value>Plugin found but could not be loaded.</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInNotFound" xml:space="preserve">
+    <value>Plugin not found. This can be caused by the internal name not exactly matching the plugin name.</value>
+  </data>
+  <data name="ServiceError_CannotStopSpecifiedTask" xml:space="preserve">
+    <value>An attempt was made to stop a task that does not support being canceled.</value>
+  </data>
+  <data name="ServiceError_DllNotABugTrackerPlugIn" xml:space="preserve">
+    <value>DLL is not a valid plugin.</value>
+  </data>
+  <data name="ServiceError_FailedToAddUpdateTableEntry" xml:space="preserve">
+    <value>Failed to add update entry.</value>
+  </data>
+  <data name="ServiceError_FailedToClearUpdateTableEntry" xml:space="preserve">
+    <value>Failed to clear all update entries.</value>
+  </data>
+  <data name="ServiceError_FailedToGetCabNote" xml:space="preserve">
+    <value>Failed to get cab note.</value>
+  </data>
+  <data name="ServiceError_FailedToGetUpdateTableEntry" xml:space="preserve">
+    <value>Failed to get update entry.</value>
+  </data>
+  <data name="ServiceError_FailedToRemoveUpdateTableEntry" xml:space="preserve">
+    <value>Failed to remove update entry.</value>
+  </data>
+  <data name="Error_BugReportFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to send information to a plugin.</value>
+  </data>
+  <data name="Error_BugReportFailedMBTitle" xml:space="preserve">
+    <value>Failed to send information to plugin - StackHash</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInNotFoundOrCouldNotBeLoaded" xml:space="preserve">
+    <value>An attempt to load a named plug-in failed because a loaded DLL with the same name could not be found. Check the case of the name and whether the DLL was successfully loaded.</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInReferenceChangeError" xml:space="preserve">
+    <value>Cannot load more than one plugin that sets the Plugin Reference field.</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInReferenceTooLarge" xml:space="preserve">
+    <value>Plugin returned a Plugin Reference longer than 200 characters.</value>
+  </data>
+  <data name="Error_PluginFailureMBMessage" xml:space="preserve">
+    <value>One or more plugins have failed.
+
+StackHash has temporarily suspended reporting information to plugins. Fix the problem and then deactivate and reactivate the profile to enable plugins again.
+
+Go to Tools -&gt; Service Options, select the current profile and click Edit. Go to the Plugins tab and click Diagnostics to view detailed error information for each plugin.</value>
+  </data>
+  <data name="Error_PluginFailureMBTitle" xml:space="preserve">
+    <value>Plugin Failure - StackHash</value>
+  </data>
+  <data name="ProfileAddEdit_MoreThanOneRefChangerMBMessage" xml:space="preserve">
+    <value>The plugin you are trying to add changes the plugin reference for events. Only one plugin that can change this field is allowed per profile. Choose a different plugin to add, or remove or disable the existing plugin that changes the plugin reference and try again.</value>
+  </data>
+  <data name="ProfileAddEdit_MoreThanOneRefChangerMBTitle" xml:space="preserve">
+    <value>Cannot Add Plugin - StackHash</value>
+  </data>
+  <data name="FieldNameEventPluginReference" xml:space="preserve">
+    <value>Event Plugin Reference</value>
+  </data>
+  <data name="ProfileAddEdit_EnableMoreThanOneRefChangeMBMessage" xml:space="preserve">
+    <value>The plugin you are trying to enable changes the plugin reference for events. Only one plugin that can change this field is allowed per profile. Either disable or remove the existing plugin that changes the plugin reference and try again.</value>
+  </data>
+  <data name="ProfileAddEdit_EnableMoreThanOneRefChangerMBTitle" xml:space="preserve">
+    <value>Cannot Add Plugin - StackHash</value>
+  </data>
+  <data name="ServiceStatus_MoveIndex" xml:space="preserve">
+    <value>Moving profile data</value>
+  </data>
+  <data name="ClientBumped_MBMessage" xml:space="preserve">
+    <value>Your connection to the StackHash Service was bumped on {0} at {1}.
+
+A connection may be bumped because you have not used StackHash for a while and another client connected to the Service. You may also have been bumped by a client running on the same computer as the StackHash Service.
+
+StackHash will attempt to connect to the Service again when you click OK.</value>
+    <comment>Parameters are the date and time of the bump.</comment>
+  </data>
+  <data name="ClientBumped_MBTitle" xml:space="preserve">
+    <value>Client Bumped - StackHash</value>
+  </data>
+  <data name="LicenseEventLimitHit_MBMessage" xml:space="preserve">
+    <value>You have exceeded the number of events that StackHash is licensed for. Synchronization will not add new events.
+
+The licensed number of events applies to products that are enabled for synchronization. You may be able to disable older products in order to reduce the number of consumed events.
+
+Alternatively you can upgrade your license to allow StackHash to store more events.</value>
+  </data>
+  <data name="LicenseEventLimitHit_MBTitle" xml:space="preserve">
+    <value>Event Limit Exceeded - StackHash</value>
+  </data>
+  <data name="LicenseSeatLimitHit_MBMessage" xml:space="preserve">
+    <value>All licensed seats are currently in use. Please wait until a seat is available and try again, or upgrade your license so that more seats are available.</value>
+  </data>
+  <data name="LicenseSeatLimitHit_MBTitle" xml:space="preserve">
+    <value>Seat Limit Exceeded - StackHash</value>
+  </data>
+  <data name="ProfileManager_ValidationErrorClientTimeout" xml:space="preserve">
+    <value>Client Timeout must be at least 1 minute.</value>
+  </data>
+  <data name="ServiceError_ClientBumped" xml:space="preserve">
+    <value>Client Bumped - this client has been disconnected from the StackHash Service because the licensed seat count has been reached and another client connected (client idle or client connection on service computer).</value>
+  </data>
+  <data name="ServiceError_FailedToGetTrialLicense" xml:space="preserve">
+    <value>Failed to install trial license. If this error occurs again contact StackHash support.</value>
+  </data>
+  <data name="ServiceError_TrialLicenseDenied" xml:space="preserve">
+    <value>Failed to install trial license. If this error occurs again contact StackHash support.</value>
+  </data>
+  <data name="ServiceError_WindowsLiveClientMissing" xml:space="preserve">
+    <value>The Windows Live Sign-in Assistant is required to access WinQual. On the computer running the StackHash Service install the Sign-in Assistant from http://goo.gl/zPJFf.</value>
+  </data>
+  <data name="Command_ResyncProduct" xml:space="preserve">
+    <value>Resynchronize Product Now</value>
+  </data>
+  <data name="Command_SyncProduct" xml:space="preserve">
+    <value>Synchronize Product Now</value>
+  </data>
+  <data name="ServiceError_BugTrackerPlugInError" xml:space="preserve">
+    <value>A call to a Plugin failed.</value>
+  </data>
+  <data name="Command_UploadMappingFile" xml:space="preserve">
+    <value>_Upload Mapping File...</value>
+  </data>
+  <data name="Error_UploadMappingFileMBMessage" xml:space="preserve">
+    <value>StackHash failed to upload the selected product mapping file.</value>
+  </data>
+  <data name="Error_UploadMappingFileMBTitle" xml:space="preserve">
+    <value>Failed to upload mapping File - StackHash</value>
+  </data>
+  <data name="MainWindowTitlePostfix" xml:space="preserve">
+    <value> - WinQual last updated {0}</value>
+    <comment>Parameter is the date time of the last WinQual update</comment>
+  </data>
+  <data name="MainWindowTitlePrefix" xml:space="preserve">
+    <value>{0} - </value>
+    <comment>Parameter is the product name and version</comment>
+  </data>
+  <data name="MainWindowTitleTemplate" xml:space="preserve">
+    <value>{0}StackHash{1}</value>
+    <comment>Parameters are the prefix and postfix</comment>
+  </data>
+  <data name="MainWindow_BrowseForMappingFile" xml:space="preserve">
+    <value>Choose product mapping file to upload - StackHash</value>
+  </data>
+  <data name="MainWindow_MappingFileEmptyMBMessage" xml:space="preserve">
+    <value>The selected product mapping file is empty.</value>
+  </data>
+  <data name="MainWindow_MappingFileEmptyMBTitle" xml:space="preserve">
+    <value>Mapping file empty - StackHash</value>
+  </data>
+  <data name="MainWindow_MappingFileLoadFailedMBMessage" xml:space="preserve">
+    <value>StackHash failed to load the selected product mapping file.</value>
+  </data>
+  <data name="MainWindow_MappingFileLoadFailedMBTitle" xml:space="preserve">
+    <value>Failed to load product mapping file - StackHash</value>
+  </data>
+  <data name="MainWindow_MappingFileUploadSuccessMBMessage" xml:space="preserve">
+    <value>Product mapping file uploaded successfully to WinQual.
+
+Note that it may take several days before a new product mapping is added to the StackHash product list.</value>
+  </data>
+  <data name="MainWindow_MappingFileUploadSuccessMBTitle" xml:space="preserve">
+    <value>Mapping file uploaded - StackHash</value>
+  </data>
+  <data name="Status_RequestMappingUpload" xml:space="preserve">
+    <value>Requesting product mapping file upload</value>
+  </data>
+  <data name="Status_UploadingMapping" xml:space="preserve">
+    <value>Uploading product mapping file to WinQual</value>
+  </data>
+  <data name="XmlBrowseFilter" xml:space="preserve">
+    <value>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSmtpFrom" xml:space="preserve">
+    <value>Enter the from address for email notifications.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSmtpPassword" xml:space="preserve">
+    <value>Enter the password for your SMTP server.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSmtpPort" xml:space="preserve">
+    <value>Enter the port used by your SMTP server (0-65535).</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSmtpServer" xml:space="preserve">
+    <value>Enter the server address (host name or IP address) of your SMTP server.</value>
+  </data>
+  <data name="ProfileAddEdit_ValidationErrorSmtpTo" xml:space="preserve">
+    <value>Enter recipients for email notifications. Use a comma to separate addresses.</value>
+  </data>
+  <data name="MainProductList_ProductDisabledMBMessage" xml:space="preserve">
+    <value>{0} is disabled.
+
+To enable this product right-click it and select 'Enable Synchronization'.</value>
+    <comment>Parameter is the product name and version.</comment>
+  </data>
+  <data name="MainProductList_ProductDisabledMBTitle" xml:space="preserve">
+    <value>Product Disabled - StackHash</value>
+  </data>
+  <data name="OptionNameDoesNotContain" xml:space="preserve">
+    <value>Does Not Contain</value>
+  </data>
+  <data name="ServiceError_InvalidMappingFileFormat" xml:space="preserve">
+    <value>The XML file uploaded is not valid. Please use the Microsoft Product Mapping Tool to generate the XML file.</value>
+  </data>
+  <data name="OpenFolder" xml:space="preserve">
+    <value>Open Folder</value>
+  </data>
+  <data name="FieldNameEventStatus" xml:space="preserve">
+    <value>Event Status</value>
+  </data>
+  <data name="Status_SetEventWorkFlow" xml:space="preserve">
+    <value>Setting status for event {0}</value>
+    <comment>Paramenter is the event id</comment>
+  </data>
+  <data name="Command_OpenCabFolder" xml:space="preserve">
+    <value>Open Cab Folder</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateCabNote" xml:space="preserve">
+    <value>Failed to update cab note.</value>
+  </data>
+  <data name="ServiceError_FailedToUpdateEventNote" xml:space="preserve">
+    <value>Failed to update event note.</value>
+  </data>
+  <data name="Status_GetCabPackage" xml:space="preserve">
+    <value>Getting extended information for cab {0}</value>
+  </data>
+  <data name="NavigationFailed_InactiveProduct_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+{1} is not active. Activate the product and try again.</value>
+    <comment>Parameters are the navigation Uri and the product name</comment>
+  </data>
+  <data name="NavigationFailed_InactiveProfile_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+The requested profile ({1}) is not active. Activate the profile and try again.</value>
+    <comment>Parameters are the navigation Uri and the profile name</comment>
+  </data>
+  <data name="NavigationFailed_MBTitle" xml:space="preserve">
+    <value>Navigation Failed - StackHash</value>
+  </data>
+  <data name="NavigationFailed_UnknownCab_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+Cab Id {1} does not exist or has not been loaded.</value>
+    <comment>Parameters are the navigation Uri and the cab id</comment>
+  </data>
+  <data name="NavigationFailed_UnknownEvent_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+Event Id {1}:{2} does not exist or has not been loaded.</value>
+    <comment>Parameters are the navigation Uri, the event id and the event type</comment>
+  </data>
+  <data name="NavigationFailed_UnknownProduct_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+Product Id {1} does not exist or has not been loaded. Enable 'Show Disabled Products' from the view menu and if Product Id {1} is listed activate it and then try again.</value>
+    <comment>Parameters are the navigation Uri and the product name</comment>
+  </data>
+  <data name="NavigationFailed_UnknownProfile_MBMessage" xml:space="preserve">
+    <value>Navigation to {0} failed.
+
+The requested profile ({1}) does not exist or has not been loaded.</value>
+    <comment>Parameters are the navigation Uri and the profile name</comment>
+  </data>
+  <data name="Status_NoOp" xml:space="preserve">
+    <value>Ready...</value>
+  </data>
+  <data name="Status_SendCabToPlugin" xml:space="preserve">
+    <value>Sending cab {0} to plugin {1}</value>
+    <comment>Parameters are the cab id and the plugin name</comment>
+  </data>
+  <data name="Status_SendProductToPlugin" xml:space="preserve">
+    <value>Sending product {0} to plugin {1}</value>
+    <comment>Parameters are the product name/version and the plugin name</comment>
+  </data>
+  <data name="ProfileIdText" xml:space="preserve">
+    <value>{0} (Profile Id {1})</value>
+    <comment>Parameters are the profile name and id</comment>
+  </data>
+  <data name="FieldNameScriptResults" xml:space="preserve">
+    <value>Script Results</value>
+  </data>
+  <data name="OptionsWindow_ValidationErrorMaxSearchResults" xml:space="preserve">
+    <value>Enter the maximum number of search results to return or 0 for no limit.</value>
+  </data>
+  <data name="MainWindow_SearchScriptsMBMessage" xml:space="preserve">
+    <value>Searching within debugger script results may take a long time. Are you sure you want to continue?</value>
+  </data>
+  <data name="MainWindow_SearchScriptsMBTitle" xml:space="preserve">
+    <value>Search script results? - StackHash</value>
+  </data>
+  <data name="CabDetails_PreviewUnavailable" xml:space="preserve">
+    <value>Preview unavailable for dump files.</value>
+  </data>
+  <data name="CabDetails_ScriptHeader" xml:space="preserve">
+    <value>{0} results from {1} {2:HH:mm}:</value>
+    <comment>Parameters are the script name and run date/time</comment>
+  </data>
+  <data name="Status_ExtractCabFile" xml:space="preserve">
+    <value>Extracting {0} from cab {1}</value>
+    <comment>Parameters are the file name and cab id</comment>
+  </data>
+  <data name="FieldNameEventCabs" xml:space="preserve">
+    <value>Event Cabs</value>
+  </data>
+  <data name="DumpType_All" xml:space="preserve">
+    <value>All Dumps</value>
+  </data>
+  <data name="DumpType_Managed" xml:space="preserve">
+    <value>Managed Dumps</value>
+  </data>
+  <data name="DumpType_Native" xml:space="preserve">
+    <value>Native Dumps</value>
+  </data>
+  <data name="Command_ShowEventsWithoutCabs" xml:space="preserve">
+    <value>Show _Events Without Cabs</value>
+  </data>
+  <data name="FieldNameCabNote" xml:space="preserve">
+    <value>Cab Note</value>
+  </data>
+  <data name="FieldNameCabNoteUser" xml:space="preserve">
+    <value>Cab Note User</value>
+  </data>
+  <data name="FieldNameEventNote" xml:space="preserve">
+    <value>Event Note</value>
+  </data>
+  <data name="FieldNameEventNoteUser" xml:space="preserve">
+    <value>Event Note User</value>
+  </data>
+  <data name="CabDetails_DeleteScriptRunMBMessage" xml:space="preserve">
+    <value>Are you sure you want to delete script results for {0} on cab {1}?</value>
+    <comment>Parameters are the script name and cab id</comment>
+  </data>
+  <data name="CabDetails_DeleteScriptRunMBTitle" xml:space="preserve">
+    <value>Delete Script Run? - StackHash</value>
+  </data>
+  <data name="MainWindow_StartSyncNoDebuggerMBMessage" xml:space="preserve">
+    <value>No debugger has been configured for the current profile. Debugger scripts will not run during synchronization. Are you sure you want to start synchronization?</value>
+  </data>
+  <data name="MainWindow_StartSyncNoDebuggerMBTitle" xml:space="preserve">
+    <value>Start Synchronization Without Debugger? - StackHash</value>
+  </data>
+  <data name="ServiceError_FailedToAddMappings" xml:space="preserve">
+    <value>Failed to add mappings data.</value>
+  </data>
+  <data name="ServiceError_FailedToGetMappings" xml:space="preserve">
+    <value>Failed to get mappings data.</value>
+  </data>
+  <data name="CabDetails_NoSelectionHeader" xml:space="preserve">
+    <value>Select Script Run or Cab File...</value>
+  </data>
+  <data name="ServiceError_FailedToDeleteCabNote" xml:space="preserve">
+    <value>Failed to delete cab note.</value>
+  </data>
+  <data name="ServiceError_FailedToDeleteEventNote" xml:space="preserve">
+    <value>Failed to delete event note.</value>
+  </data>
+</root>

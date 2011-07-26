@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Plugins - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Plugins</h1>
+            
+            <p>StackHash provides a plugin interface that allows custom actions to be taken when products, 
+            events, hits, cab information are downloaded from WinQual. Plugins are also notified when notes or script results are added to StackHash. The plugin interface is primarily 
+            intended to add and update cases in a defect management system but can be used to extend 
+            StackHash in other ways as well.</p>
+
+            <p>StackHash ships with several plugins:</p>
+            <ul>
+            <li><a href="stackhash-command-line-plugin.htm">StackHash Command Line Plugin</a></li>
+            <li><a href="stackhash-email-plugin.htm">StackHash Email Plugin</a></li>
+            <li><a href="stackhash-fogbugz-plugin.htm">StackHash FogBugz Plugin</a></li>
+            </ul>
+
+            <p>If you're interested in developing a plugin a fully documented sample is installed with StackHash. 
+            On 32-bit systms see:</p> 
+            
+            <pre>C:\Program Files\StackHash\Plugin SDK</pre>
+
+            <p>On 64-bit system see:</p>
+
+            <pre>C:\Program Files (x86)\StackHash\Plugin SDK</pre>
+
+            <p>Plugins are loaded from the StackHash settings folder. On Windows Vista or later the plugin folder is:</p>
+
+            <pre>C:\ProgramData\StackHash\BugTrackerPlugins</pre>
+
+            <p>On Windows XP the plugin folder is:</p>
+
+            <pre>C:\Documents and Settings\All Users\Application Data\StackHash\BugTrackerPlugins</pre>
+
+            <p>You must restart the StackHash Service (or reboot) to load new or updated plugins. You will need to stop 
+            the StackHash Service before removing or updating an existing plugin. Plugin DLLs must contain 'Plugin' as 
+            part of the file name (i.e. MyStackHashPlugin.dll).</p>
+
+            <p>To add, configure or remove plugins see <a href="service-options.htm">Service Options</a> -> 
+            <a href="add-edit-profile.htm">Add/Edit Profile</a> -> Plugins. Note that plugins have separate 
+            settings for each <a href="how-to-profiles.htm">profile</a>. If you want to use a plugin with several profiles you must add the plugin and 
+            configure it separately for each profile.</p>
+
+            <p>Plugins can optionally set the Plugin Reference for an event (this field is visible in a column on the 
+            <a href="main-window-event-list.htm">event list</a>). Only one plugin that sets the Plugin Reference can 
+            be active for each <a href="how-to-profiles.htm">profile</a>.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

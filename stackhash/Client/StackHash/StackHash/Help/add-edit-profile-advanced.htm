@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Add/Edit Profile - Advanced -  StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Add/Edit Profile - Advanced</h1>
+
+            <h2>WinQual API</h2>
+
+            <p>These settings allow you to fine tune how StackHash works with the WinQual API.</p>
+
+            <p><strong>Timeout</strong> sets the number of minutes to wait for a response from WinQual.</p>
+
+            <p><strong>Cab download failure limit</strong> controls how many failed downloads can occur before a synchronization attempt will be abandoned.</p>
+
+            <p><strong>Per-request retries</strong> is the number of times StackHash will retry a failed request before a synchronization attempt will be abandoned.</p>
+
+            <p><strong>Syncs before automatic resync</strong> triggers a full resynchronization with WinQual after the specified number of normal 
+            synchronizations. During a normal sync StackHash adds events, hits and cabs that have been added to WinQual since the last sync completed. 
+            Resynchronization processes all events, hits and cabs and can pick up data that may have been missed during the last sync. Setting this 
+            value to 1 will force StackHash to always resynchronize. </p>
+
+            <p>Check <em>Retry after failed synchronization</em> to schedule another attempt after the number of minutes specified in <strong>Delay before retry</strong> below.</p>
+
+            <p>Check <em>Enable sync for new product mappings</em> to automatically start synchronizing new products. If unchecked you must 
+            manually right-click each new product and choose Enable Synchronization.</p>
+
+            <p>Checking Force update of all script results will cause each script that is <a href="script-add-edit.htm">set to run automatically</a> 
+            to run again on each cab that has been downloaded. This setting will affect the next sync only and will be reset once all scripts have been 
+            run again. The default is to only run scripts if a result for a cab is not present and the script has not changed since the result was added.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

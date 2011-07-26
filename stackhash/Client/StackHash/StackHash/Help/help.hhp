@@ -1,0 +1,80 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=toc.hhc
+Default topic=index.htm
+Display compile progress=No
+Full-text search=Yes
+Language=0x409 English (United States)
+Title=StackHash Help
+
+
+[FILES]
+index.htm
+client-options-service-connection.htm
+client-options.htm
+client-options-proxy-server.htm
+client-options-debuggers.htm
+client-help.htm
+service-status.htm
+script-manager.htm
+script-add-edit.htm
+search-builder.htm
+add-edit-profile-advanced.htm
+add-edit-profile-debugger.htm
+add-edit-profile-purge.htm
+add-edit-profile-sync.htm
+add-edit-profile-winqual.htm
+add-edit-profile.htm
+add-edit-profile-database.htm
+add-edit-profile-plugins.htm
+service-options-profiles.htm
+service-options-proxy-server.htm
+service-options-troubleshooting.htm
+service-options.htm
+setup.htm
+setup-welcome.htm
+setup-winqual.htm
+setup-products.htm
+setup-more.htm
+proxy-server.htm
+main-window.htm
+main-window-product-list.htm
+main-window-event-list.htm
+main-window-event-details.htm
+main-window-cab-details.htm
+how-to.htm
+how-to-getting-started.htm
+how-to-profiles.htm
+how-to-scripting.htm
+how-to-plugins.htm
+add-edit-profile-collection.htm
+setup-collection.htm
+product-properties.htm
+product-properties-collection.htm
+event-properties.htm
+event-properties-collection.htm
+event-properties-signature.htm
+client-options-display-filter.htm
+product-properties-display-filter.htm
+synchronization-report.htm
+upgrade-profile.htm
+database-configuration.htm
+client-options-advanced.htm
+setup-profile.htm
+plugin-settings.htm
+plugin-diagnostics.htm
+select-plugins.htm
+add-plugin.htm
+stackhash-fogbugz-plugin.htm
+stackhash-email-plugin.htm
+stackhash-command-line-plugin.htm
+service-options-advanced.htm
+how-to-cdb-from-service.htm
+add-edit-profile-notifications.htm
+service-credentials.htm
+add-edit-profile-statuses.htm
+how-to-stackhash-urls.htm
+
+[INFOTYPES]
+

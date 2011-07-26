@@ -1,0 +1,2719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.cucku.com/stackhash/2010/02/17" elementFormDefault="qualified" targetNamespace="http://schemas.cucku.com/stackhash/2010/02/17" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetDebugResultRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebugResultRequest" nillable="true" type="tns:GetDebugResultRequest" />
+  <xs:complexType name="StackHashCab">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabDownloaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateCreatedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifiedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DumpAnalysis" nillable="true" type="tns:StackHashDumpAnalysis" />
+      <xs:element minOccurs="0" name="EventId" type="xs:int" />
+      <xs:element minOccurs="0" name="EventTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Purged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SizeInBytes" type="xs:long" />
+      <xs:element minOccurs="0" name="StructureVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCab" nillable="true" type="tns:StackHashCab" />
+  <xs:complexType name="StackHashDumpAnalysis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DotNetVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineArchitecture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OSVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessUpTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemUpTime" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashDumpAnalysis" nillable="true" type="tns:StackHashDumpAnalysis" />
+  <xs:complexType name="StackHashClientData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="ClientId" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientRequestId" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGuid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashClientData" nillable="true" type="tns:StackHashClientData" />
+  <xs:complexType name="StackHashEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CabCount" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreatedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifiedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventSignature" nillable="true" type="tns:StackHashEventSignature" />
+      <xs:element minOccurs="0" name="EventTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PlugInBugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalHits" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkFlowStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkFlowStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEvent" nillable="true" type="tns:StackHashEvent" />
+  <xs:complexType name="StackHashEventSignature">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApplicationVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionCode" type="xs:long" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModuleVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Offset" type="xs:long" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:StackHashParameterCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventSignature" nillable="true" type="tns:StackHashEventSignature" />
+  <xs:complexType name="StackHashParameterCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashParameterCollection" nillable="true" type="tns:StackHashParameterCollection" />
+  <xs:complexType name="StackHashParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashParameter" nillable="true" type="tns:StackHashParameter" />
+  <xs:complexType name="StackHashFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreatedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifiedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LinkDateLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashFile" nillable="true" type="tns:StackHashFile" />
+  <xs:complexType name="StackHashProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreatedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifiedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FilesLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalEvents" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalResponses" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalStoredEvents" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProduct" nillable="true" type="tns:StackHashProduct" />
+  <xs:complexType name="GetDebugResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:StackHashScriptResult" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebugResultResponse" nillable="true" type="tns:GetDebugResultResponse" />
+  <xs:complexType name="StackHashScriptResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RunDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScriptResults" nillable="true" type="tns:StackHashScriptLineResults" />
+      <xs:element minOccurs="0" name="ScriptVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptResult" nillable="true" type="tns:StackHashScriptResult" />
+  <xs:complexType name="StackHashScriptLineResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashScriptLineResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptLineResults" nillable="true" type="tns:StackHashScriptLineResults" />
+  <xs:complexType name="StackHashScriptLineResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ScriptLine" nillable="true" type="tns:StackHashScriptLine" />
+      <xs:element minOccurs="0" name="ScriptLineOutput" nillable="true" type="tns:StackHashScriptLineOutput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptLineResult" nillable="true" type="tns:StackHashScriptLineResult" />
+  <xs:complexType name="StackHashScriptLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptLine" nillable="true" type="tns:StackHashScriptLine" />
+  <xs:complexType name="StackHashScriptLineOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptLineOutput" nillable="true" type="tns:StackHashScriptLineOutput" />
+  <xs:complexType name="StackHashServiceResultData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" type="tns:StackHashServiceResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashServiceResultData" nillable="true" type="tns:StackHashServiceResultData" />
+  <xs:simpleType name="StackHashServiceResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashServiceResult" nillable="true" type="tns:StackHashServiceResult" />
+  <xs:complexType name="SenderFaultDetail">
+    <xs:sequence>
+      <xs:element name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FailedBodyElements" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SenderFaultDetail" nillable="true" type="tns:SenderFaultDetail" />
+  <xs:complexType name="ReceiverFaultDetail">
+    <xs:sequence>
+      <xs:element name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element name="ServiceErrorCode" type="tns:StackHashServiceErrorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceiverFaultDetail" nillable="true" type="tns:ReceiverFaultDetail" />
+  <xs:simpleType name="StackHashServiceErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoError" />
+      <xs:enumeration value="UnexpectedError" />
+      <xs:enumeration value="DebuggerNotConfigured" />
+      <xs:enumeration value="CabDoesNotExist" />
+      <xs:enumeration value="CabIsCorrupt" />
+      <xs:enumeration value="Aborted" />
+      <xs:enumeration value="ServerDown" />
+      <xs:enumeration value="AuthenticationFailure" />
+      <xs:enumeration value="AccessDenied" />
+      <xs:enumeration value="CabDownloadFailed" />
+      <xs:enumeration value="ContextIsNotActive" />
+      <xs:enumeration value="ContextIsActive" />
+      <xs:enumeration value="CannotOverwriteScriptFile" />
+      <xs:enumeration value="CannotRemoveSystemScripts" />
+      <xs:enumeration value="CannotRemoveReadOnlyScripts" />
+      <xs:enumeration value="ScriptDoesNotExist" />
+      <xs:enumeration value="DebuggerError" />
+      <xs:enumeration value="ScheduleFormatError" />
+      <xs:enumeration value="ErrorIndexAssigned" />
+      <xs:enumeration value="ErrorIndexNameAssigned" />
+      <xs:enumeration value="ErrorIndexNameIsDefault" />
+      <xs:enumeration value="TaskAlreadyInProgress" />
+      <xs:enumeration value="ProfileActive" />
+      <xs:enumeration value="WinQualLogOnFailed" />
+      <xs:enumeration value="ProfileInactive" />
+      <xs:enumeration value="FailedToGetLicense" />
+      <xs:enumeration value="LicenseNotFound" />
+      <xs:enumeration value="NoLicense" />
+      <xs:enumeration value="LicenseExpired" />
+      <xs:enumeration value="LicenseEventCountExceeded" />
+      <xs:enumeration value="LicenseClientLimitExceeded" />
+      <xs:enumeration value="MoveInProgress" />
+      <xs:enumeration value="CopyInProgress" />
+      <xs:enumeration value="ErrorIndexMustExist" />
+      <xs:enumeration value="ErrorIndexTypeNotSupported" />
+      <xs:enumeration value="ErrorIndexAccessDenied" />
+      <xs:enumeration value="ClientVersionMismatch" />
+      <xs:enumeration value="InvalidDatabaseName" />
+      <xs:enumeration value="CannotChangeIndexFolderOnceCreated" />
+      <xs:enumeration value="CannotMoveToExistingFolder" />
+      <xs:enumeration value="CopyIndexDeleteButNoSwitch" />
+      <xs:enumeration value="ActivateFailed" />
+      <xs:enumeration value="DeactivateFailed" />
+      <xs:enumeration value="ContextLoadError" />
+      <xs:enumeration value="ContextActivationError" />
+      <xs:enumeration value="SqlConnectionError" />
+      <xs:enumeration value="FailedToCreateDatabase" />
+      <xs:enumeration value="DatabaseNotFound" />
+      <xs:enumeration value="FailedToSetDatabaseOnlineState" />
+      <xs:enumeration value="FailedToChangeDatabaseLogicalName" />
+      <xs:enumeration value="FailedToChangeDatabaseLocation" />
+      <xs:enumeration value="FailedToDeleteDatabase" />
+      <xs:enumeration value="FailedToSelectDatabase" />
+      <xs:enumeration value="FailedToGetControlData" />
+      <xs:enumeration value="FailedToDetermineIfControlEntryExists" />
+      <xs:enumeration value="FailedToAddControlData" />
+      <xs:enumeration value="FailedToUpdateControlData" />
+      <xs:enumeration value="FailedToReadProductControlData" />
+      <xs:enumeration value="FailedToSeeIfProductControlDataExists" />
+      <xs:enumeration value="FailedToAddProductControlData" />
+      <xs:enumeration value="FailedToUpdateProductControlData" />
+      <xs:enumeration value="FailedToReadTaskControlData" />
+      <xs:enumeration value="FailedToSeeIfTaskControlDataExists" />
+      <xs:enumeration value="FailedToAddTaskControlData" />
+      <xs:enumeration value="FailedToUpdateTaskControlData" />
+      <xs:enumeration value="FailedToAddProduct" />
+      <xs:enumeration value="FailedToUpdateProduct" />
+      <xs:enumeration value="FailedToReadProducts" />
+      <xs:enumeration value="FailedToSeeIfProductExists" />
+      <xs:enumeration value="FailedToGetProductEventCount" />
+      <xs:enumeration value="FailedToGetProductCount" />
+      <xs:enumeration value="FailedToGetProductMatch" />
+      <xs:enumeration value="FailedToAddFile" />
+      <xs:enumeration value="FailedToUpdateFile" />
+      <xs:enumeration value="FailedToSeeIfFileExists" />
+      <xs:enumeration value="FailedToGetFileCount" />
+      <xs:enumeration value="FailedToSeeIfProductFileExists" />
+      <xs:enumeration value="FailedToAddProductFile" />
+      <xs:enumeration value="FailedToGetFiles" />
+      <xs:enumeration value="FailedToGetFilesMatch" />
+      <xs:enumeration value="FailedToGetFile" />
+      <xs:enumeration value="FailedToAddEvent" />
+      <xs:enumeration value="FailedToUpdateEvent" />
+      <xs:enumeration value="FailedToGetEvent" />
+      <xs:enumeration value="FailedToGetEventCount" />
+      <xs:enumeration value="FailedToLoadEventList" />
+      <xs:enumeration value="GetProductEvents" />
+      <xs:enumeration value="FailedToGetEvents" />
+      <xs:enumeration value="FailedToGetWindow" />
+      <xs:enumeration value="FailedToSeeIfEventExists" />
+      <xs:enumeration value="FailedToGetEventTypeId" />
+      <xs:enumeration value="FailedToGetEventType" />
+      <xs:enumeration value="FailedToSeeIfEventTypeExists" />
+      <xs:enumeration value="FailedToAddEventType" />
+      <xs:enumeration value="FailedToAddFileEvent" />
+      <xs:enumeration value="FailedToSeeIfFileEventExists" />
+      <xs:enumeration value="FailedToAddEventNote" />
+      <xs:enumeration value="FailedToGetEventNotes" />
+      <xs:enumeration value="FailedToAddEventInfo" />
+      <xs:enumeration value="FailedToAddEventInfos" />
+      <xs:enumeration value="FailedToGetEventInfos" />
+      <xs:enumeration value="FailedToGetEventInfoPackageCollection" />
+      <xs:enumeration value="FailedToGetMostRecentHitDate" />
+      <xs:enumeration value="FailedToGetHitCount" />
+      <xs:enumeration value="FailedToGetOperatingSystemId" />
+      <xs:enumeration value="FailedToGetOperatingSystemDetails" />
+      <xs:enumeration value="FailedToSeeIfOperatingSystemExists" />
+      <xs:enumeration value="FailedToAddOperatingSystem" />
+      <xs:enumeration value="FailedToPrimeLocaleCache" />
+      <xs:enumeration value="FailedToDetermineIfLocaleExists" />
+      <xs:enumeration value="FailedToAddLocale" />
+      <xs:enumeration value="FailedToAddCab" />
+      <xs:enumeration value="FailedToUpdateCab" />
+      <xs:enumeration value="FailedToSeeIfCabExists" />
+      <xs:enumeration value="FailedToGetCab" />
+      <xs:enumeration value="FailedToLoadCabCollection" />
+      <xs:enumeration value="FailedToGetCabs" />
+      <xs:enumeration value="FailedToGetCabCount" />
+      <xs:enumeration value="FailedToGetCabFileCount" />
+      <xs:enumeration value="FailedToAddCabNote" />
+      <xs:enumeration value="FailedToGetCabNotes" />
+      <xs:enumeration value="FailedToGetUserId" />
+      <xs:enumeration value="FailedToSeeIfUserExists" />
+      <xs:enumeration value="FailedToAddUser" />
+      <xs:enumeration value="FailedToGetSourceId" />
+      <xs:enumeration value="FailedToSeeIfSourceExists" />
+      <xs:enumeration value="FailedToAddSource" />
+      <xs:enumeration value="FailedToGetLocaleSummaryFresh" />
+      <xs:enumeration value="FailedToGetOperatingSystemSummaryFresh" />
+      <xs:enumeration value="FailedToGetHitDateSummaryFresh" />
+      <xs:enumeration value="FailedToSeeIfLocaleSummaryExists" />
+      <xs:enumeration value="FailedToGetLocaleSummaries" />
+      <xs:enumeration value="FailedToGetLocaleSummaryForProduct" />
+      <xs:enumeration value="FailedToAddLocaleSummary" />
+      <xs:enumeration value="FailedToSeeIfOperatingSystemSummaryExists" />
+      <xs:enumeration value="FailedToGetOperatingSystemSummaries" />
+      <xs:enumeration value="FailedToGetOperatingSystemSummaryForProduct" />
+      <xs:enumeration value="FailedToAddOperatingSystemSummary" />
+      <xs:enumeration value="FailedToSeeIfHitDateSummaryExists" />
+      <xs:enumeration value="FailedToGetHitDateSummaries" />
+      <xs:enumeration value="FailedToGetHitDateSummaryForProduct" />
+      <xs:enumeration value="FailedToAddHitDateSummary" />
+      <xs:enumeration value="FailedToReadProduct" />
+      <xs:enumeration value="FailedToGetDatabaseLogicalFileNames" />
+      <xs:enumeration value="ClientNotRegistered" />
+      <xs:enumeration value="FailedToRunDebugger" />
+      <xs:enumeration value="FailedToGetUpdateTableEntry" />
+      <xs:enumeration value="FailedToAddUpdateTableEntry" />
+      <xs:enumeration value="FailedToRemoveUpdateTableEntry" />
+      <xs:enumeration value="FailedToGetCabNote" />
+      <xs:enumeration value="DllNotABugTrackerPlugIn" />
+      <xs:enumeration value="BugTrackerPlugInLoadError" />
+      <xs:enumeration value="BugTrackerPlugInNotFound" />
+      <xs:enumeration value="BugTrackerNoPlugInsFound" />
+      <xs:enumeration value="BugTrackerPlugInError" />
+      <xs:enumeration value="CannotStopSpecifiedTask" />
+      <xs:enumeration value="FailedToClearUpdateTableEntry" />
+      <xs:enumeration value="BugTrackerPlugInReferenceChangeError" />
+      <xs:enumeration value="BugTrackerPlugInReferenceTooLarge" />
+      <xs:enumeration value="BugTrackerPlugInNotFoundOrCouldNotBeLoaded" />
+      <xs:enumeration value="ClientBumped" />
+      <xs:enumeration value="FailedToGetTrialLicense" />
+      <xs:enumeration value="TrialLicenseDenied" />
+      <xs:enumeration value="WindowsLiveClientMissing" />
+      <xs:enumeration value="InvalidMappingFileFormat" />
+      <xs:enumeration value="FailedToUpdateCabNote" />
+      <xs:enumeration value="FailedToUpdateEventNote" />
+      <xs:enumeration value="FailedToGetMappings" />
+      <xs:enumeration value="FailedToAddMappings" />
+      <xs:enumeration value="FailedToDeleteEventNote" />
+      <xs:enumeration value="FailedToDeleteCabNote" />
+      <xs:enumeration value="InvalidFeedDetected">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashServiceErrorCode" nillable="true" type="tns:StackHashServiceErrorCode" />
+  <xs:complexType name="RemoveScriptResultRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveScriptResultRequest" nillable="true" type="tns:RemoveScriptResultRequest" />
+  <xs:complexType name="RemoveScriptResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveScriptResultResponse" nillable="true" type="tns:RemoveScriptResultResponse" />
+  <xs:complexType name="SetProductSynchronizationStateRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProductSynchronizationStateRequest" nillable="true" type="tns:SetProductSynchronizationStateRequest" />
+  <xs:complexType name="SetProductSynchronizationStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProductSynchronizationStateResponse" nillable="true" type="tns:SetProductSynchronizationStateResponse" />
+  <xs:complexType name="SetProductSynchronizationDataRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="SyncData" nillable="true" type="tns:StackHashProductSyncData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProductSynchronizationDataRequest" nillable="true" type="tns:SetProductSynchronizationDataRequest" />
+  <xs:complexType name="StackHashProductSyncData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductSyncData" nillable="true" type="tns:StackHashProductSyncData" />
+  <xs:complexType name="SetProductSynchronizationDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProductSynchronizationDataResponse" nillable="true" type="tns:SetProductSynchronizationDataResponse" />
+  <xs:complexType name="RunWinQualLogOnRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunWinQualLogOnRequest" nillable="true" type="tns:RunWinQualLogOnRequest" />
+  <xs:complexType name="RunWinQualLogOnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunWinQualLogOnResponse" nillable="true" type="tns:RunWinQualLogOnResponse" />
+  <xs:complexType name="SetProxyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ProxySettings" nillable="true" type="tns:StackHashProxySettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProxyRequest" nillable="true" type="tns:SetProxyRequest" />
+  <xs:complexType name="StackHashProxySettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProxyDomain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyHost" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyPort" type="xs:int" />
+      <xs:element minOccurs="0" name="ProxyUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseProxy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseProxyAuthentication" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProxySettings" nillable="true" type="tns:StackHashProxySettings" />
+  <xs:complexType name="SetProxyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetProxyResponse" nillable="true" type="tns:SetProxyResponse" />
+  <xs:complexType name="SetEmailSettingsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailSettings" nillable="true" type="tns:StackHashEmailSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEmailSettingsRequest" nillable="true" type="tns:SetEmailSettingsRequest" />
+  <xs:complexType name="StackHashEmailSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OperationsToReport" nillable="true" type="tns:StackHashAdminOperationCollection" />
+      <xs:element minOccurs="0" name="SmtpSettings" nillable="true" type="tns:StackHashSmtpSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEmailSettings" nillable="true" type="tns:StackHashEmailSettings" />
+  <xs:complexType name="StackHashAdminOperationCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:StackHashAdminOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashAdminOperationCollection" nillable="true" type="tns:StackHashAdminOperationCollection" />
+  <xs:simpleType name="StackHashAdminOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdminRegister" />
+      <xs:enumeration value="AdminUnregister" />
+      <xs:enumeration value="WinQualSyncStarted" />
+      <xs:enumeration value="WinQualSyncCompleted" />
+      <xs:enumeration value="PurgeStarted" />
+      <xs:enumeration value="PurgeCompleted" />
+      <xs:enumeration value="ErrorIndexMoveStarted" />
+      <xs:enumeration value="ErrorIndexMoveCompleted" />
+      <xs:enumeration value="AnalyzeStarted" />
+      <xs:enumeration value="AnalyzeCompleted" />
+      <xs:enumeration value="RunScriptStarted" />
+      <xs:enumeration value="RunScriptCompleted" />
+      <xs:enumeration value="WinQualSyncProgressDownloadingProductList" />
+      <xs:enumeration value="WinQualSyncProgressProductListUpdated" />
+      <xs:enumeration value="WinQualSyncProgressDownloadingProductEvents" />
+      <xs:enumeration value="WinQualSyncProgressProductEventsUpdated" />
+      <xs:enumeration value="WinQualSyncProgressDownloadingProductCabs" />
+      <xs:enumeration value="WinQualSyncProgressProductCabsUpdated" />
+      <xs:enumeration value="WinQualLogOnStarted" />
+      <xs:enumeration value="WinQualLogOnCompleted" />
+      <xs:enumeration value="DownloadCabStarted" />
+      <xs:enumeration value="DownloadCabCompleted" />
+      <xs:enumeration value="WinQualSyncProgressDownloadingEventPage" />
+      <xs:enumeration value="WinQualSyncProgressDownloadingCab" />
+      <xs:enumeration value="ErrorIndexCopyStarted" />
+      <xs:enumeration value="ErrorIndexCopyCompleted" />
+      <xs:enumeration value="ErrorIndexCopyProgress" />
+      <xs:enumeration value="ContextStateChanged" />
+      <xs:enumeration value="BugTrackerStarted" />
+      <xs:enumeration value="BugTrackerCompleted" />
+      <xs:enumeration value="BugReportStarted" />
+      <xs:enumeration value="BugReportCompleted" />
+      <xs:enumeration value="BugReportProgress" />
+      <xs:enumeration value="BugTrackerPlugInStatus" />
+      <xs:enumeration value="ErrorIndexMoveProgress" />
+      <xs:enumeration value="UploadFileStarted" />
+      <xs:enumeration value="UploadFileCompleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashAdminOperation" nillable="true" type="tns:StackHashAdminOperation" />
+  <xs:complexType name="StackHashSmtpSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SmtpFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmtpHost" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmtpPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmtpPort" type="xs:int" />
+      <xs:element minOccurs="0" name="SmtpRecipients" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmtpUsername" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSmtpSettings" nillable="true" type="tns:StackHashSmtpSettings" />
+  <xs:complexType name="SetEmailSettingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEmailSettingsResponse" nillable="true" type="tns:SetEmailSettingsResponse" />
+  <xs:complexType name="SetPurgeOptionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="PurgeOptions" nillable="true" type="tns:StackHashPurgeOptionsCollection" />
+      <xs:element minOccurs="0" name="Schedule" nillable="true" type="tns:ScheduleCollection" />
+      <xs:element minOccurs="0" name="SetAll" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetPurgeOptionsRequest" nillable="true" type="tns:SetPurgeOptionsRequest" />
+  <xs:complexType name="StackHashPurgeOptionsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashPurgeOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashPurgeOptionsCollection" nillable="true" type="tns:StackHashPurgeOptionsCollection" />
+  <xs:complexType name="StackHashPurgeOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgeToPurge" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PurgeCabFiles" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PurgeDumpFiles" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PurgeObject" type="tns:StackHashPurgeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashPurgeOptions" nillable="true" type="tns:StackHashPurgeOptions" />
+  <xs:simpleType name="StackHashPurgeObject">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PurgeGlobal" />
+      <xs:enumeration value="PurgeProduct" />
+      <xs:enumeration value="PurgeFile" />
+      <xs:enumeration value="PurgeEvent" />
+      <xs:enumeration value="PurgeCab" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashPurgeObject" nillable="true" type="tns:StackHashPurgeObject" />
+  <xs:complexType name="ScheduleCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Schedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleCollection" nillable="true" type="tns:ScheduleCollection" />
+  <xs:complexType name="Schedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DaysOfWeek" type="tns:DaysOfWeek" />
+      <xs:element minOccurs="0" name="Period" type="tns:SchedulePeriod" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="tns:ScheduleTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Schedule" nillable="true" type="tns:Schedule" />
+  <xs:simpleType name="DaysOfWeek">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Sunday" />
+          <xs:enumeration value="Monday" />
+          <xs:enumeration value="Tuesday" />
+          <xs:enumeration value="Wednesday" />
+          <xs:enumeration value="Thursday" />
+          <xs:enumeration value="Friday" />
+          <xs:enumeration value="Saturday" />
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">127</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DaysOfWeek" nillable="true" type="tns:DaysOfWeek" />
+  <xs:simpleType name="SchedulePeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hourly" />
+      <xs:enumeration value="Daily" />
+      <xs:enumeration value="Weekly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SchedulePeriod" nillable="true" type="tns:SchedulePeriod" />
+  <xs:complexType name="ScheduleTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Hour" type="xs:int" />
+      <xs:element minOccurs="0" name="Minute" type="xs:int" />
+      <xs:element minOccurs="0" name="Second" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleTime" nillable="true" type="tns:ScheduleTime" />
+  <xs:complexType name="SetPurgeOptionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetPurgeOptionsResponse" nillable="true" type="tns:SetPurgeOptionsResponse" />
+  <xs:complexType name="GetPurgeOptionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="GetAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PurgeObject" type="tns:StackHashPurgeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPurgeOptionsRequest" nillable="true" type="tns:GetPurgeOptionsRequest" />
+  <xs:complexType name="GetPurgeOptionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PurgeOptions" nillable="true" type="tns:StackHashPurgeOptionsCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPurgeOptionsResponse" nillable="true" type="tns:GetPurgeOptionsResponse" />
+  <xs:complexType name="GetActivePurgeOptionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabId" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="EventId" type="xs:int" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivePurgeOptionsRequest" nillable="true" type="tns:GetActivePurgeOptionsRequest" />
+  <xs:complexType name="GetActivePurgeOptionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PurgeOptions" nillable="true" type="tns:StackHashPurgeOptionsCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActivePurgeOptionsResponse" nillable="true" type="tns:GetActivePurgeOptionsResponse" />
+  <xs:complexType name="RemovePurgeOptionsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PurgeObject" type="tns:StackHashPurgeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemovePurgeOptionsRequest" nillable="true" type="tns:RemovePurgeOptionsRequest" />
+  <xs:complexType name="RemovePurgeOptionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemovePurgeOptionsResponse" nillable="true" type="tns:RemovePurgeOptionsResponse" />
+  <xs:complexType name="SetDataCollectionPolicyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyCollection" nillable="true" type="tns:StackHashCollectionPolicyCollection" />
+      <xs:element minOccurs="0" name="SetAll" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetDataCollectionPolicyRequest" nillable="true" type="tns:SetDataCollectionPolicyRequest" />
+  <xs:complexType name="StackHashCollectionPolicyCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashCollectionPolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCollectionPolicyCollection" nillable="true" type="tns:StackHashCollectionPolicyCollection" />
+  <xs:complexType name="StackHashCollectionPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CollectLarger" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CollectionOrder" type="tns:StackHashCollectionOrder" />
+      <xs:element minOccurs="0" name="CollectionType" type="tns:StackHashCollectionType" />
+      <xs:element minOccurs="0" name="ConditionObject" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="Maximum" type="xs:int" />
+      <xs:element minOccurs="0" name="Minimum" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectToCollect" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:int" />
+      <xs:element minOccurs="0" name="RootId" type="xs:int" />
+      <xs:element minOccurs="0" name="RootObject" type="tns:StackHashCollectionObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCollectionPolicy" nillable="true" type="tns:StackHashCollectionPolicy" />
+  <xs:simpleType name="StackHashCollectionOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MostRecentFirst" />
+      <xs:enumeration value="OldestFirst" />
+      <xs:enumeration value="LargestFirst" />
+      <xs:enumeration value="SmallestFirst" />
+      <xs:enumeration value="AsReceived" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashCollectionOrder" nillable="true" type="tns:StackHashCollectionOrder" />
+  <xs:simpleType name="StackHashCollectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Percentage" />
+      <xs:enumeration value="Count" />
+      <xs:enumeration value="MinimumHitCount" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashCollectionType" nillable="true" type="tns:StackHashCollectionType" />
+  <xs:simpleType name="StackHashCollectionObject">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Global" />
+      <xs:enumeration value="Product" />
+      <xs:enumeration value="File" />
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="Cab" />
+      <xs:enumeration value="Any" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashCollectionObject" nillable="true" type="tns:StackHashCollectionObject" />
+  <xs:complexType name="SetDataCollectionPolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetDataCollectionPolicyResponse" nillable="true" type="tns:SetDataCollectionPolicyResponse" />
+  <xs:complexType name="GetDataCollectionPolicyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ConditionObject" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="GetAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectToCollect" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="RootObject" type="tns:StackHashCollectionObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDataCollectionPolicyRequest" nillable="true" type="tns:GetDataCollectionPolicyRequest" />
+  <xs:complexType name="GetDataCollectionPolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PolicyCollection" nillable="true" type="tns:StackHashCollectionPolicyCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDataCollectionPolicyResponse" nillable="true" type="tns:GetDataCollectionPolicyResponse" />
+  <xs:complexType name="GetActiveDataCollectionPolicyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabId" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="EventId" type="xs:int" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectToCollect" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActiveDataCollectionPolicyRequest" nillable="true" type="tns:GetActiveDataCollectionPolicyRequest" />
+  <xs:complexType name="GetActiveDataCollectionPolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PolicyCollection" nillable="true" type="tns:StackHashCollectionPolicyCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetActiveDataCollectionPolicyResponse" nillable="true" type="tns:GetActiveDataCollectionPolicyResponse" />
+  <xs:complexType name="RemoveDataCollectionPolicyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ConditionObject" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectToCollect" type="tns:StackHashCollectionObject" />
+      <xs:element minOccurs="0" name="RootObject" type="tns:StackHashCollectionObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveDataCollectionPolicyRequest" nillable="true" type="tns:RemoveDataCollectionPolicyRequest" />
+  <xs:complexType name="RemoveDataCollectionPolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveDataCollectionPolicyResponse" nillable="true" type="tns:RemoveDataCollectionPolicyResponse" />
+  <xs:complexType name="GetLicenseDataRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLicenseDataRequest" nillable="true" type="tns:GetLicenseDataRequest" />
+  <xs:complexType name="GetLicenseDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LicenseData" nillable="true" type="tns:StackHashLicenseData" />
+      <xs:element minOccurs="0" name="LicenseUsage" nillable="true" type="tns:StackHashLicenseUsage" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetLicenseDataResponse" nillable="true" type="tns:GetLicenseDataResponse" />
+  <xs:complexType name="StackHashLicenseData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsTrialLicense" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseDefined" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxEvents" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxSeats" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashLicenseData" nillable="true" type="tns:StackHashLicenseData" />
+  <xs:complexType name="StackHashLicenseUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientLicenseUsageCollection" nillable="true" type="tns:StackHashClientLicenseUsageCollection" />
+      <xs:element minOccurs="0" name="ContextLicenseUsageCollection" nillable="true" type="tns:StackHashContextLicenseUsageCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashLicenseUsage" nillable="true" type="tns:StackHashLicenseUsage" />
+  <xs:complexType name="StackHashClientLicenseUsageCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashClientLicenseUsage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashClientLicenseUsageCollection" nillable="true" type="tns:StackHashClientLicenseUsageCollection" />
+  <xs:complexType name="StackHashClientLicenseUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientConnectTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="LastAccessTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashClientLicenseUsage" nillable="true" type="tns:StackHashClientLicenseUsage" />
+  <xs:complexType name="StackHashContextLicenseUsageCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashContextLicenseUsage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextLicenseUsageCollection" nillable="true" type="tns:StackHashContextLicenseUsageCollection" />
+  <xs:complexType name="StackHashContextLicenseUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfStoredEvents" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextLicenseUsage" nillable="true" type="tns:StackHashContextLicenseUsage" />
+  <xs:complexType name="SetLicenseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="LicenseId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetLicenseRequest" nillable="true" type="tns:SetLicenseRequest" />
+  <xs:complexType name="SetLicenseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LicenseData" nillable="true" type="tns:StackHashLicenseData" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetLicenseResponse" nillable="true" type="tns:SetLicenseResponse" />
+  <xs:complexType name="RunBugTrackerTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunBugTrackerTaskRequest" nillable="true" type="tns:RunBugTrackerTaskRequest" />
+  <xs:complexType name="RunBugTrackerTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunBugTrackerTaskResponse" nillable="true" type="tns:RunBugTrackerTaskResponse" />
+  <xs:complexType name="GetBugTrackerPlugInDiagnosticsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlugInName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBugTrackerPlugInDiagnosticsRequest" nillable="true" type="tns:GetBugTrackerPlugInDiagnosticsRequest" />
+  <xs:complexType name="GetBugTrackerPlugInDiagnosticsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugTrackerPlugInDiagnostics" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnosticsCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBugTrackerPlugInDiagnosticsResponse" nillable="true" type="tns:GetBugTrackerPlugInDiagnosticsResponse" />
+  <xs:complexType name="StackHashBugTrackerPlugInDiagnosticsCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnostics" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInDiagnosticsCollection" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnosticsCollection" />
+  <xs:complexType name="StackHashBugTrackerPlugInDiagnostics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultProperties" nillable="true" type="tns:StackHashNameValueCollection" />
+      <xs:element minOccurs="0" name="Diagnostics" nillable="true" type="tns:StackHashNameValueCollection" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HelpUrl" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="LastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loaded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlugInDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlugInSetsBugReference" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInDiagnostics" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnostics" />
+  <xs:complexType name="StackHashNameValueCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashNameValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashNameValueCollection" nillable="true" type="tns:StackHashNameValueCollection" />
+  <xs:complexType name="StackHashNameValuePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashNameValuePair" nillable="true" type="tns:StackHashNameValuePair" />
+  <xs:complexType name="GetContextBugTrackerPlugInSettingsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetContextBugTrackerPlugInSettingsRequest" nillable="true" type="tns:GetContextBugTrackerPlugInSettingsRequest" />
+  <xs:complexType name="GetContextBugTrackerPlugInSettingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugTrackerPlugInSettings" nillable="true" type="tns:StackHashBugTrackerPlugInSettings" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetContextBugTrackerPlugInSettingsResponse" nillable="true" type="tns:GetContextBugTrackerPlugInSettingsResponse" />
+  <xs:complexType name="StackHashBugTrackerPlugInSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PlugInSettings" nillable="true" type="tns:StackHashBugTrackerPlugInCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInSettings" nillable="true" type="tns:StackHashBugTrackerPlugInSettings" />
+  <xs:complexType name="StackHashBugTrackerPlugInCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashBugTrackerPlugIn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInCollection" nillable="true" type="tns:StackHashBugTrackerPlugInCollection" />
+  <xs:complexType name="StackHashBugTrackerPlugIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangesBugReference" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HelpUrl" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlugInDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:StackHashNameValueCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugIn" nillable="true" type="tns:StackHashBugTrackerPlugIn" />
+  <xs:complexType name="SetContextBugTrackerPlugInSettingsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugTrackerPlugInSettings" nillable="true" type="tns:StackHashBugTrackerPlugInSettings" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetContextBugTrackerPlugInSettingsRequest" nillable="true" type="tns:SetContextBugTrackerPlugInSettingsRequest" />
+  <xs:complexType name="SetContextBugTrackerPlugInSettingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetContextBugTrackerPlugInSettingsResponse" nillable="true" type="tns:SetContextBugTrackerPlugInSettingsResponse" />
+  <xs:complexType name="AbortTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskType" type="tns:StackHashTaskType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbortTaskRequest" nillable="true" type="tns:AbortTaskRequest" />
+  <xs:simpleType name="StackHashTaskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WinQualSynchronizeTask" />
+      <xs:enumeration value="WinQualSynchronizeTimerTask" />
+      <xs:enumeration value="PurgeTask" />
+      <xs:enumeration value="PurgeTimerTask" />
+      <xs:enumeration value="WinQualLogOnTask" />
+      <xs:enumeration value="AnalyzeTask" />
+      <xs:enumeration value="ErrorIndexMoveTask" />
+      <xs:enumeration value="DebugScriptTask" />
+      <xs:enumeration value="DummyTask" />
+      <xs:enumeration value="DownloadCabTask" />
+      <xs:enumeration value="ErrorIndexCopyTask" />
+      <xs:enumeration value="BugTrackerTask" />
+      <xs:enumeration value="BugReportTask" />
+      <xs:enumeration value="UploadFileTask" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashTaskType" nillable="true" type="tns:StackHashTaskType" />
+  <xs:complexType name="AbortTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbortTaskResponse" nillable="true" type="tns:AbortTaskResponse" />
+  <xs:complexType name="SetClientTimeoutRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ClientTimeoutInSeconds" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetClientTimeoutRequest" nillable="true" type="tns:SetClientTimeoutRequest" />
+  <xs:complexType name="SetClientTimeoutResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetClientTimeoutResponse" nillable="true" type="tns:SetClientTimeoutResponse" />
+  <xs:complexType name="UploadMappingFileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="MappingFileData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadMappingFileRequest" nillable="true" type="tns:UploadMappingFileRequest" />
+  <xs:complexType name="UploadMappingFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadMappingFileResponse" nillable="true" type="tns:UploadMappingFileResponse" />
+  <xs:complexType name="GetStatusMappingsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="MappingType" type="tns:StackHashMappingType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatusMappingsRequest" nillable="true" type="tns:GetStatusMappingsRequest" />
+  <xs:simpleType name="StackHashMappingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WorkFlow" />
+      <xs:enumeration value="Group" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashMappingType" nillable="true" type="tns:StackHashMappingType" />
+  <xs:complexType name="GetStatusMappingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MappingType" type="tns:StackHashMappingType" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="StatusMappings" nillable="true" type="tns:StackHashMappingCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatusMappingsResponse" nillable="true" type="tns:GetStatusMappingsResponse" />
+  <xs:complexType name="StackHashMappingCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashMapping" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashMappingCollection" nillable="true" type="tns:StackHashMappingCollection" />
+  <xs:complexType name="StackHashMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MappingType" type="tns:StackHashMappingType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashMapping" nillable="true" type="tns:StackHashMapping" />
+  <xs:complexType name="SetStatusMappingsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="MappingType" type="tns:StackHashMappingType" />
+      <xs:element minOccurs="0" name="StatusMappings" nillable="true" type="tns:StackHashMappingCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetStatusMappingsRequest" nillable="true" type="tns:SetStatusMappingsRequest" />
+  <xs:complexType name="SetStatusMappingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MappingType" type="tns:StackHashMappingType" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetStatusMappingsResponse" nillable="true" type="tns:SetStatusMappingsResponse" />
+  <xs:complexType name="RegisterRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="IsRegister" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterRequest" nillable="true" type="tns:RegisterRequest" />
+  <xs:complexType name="RestartRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RestartRequest" nillable="true" type="tns:RestartRequest" />
+  <xs:complexType name="RestartResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RestartResponse" nillable="true" type="tns:RestartResponse" />
+  <xs:complexType name="CheckVersionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="MajorVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="MinorVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceGuid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckVersionRequest" nillable="true" type="tns:CheckVersionRequest" />
+  <xs:complexType name="CheckVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsLocalClient" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckVersionResponse" nillable="true" type="tns:CheckVersionResponse" />
+  <xs:complexType name="TestDatabaseConnectionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="SqlSettings" nillable="true" type="tns:StackHashSqlConfiguration" />
+      <xs:element minOccurs="0" name="TestDatabaseExistence" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestDatabaseConnectionRequest" nillable="true" type="tns:TestDatabaseConnectionRequest" />
+  <xs:complexType name="StackHashSqlConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionTimeout" type="xs:int" />
+      <xs:element minOccurs="0" name="EventsPerBlock" type="xs:int" />
+      <xs:element minOccurs="0" name="InitialCatalog" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxPoolSize" type="xs:int" />
+      <xs:element minOccurs="0" name="MinPoolSize" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSqlConfiguration" nillable="true" type="tns:StackHashSqlConfiguration" />
+  <xs:complexType name="TestDatabaseConnectionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabFolderAccessLastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCabFolderAccessible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="TestResult" type="tns:StackHashErrorIndexDatabaseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestDatabaseConnectionResponse" nillable="true" type="tns:TestDatabaseConnectionResponse" />
+  <xs:simpleType name="StackHashErrorIndexDatabaseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="InvalidDatabaseName" />
+      <xs:enumeration value="FailedToConnectToMaster" />
+      <xs:enumeration value="ConnectedToMasterButDatabaseDoesNotExist" />
+      <xs:enumeration value="ConnectedToMasterButFailedToSeeIfDatabaseExists" />
+      <xs:enumeration value="DatabaseExistsButFailedToConnect" />
+      <xs:enumeration value="DatabaseDoesNotExist" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashErrorIndexDatabaseStatus" nillable="true" type="tns:StackHashErrorIndexDatabaseStatus" />
+  <xs:complexType name="DeleteIndexRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteIndexRequest" nillable="true" type="tns:DeleteIndexRequest" />
+  <xs:complexType name="DeleteIndexResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteIndexResponse" nillable="true" type="tns:DeleteIndexResponse" />
+  <xs:complexType name="MoveIndexRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="NewErrorIndexName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewErrorIndexPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewSqlSettings" nillable="true" type="tns:StackHashSqlConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveIndexRequest" nillable="true" type="tns:MoveIndexRequest" />
+  <xs:complexType name="MoveIndexResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveIndexResponse" nillable="true" type="tns:MoveIndexResponse" />
+  <xs:complexType name="CopyIndexRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="DeleteSourceIndexWhenCopyComplete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DestinationErrorIndexSettings" nillable="true" type="tns:ErrorIndexSettings" />
+      <xs:element minOccurs="0" name="SqlSettings" nillable="true" type="tns:StackHashSqlConfiguration" />
+      <xs:element minOccurs="0" name="SwitchIndexWhenCopyComplete" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CopyIndexRequest" nillable="true" type="tns:CopyIndexRequest" />
+  <xs:complexType name="ErrorIndexSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Folder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" type="tns:StackHashErrorIndexLocation" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:ErrorIndexStatus" />
+      <xs:element minOccurs="0" name="Type" type="tns:ErrorIndexType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorIndexSettings" nillable="true" type="tns:ErrorIndexSettings" />
+  <xs:simpleType name="StackHashErrorIndexLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="InCabFolder" />
+      <xs:enumeration value="OnSqlServer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashErrorIndexLocation" nillable="true" type="tns:StackHashErrorIndexLocation" />
+  <xs:simpleType name="ErrorIndexStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="NotCreated" />
+      <xs:enumeration value="Created" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorIndexStatus" nillable="true" type="tns:ErrorIndexStatus" />
+  <xs:simpleType name="ErrorIndexType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Xml" />
+      <xs:enumeration value="Sql" />
+      <xs:enumeration value="SqlExpress" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorIndexType" nillable="true" type="tns:ErrorIndexType" />
+  <xs:complexType name="CopyIndexResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CopyIndexResponse" nillable="true" type="tns:CopyIndexResponse" />
+  <xs:complexType name="GetStackHashPropertiesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStackHashPropertiesRequest" nillable="true" type="tns:GetStackHashPropertiesRequest" />
+  <xs:complexType name="GetStackHashPropertiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:StackHashSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStackHashPropertiesResponse" nillable="true" type="tns:GetStackHashPropertiesResponse" />
+  <xs:complexType name="StackHashSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientTimeoutInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="ContextCollection" nillable="true" type="tns:StackHashContextCollection" />
+      <xs:element minOccurs="0" name="EnableLogging" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NextContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProxySettings" nillable="true" type="tns:StackHashProxySettings" />
+      <xs:element minOccurs="0" name="ReportingEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSettings" nillable="true" type="tns:StackHashSettings" />
+  <xs:complexType name="StackHashContextCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashContextSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextCollection" nillable="true" type="tns:StackHashContextCollection" />
+  <xs:complexType name="StackHashContextSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnalysisSettings" nillable="true" type="tns:StackHashAnalysisSettings" />
+      <xs:element minOccurs="0" name="BugTrackerSettings" nillable="true" type="tns:StackHashBugTrackerPlugInSettings" />
+      <xs:element minOccurs="0" name="CabFilePurgeSchedule" nillable="true" type="tns:ScheduleCollection" />
+      <xs:element minOccurs="0" name="CollectionPolicy" nillable="true" type="tns:StackHashCollectionPolicyCollection" />
+      <xs:element minOccurs="0" name="DebuggerSettings" nillable="true" type="tns:StackHashDebuggerSettings" />
+      <xs:element minOccurs="0" name="EmailSettings" nillable="true" type="tns:StackHashEmailSettings" />
+      <xs:element minOccurs="0" name="ErrorIndexSettings" nillable="true" type="tns:ErrorIndexSettings" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIndexCreated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PurgeOptionsCollection" nillable="true" type="tns:StackHashPurgeOptionsCollection" />
+      <xs:element minOccurs="0" name="SqlSettings" nillable="true" type="tns:StackHashSqlConfiguration" />
+      <xs:element minOccurs="0" name="WinQualSettings" nillable="true" type="tns:WinQualSettings" />
+      <xs:element minOccurs="0" name="WinQualSyncSchedule" nillable="true" type="tns:ScheduleCollection" />
+      <xs:element minOccurs="0" name="WorkFlowMappings" nillable="true" type="tns:StackHashMappingCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextSettings" nillable="true" type="tns:StackHashContextSettings" />
+  <xs:complexType name="StackHashAnalysisSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ForceRerun" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashAnalysisSettings" nillable="true" type="tns:StackHashAnalysisSettings" />
+  <xs:complexType name="StackHashDebuggerSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BinaryPath" nillable="true" type="tns:StackHashSearchPath" />
+      <xs:element minOccurs="0" name="BinaryPath64Bit" nillable="true" type="tns:StackHashSearchPath" />
+      <xs:element minOccurs="0" name="DebuggerPathAndFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DebuggerPathAndFileName64Bit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SymbolPath" nillable="true" type="tns:StackHashSearchPath" />
+      <xs:element minOccurs="0" name="SymbolPath64Bit" nillable="true" type="tns:StackHashSearchPath" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashDebuggerSettings" nillable="true" type="tns:StackHashDebuggerSettings" />
+  <xs:complexType name="StackHashSearchPath">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSearchPath" nillable="true" type="tns:StackHashSearchPath" />
+  <xs:complexType name="WinQualSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgeOldToPurgeInDays" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DelayBeforeRetryInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="EnableNewProductsAutomatically" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxCabDownloadFailuresBeforeAbort" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductsToSynchronize" nillable="true" type="tns:StackHashProductSyncDataCollection" />
+      <xs:element minOccurs="0" name="RequestRetryCount" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestTimeout" type="xs:int" />
+      <xs:element minOccurs="0" name="RetryAfterError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SyncsBeforeResync" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WinQualSettings" nillable="true" type="tns:WinQualSettings" />
+  <xs:complexType name="StackHashProductSyncDataCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashProductSyncData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductSyncDataCollection" nillable="true" type="tns:StackHashProductSyncDataCollection" />
+  <xs:complexType name="GetStackHashServiceStatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStackHashServiceStatusRequest" nillable="true" type="tns:GetStackHashServiceStatusRequest" />
+  <xs:complexType name="GetStackHashServiceStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StackHashStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStackHashServiceStatusResponse" nillable="true" type="tns:GetStackHashServiceStatusResponse" />
+  <xs:complexType name="StackHashStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContextStatusCollection" nillable="true" type="tns:StackHashContextStatusCollection" />
+      <xs:element minOccurs="0" name="HostRunningInTestMode" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InitializationFailed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashStatus" nillable="true" type="tns:StackHashStatus" />
+  <xs:complexType name="StackHashContextStatusCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashContextStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextStatusCollection" nillable="true" type="tns:StackHashContextStatusCollection" />
+  <xs:complexType name="StackHashContextStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="ContextName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentError" type="tns:StackHashServiceErrorCode" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastContextException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastSynchronizationLogOnException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastSynchronizationLogOnFailed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastSynchronizationLogOnServiceError" type="tns:StackHashServiceErrorCode" />
+      <xs:element minOccurs="0" name="PlugInDiagnostics" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnosticsCollection" />
+      <xs:element minOccurs="0" name="TaskStatusCollection" nillable="true" type="tns:StackHashTaskStatusCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashContextStatus" nillable="true" type="tns:StackHashContextStatus" />
+  <xs:complexType name="StackHashTaskStatusCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashTaskStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashTaskStatusCollection" nillable="true" type="tns:StackHashTaskStatusCollection" />
+  <xs:complexType name="StackHashTaskStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanBeAbortedByClient" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FailedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LastDurationInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="LastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastFailedRunTimeUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastStartedTimeUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastSuccessfulRunTimeUtc" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RunCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceErrorCode" type="tns:StackHashServiceErrorCode" />
+      <xs:element minOccurs="0" name="SuccessCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskState" type="tns:StackHashTaskState" />
+      <xs:element minOccurs="0" name="TaskType" type="tns:StackHashTaskType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashTaskStatus" nillable="true" type="tns:StackHashTaskStatus" />
+  <xs:simpleType name="StackHashTaskState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotRunning" />
+      <xs:enumeration value="Queued" />
+      <xs:enumeration value="Running" />
+      <xs:enumeration value="Faulted" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Aborted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashTaskState" nillable="true" type="tns:StackHashTaskState" />
+  <xs:complexType name="SetStackHashPropertiesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:StackHashSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetStackHashPropertiesRequest" nillable="true" type="tns:SetStackHashPropertiesRequest" />
+  <xs:complexType name="SetStackHashPropertiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:StackHashSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetStackHashPropertiesResponse" nillable="true" type="tns:SetStackHashPropertiesResponse" />
+  <xs:complexType name="CreateNewStackHashContextRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="IndexType" type="tns:ErrorIndexType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNewStackHashContextRequest" nillable="true" type="tns:CreateNewStackHashContextRequest" />
+  <xs:complexType name="CreateNewStackHashContextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:StackHashContextSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateNewStackHashContextResponse" nillable="true" type="tns:CreateNewStackHashContextResponse" />
+  <xs:complexType name="RemoveStackHashContextRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResetNextContextIdIfAppropriate" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveStackHashContextRequest" nillable="true" type="tns:RemoveStackHashContextRequest" />
+  <xs:complexType name="RemoveStackHashContextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveStackHashContextResponse" nillable="true" type="tns:RemoveStackHashContextResponse" />
+  <xs:complexType name="ActivateStackHashContextRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivateStackHashContextRequest" nillable="true" type="tns:ActivateStackHashContextRequest" />
+  <xs:complexType name="ActivateStackHashContextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivateStackHashContextResponse" nillable="true" type="tns:ActivateStackHashContextResponse" />
+  <xs:complexType name="DeactivateStackHashContextRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeactivateStackHashContextRequest" nillable="true" type="tns:DeactivateStackHashContextRequest" />
+  <xs:complexType name="DeactivateStackHashContextResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeactivateStackHashContextResponse" nillable="true" type="tns:DeactivateStackHashContextResponse" />
+  <xs:complexType name="EnableLoggingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnableLoggingRequest" nillable="true" type="tns:EnableLoggingRequest" />
+  <xs:complexType name="EnableLoggingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnableLoggingResponse" nillable="true" type="tns:EnableLoggingResponse" />
+  <xs:complexType name="DisableLoggingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisableLoggingRequest" nillable="true" type="tns:DisableLoggingRequest" />
+  <xs:complexType name="DisableLoggingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisableLoggingResponse" nillable="true" type="tns:DisableLoggingResponse" />
+  <xs:complexType name="EnableReportingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnableReportingRequest" nillable="true" type="tns:EnableReportingRequest" />
+  <xs:complexType name="EnableReportingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnableReportingResponse" nillable="true" type="tns:EnableReportingResponse" />
+  <xs:complexType name="DisableReportingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisableReportingRequest" nillable="true" type="tns:DisableReportingRequest" />
+  <xs:complexType name="DisableReportingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisableReportingResponse" nillable="true" type="tns:DisableReportingResponse" />
+  <xs:complexType name="StartSynchronizationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="ForceResynchronize" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JustSyncProducts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProductsToSynchronize" nillable="true" type="tns:StackHashProductSyncDataCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartSynchronizationRequest" nillable="true" type="tns:StartSynchronizationRequest" />
+  <xs:complexType name="StartSynchronizationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartSynchronizationResponse" nillable="true" type="tns:StartSynchronizationResponse" />
+  <xs:complexType name="AbortSynchronizationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbortSynchronizationRequest" nillable="true" type="tns:AbortSynchronizationRequest" />
+  <xs:complexType name="AbortSynchronizationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbortSynchronizationResponse" nillable="true" type="tns:AbortSynchronizationResponse" />
+  <xs:complexType name="GetDebuggerScriptNamesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebuggerScriptNamesRequest" nillable="true" type="tns:GetDebuggerScriptNamesRequest" />
+  <xs:complexType name="GetDebuggerScriptNamesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="ScriptFileData" nillable="true" type="tns:StackHashScriptFileDataCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebuggerScriptNamesResponse" nillable="true" type="tns:GetDebuggerScriptNamesResponse" />
+  <xs:complexType name="StackHashScriptFileDataCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashScriptFileData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptFileDataCollection" nillable="true" type="tns:StackHashScriptFileDataCollection" />
+  <xs:complexType name="StackHashScriptFileData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DumpType" type="tns:StackHashScriptDumpType" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RunAutomatically" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptFileData" nillable="true" type="tns:StackHashScriptFileData" />
+  <xs:simpleType name="StackHashScriptDumpType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnmanagedAndManaged" />
+      <xs:enumeration value="UnmanagedOnly" />
+      <xs:enumeration value="ManagedOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashScriptDumpType" nillable="true" type="tns:StackHashScriptDumpType" />
+  <xs:complexType name="AddDebuggerScriptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="Overwrite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Script" nillable="true" type="tns:StackHashScriptSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddDebuggerScriptRequest" nillable="true" type="tns:AddDebuggerScriptRequest" />
+  <xs:complexType name="StackHashScriptSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DumpType" type="tns:StackHashScriptDumpType" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" type="tns:StackHashScriptOwner" />
+      <xs:element minOccurs="0" name="RunAutomatically" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Script" nillable="true" type="tns:StackHashScript" />
+      <xs:element minOccurs="0" name="Version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptSettings" nillable="true" type="tns:StackHashScriptSettings" />
+  <xs:simpleType name="StackHashScriptOwner">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="User" />
+      <xs:enumeration value="System" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashScriptOwner" nillable="true" type="tns:StackHashScriptOwner" />
+  <xs:complexType name="StackHashScript">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashScriptLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScript" nillable="true" type="tns:StackHashScript" />
+  <xs:complexType name="AddDebuggerScriptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddDebuggerScriptResponse" nillable="true" type="tns:AddDebuggerScriptResponse" />
+  <xs:complexType name="RemoveDebuggerScriptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveDebuggerScriptRequest" nillable="true" type="tns:RemoveDebuggerScriptRequest" />
+  <xs:complexType name="RemoveDebuggerScriptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveDebuggerScriptResponse" nillable="true" type="tns:RemoveDebuggerScriptResponse" />
+  <xs:complexType name="RenameDebuggerScriptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="NewScriptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RenameDebuggerScriptRequest" nillable="true" type="tns:RenameDebuggerScriptRequest" />
+  <xs:complexType name="RenameDebuggerScriptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RenameDebuggerScriptResponse" nillable="true" type="tns:RenameDebuggerScriptResponse" />
+  <xs:complexType name="GetDebuggerScriptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebuggerScriptRequest" nillable="true" type="tns:GetDebuggerScriptRequest" />
+  <xs:complexType name="GetDebuggerScriptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="ScriptSettings" nillable="true" type="tns:StackHashScriptSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebuggerScriptResponse" nillable="true" type="tns:GetDebuggerScriptResponse" />
+  <xs:complexType name="RunDebuggerScriptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="DumpFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunDebuggerScriptRequest" nillable="true" type="tns:RunDebuggerScriptRequest" />
+  <xs:complexType name="RunDebuggerScriptResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="ScriptResult" nillable="true" type="tns:StackHashScriptResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunDebuggerScriptResponse" nillable="true" type="tns:RunDebuggerScriptResponse" />
+  <xs:complexType name="RunDebuggerScriptAsyncRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="DumpFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ScriptsToRun" nillable="true" type="tns:StackHashScriptNamesCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunDebuggerScriptAsyncRequest" nillable="true" type="tns:RunDebuggerScriptAsyncRequest" />
+  <xs:complexType name="StackHashScriptNamesCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptNamesCollection" nillable="true" type="tns:StackHashScriptNamesCollection" />
+  <xs:complexType name="RunDebuggerScriptAsyncResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunDebuggerScriptAsyncResponse" nillable="true" type="tns:RunDebuggerScriptAsyncResponse" />
+  <xs:complexType name="GetDebugResultFilesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebugResultFilesRequest" nillable="true" type="tns:GetDebugResultFilesRequest" />
+  <xs:complexType name="GetDebugResultFilesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="ResultFiles" nillable="true" type="tns:StackHashScriptResultFiles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDebugResultFilesResponse" nillable="true" type="tns:GetDebugResultFilesResponse" />
+  <xs:complexType name="StackHashScriptResultFiles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashScriptResultFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptResultFiles" nillable="true" type="tns:StackHashScriptResultFiles" />
+  <xs:complexType name="StackHashScriptResultFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RunDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashScriptResultFile" nillable="true" type="tns:StackHashScriptResultFile" />
+  <xs:complexType name="StackHashAdminReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRetry" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastException" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operation" type="tns:StackHashAdminOperation" />
+      <xs:element minOccurs="0" name="ResultData" type="tns:StackHashAsyncOperationResult" />
+      <xs:element minOccurs="0" name="ServiceErrorCode" type="tns:StackHashServiceErrorCode" />
+      <xs:element minOccurs="0" name="ServiceGuid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceHost" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashAdminReport" nillable="true" type="tns:StackHashAdminReport" />
+  <xs:simpleType name="StackHashAsyncOperationResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Aborted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashAsyncOperationResult" nillable="true" type="tns:StackHashAsyncOperationResult" />
+  <xs:complexType name="StackHashBugReportProgressAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentEvent" type="xs:long" />
+          <xs:element minOccurs="0" name="CurrentEventId" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalEvents" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashBugReportProgressAdminReport" nillable="true" type="tns:StackHashBugReportProgressAdminReport" />
+  <xs:complexType name="StackHashBugTrackerStatusAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlugInDiagnostics" nillable="true" type="tns:StackHashBugTrackerPlugInDiagnosticsCollection" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerStatusAdminReport" nillable="true" type="tns:StackHashBugTrackerStatusAdminReport" />
+  <xs:complexType name="StackHashMoveIndexProgressAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentFileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileCount" type="xs:int" />
+          <xs:element minOccurs="0" name="IsCopyStart" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashMoveIndexProgressAdminReport" nillable="true" type="tns:StackHashMoveIndexProgressAdminReport" />
+  <xs:complexType name="StackHashPurgeCompleteAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PurgeStatistics" nillable="true" type="tns:StackHashPurgeStatistics" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashPurgeCompleteAdminReport" nillable="true" type="tns:StackHashPurgeCompleteAdminReport" />
+  <xs:complexType name="StackHashPurgeStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabsTotalSize" type="xs:long" />
+      <xs:element minOccurs="0" name="DumpFilesTotalSize" type="xs:long" />
+      <xs:element minOccurs="0" name="NumberOfCabs" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfDumpFiles" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashPurgeStatistics" nillable="true" type="tns:StackHashPurgeStatistics" />
+  <xs:complexType name="StackHashWinQualSyncCompleteAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorIndexStatistics" nillable="true" type="tns:StackHashSynchronizeStatistics" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashWinQualSyncCompleteAdminReport" nillable="true" type="tns:StackHashWinQualSyncCompleteAdminReport" />
+  <xs:complexType name="StackHashSynchronizeStatistics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cabs" type="xs:int" />
+      <xs:element minOccurs="0" name="EventInfos" type="xs:int" />
+      <xs:element minOccurs="0" name="Events" type="xs:int" />
+      <xs:element minOccurs="0" name="Files" type="xs:int" />
+      <xs:element minOccurs="0" name="Products" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSynchronizeStatistics" nillable="true" type="tns:StackHashSynchronizeStatistics" />
+  <xs:complexType name="StackHashContextStateAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsActivationAttempt" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashContextStateAdminReport" nillable="true" type="tns:StackHashContextStateAdminReport" />
+  <xs:complexType name="StackHashCopyIndexProgressAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentEvent" type="xs:long" />
+          <xs:element minOccurs="0" name="CurrentEventId" type="xs:int" />
+          <xs:element minOccurs="0" name="DestinationIndexFolder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DestinationIndexName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceIndexFolder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceIndexName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalEvents" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashCopyIndexProgressAdminReport" nillable="true" type="tns:StackHashCopyIndexProgressAdminReport" />
+  <xs:complexType name="StackHashSyncProgressAdminReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashAdminReport">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+          <xs:element minOccurs="0" name="CurrentPage" type="xs:int" />
+          <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+          <xs:element minOccurs="0" name="IsProductsOnlySync" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsResync" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProductInfo" />
+          <xs:element minOccurs="0" name="TheEvent" nillable="true" type="tns:StackHashEvent" />
+          <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StackHashSyncProgressAdminReport" nillable="true" type="tns:StackHashSyncProgressAdminReport" />
+  <xs:complexType name="StackHashProductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastSynchronizeCompletedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastSynchronizeStartedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastSynchronizeTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ProductSyncData" nillable="true" type="tns:StackHashProductSyncData" />
+      <xs:element minOccurs="0" name="SynchronizeEnabled" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductInfo" nillable="true" type="tns:StackHashProductInfo" />
+  <xs:complexType name="GetProductsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductsRequest" nillable="true" type="tns:GetProductsRequest" />
+  <xs:complexType name="GetProductsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastSiteUpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:StackHashProductInfoCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductsResponse" nillable="true" type="tns:GetProductsResponse" />
+  <xs:complexType name="StackHashProductInfoCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashProductInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductInfoCollection" nillable="true" type="tns:StackHashProductInfoCollection" />
+  <xs:complexType name="GetFilesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFilesRequest" nillable="true" type="tns:GetFilesRequest" />
+  <xs:complexType name="GetFilesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:StackHashFileCollection" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFilesResponse" nillable="true" type="tns:GetFilesResponse" />
+  <xs:complexType name="StackHashFileCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashFileCollection" nillable="true" type="tns:StackHashFileCollection" />
+  <xs:complexType name="GetEventsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventsRequest" nillable="true" type="tns:GetEventsRequest" />
+  <xs:complexType name="GetEventsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Events" nillable="true" type="tns:StackHashEventCollection" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventsResponse" nillable="true" type="tns:GetEventsResponse" />
+  <xs:complexType name="StackHashEventCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventCollection" nillable="true" type="tns:StackHashEventCollection" />
+  <xs:complexType name="GetEventPackageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventPackageRequest" nillable="true" type="tns:GetEventPackageRequest" />
+  <xs:complexType name="GetEventPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="EventPackage" nillable="true" type="tns:StackHashEventPackage" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventPackageResponse" nillable="true" type="tns:GetEventPackageResponse" />
+  <xs:complexType name="StackHashEventPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cabs" nillable="true" type="tns:StackHashCabPackageCollection" />
+      <xs:element minOccurs="0" name="CriteriaMatchMap" type="xs:int" />
+      <xs:element minOccurs="0" name="EventData" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="EventInfoList" nillable="true" type="tns:StackHashEventInfoCollection" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="RowNumber" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventPackage" nillable="true" type="tns:StackHashEventPackage" />
+  <xs:complexType name="StackHashCabPackageCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashCabPackage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCabPackageCollection" nillable="true" type="tns:StackHashCabPackageCollection" />
+  <xs:complexType name="StackHashCabPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="CabFileContents" nillable="true" type="tns:StackHashCabFileContents" />
+      <xs:element minOccurs="0" name="FullPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSearchMatch" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCabPackage" nillable="true" type="tns:StackHashCabPackage" />
+  <xs:complexType name="StackHashCabFileContents">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:StackHashCabFilesCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCabFileContents" nillable="true" type="tns:StackHashCabFileContents" />
+  <xs:complexType name="StackHashCabFilesCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashCabFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCabFilesCollection" nillable="true" type="tns:StackHashCabFilesCollection" />
+  <xs:complexType name="StackHashCabFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashCabFile" nillable="true" type="tns:StackHashCabFile" />
+  <xs:complexType name="StackHashEventInfoCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashEventInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventInfoCollection" nillable="true" type="tns:StackHashEventInfoCollection" />
+  <xs:complexType name="StackHashEventInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreatedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifiedLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HitDateLocal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lcid" type="xs:int" />
+      <xs:element minOccurs="0" name="Locale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatingSystemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatingSystemVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureVersion" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalHits" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventInfo" nillable="true" type="tns:StackHashEventInfo" />
+  <xs:complexType name="GetProductEventPackageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductEventPackageRequest" nillable="true" type="tns:GetProductEventPackageRequest" />
+  <xs:complexType name="GetProductEventPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventPackages" nillable="true" type="tns:StackHashEventPackageCollection" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductEventPackageResponse" nillable="true" type="tns:GetProductEventPackageResponse" />
+  <xs:complexType name="StackHashEventPackageCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashEventPackage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashEventPackageCollection" nillable="true" type="tns:StackHashEventPackageCollection" />
+  <xs:complexType name="GetAllEventPackageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchCriteriaCollection" nillable="true" type="tns:StackHashSearchCriteriaCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllEventPackageRequest" nillable="true" type="tns:GetAllEventPackageRequest" />
+  <xs:complexType name="StackHashSearchCriteriaCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashSearchCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSearchCriteriaCollection" nillable="true" type="tns:StackHashSearchCriteriaCollection" />
+  <xs:complexType name="StackHashSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SearchFieldOptions" nillable="true" type="tns:StackHashSearchOptionCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSearchCriteria" nillable="true" type="tns:StackHashSearchCriteria" />
+  <xs:complexType name="StackHashSearchOptionCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashSearchOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSearchOptionCollection" nillable="true" type="tns:StackHashSearchOptionCollection" />
+  <xs:complexType name="StackHashSearchOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" type="tns:StackHashObjectType" />
+      <xs:element minOccurs="0" name="SearchOptionType" type="tns:StackHashSearchOptionType" />
+      <xs:element minOccurs="0" name="SearchType" type="tns:StackHashSearchFieldType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSearchOption" nillable="true" type="tns:StackHashSearchOption" />
+  <xs:simpleType name="StackHashObjectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Product" />
+      <xs:enumeration value="File" />
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="EventInfo" />
+      <xs:enumeration value="CabInfo" />
+      <xs:enumeration value="EventSignature" />
+      <xs:enumeration value="Script" />
+      <xs:enumeration value="EventWorkFlow" />
+      <xs:enumeration value="EventNotes" />
+      <xs:enumeration value="CabNotes" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashObjectType" nillable="true" type="tns:StackHashObjectType" />
+  <xs:simpleType name="StackHashSearchOptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Equal" />
+      <xs:enumeration value="NotEqual" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="GreaterThanOrEqual" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="LessThanOrEqual" />
+      <xs:enumeration value="RangeInclusive" />
+      <xs:enumeration value="RangeExclusive" />
+      <xs:enumeration value="StringStartsWith" />
+      <xs:enumeration value="StringContains" />
+      <xs:enumeration value="StringDoesNotContain" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashSearchOptionType" nillable="true" type="tns:StackHashSearchOptionType" />
+  <xs:simpleType name="StackHashSearchFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Long" />
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="String" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashSearchFieldType" nillable="true" type="tns:StackHashSearchFieldType" />
+  <xs:complexType name="LongSearchOption">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashSearchOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End" type="xs:long" />
+          <xs:element minOccurs="0" name="Start" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LongSearchOption" nillable="true" type="tns:LongSearchOption" />
+  <xs:complexType name="StringSearchOption">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashSearchOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CaseSensitive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="End" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Start" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringSearchOption" nillable="true" type="tns:StringSearchOption" />
+  <xs:complexType name="IntSearchOption">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashSearchOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End" type="xs:int" />
+          <xs:element minOccurs="0" name="Start" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IntSearchOption" nillable="true" type="tns:IntSearchOption" />
+  <xs:complexType name="DateTimeSearchOption">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StackHashSearchOption">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="End" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DateTimeSearchOption" nillable="true" type="tns:DateTimeSearchOption" />
+  <xs:complexType name="GetAllEventPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventPackages" nillable="true" type="tns:StackHashEventPackageCollection" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllEventPackageResponse" nillable="true" type="tns:GetAllEventPackageResponse" />
+  <xs:complexType name="GetWindowedEventPackageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="CountAllMatches" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Direction" type="tns:StackHashSearchDirection" />
+      <xs:element minOccurs="0" name="NumberOfRows" type="xs:long" />
+      <xs:element minOccurs="0" name="SearchCriteriaCollection" nillable="true" type="tns:StackHashSearchCriteriaCollection" />
+      <xs:element minOccurs="0" name="SortOrder" nillable="true" type="tns:StackHashSortOrderCollection" />
+      <xs:element minOccurs="0" name="StartRow" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWindowedEventPackageRequest" nillable="true" type="tns:GetWindowedEventPackageRequest" />
+  <xs:simpleType name="StackHashSearchDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Forwards" />
+      <xs:enumeration value="Backwards" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StackHashSearchDirection" nillable="true" type="tns:StackHashSearchDirection" />
+  <xs:complexType name="StackHashSortOrderCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashSortOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSortOrderCollection" nillable="true" type="tns:StackHashSortOrderCollection" />
+  <xs:complexType name="StackHashSortOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ascending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectType" type="tns:StackHashObjectType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashSortOrder" nillable="true" type="tns:StackHashSortOrder" />
+  <xs:complexType name="GetWindowedEventPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventPackages" nillable="true" type="tns:StackHashEventPackageCollection" />
+      <xs:element minOccurs="0" name="MaximumRowNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="MinimumRowNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="TotalRows" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWindowedEventPackageResponse" nillable="true" type="tns:GetWindowedEventPackageResponse" />
+  <xs:complexType name="GetCabNotesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCabNotesRequest" nillable="true" type="tns:GetCabNotesRequest" />
+  <xs:complexType name="GetCabNotesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StackHashNotes" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCabNotesResponse" nillable="true" type="tns:GetCabNotesResponse" />
+  <xs:complexType name="StackHashNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashNoteEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashNotes" nillable="true" type="tns:StackHashNotes" />
+  <xs:complexType name="StackHashNoteEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeOfEntry" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashNoteEntry" nillable="true" type="tns:StackHashNoteEntry" />
+  <xs:complexType name="AddCabNoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="NoteEntry" nillable="true" type="tns:StackHashNoteEntry" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddCabNoteRequest" nillable="true" type="tns:AddCabNoteRequest" />
+  <xs:complexType name="AddCabNoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddCabNoteResponse" nillable="true" type="tns:AddCabNoteResponse" />
+  <xs:complexType name="DeleteCabNoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="NoteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteCabNoteRequest" nillable="true" type="tns:DeleteCabNoteRequest" />
+  <xs:complexType name="DeleteCabNoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteCabNoteResponse" nillable="true" type="tns:DeleteCabNoteResponse" />
+  <xs:complexType name="GetEventNotesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventNotesRequest" nillable="true" type="tns:GetEventNotesRequest" />
+  <xs:complexType name="GetEventNotesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StackHashNotes" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetEventNotesResponse" nillable="true" type="tns:GetEventNotesResponse" />
+  <xs:complexType name="AddEventNoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="NoteEntry" nillable="true" type="tns:StackHashNoteEntry" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddEventNoteRequest" nillable="true" type="tns:AddEventNoteRequest" />
+  <xs:complexType name="AddEventNoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddEventNoteResponse" nillable="true" type="tns:AddEventNoteResponse" />
+  <xs:complexType name="DeleteEventNoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="NoteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteEventNoteRequest" nillable="true" type="tns:DeleteEventNoteRequest" />
+  <xs:complexType name="DeleteEventNoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteEventNoteResponse" nillable="true" type="tns:DeleteEventNoteResponse" />
+  <xs:complexType name="SetEventBugIdRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEventBugIdRequest" nillable="true" type="tns:SetEventBugIdRequest" />
+  <xs:complexType name="SetEventBugIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEventBugIdResponse" nillable="true" type="tns:SetEventBugIdResponse" />
+  <xs:complexType name="SetEventWorkFlowStatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="WorkFlowStatus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEventWorkFlowStatusRequest" nillable="true" type="tns:SetEventWorkFlowStatusRequest" />
+  <xs:complexType name="SetEventWorkFlowStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetEventWorkFlowStatusResponse" nillable="true" type="tns:SetEventWorkFlowStatusResponse" />
+  <xs:complexType name="DownloadCabRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadCabRequest" nillable="true" type="tns:DownloadCabRequest" />
+  <xs:complexType name="DownloadCabResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownloadCabResponse" nillable="true" type="tns:DownloadCabResponse" />
+  <xs:complexType name="GetProductRollupRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductRollupRequest" nillable="true" type="tns:GetProductRollupRequest" />
+  <xs:complexType name="GetProductRollupResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+      <xs:element minOccurs="0" name="RollupData" nillable="true" type="tns:StackHashProductSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetProductRollupResponse" nillable="true" type="tns:GetProductRollupResponse" />
+  <xs:complexType name="StackHashProductSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HitDateSummary" nillable="true" type="tns:StackHashProductHitDateSummaryCollection" />
+      <xs:element minOccurs="0" name="LocaleSummaryCollection" nillable="true" type="tns:StackHashProductLocaleSummaryCollection" />
+      <xs:element minOccurs="0" name="OperatingSystemSummary" nillable="true" type="tns:StackHashProductOperatingSystemSummaryCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductSummary" nillable="true" type="tns:StackHashProductSummary" />
+  <xs:complexType name="StackHashProductHitDateSummaryCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashProductHitDateSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductHitDateSummaryCollection" nillable="true" type="tns:StackHashProductHitDateSummaryCollection" />
+  <xs:complexType name="StackHashProductHitDateSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HitDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalHits" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductHitDateSummary" nillable="true" type="tns:StackHashProductHitDateSummary" />
+  <xs:complexType name="StackHashProductLocaleSummaryCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashProductLocaleSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductLocaleSummaryCollection" nillable="true" type="tns:StackHashProductLocaleSummaryCollection" />
+  <xs:complexType name="StackHashProductLocaleSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lcid" type="xs:int" />
+      <xs:element minOccurs="0" name="Locale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalHits" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductLocaleSummary" nillable="true" type="tns:StackHashProductLocaleSummary" />
+  <xs:complexType name="StackHashProductOperatingSystemSummaryCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashProductOperatingSystemSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductOperatingSystemSummaryCollection" nillable="true" type="tns:StackHashProductOperatingSystemSummaryCollection" />
+  <xs:complexType name="StackHashProductOperatingSystemSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OperatingSystemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatingSystemVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalHits" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashProductOperatingSystemSummary" nillable="true" type="tns:StackHashProductOperatingSystemSummary" />
+  <xs:complexType name="RunBugReportTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BugReportDataCollection" nillable="true" type="tns:StackHashBugReportDataCollection" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlugIns" nillable="true" type="tns:StackHashBugTrackerPlugInSelectionCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunBugReportTaskRequest" nillable="true" type="tns:RunBugReportTaskRequest" />
+  <xs:complexType name="StackHashBugReportDataCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashBugReportData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugReportDataCollection" nillable="true" type="tns:StackHashBugReportDataCollection" />
+  <xs:complexType name="StackHashBugReportData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Options" type="tns:StackHashReportOptions" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ScriptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TheEvent" nillable="true" type="tns:StackHashEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugReportData" nillable="true" type="tns:StackHashBugReportData" />
+  <xs:simpleType name="StackHashReportOptions">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="IncludeAllObjects" />
+          <xs:enumeration value="IncludeProducts" />
+          <xs:enumeration value="IncludeFiles" />
+          <xs:enumeration value="IncludeEvents" />
+          <xs:enumeration value="IncludeCabs" />
+          <xs:enumeration value="IncludeScriptResults" />
+          <xs:enumeration value="IncludeEventNotes" />
+          <xs:enumeration value="IncludeCabNotes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="StackHashReportOptions" nillable="true" type="tns:StackHashReportOptions" />
+  <xs:complexType name="StackHashBugTrackerPlugInSelectionCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:StackHashBugTrackerPlugInSelection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInSelectionCollection" nillable="true" type="tns:StackHashBugTrackerPlugInSelectionCollection" />
+  <xs:complexType name="StackHashBugTrackerPlugInSelection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashBugTrackerPlugInSelection" nillable="true" type="tns:StackHashBugTrackerPlugInSelection" />
+  <xs:complexType name="RunBugReportTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RunBugReportTaskResponse" nillable="true" type="tns:RunBugReportTaskResponse" />
+  <xs:complexType name="GetCabPackageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCabPackageRequest" nillable="true" type="tns:GetCabPackageRequest" />
+  <xs:complexType name="GetCabPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabPackage" nillable="true" type="tns:StackHashCabPackage" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCabPackageResponse" nillable="true" type="tns:GetCabPackageResponse" />
+  <xs:complexType name="GetCabFileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cab" nillable="true" type="tns:StackHashCab" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:StackHashEvent" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:StackHashFile" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:StackHashProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCabFileRequest" nillable="true" type="tns:GetCabFileRequest" />
+  <xs:complexType name="CreateTestIndexRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="ContextId" type="xs:int" />
+      <xs:element minOccurs="0" name="TestIndexData" nillable="true" type="tns:StackHashTestIndexData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTestIndexRequest" nillable="true" type="tns:CreateTestIndexRequest" />
+  <xs:complexType name="StackHashTestIndexData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CabFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DuplicateFileIdsAcrossProducts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EventsToAssignCabs" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfCabNotes" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfCabs" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfEventInfos" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfEventNotes" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfEvents" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFiles" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfProducts" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfScriptResults" type="xs:int" />
+      <xs:element minOccurs="0" name="ScriptFileSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SetBugId" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UnwrapCabs" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseLargeCab" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseUnmanagedCab" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashTestIndexData" nillable="true" type="tns:StackHashTestIndexData" />
+  <xs:complexType name="CreateTestIndexResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTestIndexResponse" nillable="true" type="tns:CreateTestIndexResponse" />
+  <xs:complexType name="SetTestDataRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+      <xs:element minOccurs="0" name="TestData" nillable="true" type="tns:StackHashTestData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetTestDataRequest" nillable="true" type="tns:SetTestDataRequest" />
+  <xs:complexType name="StackHashTestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DummyWinQualSettings" nillable="true" type="tns:StackHashTestDummyWinQualSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashTestData" nillable="true" type="tns:StackHashTestData" />
+  <xs:complexType name="StackHashTestDummyWinQualSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FailLogOn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FailSync" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ObjectsToCreate" nillable="true" type="tns:StackHashTestIndexData" />
+      <xs:element minOccurs="0" name="UseDummyWinQual" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackHashTestDummyWinQualSettings" nillable="true" type="tns:StackHashTestDummyWinQualSettings" />
+  <xs:complexType name="SetTestDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetTestDataResponse" nillable="true" type="tns:SetTestDataResponse" />
+  <xs:complexType name="GetTestModeSettingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="tns:StackHashClientData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTestModeSettingRequest" nillable="true" type="tns:GetTestModeSettingRequest" />
+  <xs:complexType name="GetTestModeSettingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttributeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultData" nillable="true" type="tns:StackHashServiceResultData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTestModeSettingResponse" nillable="true" type="tns:GetTestModeSettingResponse" />
+</xs:schema>

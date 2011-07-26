@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Main Window - Mapped Products - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Main Window - Mapped Products</h1>
+
+            <p>The mapped products view lists products mapped to your WinQual account for the current <a href="how-to-profiles.htm">profile</a>. 
+            This is the default view when you run StackHash. You can return to this view at any time from View -> Home.</p> 
+
+            <p>When you select a product the charts on the right will refresh to help you visualize the hits associated 
+            with all events for that product. The charts are interactive &#8212; hover to see a tooltip with specific data, 
+            double-click a chart element to search for events that match the highlighted data.</p>
+
+            <p>The world map shows an approximate distribution of hits for the selected product. This chart is based 
+            on the locale reported with each hit. Some countries use multiple locales and some countries do not have 
+            an associated locale.</p>
+
+            <p>Double click a product or click the <em>List Events</em> link to show the <a href="main-window-event-list.htm">Event List</a> view.</p>
+
+            <p>A context menu is available when you right-click a mapped product. From this menu you can enable or 
+            disable a product for synchronization, copy the <a href="how-to-stackhash-urls.htm">StackHash URL</a>, export information from the product to XML, set <a href="product-properties.htm">product properties</a> and open the product 
+            page on the WinQual site.</p>
+
+            <p>If no products are shown on this view check the following:</p>
+
+            <ol>
+            <li>StackHash allows you to hide products that are disabled for synchronization. You can toggle the visibility 
+            of these products from the View menu.</li>
+
+            <li>Refresh the current view: hit Ctrl-R, or View -> Refresh.</li>
+
+            <li>Check that you are connected to the StackHash service and that an active profile is available in 
+            Tools -> <a href="client-options.htm">Client Options</a> -> <a href="client-options-service-connection.htm">Service Connection</a>.</li>
+            </ol>
+
+            <h2>Mapped Products</h2>
+
+            <table>
+            <tr> <td class="emtdm">Synchronize</td> <td>Yes if the product is enabled for synchronization, No if not. Disabled products are grayed out in the list and do not count towards the event limit for your <a href="how-to-licensing.htm">license</a> Right-click the product and choose <em>Enable Synchronization</em> or <em>Disable Synchronization</em> to change this setting.</td> </tr>
+            <tr> <td class="emtdm">ID</td> <td>The WinQual Id for the product mapping.</td> </tr>
+            <tr> <td class="emtdm">Name</td> <td>Name of the product (as set in the Microsoft Product Feedback Mapping Tool when the mapping was created).</td> </tr>
+            <tr> <td class="emtdm">Version</td> <td>Version of the product (as set in the Microsoft Product Feedback Mapping Tool when the mapping was created).</td> </tr>
+            <tr> <td class="emtdm">Events on WinQual</td> <td>Number of events (buckets) currently available for the product mapping on WinQual. If this number is higher than <em>Events in StackHash</em> after synchronization please see <a href="http://www.stackhash.com/blog/post/Missing-Events.aspx" target="_blank">Missing Events?</a> on the StackHash Blog.</td> </tr>
+            <tr> <td class="emtdm">Events in StackHash</td> <td>Number of events (buckets) currently available for the product in StackHash. WinQual stores data for the past 90 days so over time this number is likely to be higher than <em>Events on WinQual</em>.</td> </tr>
+            <tr> <td class="emtdm">Responses</td> <td>Number of responses registered on WinQual for the product.</td> </tr>
+            <tr> <td class="emtdm">Created</td> <td>Local date and time that the product mapping was created on WinQual.</td> </tr>
+            <tr> <td class="emtdm">Modified</td> <td>Local date and time that the product mapping was last modified on WinQual.</td> </tr>
+            <tr> <td class="emtdm">Last Sync Started</td> <td>Local date and time that the last synchronization was started for the product. If blank StackHash has never synchronized the product with WinQual.</td> </tr>
+            <tr> <td class="emtdm">Last Sync Completed</td> <td>Local date and time that the last synchronization was completed for the product. If blank StackHash has never completed synchronization of the product with WinQual. If earlier than <em>Last Sync Started</em> then synchronization is either still in progress or has failed (see <em>Tools -> <a href="synchronization-report.htm">Synchronization Report</a></em> for more information).</td> </tr>
+            <tr> <td class="emtdm">Cab Collection Policy</td> <td>The cab collection policy for this product. Note that the collection policy controls how many of the available cabs are downloaded from WinQual. To request more cabs you must visit the WinQual web site. <a href="add-edit-profile-collection.htm">Default Collection Policies</a> can be set for the profile in <a href="service-options.htm">Service Options</a>. To override the default policies for the current product right-click it and choose <em><a href="product-properties-collection.htm">Properties</a></em>.</td> </tr>
+            <tr> <td class="emtdm">Event Collection Policy</td> <td>The event collection policy for this product. Determines the hit threshold before cabs are downloaded for events. <a href="add-edit-profile-collection.htm">Default Collection Policies</a> can be set for the profile in <a href="service-options.htm">Service Options</a>. To override the default policies for the current product right-click it and choose <em><a href="product-properties-collection.htm">Properties</a></em>.</td> </tr>
+            <tr> <td class="emtdm">Event Filter</td> <td>The current event filter. If a filter is enabled events below a hit threshold are not displayed in the client. The default <a href="client-options-display-filter.htm">Display Filter</a> can be set in <a href="client-options.htm">Client Options</a>. To override the filter for the current product right-click it and choose <em><a href="product-properties-display-filter.htm">Properties</a></em>.</td> </tr>
+            </table>
+
+            <p>Note that columns can be re-ordered in the client and so might not be in the order listed above. 
+            You can re-order columns by clicking and dragging the header.</p>
+            
+            <p><em>See <a href="main-window.htm">Main Window</a> for an overview of the StackHash client.</em></p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

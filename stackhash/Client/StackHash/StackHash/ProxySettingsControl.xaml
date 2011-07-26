@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="StackHash.ProxySettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <CheckBox Margin="5,3,5,3" Grid.ColumnSpan="2" Name="checkBoxUseProxy" Checked="checkBoxUseProxy_Checked" Unchecked="checkBoxUseProxy_Unchecked" IsChecked="{Binding UseProxy, Mode=TwoWay}">_Use proxy server</CheckBox>
+        
+        <Label Grid.Row="1" Name="labelHost" Target="{Binding ElementName=textBoxHost}">_Host:</Label>
+        <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Name="textBoxHost" Text="{Binding ProxyHost, Mode=TwoWay, ValidatesOnDataErrors=True}" ToolTip="{Binding ElementName=textBoxHost, Path=(Validation.Errors)[0].ErrorContent}" />
+        
+        <Label Grid.Row="2" Name="labelPort" Target="{Binding ElementName=textBoxPort}">_Port:</Label>
+        <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Name="textBoxPort" Text="{Binding ProxyPort, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" ToolTip="{Binding ElementName=textBoxPort, Path=(Validation.Errors)[0].ErrorContent}" />
+
+        <CheckBox Margin="5,10,5,3" Grid.Row="3" Grid.ColumnSpan="2" Name="checkBoxUseProxyAuthentication" Checked="checkBoxUseProxyAuthentication_Checked" Unchecked="checkBoxUseProxyAuthentication_Unchecked" IsChecked="{Binding UseProxyAuthentication, Mode=TwoWay}">P_roxy server requires authentication:</CheckBox>
+        
+        <Label Grid.Row="4" Name="labelUsername" Target="{Binding ElementName=textBoxUsername}">_Username:</Label>
+        <TextBox Margin="3" Grid.Row="4" Grid.Column="1" Name="textBoxUsername" Text="{Binding ProxyUsername, Mode=TwoWay}" />
+        
+        <Label Grid.Row="5" Name="labelPassword" Target="{Binding ElementName=passwordBoxPassword}">P_assword:</Label>
+        <PasswordBox Margin="3" Grid.Row="5" Grid.Column="1" Name="passwordBoxPassword" PasswordChanged="passwordBoxPassword_PasswordChanged" />
+        
+        <Label Grid.Row="6" Name="labelDomain" Target="{Binding ElementName=textBoxDomain}">_Domain:</Label>
+        <TextBox Margin="3" Grid.Row="6" Grid.Column="1" Name="textBoxDomain" Text="{Binding ProxyDomain, Mode=TwoWay}" />
+        
+    </Grid>
+</UserControl>

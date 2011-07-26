@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Main Window - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Main Window</h1>
+
+            <p>The main window displays four different views as you drill down into the mapped products:</p>
+
+            <ul>
+                <li><a href="main-window-product-list.htm">Mapped Products</a></li>
+                <li><a href="main-window-event-list.htm">Event List</a></li>
+                <li><a href="main-window-event-details.htm">Event Details</a></li>
+                <li><a href="main-window-cab-details.htm">Cab Details</a></li>
+            </ul>
+
+            <h2>Menus</h2>
+
+            <h3>File</h3>
+
+            <table>
+            <tr> <td class="emtdm">Export</td> <td class="mimg"><img src="export.png" width="16" height="16" alt="Export"></td> <td>Export the mapped product list; events for the currently selected product; or events, hits (event infos) and cab information for the currently selected product.</td> </tr>
+            <tr> <td class="emtdm">Upload Mapping File</td> <td class="mimg">&nbsp;</td> <td>Uploads a new product mapping file to WinQual.</td> </tr>
+            <tr> <td class="emtdm">Exit</td> <td class="mimg">&nbsp;</td> <td>Closes the StackHash client. The service will continue to run and will synchronize as scheduled.</td> </tr>
+            </table>
+
+            <h3>View</h3>
+
+            <table>
+            <tr> <td class="emtdm">Back</td> <td class="mimg"><img src="back.png" width="16" height="16" alt="Back"></td> <td>Returns to the previous view in the main window.</td> </tr>
+            <tr> <td class="emtdm">Home</td> <td class="mimg"><img src="home.png" width="16" height="16" alt="Home"></td> <td>Returns to the Mapped Products view in the main window.</td> </tr>
+            <tr> <td class="emtdm">Show Disabled Products</td> <td class="mimg">&nbsp;</td> <td>Toggles display of products that have been disabled for synchronization. To change the synchronization state right-click the product in the Mapped Products view.</td> </tr>
+            <tr> <td class="emtdm">Show Events Without Cabs</td> <td class="mimg">&nbsp;</td> <td>Toggles display of events without associated cab files.</td> </tr>
+            <tr> <td class="emtdm">Refresh</td> <td class="mimg">&nbsp;</td> <td>Refreshes the current main window view.</td> </tr>
+            </table>
+
+            <h3>Debug</h3>
+
+            <table>
+            <tr> <td class="emtdm">Run Script</td> <td class="mimg"><img src="run-script.png" width="16" height="16" alt="Run Script"></td> <td>Immediately run a script on the currently selected cab.</td> </tr>
+            <tr> <td class="emtdm">Script Manager</td> <td class="mimg"><img src="script-manager.png" width="16" height="16" alt="Script Manager"></td> <td>Add, edit, delete and test StackHash debugger scripts. See <a href="script-manager.htm">Script Manager</a>.</td> </tr>
+            <tr> <td class="emtdm">Start Debugging</td> <td class="mimg"><img src="debug.png" width="16" height="16" alt="Start Debugging"></td> <td>Launches the currently selected cab in the default debugger. Set the default debugger in Tools -> <a href="client-options.htm">Client Options</a> -> <a href="client-options-debuggers.htm">Debuggers</a>.</td> </tr>
+            <tr> <td class="emtdm">Debug Using</td> <td class="mimg">&nbsp;</td> <td>Launches the currently selected cab in the debugger of your choice.</td> </tr>
+            <tr> <td class="emtdm">Extract Cab</td> <td class="mimg"><img src="extract-cab.png" width="16" height="16" alt="Extract Cab"></td> <td>Extracts the contents of the currently selected cab to a folder of your choice.</td> </tr>
+            <tr> <td class="emtdm">Download Cab</td> <td class="mimg">&nbsp;</td> <td>Downloads the currently selected cab.</td> </tr>
+            <tr> <td class="emtdm">Open Cab Folder</td> <td class="mimg">&nbsp;</td> <td>Open the folder containing the currently selected cab file (this menu item is only available if the StackHash Client is running on the same computer as the StackHash Service).</td> </tr>
+            </table>
+
+            <h3>Tools</h3>
+
+            <table>
+            <tr> <td class="emtdm">Synchronize Now</td> <td class="mimg"><img src="synchronize.png" width="16" height="16" alt="Synchronize Now"></td> <td>Connects to WinQual and adds new products, events, hits (event infos) and cabs. StackHash analyzes new cabs once the sync completes.</td> </tr>
+            <tr> <td class="emtdm">Resynchronize Now</td> <td class="mimg"><img src="resync.png" width="16" height="16" alt="Resynchronize Now"></td> <td>Connects to WinQual and updates all products, events, hits (event infos) and cabs in addition to adding any new information. StackHash analyzes new cabs once the sync completes.</td> </tr>
+            <tr> <td class="emtdm">Cancel Synchronization</td> <td class="mimg">&nbsp;</td> <td>Stops the current sync as quickly as possible.</td> </tr>
+            <tr> <td class="emtdm">Synchronization Report</td> <td class="mimg">&nbsp;</td> <td>Shows the result of the most recent WinQual synchronization. See <a href="synchronization-report.htm">Synchronization Report</a>.</td> </tr>
+            <tr> <td class="emtdm">Synchronize with Plugins</td> <td class="mimg">&nbsp;</td> <td>Sends all WinQual data to one or more plugins. See <a href="select-plugins.htm">Select Plugins</a>.</td> </tr>
+            <tr> <td class="emtdm">Search Builder</td> <td class="mimg"><img src="search-builder.png" width="16" height="16" alt="Search Builder"></td> <td>Allows you to search and filter events. See <a href="search-builder.htm">Search Builder</a>.</td> </tr>
+            <tr> <td class="emtdm">Service Status</td> <td class="mimg"><img src="service-status.png" width="16" height="16" alt="Service Status"></td> <td>Shows the current state of service tasks for each configured profile, including statistics on task success and failure. See <a href="service-status.htm">Service Status</a>.</td> </tr>
+            <tr> <td class="emtdm">Service Options</td> <td class="mimg"><img src="service-options.png" width="16" height="16" alt="Service Options"></td> <td>Configure the StackHash service. This option is only available if you are running the client on the same computer as the service. See <a href="service-options.htm">Service Options</a>.</td> </tr>
+            <tr> <td class="emtdm">Client Options</td> <td class="mimg"><img src="client-options.png" width="16" height="16" alt="Client Options"></td> <td>Configure the StackHash client. See <a href="client-options.htm">Client Options</a>.</td> </tr>
+            </table>
+
+            <h2>Status Bar</h2>
+
+            <p>The left hand side of the status bar shows client activity. The status will be Ready when you can use the client. 
+            The right hand side shows service activity. During synchronization the service status will let you know when events 
+            and cabs have been downloaded for each product. You will need to refresh the client view to see any new data 
+            (hit Ctrl-R, or View -> Refresh).</p>
+
+            <h2>Personalization</h2>
+
+            <p>The panes for each view can be resized. Hover your mouse over the space between each pane until the cursor changes 
+            to a left/right or up/down arrow and then click and drag to resize.</p>
+
+            <p>The columns in all lists can be resized and reordered. Click the column header and drag to change the order of 
+            the columns in each list.</p>
+
+            <p>StackHash saves the main window position, pane sizes, list column sizes/order and toolbar positions between 
+            sessions.</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

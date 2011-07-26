@@ -1,0 +1,21 @@
+﻿<Window x:Class="StackHashDC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Windows Live Sign-in Assistant Required - StackHash" SizeToContent="Height" Width="500" MinWidth="500" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" ShowInTaskbar="True" Icon="/StackHashDC;component/StackHash.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="10" TextWrapping="Wrap">The StackHash Service requires that the Windows Live Sign-in Assistant is installed in order to access WinQual. Please click the link below and install the Sign-in Assistant.</TextBlock>
+
+        <TextBlock Margin="10,0,10,20" Grid.Row="1"><Hyperlink ToolTip="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=9BA199EF-3086-4F12-970D-8745BE104600" Click="Hyperlink_Click">Download Windows Live Sign-in Assistant </Hyperlink></TextBlock>
+
+        <Border Margin="0" Grid.Row="3" Style="{StaticResource ButtonBorder}">
+            <Button Margin="10" HorizontalAlignment="Right" Name="buttonClose" IsCancel="True" Click="buttonClose_Click">Close</Button>
+        </Border>
+        
+    </Grid>
+</Window>

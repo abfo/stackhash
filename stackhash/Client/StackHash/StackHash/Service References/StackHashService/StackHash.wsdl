@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.cucku.com/stackhash/2010/02/17" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.cucku.com/stackhash/2010/02/17" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.cucku.com/stackhash/2010/02/17/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd0" namespace="http://www.cucku.com/stackhash/2010/02/17" />
+      <xsd:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd2" namespace="http://schemas.cucku.com/stackhash/2010/02/17" />
+      <xsd:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8000/StackHash?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdminContract_GetDebugResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebugResult" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebugResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResult_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q1:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResult_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q2:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScriptResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScriptResult" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScriptResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScriptResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScriptResult_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q3:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScriptResult_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q4:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationState_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProductSynchronizationState" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetProductSynchronizationStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationState_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q5:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationState_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q6:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProductSynchronizationData" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetProductSynchronizationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationData_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q7:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProductSynchronizationData_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q8:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunWinQualLogOn_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunWinQualLogOn" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunWinQualLogOn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunWinQualLogOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunWinQualLogOn_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q9:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunWinQualLogOn_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q10:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProxy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProxy" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProxy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProxy_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q11:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetProxy_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q12:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetEmailSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEmailSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetEmailSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEmailSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetEmailSettings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q13:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetEmailSettings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q14:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetPurgeOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPurgeOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetPurgeOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPurgeOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetPurgeOptions_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q15:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetPurgeOptions_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q16:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetPurgeOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurgeOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetPurgeOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurgeOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetPurgeOptions_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q17:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetPurgeOptions_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q18:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActivePurgeOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePurgeOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActivePurgeOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePurgeOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActivePurgeOptions_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q19:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActivePurgeOptions_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q20:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemovePurgeOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePurgeOptions" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemovePurgeOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePurgeOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemovePurgeOptions_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q21:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemovePurgeOptions_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q22:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetDataCollectionPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataCollectionPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetDataCollectionPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDataCollectionPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetDataCollectionPolicy_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q23:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q24:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDataCollectionPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCollectionPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDataCollectionPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataCollectionPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q25:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDataCollectionPolicy_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q26:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActiveDataCollectionPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDataCollectionPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActiveDataCollectionPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDataCollectionPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActiveDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q27:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetActiveDataCollectionPolicy_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q28:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveDataCollectionPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDataCollectionPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveDataCollectionPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDataCollectionPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveDataCollectionPolicy_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q29:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q30:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetLicenseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseData" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetLicenseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetLicenseData_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q31:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetLicenseData_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q32:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLicense" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetLicense_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q33:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetLicense_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q34:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunBugTracker_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunBugTracker" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunBugTracker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunBugTrackerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunBugTracker_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q35:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunBugTracker_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q36:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetBugTrackerDiagnostics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugTrackerDiagnostics" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetBugTrackerDiagnostics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBugTrackerDiagnosticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetBugTrackerDiagnostics_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q37:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetBugTrackerDiagnostics_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q38:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetContextBugTrackerPlugInSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContextBugTrackerPlugInSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetContextBugTrackerPlugInSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContextBugTrackerPlugInSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetContextBugTrackerPlugInSettings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q39:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetContextBugTrackerPlugInSettings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q40:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetContextBugTrackerPlugInSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetContextBugTrackerPlugInSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetContextBugTrackerPlugInSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetContextBugTrackerPlugInSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetContextBugTrackerPlugInSettings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q41:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetContextBugTrackerPlugInSettings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q42:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbortTask" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbortTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortTask_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q43:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortTask_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q44:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetClientTimeout_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetClientTimeout" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetClientTimeout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetClientTimeoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetClientTimeout_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q45:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetClientTimeout_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q46:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_UploadMappingFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMappingFile" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_UploadMappingFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMappingFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_UploadMappingFile_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q47:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_UploadMappingFile_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q48:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStatusMappings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusMappings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStatusMappings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusMappingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStatusMappings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q49:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStatusMappings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q50:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStatusMappings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusMappings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStatusMappings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusMappingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStatusMappings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q51:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStatusMappings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q52:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RegisterForNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterForNotifications" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_Restart_InputMessage">
+    <wsdl:part name="parameters" element="tns:Restart" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_Restart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_Restart_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q53:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_Restart_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q54:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CheckVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckVersion" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CheckVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CheckVersion_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q55:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CheckVersion_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q56:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_TestDatabaseConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestDatabaseConnection" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_TestDatabaseConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestDatabaseConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_TestDatabaseConnection_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q57:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_TestDatabaseConnection_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q58:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeleteIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndex" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeleteIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeleteIndex_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q59:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeleteIndex_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q60:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_MoveIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveIndex" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_MoveIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_MoveIndex_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q61:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_MoveIndex_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q62:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CopyIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyIndex" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CopyIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CopyIndex_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q63:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CopyIndex_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q64:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStackHashSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStackHashSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStackHashSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStackHashSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStackHashSettings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q65:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetStackHashSettings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q66:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetServiceStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetServiceStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetServiceStatus_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q67:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetServiceStatus_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q68:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStackHashSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStackHashSettings" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStackHashSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStackHashSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStackHashSettings_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q69:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_SetStackHashSettings_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q70:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CreateNewStackHashContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewStackHashContext" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CreateNewStackHashContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewStackHashContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CreateNewStackHashContext_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q71:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_CreateNewStackHashContext_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q72:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveStackHashContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStackHashContext" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveStackHashContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveStackHashContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveStackHashContext_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q73:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveStackHashContext_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q74:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_ActivateStackHashContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateStackHashContext" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_ActivateStackHashContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateStackHashContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_ActivateStackHashContext_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q75:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_ActivateStackHashContext_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q76:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeactivateStackHashContext_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateStackHashContext" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeactivateStackHashContext_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateStackHashContextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeactivateStackHashContext_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q77:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DeactivateStackHashContext_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q78:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnableLogging" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnableLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableLogging_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q79:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableLogging_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q80:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableLogging_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableLogging" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableLogging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableLoggingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableLogging_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q81:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableLogging_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q82:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableReporting_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnableReporting" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableReporting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnableReportingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableReporting_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q83:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_EnableReporting_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q84:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableReporting_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableReporting" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableReporting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableReportingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableReporting_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q85:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_DisableReporting_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q86="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q86:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_StartSynchronization_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartSynchronization" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_StartSynchronization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartSynchronizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_StartSynchronization_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q87="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q87:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_StartSynchronization_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q88="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q88:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortSynchronization_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbortSynchronization" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortSynchronization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbortSynchronizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortSynchronization_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q89="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q89:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AbortSynchronization_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q90="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q90:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebuggerScriptNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebuggerScriptNames" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebuggerScriptNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebuggerScriptNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebuggerScriptNames_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q91="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q91:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebuggerScriptNames_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q92="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q92:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AddScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddScript" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AddScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AddScript_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q93="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q93:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AddScript_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q94="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q94:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScript" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScript_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q95="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q95:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RemoveScript_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q96="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q96:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RenameScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameScript" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RenameScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RenameScript_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q97="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q97:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RenameScript_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q98="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q98:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScript" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetScript_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q99="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q99:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetScript_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q100="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q100:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScript_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunScript" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScript_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunScriptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScript_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q101="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q101:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScript_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q102="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q102:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScriptAsync_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunScriptAsync" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScriptAsync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunScriptAsyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScriptAsync_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q103="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q103:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_RunScriptAsync_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q104="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q104:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResultFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebugResultFiles" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResultFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebugResultFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResultFiles_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q105="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q105:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_GetDebugResultFiles_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q106="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q106:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdminContract_AdminProgressEvent_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AdminProgressEvent" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProducts_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q107="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q107:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProducts_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q108="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q108:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiles" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetFiles_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q109="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q109:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetFiles_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q110="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q110:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvents" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEvents_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q111="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q111:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEvents_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q112="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q112:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPackage" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackage_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q113="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q113:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackage_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q114="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q114:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductEventPackages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductEventPackages" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductEventPackages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductEventPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductEventPackages_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q115="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q115:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductEventPackages_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q116="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q116:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPackages" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackages_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q117="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q117:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventPackages_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q118="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q118:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetWindowedEventPackages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWindowedEventPackages" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetWindowedEventPackages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWindowedEventPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetWindowedEventPackages_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q119="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q119:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetWindowedEventPackages_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q120="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q120:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabNotes" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabNotes_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q121="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q121:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabNotes_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q122="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q122:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddCabNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCabNote" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddCabNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCabNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddCabNote_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q123="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q123:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddCabNote_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q124="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q124:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteCabNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCabNote" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteCabNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCabNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteCabNote_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q125="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q125:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteCabNote_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q126="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q126:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventNotes" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventNotes_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q127="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q127:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetEventNotes_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q128="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q128:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddEventNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEventNote" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddEventNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEventNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddEventNote_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q129="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q129:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_AddEventNote_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q130="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q130:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteEventNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEventNote" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteEventNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEventNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteEventNote_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q131="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q131:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DeleteEventNote_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q132="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q132:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetEventBugId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventBugId" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetEventBugId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventBugIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetEventBugId_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q133="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q133:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetEventBugId_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q134="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q134:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetWorkFlowStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkFlowStatus" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetWorkFlowStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkFlowStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetWorkFlowStatus_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q135="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q135:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_SetWorkFlowStatus_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q136="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q136:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DownloadCab_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCab" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DownloadCab_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DownloadCab_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q137="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q137:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_DownloadCab_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q138="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q138:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSummary" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductSummary_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q139="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q139:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetProductSummary_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q140="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q140:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_RunBugReportTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunBugReportTask" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_RunBugReportTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunBugReportTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_RunBugReportTask_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q141="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q141:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_RunBugReportTask_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q142="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q142:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabPackage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabPackage" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabPackage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabPackage_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q143="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q143:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IProjectsContract_GetCabPackage_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q144="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q144:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICabContract_GetCabFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabFile" />
+  </wsdl:message>
+  <wsdl:message name="ICabContract_GetCabFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCabFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICabContract_GetCabFile_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q145="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q145:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICabContract_GetCabFile_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q146="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q146:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_CreateTestIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTestIndex" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_CreateTestIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTestIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_CreateTestIndex_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q147="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q147:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_CreateTestIndex_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q148="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q148:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_SetTestData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTestData" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_SetTestData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_SetTestData_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q149="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q149:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_SetTestData_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q150="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q150:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_GetTestModeSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestModeSetting" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_GetTestModeSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestModeSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_GetTestModeSetting_SenderFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q151="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q151:SenderFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITestContract_GetTestModeSetting_ReceiverFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q152="http://schemas.cucku.com/stackhash/2010/02/17" name="detail" element="q152:ReceiverFaultDetail" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IAdminContract">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDebugResult">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResult" message="tns:IAdminContract_GetDebugResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultResponse" message="tns:IAdminContract_GetDebugResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetDebugResult_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetDebugResult_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveScriptResult">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResult" message="tns:IAdminContract_RemoveScriptResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResultResponse" message="tns:IAdminContract_RemoveScriptResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResultSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RemoveScriptResult_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResultReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RemoveScriptResult_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetProductSynchronizationState">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationState" message="tns:IAdminContract_SetProductSynchronizationState_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationStateResponse" message="tns:IAdminContract_SetProductSynchronizationState_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationStateReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetProductSynchronizationState_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationStateSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetProductSynchronizationState_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetProductSynchronizationData">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationData" message="tns:IAdminContract_SetProductSynchronizationData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationDataResponse" message="tns:IAdminContract_SetProductSynchronizationData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationDataReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetProductSynchronizationData_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProductSynchronizationDataSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetProductSynchronizationData_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RunWinQualLogOn">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunWinQualLogOn" message="tns:IAdminContract_RunWinQualLogOn_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunWinQualLogOnResponse" message="tns:IAdminContract_RunWinQualLogOn_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunWinQualLogOnReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RunWinQualLogOn_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunWinQualLogOnSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RunWinQualLogOn_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetProxy">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProxy" message="tns:IAdminContract_SetProxy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProxyResponse" message="tns:IAdminContract_SetProxy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProxySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetProxy_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetProxyReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetProxy_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetEmailSettings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetEmailSettings" message="tns:IAdminContract_SetEmailSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetEmailSettingsResponse" message="tns:IAdminContract_SetEmailSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetEmailSettingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetEmailSettings_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetEmailSettingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetEmailSettings_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetPurgeOptions">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetPurgeOptions" message="tns:IAdminContract_SetPurgeOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetPurgeOptionsResponse" message="tns:IAdminContract_SetPurgeOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetPurgeOptionsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetPurgeOptions_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetPurgeOptionsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetPurgeOptions_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPurgeOptions">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetPurgeOptions" message="tns:IAdminContract_GetPurgeOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetPurgeOptionsResponse" message="tns:IAdminContract_GetPurgeOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetPurgeOptionsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetPurgeOptions_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetPurgeOptionsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetPurgeOptions_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetActivePurgeOptions">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActivePurgeOptions" message="tns:IAdminContract_GetActivePurgeOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActivePurgeOptionsResponse" message="tns:IAdminContract_GetActivePurgeOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActivePurgeOptionsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetActivePurgeOptions_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActivePurgeOptionsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetActivePurgeOptions_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemovePurgeOptions">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemovePurgeOptions" message="tns:IAdminContract_RemovePurgeOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemovePurgeOptionsResponse" message="tns:IAdminContract_RemovePurgeOptions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemovePurgeOptionsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RemovePurgeOptions_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemovePurgeOptionsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RemovePurgeOptions_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDataCollectionPolicy">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetDataCollectionPolicy" message="tns:IAdminContract_SetDataCollectionPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetDataCollectionPolicyResponse" message="tns:IAdminContract_SetDataCollectionPolicy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetDataCollectionPolicySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetDataCollectionPolicy_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetDataCollectionPolicyReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDataCollectionPolicy">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDataCollectionPolicy" message="tns:IAdminContract_GetDataCollectionPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDataCollectionPolicyResponse" message="tns:IAdminContract_GetDataCollectionPolicy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDataCollectionPolicyReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDataCollectionPolicySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetDataCollectionPolicy_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetActiveDataCollectionPolicy">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActiveDataCollectionPolicy" message="tns:IAdminContract_GetActiveDataCollectionPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActiveDataCollectionPolicyResponse" message="tns:IAdminContract_GetActiveDataCollectionPolicy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActiveDataCollectionPolicyReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetActiveDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetActiveDataCollectionPolicySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetActiveDataCollectionPolicy_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveDataCollectionPolicy">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveDataCollectionPolicy" message="tns:IAdminContract_RemoveDataCollectionPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveDataCollectionPolicyResponse" message="tns:IAdminContract_RemoveDataCollectionPolicy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveDataCollectionPolicySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RemoveDataCollectionPolicy_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveDataCollectionPolicyReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RemoveDataCollectionPolicy_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetLicenseData">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetLicenseData" message="tns:IAdminContract_GetLicenseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetLicenseDataResponse" message="tns:IAdminContract_GetLicenseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetLicenseDataReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetLicenseData_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetLicenseDataSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetLicenseData_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetLicense">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetLicense" message="tns:IAdminContract_SetLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetLicenseResponse" message="tns:IAdminContract_SetLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetLicenseSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetLicense_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetLicenseReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetLicense_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RunBugTracker">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunBugTracker" message="tns:IAdminContract_RunBugTracker_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunBugTrackerResponse" message="tns:IAdminContract_RunBugTracker_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunBugTrackerReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RunBugTracker_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunBugTrackerSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RunBugTracker_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetBugTrackerDiagnostics">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetBugTrackerDiagnostics" message="tns:IAdminContract_GetBugTrackerDiagnostics_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetBugTrackerDiagnosticsResponse" message="tns:IAdminContract_GetBugTrackerDiagnostics_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetBugTrackerDiagnosticsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetBugTrackerDiagnostics_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetBugTrackerDiagnosticsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetBugTrackerDiagnostics_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetContextBugTrackerPlugInSettings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetContextBugTrackerPlugInSettings" message="tns:IAdminContract_GetContextBugTrackerPlugInSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetContextBugTrackerPlugInSettingsResponse" message="tns:IAdminContract_GetContextBugTrackerPlugInSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetContextBugTrackerPlugInSettingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetContextBugTrackerPlugInSettings_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetContextBugTrackerPlugInSettingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetContextBugTrackerPlugInSettings_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetContextBugTrackerPlugInSettings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetContextBugTrackerPlugInSettings" message="tns:IAdminContract_SetContextBugTrackerPlugInSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetContextBugTrackerPlugInSettingsResponse" message="tns:IAdminContract_SetContextBugTrackerPlugInSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetContextBugTrackerPlugInSettingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetContextBugTrackerPlugInSettings_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetContextBugTrackerPlugInSettingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetContextBugTrackerPlugInSettings_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AbortTask">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortTask" message="tns:IAdminContract_AbortTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortTaskResponse" message="tns:IAdminContract_AbortTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortTaskSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_AbortTask_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortTaskReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_AbortTask_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetClientTimeout">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetClientTimeout" message="tns:IAdminContract_SetClientTimeout_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetClientTimeoutResponse" message="tns:IAdminContract_SetClientTimeout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetClientTimeoutSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetClientTimeout_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetClientTimeoutReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetClientTimeout_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UploadMappingFile">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/UploadMappingFile" message="tns:IAdminContract_UploadMappingFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/UploadMappingFileResponse" message="tns:IAdminContract_UploadMappingFile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/UploadMappingFileSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_UploadMappingFile_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/UploadMappingFileReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_UploadMappingFile_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetStatusMappings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStatusMappings" message="tns:IAdminContract_GetStatusMappings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStatusMappingsResponse" message="tns:IAdminContract_GetStatusMappings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStatusMappingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetStatusMappings_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStatusMappingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetStatusMappings_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetStatusMappings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStatusMappings" message="tns:IAdminContract_SetStatusMappings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStatusMappingsResponse" message="tns:IAdminContract_SetStatusMappings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStatusMappingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetStatusMappings_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStatusMappingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetStatusMappings_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RegisterForNotifications">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RegisterForNotifications" message="tns:IAdminContract_RegisterForNotifications_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Restart">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/Restart" message="tns:IAdminContract_Restart_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RestartResponse" message="tns:IAdminContract_Restart_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RestartReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_Restart_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RestartSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_Restart_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CheckVersion">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CheckVersion" message="tns:IAdminContract_CheckVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CheckVersionResponse" message="tns:IAdminContract_CheckVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CheckVersionReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_CheckVersion_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CheckVersionSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_CheckVersion_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="TestDatabaseConnection">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/TestDatabaseConnection" message="tns:IAdminContract_TestDatabaseConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/TestDatabaseConnectionResponse" message="tns:IAdminContract_TestDatabaseConnection_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/TestDatabaseConnectionReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_TestDatabaseConnection_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/TestDatabaseConnectionSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_TestDatabaseConnection_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteIndex">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeleteIndex" message="tns:IAdminContract_DeleteIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeleteIndexResponse" message="tns:IAdminContract_DeleteIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeleteIndexSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_DeleteIndex_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeleteIndexReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_DeleteIndex_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MoveIndex">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/MoveIndex" message="tns:IAdminContract_MoveIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/MoveIndexResponse" message="tns:IAdminContract_MoveIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/MoveIndexSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_MoveIndex_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/MoveIndexReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_MoveIndex_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CopyIndex">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CopyIndex" message="tns:IAdminContract_CopyIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CopyIndexResponse" message="tns:IAdminContract_CopyIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CopyIndexSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_CopyIndex_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CopyIndexReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_CopyIndex_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetStackHashSettings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStackHashSettings" message="tns:IAdminContract_GetStackHashSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStackHashSettingsResponse" message="tns:IAdminContract_GetStackHashSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStackHashSettingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetStackHashSettings_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetStackHashSettingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetStackHashSettings_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetServiceStatus">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetServiceStatus" message="tns:IAdminContract_GetServiceStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetServiceStatusResponse" message="tns:IAdminContract_GetServiceStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetServiceStatusSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetServiceStatus_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetServiceStatusReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetServiceStatus_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetStackHashSettings">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStackHashSettings" message="tns:IAdminContract_SetStackHashSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStackHashSettingsResponse" message="tns:IAdminContract_SetStackHashSettings_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStackHashSettingsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_SetStackHashSettings_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/SetStackHashSettingsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_SetStackHashSettings_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateNewStackHashContext">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CreateNewStackHashContext" message="tns:IAdminContract_CreateNewStackHashContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CreateNewStackHashContextResponse" message="tns:IAdminContract_CreateNewStackHashContext_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CreateNewStackHashContextReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_CreateNewStackHashContext_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/CreateNewStackHashContextSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_CreateNewStackHashContext_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveStackHashContext">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveStackHashContext" message="tns:IAdminContract_RemoveStackHashContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveStackHashContextResponse" message="tns:IAdminContract_RemoveStackHashContext_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveStackHashContextReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RemoveStackHashContext_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveStackHashContextSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RemoveStackHashContext_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ActivateStackHashContext">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/ActivateStackHashContext" message="tns:IAdminContract_ActivateStackHashContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/ActivateStackHashContextResponse" message="tns:IAdminContract_ActivateStackHashContext_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/ActivateStackHashContextSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_ActivateStackHashContext_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/ActivateStackHashContextReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_ActivateStackHashContext_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeactivateStackHashContext">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeactivateStackHashContext" message="tns:IAdminContract_DeactivateStackHashContext_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeactivateStackHashContextResponse" message="tns:IAdminContract_DeactivateStackHashContext_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeactivateStackHashContextReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_DeactivateStackHashContext_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DeactivateStackHashContextSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_DeactivateStackHashContext_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="EnableLogging">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableLogging" message="tns:IAdminContract_EnableLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableLoggingResponse" message="tns:IAdminContract_EnableLogging_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableLoggingSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_EnableLogging_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableLoggingReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_EnableLogging_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DisableLogging">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableLogging" message="tns:IAdminContract_DisableLogging_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableLoggingResponse" message="tns:IAdminContract_DisableLogging_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableLoggingReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_DisableLogging_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableLoggingSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_DisableLogging_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="EnableReporting">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableReporting" message="tns:IAdminContract_EnableReporting_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableReportingResponse" message="tns:IAdminContract_EnableReporting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableReportingReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_EnableReporting_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/EnableReportingSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_EnableReporting_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DisableReporting">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableReporting" message="tns:IAdminContract_DisableReporting_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableReportingResponse" message="tns:IAdminContract_DisableReporting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableReportingReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_DisableReporting_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/DisableReportingSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_DisableReporting_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StartSynchronization">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/StartSynchronization" message="tns:IAdminContract_StartSynchronization_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/StartSynchronizationResponse" message="tns:IAdminContract_StartSynchronization_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/StartSynchronizationReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_StartSynchronization_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/StartSynchronizationSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_StartSynchronization_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AbortSynchronization">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortSynchronization" message="tns:IAdminContract_AbortSynchronization_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortSynchronizationResponse" message="tns:IAdminContract_AbortSynchronization_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortSynchronizationSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_AbortSynchronization_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AbortSynchronizationReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_AbortSynchronization_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDebuggerScriptNames">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebuggerScriptNames" message="tns:IAdminContract_GetDebuggerScriptNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebuggerScriptNamesResponse" message="tns:IAdminContract_GetDebuggerScriptNames_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebuggerScriptNamesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetDebuggerScriptNames_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebuggerScriptNamesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetDebuggerScriptNames_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddScript">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AddScript" message="tns:IAdminContract_AddScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AddScriptResponse" message="tns:IAdminContract_AddScript_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AddScriptReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_AddScript_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AddScriptSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_AddScript_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveScript">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScript" message="tns:IAdminContract_RemoveScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptResponse" message="tns:IAdminContract_RemoveScript_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RemoveScript_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RemoveScriptReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RemoveScript_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RenameScript">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RenameScript" message="tns:IAdminContract_RenameScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RenameScriptResponse" message="tns:IAdminContract_RenameScript_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RenameScriptSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RenameScript_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RenameScriptReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RenameScript_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetScript">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetScript" message="tns:IAdminContract_GetScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetScriptResponse" message="tns:IAdminContract_GetScript_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetScriptReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetScript_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetScriptSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetScript_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RunScript">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScript" message="tns:IAdminContract_RunScript_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptResponse" message="tns:IAdminContract_RunScript_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RunScript_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RunScript_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RunScriptAsync">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptAsync" message="tns:IAdminContract_RunScriptAsync_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptAsyncResponse" message="tns:IAdminContract_RunScriptAsync_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptAsyncSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_RunScriptAsync_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/RunScriptAsyncReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_RunScriptAsync_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetDebugResultFiles">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultFiles" message="tns:IAdminContract_GetDebugResultFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultFilesResponse" message="tns:IAdminContract_GetDebugResultFiles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultFilesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IAdminContract_GetDebugResultFiles_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/GetDebugResultFilesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IAdminContract_GetDebugResultFiles_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AdminProgressEvent">
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IAdminContract/AdminProgressEvent" message="tns:IAdminContract_AdminProgressEvent_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="true" name="IProjectsContract">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetProducts">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProducts" message="tns:IProjectsContract_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductsResponse" message="tns:IProjectsContract_GetProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetProducts_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetProducts_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFiles">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetFiles" message="tns:IProjectsContract_GetFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetFilesResponse" message="tns:IProjectsContract_GetFiles_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetFilesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetFiles_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetFilesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetFiles_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEvents">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEvents" message="tns:IProjectsContract_GetEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventsResponse" message="tns:IProjectsContract_GetEvents_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventsSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetEvents_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventsReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetEvents_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEventPackage">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackage" message="tns:IProjectsContract_GetEventPackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackageResponse" message="tns:IProjectsContract_GetEventPackage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackageSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetEventPackage_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackageReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetEventPackage_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetProductEventPackages">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductEventPackages" message="tns:IProjectsContract_GetProductEventPackages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductEventPackagesResponse" message="tns:IProjectsContract_GetProductEventPackages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductEventPackagesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetProductEventPackages_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductEventPackagesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetProductEventPackages_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEventPackages">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackages" message="tns:IProjectsContract_GetEventPackages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackagesResponse" message="tns:IProjectsContract_GetEventPackages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackagesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetEventPackages_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventPackagesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetEventPackages_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetWindowedEventPackages">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetWindowedEventPackages" message="tns:IProjectsContract_GetWindowedEventPackages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetWindowedEventPackagesResponse" message="tns:IProjectsContract_GetWindowedEventPackages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetWindowedEventPackagesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetWindowedEventPackages_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetWindowedEventPackagesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetWindowedEventPackages_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCabNotes">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabNotes" message="tns:IProjectsContract_GetCabNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabNotesResponse" message="tns:IProjectsContract_GetCabNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabNotesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetCabNotes_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabNotesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetCabNotes_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddCabNote">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddCabNote" message="tns:IProjectsContract_AddCabNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddCabNoteResponse" message="tns:IProjectsContract_AddCabNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddCabNoteSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_AddCabNote_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddCabNoteReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_AddCabNote_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteCabNote">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteCabNote" message="tns:IProjectsContract_DeleteCabNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteCabNoteResponse" message="tns:IProjectsContract_DeleteCabNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteCabNoteSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_DeleteCabNote_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteCabNoteReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_DeleteCabNote_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEventNotes">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventNotes" message="tns:IProjectsContract_GetEventNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventNotesResponse" message="tns:IProjectsContract_GetEventNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventNotesReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetEventNotes_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetEventNotesSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetEventNotes_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddEventNote">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddEventNote" message="tns:IProjectsContract_AddEventNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddEventNoteResponse" message="tns:IProjectsContract_AddEventNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddEventNoteReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_AddEventNote_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/AddEventNoteSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_AddEventNote_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteEventNote">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteEventNote" message="tns:IProjectsContract_DeleteEventNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteEventNoteResponse" message="tns:IProjectsContract_DeleteEventNote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteEventNoteSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_DeleteEventNote_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DeleteEventNoteReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_DeleteEventNote_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetEventBugId">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetEventBugId" message="tns:IProjectsContract_SetEventBugId_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetEventBugIdResponse" message="tns:IProjectsContract_SetEventBugId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetEventBugIdSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_SetEventBugId_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetEventBugIdReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_SetEventBugId_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetWorkFlowStatus">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetWorkFlowStatus" message="tns:IProjectsContract_SetWorkFlowStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetWorkFlowStatusResponse" message="tns:IProjectsContract_SetWorkFlowStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetWorkFlowStatusSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_SetWorkFlowStatus_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/SetWorkFlowStatusReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_SetWorkFlowStatus_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DownloadCab">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DownloadCab" message="tns:IProjectsContract_DownloadCab_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DownloadCabResponse" message="tns:IProjectsContract_DownloadCab_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DownloadCabReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_DownloadCab_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/DownloadCabSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_DownloadCab_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetProductSummary">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductSummary" message="tns:IProjectsContract_GetProductSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductSummaryResponse" message="tns:IProjectsContract_GetProductSummary_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductSummarySenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetProductSummary_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetProductSummaryReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetProductSummary_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RunBugReportTask">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/RunBugReportTask" message="tns:IProjectsContract_RunBugReportTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/RunBugReportTaskResponse" message="tns:IProjectsContract_RunBugReportTask_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/RunBugReportTaskSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_RunBugReportTask_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/RunBugReportTaskReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_RunBugReportTask_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCabPackage">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabPackage" message="tns:IProjectsContract_GetCabPackage_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabPackageResponse" message="tns:IProjectsContract_GetCabPackage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabPackageSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:IProjectsContract_GetCabPackage_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/IProjectsContract/GetCabPackageReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:IProjectsContract_GetCabPackage_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICabContract">
+    <wsdl:operation name="GetCabFile">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ICabContract/GetCabFile" message="tns:ICabContract_GetCabFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ICabContract/GetCabFileResponse" message="tns:ICabContract_GetCabFile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ICabContract/GetCabFileReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:ICabContract_GetCabFile_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ICabContract/GetCabFileSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:ICabContract_GetCabFile_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="true" name="ITestContract">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateTestIndex">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/CreateTestIndex" message="tns:ITestContract_CreateTestIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/CreateTestIndexResponse" message="tns:ITestContract_CreateTestIndex_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/CreateTestIndexSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:ITestContract_CreateTestIndex_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/CreateTestIndexReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:ITestContract_CreateTestIndex_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetTestData">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/SetTestData" message="tns:ITestContract_SetTestData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/SetTestDataResponse" message="tns:ITestContract_SetTestData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/SetTestDataReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:ITestContract_SetTestData_ReceiverFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/SetTestDataSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:ITestContract_SetTestData_SenderFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetTestModeSetting">
+      <wsdl:input wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/GetTestModeSetting" message="tns:ITestContract_GetTestModeSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/GetTestModeSettingResponse" message="tns:ITestContract_GetTestModeSetting_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/GetTestModeSettingSenderFaultDetailFault" name="SenderFaultDetailFault" message="tns:ITestContract_GetTestModeSetting_SenderFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.cucku.com/stackhash/2010/02/17/ITestContract/GetTestModeSettingReceiverFaultDetailFault" name="ReceiverFaultDetailFault" message="tns:ITestContract_GetTestModeSetting_ReceiverFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

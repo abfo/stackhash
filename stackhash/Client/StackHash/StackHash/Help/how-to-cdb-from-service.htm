@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>Cdb from a Windows Service - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>Cdb from a Windows Service</h1>
+
+            <p>The StackHash <a href="how-to-scripting.htm">scripting</a> feature relies on running cdb.exe from a Windows service (the StackHash Service).</p>
+
+            <p>When running in a service cdb.exe uses WinHttp to download any symbols required during analysis. 
+            If a WinHttp proxy is specified cdb.exe will use this to connect to the Internet. If your computer does not 
+            have a WinHttp proxy configured then cdb.exe will default to using a dummy proxy server. This allows 
+            symbols to be downloaded from local hosts but effectively blocks Internet access including to the Microsoft public symbol server.</p>
+
+            <p>This behavior can be overridden by setting a registry value:</p>
+
+            <pre>Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Symbol Server 
+DWORD (32-bit) Value: NoInternetProxy=1</pre>
+
+            <p>On 64-bit systems the following value should also be set for 32-bit applications:</p>
+
+            <pre>Key: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Symbol Server
+DWORD (32-bit) Value: NoInternetProxy=1</pre>
+
+            <p>The StackHash installer will set both keys if you do not have a WinHttp proxy configured. If your 
+            configuration changes then you may need to manually add or remove these keys.</p>
+
+            <p>You can view and change your WinHttp proxy using the netsh command:</p>
+
+            <pre>netsh winhttp -?</pre>
+
+            <p>Note that WinHttp proxy settings are separate from other proxy settings (i.e. Internet Explorer).</p>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>

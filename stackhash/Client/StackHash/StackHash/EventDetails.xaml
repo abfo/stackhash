@@ -1,0 +1,315 @@
+﻿<UserControl x:Class="StackHash.EventDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vcs="clr-namespace:StackHash.ValueConverters" xmlns:local="clr-namespace:StackHash" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MasterResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" MinHeight="50" x:Name="Row3" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" MinHeight="50" x:Name="Row5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="50" x:Name="Column1" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="50" x:Name="Column3" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Margin="6" FontSize="14" FontWeight="Bold">
+            <TextBlock>
+                <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkMappedProducts" Click="linkMappedProducts_Click">Mapped Products</Hyperlink>
+            </TextBlock>
+            <TextBlock>&gt;</TextBlock>
+            <TextBlock>
+                <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkCurrentProduct" Click="linkCurrentProduct_Click">
+                    <TextBlock Text="{Binding EventListTitle}" />
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock>&gt;</TextBlock>
+            <TextBlock Text="{Binding CurrentEventPackage.Id}" />
+        </TextBlock>
+        
+        <TextBlock Margin="6,6,6,3" Grid.Row="1" FontWeight="Bold">Cabs:</TextBlock>
+        <ListView Margin="6,0,6,6" Grid.Row="2" ItemsSource="{Binding CurrentEventPackage.Cabs}" Name="listViewCabs" GridViewColumnHeader.Click="listViewCabsHeader_Click" SelectionChanged="listViewCabs_SelectionChanged" MouseDoubleClick="listViewCabs_MouseDoubleClick" SelectionMode="Single" ContextMenuOpening="listViewCabs_ContextMenuOpening">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="local:StackHashCommands.RunScriptCommand" ItemsSource="{Binding ScriptData}" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon">
+                        <MenuItem.Icon>
+                            <Image Source="Help\run-script.png" />
+                        </MenuItem.Icon>
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="{x:Type MenuItem}">
+                                <Setter Property="Command" Value="{x:Static local:StackHashCommands.RunScriptByNameCommand}" />
+                                <Setter Property="CommandParameter" Value="{Binding Name}" />
+                                <Setter Property="Header" Value="{Binding Name}" />
+                                <Setter Property="CommandTarget" Value="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                    <MenuItem Command="local:StackHashCommands.ScriptManagerCommand" ToolTip="Create, edit, remove and test debugger scripts." IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                        <MenuItem.Icon>
+                            <Image Source="Help\script-manager.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Command="local:StackHashCommands.DebugCommand" ToolTip="Debug the contents of the selected Cab." IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                        <MenuItem.Icon>
+                            <Image Source="Help\debug.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="local:StackHashCommands.DebugUsingCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}">
+                        <MenuItem Command="local:StackHashCommands.DebugX86Command" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                        <MenuItem Command="local:StackHashCommands.DebugX64Command" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                        <MenuItem Command="local:StackHashCommands.DebugVisualStudioCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Command="local:StackHashCommands.ExtractCabCommand" ToolTip="Extract the contents of the currently selected Cab to a local directory." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" IsEnabledChanged="MenuItem_IsEnabledChangedDimIcon">
+                        <MenuItem.Icon>
+                            <Image Source="Help\extract-cab.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Command="local:StackHashCommands.DownloadCabCommand" ToolTip="Download the currently selected cab." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                    <MenuItem Command="local:StackHashCommands.OpenCabFolderCommand" ToolTip="Open the folder containing this cab file (only available if running on the same computer as the StackHash Service)." CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                    <Separator />
+                    <MenuItem Header="Send Cab to Plugin" ItemsSource="{Binding ActivePlugins}" Name="menuItemSendCabToPlugin" Click="menuItemSendCabToPlugin_Click">
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="{x:Type MenuItem}">
+                                <Setter Property="Header" Value="{Binding Name}" />
+                                <Setter Property="Tag" Value="{Binding}" />
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                    <MenuItem Header="Copy Cab URL to Clipboard" Name="menuItemCopyCabUrl" Click="menuItemCopyCabUrl_Click" />
+                    <Separator />
+                    <MenuItem Command="local:StackHashCommands.RefreshCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="Id" Content="ID" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="CabDownloaded" Content="Downloaded" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CabDownloaded, Converter={StaticResource boolToYesNoConverter}}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="EventTypeName" Content="Type" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EventTypeName}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="SizeInBytes" Content="Size" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SizeInBytes, Converter={StaticResource fileSizeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="OSVersion" Content="OS Version" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OSVersion}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="MachineArchitecture" Content="Architecture" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MachineArchitecture}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="DotNetVersion" Content=".NET" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DotNetVersion}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="125">
+                        <GridViewColumnHeader Tag="ProcessUpTime" Content="Process Uptime" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ProcessUpTime}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="125">
+                        <GridViewColumnHeader Tag="SystemUpTime" Content="System Uptime" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SystemUpTime}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="125">
+                        <GridViewColumnHeader Tag="DateCreatedLocal" Content="Created" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DateCreatedLocal, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="125">
+                        <GridViewColumnHeader Tag="DateModifiedLocal" Content="Modified" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DateModifiedLocal, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100">
+                        <GridViewColumnHeader Tag="Purged" Content="Purged" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Purged, Converter={StaticResource boolToYesNoConverter}}" HorizontalAlignment="Left" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <GridSplitter Grid.Row="3" Height="3" Margin="6,0,6,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        
+        <DockPanel Grid.Row="4">
+            <TextBlock Margin="6,6,6,3" FontWeight="Bold" DockPanel.Dock="Top">Event Infos (Hits):</TextBlock>
+            <ListView Margin="6,0,6,6" DockPanel.Dock="Top" ItemsSource="{Binding CurrentEventPackage.EventInfoList}" Name="listViewEventInfos" GridViewColumnHeader.Click="listViewEventInfosHeader_Click" SelectionMode="Single">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="local:StackHashCommands.RefreshCommand" CommandTarget="{Binding Path=PlacementTarget,RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.View>
+                    <GridView>                    
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Tag="HitDateLocal" Content="Hit Date" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding HitDateLocal, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="50">
+                            <GridViewColumnHeader Tag="TotalHits" Content="Hits" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding TotalHits, Converter={StaticResource intGeneralDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="150">
+                            <GridViewColumnHeader Tag="OperatingSystemName" Content="OS" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OperatingSystemName}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="150">
+                            <GridViewColumnHeader Tag="OperatingSystemVersion" Content="OS Version" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OperatingSystemVersion}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="150">
+                            <GridViewColumnHeader Tag="Language" Content="Language" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Language}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="75">
+                            <GridViewColumnHeader Tag="Locale" Content="Locale" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Locale}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="75">
+                            <GridViewColumnHeader Tag="Lcid" Content="LCID" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Lcid}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Tag="DateCreatedLocal" Content="Created" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DateCreatedLocal, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Tag="DateModifiedLocal" Content="Modified" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DateModifiedLocal, Converter={StaticResource dateTimeDisplayConverter}}" HorizontalAlignment="Right" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+        
+        <GridSplitter Grid.Column="1" Grid.RowSpan="5" Margin="0,6,0,6" ResizeBehavior="PreviousAndNext" Width="3" />
+        
+        <TextBlock Grid.Column="2" Margin="6" FontSize="14" FontWeight="Bold" Visibility="{Binding ElementName=listViewCabs, Path=SelectedItem, Converter={StaticResource nullVisibleConverter}}">&lt; Select Cab</TextBlock>
+        <TextBlock Grid.Column="2" Margin="6" FontSize="14" FontWeight="Bold" Visibility="{Binding ElementName=listViewCabs, Path=SelectedItem, Converter={StaticResource nullHiddenConverter}}">
+            <TextBlock Text="{Binding ElementName=listViewCabs, Path=SelectedItem.Id}" />
+            <TextBlock>: <Hyperlink IsEnabled="{Binding NotBusy}" Name="linkShowDetails" Click="linkShowDetails_Click">Show Details</Hyperlink></TextBlock>
+        </TextBlock>
+        
+        <DockPanel Margin="3" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4">
+            <ScrollViewer Margin="6" DockPanel.Dock="Top" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+                    <local:SummaryControlProduct DataContext="{Binding CurrentProduct}" HorizontalAlignment="Left" />
+                    <local:SummaryControlEventPackage DataContext="{Binding CurrentEventPackage}" HorizontalAlignment="Left" />
+                </StackPanel>
+            </ScrollViewer>
+            <TextBlock Margin="3,13,3,3" DockPanel.Dock="Top" FontWeight="Bold">Event Notes:</TextBlock>
+            <local:NotesControl DockPanel.Dock="Top" x:Name="notesControl" />
+        </DockPanel>
+    </Grid>
+</UserControl>

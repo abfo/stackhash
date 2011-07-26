@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>StackHash Command Line Plugin - StackHash Help</title>
+        <link href="help.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <div id="helpcontent">
+	        <h1>StackHash Command Line Plugin</h1>
+
+            <p>Reports products, events, cab information and debug script results to a command line 
+            (batch file, script or program).</p>
+
+            <p>To configure the plugin specify a command line to run for the events that you're interested 
+            in handling. The possible events are: Product Added, Product Updated, Event Added, Event Updated,
+            Event Note Added, Cab Added, Cab Updated, Cab Note Added and Debug Script Executed. The command 
+            line should be the full path to the script or program you wish to run.</p>
+
+            <p>Command line parameters passed to each script are listed below.</p>
+
+            <p>Note that the plugin runs with permissions from the StackHash Service account. 
+            By default this is NETWORK SERVICE.</p>
+
+            <p><strong>Only report manually submitted events</strong>: Enter True to only report events on demand. 
+            To do this, right-click an event and choose <em>Send event to Plugin</em> -> <em>StackHash Command Line Plugin</em>. 
+            Enter False to automatically report new events during synchronization.</p>
+
+            <p><strong>Hit threshold for automatically reporting events</strong>: Prevents events from being automatically 
+            reported unless the event has this number of hits. Enter 0 to report all events. Note this setting only applies 
+            to events added or updated during synchronization. Manually submitted events are always reported.</p>
+
+            <h2>Command Line Parameter Reference</h2>
+
+            <p>The first parameter always indicates the type of report. This is set to <em>Automatic</em> when the event 
+            is being reported to the plugin as a result of synchronizing with WinQual. If the report was initiated 
+            by the user the report type is set to <em>Manual</em>.</p>
+
+            <p>A Manual report can be triggers by <em>Tools</em> -> <em>Synchronize with Plugins</em> (to report all 
+            current data to one or more plugins: note that this triggers Product Added, Event Added and Cab Added 
+            scripts), or by right-clicking an event choosing <em>Send event to Plugin</em> (to report a single event).</p>
+
+            <p>When handling Event Added and Event Updated note that the Event Id is not guaranteed to be unique. 
+            To identify an event correctly use the Event Id <strong>AND</strong> the Event Type Name together. Also note that the Event 
+            Id may be a negative number.</p>
+
+            <h3>Product Added</h3>
+            <p>Called when a new WinQual product mapping is added.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            </table>
+
+            <h3>Product Updated</h3>
+            <p>Called when a WinQual product mapping is updated.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td><em>Automatic</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            </table>
+
+            <h3>Event Added</h3>
+            <p>Called when an event is added.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>
+            <tr> <td class="emtdm">7</td> <td>Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Total Hits</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Signature: applicationName</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Signature: applicationVersion</td> </tr>
+            <tr> <td class="emtdm">12</td> <td>Signature: applicationTimeStamp</td> </tr>
+            <tr> <td class="emtdm">13</td> <td>Signature: moduleName</td> </tr>
+            <tr> <td class="emtdm">14</td> <td>Signature: moduleVersion</td> </tr>
+            <tr> <td class="emtdm">15</td> <td>Signature: moduleTimeStamp</td> </tr>
+            <tr> <td class="emtdm">16</td> <td>Signature: exceptionCode</td> </tr>
+            <tr> <td class="emtdm">17</td> <td>Signature: offset</td> </tr>
+            </table>
+
+            <p>The Plugin Bug Reference may be set by returning an exit code greater 
+            than 0 from the Event Added script. If the exit code is 0 or negative then the Plugin 
+            Bug Reference is not set.</p>
+
+            <h3>Event Updated</h3>
+            <p>Called when an event is updated.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td><em>Automatic</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>
+            <tr> <td class="emtdm">7</td> <td>Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Total Hits</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Signature: applicationName</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Signature: applicationVersion</td> </tr>
+            <tr> <td class="emtdm">12</td> <td>Signature: applicationTimeStamp</td> </tr>
+            <tr> <td class="emtdm">13</td> <td>Signature: moduleName</td> </tr>
+            <tr> <td class="emtdm">14</td> <td>Signature: moduleVersion</td> </tr>
+            <tr> <td class="emtdm">15</td> <td>Signature: moduleTimeStamp</td> </tr>
+            <tr> <td class="emtdm">16</td> <td>Signature: exceptionCode</td> </tr>
+            <tr> <td class="emtdm">17</td> <td>Signature: offset</td> </tr>
+            </table>
+
+            <p>The Plugin Bug Reference may be updated by returning an exit code greater 
+            than 0 from the Event Updated script. If the exit code is 0 or negative then the Plugin 
+            Bug Reference is not updated.</p>
+
+            <h3>Event Note Added</h3>
+            <p>Called when a note is added to an event.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>            
+            <tr> <td class="emtdm">7</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Note source</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Note user</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Note time</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Path to file containing the contents of the note. This is a temporary file that is deleted once the script exits.</td> </tr>
+            </table>
+
+            <h3>Cab Added</h3>
+            <p>Called when a cab is added.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>
+            <tr> <td class="emtdm">7</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Cab Id</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Cab size (bytes)</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Cab downloaded (true/false)</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Cab purged (true/false)</td> </tr>
+            <tr> <td class="emtdm">12</td> <td>StackHash Analysis: .NET Version</td> </tr>
+            <tr> <td class="emtdm">13</td> <td>StackHash Analysis: Machine Architecture</td> </tr>
+            <tr> <td class="emtdm">14</td> <td>StackHash Analysis: OS Version</td> </tr>
+            <tr> <td class="emtdm">15</td> <td>StackHash Analysis: Process Uptime</td> </tr>
+            <tr> <td class="emtdm">16</td> <td>StackHash Analysis: System Uptime</td> </tr>
+            </table>
+
+            <h3>Cab Updated</h3>
+            <p>Called when a cab is updated.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td><em>Automatic</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>
+            <tr> <td class="emtdm">7</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Cab Id</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Cab size (bytes)</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Cab downloaded (true/false)</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Cab purged (true/false)</td> </tr>
+            <tr> <td class="emtdm">12</td> <td>StackHash Analysis: .NET Version</td> </tr>
+            <tr> <td class="emtdm">13</td> <td>StackHash Analysis: Machine Architecture</td> </tr>
+            <tr> <td class="emtdm">14</td> <td>StackHash Analysis: OS Version</td> </tr>
+            <tr> <td class="emtdm">15</td> <td>StackHash Analysis: Process Uptime</td> </tr>
+            <tr> <td class="emtdm">16</td> <td>StackHash Analysis: System Uptime</td> </tr>
+            </table>
+
+            <h3>Cab Note Added</h3>
+            <p>Called when a note is added to a cab.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>            
+            <tr> <td class="emtdm">7</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Cab Id</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Note source</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Note user</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Note time</td> </tr>
+            <tr> <td class="emtdm">12</td> <td>Path to file containing the contents of the note. This is a temporary file that is deleted once the script exits.</td> </tr>
+            </table>
+
+            <h3>Debug Script Executed</h3>
+            <p>Called when a debugger script has been executed.</p>
+            <p>Parameters:</p>
+            <table>
+            <tr> <td class="emtdm">1</td> <td>Report type: <em>Automatic</em> or <em>Manual</em></td> </tr>
+            <tr> <td class="emtdm">2</td> <td>Product Id</td> </tr>
+            <tr> <td class="emtdm">3</td> <td>Product Name</td> </tr>
+            <tr> <td class="emtdm">4</td> <td>Product Version</td> </tr>
+            <tr> <td class="emtdm">5</td> <td>Event Id</td> </tr>
+            <tr> <td class="emtdm">6</td> <td>Event Type Name</td> </tr>            
+            <tr> <td class="emtdm">7</td> <td>Plugin Bug Reference</td> </tr>
+            <tr> <td class="emtdm">8</td> <td>Cab Id</td> </tr>
+            <tr> <td class="emtdm">9</td> <td>Script name</td> </tr>
+            <tr> <td class="emtdm">10</td> <td>Script run date/time</td> </tr>
+            <tr> <td class="emtdm">11</td> <td>Path to file containing the debugger script results. This is a temporary file that is deleted once the script exits.</td> </tr>
+            </table>
+
+        </div>
+        <div id="helpfooter"><a href="http://stackhash.codeplex.com/" target="_blank">StackHash</a> | &copy; Copyright Cucku, Inc and the stackhash.codeplex.com contributors.</div>
+	</body>
+</html>
