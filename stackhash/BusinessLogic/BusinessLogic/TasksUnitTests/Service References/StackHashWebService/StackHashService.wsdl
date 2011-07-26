@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.stackhash.com/services/2010/04/15" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.stackhash.com/services/2010/04/15" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.stackhash.com/services/2010/04/15">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ReportError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportErrorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportErrorFromUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportErrorFromUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReportErrorFromUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckForUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientMajor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientMinor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientInstance" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckForUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckForUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportIndexStatistics">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceInstance" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="contextId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="products" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="files" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="events" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventInfos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cabs" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxEventCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportIndexStatisticsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReportDotNetMiss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="serviceInstance" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="contextId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dotNetMajor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dotNetMinor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dotNetBuild" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dotNetPrivate" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportDotNetMissResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveTestData">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveTestDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="licenseId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLicenseResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="departmentName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxEvents" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxSeats" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="expiryUTC" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReportErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportError" />
+  </wsdl:message>
+  <wsdl:message name="ReportErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportErrorFromUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportErrorFromUser" />
+  </wsdl:message>
+  <wsdl:message name="ReportErrorFromUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportErrorFromUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckForUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckForUpdate" />
+  </wsdl:message>
+  <wsdl:message name="CheckForUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckForUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportIndexStatisticsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportIndexStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ReportIndexStatisticsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportIndexStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportDotNetMissSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportDotNetMiss" />
+  </wsdl:message>
+  <wsdl:message name="ReportDotNetMissSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportDotNetMissResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTestData" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLicense" />
+  </wsdl:message>
+  <wsdl:message name="GetLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLicenseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StackHashServiceSoap">
+    <wsdl:operation name="ReportError">
+      <wsdl:input message="tns:ReportErrorSoapIn" />
+      <wsdl:output message="tns:ReportErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportErrorFromUser">
+      <wsdl:input message="tns:ReportErrorFromUserSoapIn" />
+      <wsdl:output message="tns:ReportErrorFromUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckForUpdate">
+      <wsdl:input message="tns:CheckForUpdateSoapIn" />
+      <wsdl:output message="tns:CheckForUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportIndexStatistics">
+      <wsdl:input message="tns:ReportIndexStatisticsSoapIn" />
+      <wsdl:output message="tns:ReportIndexStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportDotNetMiss">
+      <wsdl:input message="tns:ReportDotNetMissSoapIn" />
+      <wsdl:output message="tns:ReportDotNetMissSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestData">
+      <wsdl:input message="tns:RemoveTestDataSoapIn" />
+      <wsdl:output message="tns:RemoveTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicense">
+      <wsdl:input message="tns:GetLicenseSoapIn" />
+      <wsdl:output message="tns:GetLicenseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StackHashServiceSoap" type="tns:StackHashServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportError">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportErrorFromUser">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportErrorFromUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckForUpdate">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/CheckForUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportIndexStatistics">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportIndexStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportDotNetMiss">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportDotNetMiss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestData">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/RemoveTestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicense">
+      <soap:operation soapAction="http://www.stackhash.com/services/2010/04/15/GetLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StackHashServiceSoap12" type="tns:StackHashServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportError">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportErrorFromUser">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportErrorFromUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckForUpdate">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/CheckForUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportIndexStatistics">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportIndexStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportDotNetMiss">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/ReportDotNetMiss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestData">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/RemoveTestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicense">
+      <soap12:operation soapAction="http://www.stackhash.com/services/2010/04/15/GetLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StackHashService">
+    <wsdl:port name="StackHashServiceSoap" binding="tns:StackHashServiceSoap">
+      <soap:address location="http://www.stackhash.com/service/StackHashService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StackHashServiceSoap12" binding="tns:StackHashServiceSoap12">
+      <soap12:address location="http://www.stackhash.com/service/StackHashService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

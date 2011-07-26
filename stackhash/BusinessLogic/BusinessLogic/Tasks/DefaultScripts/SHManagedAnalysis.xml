@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<StackHashScriptSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Script>
+    <StackHashScriptLine>
+      <Command>.load psscor.dll</Command>
+      <Comment>Loads the correct version of psscor2 or psscor4</Comment>
+    </StackHashScriptLine>
+    <StackHashScriptLine>
+      <Command>!Analysis</Command>
+      <Comment>Perform full managed analysis</Comment>
+    </StackHashScriptLine>
+  </Script>
+  <Name>SHManagedAnalysis</Name>
+  <CreationDate>2011-04-28T13:08:18.0649431Z</CreationDate>
+  <LastModifiedDate>2011-04-28T13:10:00.900825Z</LastModifiedDate>
+  <Version>1</Version>
+  <Owner>User</Owner>
+  <IsReadOnly>false</IsReadOnly>
+  <RunAutomatically>true</RunAutomatically>
+  <DumpType>ManagedOnly</DumpType>
+</StackHashScriptSettings>

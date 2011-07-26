@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.stackhash.com/service/StackHashService.asmx?wsdl" docRef="http://www.stackhash.com/service/StackHashService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.stackhash.com/service/StackHashService.asmx" xmlns:q1="http://www.stackhash.com/services/2010/04/15" binding="q1:StackHashServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.stackhash.com/service/StackHashService.asmx" xmlns:q2="http://www.stackhash.com/services/2010/04/15" binding="q2:StackHashServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
