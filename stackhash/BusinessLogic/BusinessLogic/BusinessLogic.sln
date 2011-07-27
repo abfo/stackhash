@@ -56,6 +56,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{20D8D188-FAEB-4DAD-BCFF-727AC767A520}"
 	ProjectSection(SolutionItems) = preProject
 		TestData\Settings\beta3settings.xml = TestData\Settings\beta3settings.xml
+		TestData\Settings\Beta4CabInfo.xml = TestData\Settings\Beta4CabInfo.xml
 		TestData\Settings\Beta4Event.xml = TestData\Settings\Beta4Event.xml
 	EndProjectSection
 EndProject

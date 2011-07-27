@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<StackHashCab xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DateCreatedLocal>2010-05-03T18:44:00Z</DateCreatedLocal>
+  <DateModifiedLocal>2010-05-03T18:44:00Z</DateModifiedLocal>
+  <EventId>1099304277</EventId>
+  <EventTypeName>CLR20 Managed Crash</EventTypeName>
+  <FileName>1099304277-CLR20ManagedCrash-0845934887.cab</FileName>
+  <Id>845934887</Id>
+  <SizeInBytes>9301398</SizeInBytes>
+  <DumpAnalysis>
+    <SystemUpTime>4 days 2:10:35.391</SystemUpTime>
+    <ProcessUpTime>0 days 0:00:12.000</ProcessUpTime>
+    <DotNetVersion>2.0.50727.4927</DotNetVersion>
+    <OSVersion>Windows 7 Version 7600 MP (8 procs) Free x64</OSVersion>
+    <MachineArchitecture>x64</MachineArchitecture>
+  </DumpAnalysis>
+</StackHashCab>
