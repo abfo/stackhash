@@ -17,8 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cabs", "Cabs", "{4C3712F1-0
 	ProjectSection(SolutionItems) = preProject
 		TestData\Cabs\1535419857-SpecialException-1116452068.cab = TestData\Cabs\1535419857-SpecialException-1116452068.cab
 		TestData\Cabs\1629290733-SpecialException-1073810027.cab = TestData\Cabs\1629290733-SpecialException-1073810027.cab
+		TestData\Cabs\1630796338-Crash32bit-0760025228.cab = TestData\Cabs\1630796338-Crash32bit-0760025228.cab
 		TestData\Cabs\1641909485-Crash32bit-0773522646.cab = TestData\Cabs\1641909485-Crash32bit-0773522646.cab
 		TestData\Cabs\2045056648-Crash32bit-1042883046.cab = TestData\Cabs\2045056648-Crash32bit-1042883046.cab
+		TestData\Cabs\496858888-5-0615344527.cab = TestData\Cabs\496858888-5-0615344527.cab
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashWinQual", "WinQual\StackHashWinQual.csproj", "{D9F9CA48-60C9-42BE-8658-2943F2A3BE9F}"
