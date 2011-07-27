@@ -83,6 +83,8 @@ namespace StackHashBusinessObjects
         [DataMember]
         private const String s_Default32BitDebuggerToolsForWindowsPathOn32BitWindows = @"C:\Program Files\Debugging Tools for Windows\cdb.exe";
         [DataMember]
+        private const String s_Default32BitDebuggerToolsForWindowsPathOn32BitWindowsAlternative = @"C:\Program Files\Debugging Tools for Windows (x86)\cdb.exe";
+        [DataMember]
         private const String s_Default32BitDebuggerToolsForWindowsPathOn64BitWindows = @"C:\Program Files (x86)\Debugging Tools for Windows (x86)\cdb.exe";
 
         // 64 bit debugger location on 64 bit machine and 32 bit machine - NB: Can't run a 64 bit debugger on 32 bit windows.
@@ -138,9 +140,16 @@ namespace StackHashBusinessObjects
             get
             {
                 if (StackHashUtilities.SystemInformation.Is64BitSystem())
+                {
                     return StackHashDebuggerSettings.s_Default32BitDebuggerToolsForWindowsPathOn64BitWindows;
+                }
                 else
-                    return StackHashDebuggerSettings.s_Default32BitDebuggerToolsForWindowsPathOn32BitWindows;
+                {
+                    if (File.Exists(s_Default32BitDebuggerToolsForWindowsPathOn32BitWindowsAlternative))
+                        return StackHashDebuggerSettings.s_Default32BitDebuggerToolsForWindowsPathOn32BitWindowsAlternative;
+                    else
+                        return StackHashDebuggerSettings.s_Default32BitDebuggerToolsForWindowsPathOn32BitWindows;
+                }
             }
         }
         public static String Default64BitDebuggerPathAndFileName
