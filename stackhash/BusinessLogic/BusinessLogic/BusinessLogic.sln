@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{FB91CB62-25D3-401D-BB5F-793B90B1B4CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dumps", "Dumps", "{AF82CFAC-5FF6-4A7C-A5FE-8BA4A8365F13}"
+	ProjectSection(SolutionItems) = preProject
+		TestData\Dumps\Cucku.exe.mdmp = TestData\Dumps\Cucku.exe.mdmp
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cabs", "Cabs", "{4C3712F1-069B-4038-B0A3-3D2BD4B11C85}"
 	ProjectSection(SolutionItems) = preProject
@@ -73,6 +76,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashSqlUtilsUnitTests", "StackHashSqlUtilsUnitTests\StackHashSqlUtilsUnitTests.csproj", "{ED85F786-73FD-463B-BCCD-508C48427800}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackHashTestBugTrackerPlugin", "StackHashTestBugTrackerPlugin\StackHashTestBugTrackerPlugin.csproj", "{6FF9564A-ADDD-45B1-825D-203B180C63A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MappingFiles", "MappingFiles", "{2A6DA14E-C5F8-49C9-A32E-F108691FFAF3}"
+	ProjectSection(SolutionItems) = preProject
+		TestData\MappingFiles\1.0.4511.261.xml = TestData\MappingFiles\1.0.4511.261.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -434,5 +442,6 @@ Global
 		{AF82CFAC-5FF6-4A7C-A5FE-8BA4A8365F13} = {BC61DFF1-F15B-4502-8E40-CDD8336C98DE}
 		{4C3712F1-069B-4038-B0A3-3D2BD4B11C85} = {BC61DFF1-F15B-4502-8E40-CDD8336C98DE}
 		{20D8D188-FAEB-4DAD-BCFF-727AC767A520} = {BC61DFF1-F15B-4502-8E40-CDD8336C98DE}
+		{2A6DA14E-C5F8-49C9-A32E-F108691FFAF3} = {BC61DFF1-F15B-4502-8E40-CDD8336C98DE}
 	EndGlobalSection
 EndGlobal
