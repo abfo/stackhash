@@ -5,6 +5,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.IO;
+using System.Runtime.InteropServices;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -2024,9 +2025,43 @@ namespace ServiceUnitTests
             return resp;
         }
 
+        public FileStream FileOpenWithWait(String fileName, FileMode mode, FileAccess access, FileShare share, int secondsToWait)
+        {
+            int retryCount = 0;
+            FileStream stream = null;
+            while (stream == null) 
+            {    
+                try 
+                {        
+                    stream = File.Open(fileName, mode, access, FileShare.Read);    
+                } 
+                catch (IOException e) 
+                {
+                    int ERROR_SHARING_VIOLATION = -2147024864;
+
+                    if (Marshal.GetHRForException(e) != ERROR_SHARING_VIOLATION)
+                    {
+                        throw;
+                    }
+                    else if (retryCount >= secondsToWait)
+                    {
+                        throw;
+                    }
+                    else
+                    {
+                        Console.WriteLine("FileOpenWithWait retry: " + retryCount.ToString());
+                        Thread.Sleep(1000);
+                    }
+                    retryCount++;
+                }
+            }
+            return stream;
+        }
+    
+
         public void CorruptFile(String fileName)
         {
-            FileStream fileStream = File.Open(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            FileStream fileStream = FileOpenWithWait(fileName, FileMode.Open, FileAccess.ReadWrite, FileShare.None, 10);
 
             try
             {
